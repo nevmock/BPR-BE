@@ -47,9 +47,10 @@ jobs:
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
           nvm use 20
 
-          cd /home/kanzen/Marhaen-BE
+          cd /home/kanzen/BPR/BE
           git reset --hard HEAD
           git pull origin main --rebase
           npm install
-          npm run build          
-          pm2 restart marhaen-be:service
+          npm run build
+          npx prisma migrate deploy   
+          pm2 restart bpr-be:service

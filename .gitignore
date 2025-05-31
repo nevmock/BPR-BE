@@ -11,8 +11,8 @@ node_modules/
 # generate output
 dist
 
-# prisma
-prisma/migrations
+# # prisma
+# prisma/migrations
 
 # Local development
 package-lock.json
