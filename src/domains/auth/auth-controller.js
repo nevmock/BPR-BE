@@ -15,9 +15,9 @@ class AuthController {
     }
 
     async register(req, res) {
-        const { name, username, email, password, phone_number, otp_verification } = req.body;
+        const { name, username, email, password } = req.body;
 
-        const message = await AuthService.register({ name, username, email, password, phone_number, otp_verification });
+        const message = await AuthService.register({ name, username, email, password });
 
         if (!message) {
             throw Error("Failed to register");
@@ -39,7 +39,7 @@ class AuthController {
     }
 
     async getProfile(req, res){
-        const user = await AuthService.getProfile(req.app.locals.user.id);
+        const user = await AuthService.getProfile(req.app.locals.user);
 
         if (!user) {
             throw Error("Failed to get user profile");
@@ -49,27 +49,15 @@ class AuthController {
     }
 
     async updateProfile(req, res){
-        const { name, email, phone_number } = req.body;
+        const { name } = req.body;
 
-        const user = await AuthService.updateProfile(req.app.locals.user.id, { name, email, phone_number });
+        const user = await AuthService.updateProfile(req.app.locals.user, { name });
 
         if (!user) {
             throw Error("Failed to update user profile");
         }
 
         return successResponse(res, user);
-    }
-
-    async sendOtp(req, res) {
-        const { email } = req.body;
-
-        const message = await AuthService.sendOtp(email);
-
-        if (!message) {
-            throw Error("Failed to send OTP");
-        }
-
-        return successResponse(res, message);
     }
 }
 

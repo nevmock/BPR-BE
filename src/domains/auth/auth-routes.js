@@ -8,10 +8,6 @@ import authToken from "../../middlewares/auth-token-middleware.js";
 
 class AuthRoutes extends BaseRoutes {
     routes() {
-        this.router.post("/send-otp", [
-            validateCredentials(sendOtpSchema),
-            tryCatch(AuthController.sendOtp)
-        ])
         this.router.post("/register", [
             validateCredentials(registerSchema),
             tryCatch(AuthController.register)

@@ -18,7 +18,7 @@ const authToken = (req, res, next) => {
    jwt.verify(
         token,
         process.env.JWT_SECRET || '',
-        (err, user) => {
+        (err, data) => {
             if (err) {
                 console.log(err.message)
                 if (err.message == 'invalid signature') {
@@ -52,7 +52,16 @@ const authToken = (req, res, next) => {
                 }
             }
 
-            req.app.locals.user = user;
+            if (data.type !== 'access') {
+                throw new BaseError(
+                    403,
+                    statusCodes.FORBIDDEN.message,
+                    'FORBIDDEN',
+                    'Token Is Not An Access Token',
+                );
+            }
+
+            req.app.locals.user = data.id;
 
             return next();
         },

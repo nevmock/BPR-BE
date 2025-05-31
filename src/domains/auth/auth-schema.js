@@ -26,19 +26,6 @@ const registerSchema = Joi.object({
             "string.empty": "Email is required.",
             "string.email": "Email must be a valid email address."
         }),
-    otp_verification : Joi.number()
-        .required()
-        
-        .messages({
-            "string.empty": "OTP verification is required."
-        }),
-    phone_number : Joi.string()
-        .required()
-        .regex(/^\+?[0-9]{10,15}$/)
-        .messages({
-            "string.empty": "Phone number is required.",
-            "string.pattern.base": "Phone number must be a valid phone number."
-    }),
     password : Joi.string()
         .required()
         .min(8)

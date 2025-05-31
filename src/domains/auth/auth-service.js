@@ -25,23 +25,8 @@ class AuthService {
             throw BaseError.badRequest("Invalid credentials");
         }
 
-        if (!user.verified_at){
-            const token = generateToken(user.id, "5m");
-            const verificationLink = `${process.env.BE_URL}/api/v1/auth/verify/${token}`;
-            const emailHtml = generateVerifEmail(verificationLink);
-
-            sendEmail(
-                user.email,
-                "Verifikasi Email dari Hiji: Omni Ads Channel",
-                "Terima kasih telah mendaftar di Marhein! Untuk melanjutkan, silakan verifikasi email Anda dengan mengklik tautan berikut:",
-                emailHtml
-            );
-
-            throw BaseError.badRequest("Email not verified, Please check your email to verify your account.");
-        }
-
-        const accessToken = generateToken(user.id, "1d");
-        const refreshToken = generateToken(user.id, "365d");
+        const accessToken = generateToken({ id : user.id, type: "access" }, "1d");
+        const refreshToken = generateToken({ id : user.id, type: "refresh" }, "365d");
 
         return { access_token: accessToken, refresh_token: refreshToken };
     }
@@ -67,54 +52,12 @@ class AuthService {
             throw new joi.ValidationError(validation, stack);
         }
 
-        const otpExist = await db.otp.findFirst({
-            where: {
-                email: data.email,
-                otp_code: data.otp_verification
-            }
-        })
-
-        if (!otpExist) {
-            let validation = "";
-            let stack = [];
-
-            validation += "Invalid OTP.";
-
-            stack.push({
-                message: "Invalid OTP.",
-                path: ["otp_verification"]
-            });
-
-            throw new joi.ValidationError(validation, stack);
-        }
-
-        if (otpExist.expired_at < new Date()) {
-            let validation = "";
-            let stack = [];
-
-            validation += "OTP expired.";
-
-            stack.push({
-                message: "OTP expired.",
-                path: ["otp_verification"]
-            });
-
-            throw new joi.ValidationError(validation, stack);
-        }
-
-        await db.otp.delete({
-            where: {
-                id: otpExist.id
-            }
-        })
-
         const createdUser = await db.user.create({
             data: {
                 name: data.name,
                 email: data.email,
                 password: await hashPassword(data.password),
-                phone_number: data.phone_number,
-                verified_at: new Date()
+                role: "Admin"
             }
         })
         
@@ -122,8 +65,8 @@ class AuthService {
             throw Error("Failed to register");
         }
 
-        const accessToken = generateToken(createdUser.id, "1d");
-        const refreshToken = generateToken(createdUser.id, "365d");
+        const accessToken = generateToken({ id : createdUser.id, type: "access" }, "1d");
+        const refreshToken = generateToken({ id: createdUser.id, type: "refresh" }, "365d");
 
         return { message: "User register successfully", access_token: accessToken, refresh_token: refreshToken };
     }
@@ -133,6 +76,10 @@ class AuthService {
 
         if (!decoded) {
             throw BaseError.unauthorized("Invalid token");
+        }
+
+        if (decoded.type !== "refresh"){
+            throw BaseError.unauthorized("Invalid token type");
         }
 
         const user = await db.user.findUnique({
@@ -145,7 +92,7 @@ class AuthService {
             throw BaseError.notFound("User not found");
         }
 
-        const accessToken = generateToken(user.id, "1d");
+        const accessToken = generateToken({id: user.id, type: 'access'}, "1d");
 
         return accessToken;
     }
@@ -159,7 +106,6 @@ class AuthService {
                 id: true,
                 name: true,
                 email: true,
-                phone_number: true,
                 created_at: true,
                 updated_at: true
             }
@@ -181,7 +127,6 @@ class AuthService {
                 id: true,
                 name: true,
                 email: true,
-                phone_number: true,
                 created_at: true,
                 updated_at: true
             }
@@ -196,63 +141,18 @@ class AuthService {
                 id: id
             },
             data: {
-                name: data.name,
-                email: data.email,
-                phone_number: data.phone_number
+                name: data.name
+            },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                created_at: true,
+                updated_at: true
             }
         });
 
         return updatedUser;
-    }
-
-    async sendOtp(email) {
-        const userExist = await db.user.findUnique({
-            where: {
-                email: email
-            }
-        })
-
-        if (userExist) {
-            let validation = "";
-            let stack = [];
-
-            validation += "Email already taken.";
-
-            stack.push({
-                message: "Email already taken.",
-                path: ["email"]
-            });
-
-            throw new joi.ValidationError(validation, stack);
-        }
-
-        const { otp, expiresAt } = await this.generateOtp();
-
-        await db.otp.create({
-            data: {
-                otp_code: otp,
-                email: email,
-                expired_at: expiresAt
-            }
-        })
-
-        const emailHtml = generateVerifEmail(otp);
-
-        sendEmail(
-            email,
-            "Verifikasi Email dari Marhein",
-            "Terima kasih telah mendaftar di Marhein! Untuk melanjutkan, silakan verifikasi email Anda dengan otp berikut:",
-            emailHtml
-        );
-
-        return { message: "OTP sent successfully" };
-    }
-
-    async generateOtp(){
-        const otp = Math.floor(100000 + Math.random() * 900000);
-        const expiresAt = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes
-
-        return { otp, expiresAt };
     }
 }
 
