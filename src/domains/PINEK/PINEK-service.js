@@ -113,7 +113,7 @@ class PINEKService {
         status,
         submitted_at,
     }) {
-        const updatedKSSM = await db.PINEK.update({
+        const updatedPINEK = await db.PINEK.update({
             where: {
                 id: parseInt(id)
             },

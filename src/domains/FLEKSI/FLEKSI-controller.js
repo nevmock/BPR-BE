@@ -133,7 +133,7 @@ class FLEKSIController {
             return res.status(404).json({ message: "FLEKSI not found" });
         }
 
-        return successResponse(res, updatedKSSM);
+        return successResponse(res, updatedFLEKSI);
     }
 }
 

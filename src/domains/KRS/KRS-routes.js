@@ -10,7 +10,16 @@ class KRSRoutes extends BaseRoutes {
             tryCatch(KRSController.get)
         ])
 
+        this.router.get("/:id", [
+            tryCatch(KRSController.getById)
+        ])
+
         this.router.post("/", [
+            validateCredentials(createKRS),
+            tryCatch(KRSController.post)
+        ])
+
+        this.router.put("/", [
             validateCredentials(createKRS),
             tryCatch(KRSController.post)
         ])

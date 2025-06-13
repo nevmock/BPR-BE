@@ -10,7 +10,16 @@ class KSMRoutes extends BaseRoutes {
             tryCatch(KSMController.get)
         ])
 
+        this.router.get("/:id", [
+            tryCatch(KSMController.getById)
+        ])
+
         this.router.post("/", [
+            validateCredentials(createKSM),
+            tryCatch(KSMController.post)
+        ])
+
+        this.router.put("/", [
             validateCredentials(createKSM),
             tryCatch(KSMController.post)
         ])

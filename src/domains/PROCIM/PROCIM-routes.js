@@ -10,7 +10,16 @@ class PROCIMRoutes extends BaseRoutes {
             tryCatch(PROCIMController.get)
         ])
 
+        this.router.get("/:id", [
+            tryCatch(PROCIMController.getById)
+        ])
+
         this.router.post("/", [
+            validateCredentials(createPROCIM),
+            tryCatch(PROCIMController.post)
+        ])
+
+        this.router.put("/", [
             validateCredentials(createPROCIM),
             tryCatch(PROCIMController.post)
         ])

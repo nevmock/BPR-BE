@@ -10,7 +10,16 @@ class KEFRoutes extends BaseRoutes {
             tryCatch(KEFController.get)
         ])
 
+        this.router.get("/:id", [
+            tryCatch(KEFController.getById)
+        ])
+
         this.router.post("/", [
+            validateCredentials(createKEF),
+            tryCatch(KEFController.post)
+        ])
+
+        this.router.put("/", [
             validateCredentials(createKEF),
             tryCatch(KEFController.post)
         ])

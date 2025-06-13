@@ -10,7 +10,16 @@ class KARRoutes extends BaseRoutes {
             tryCatch(KARController.get)
         ])
 
+        this.router.get("/:id", [
+            tryCatch(KARController.getById)
+        ])
+
         this.router.post("/", [
+            validateCredentials(createKAR),
+            tryCatch(KARController.post)
+        ])
+
+        this.router.put("/", [
             validateCredentials(createKAR),
             tryCatch(KARController.post)
         ])

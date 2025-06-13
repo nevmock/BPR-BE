@@ -10,7 +10,16 @@ class KMMRoutes extends BaseRoutes {
             tryCatch(KMMController.get)
         ])
 
+        this.router.get("/:id", [
+            tryCatch(KMMController.getById)
+        ])
+
         this.router.post("/", [
+            validateCredentials(createKMM),
+            tryCatch(KMMController.post)
+        ])
+
+        this.router.put("/", [
             validateCredentials(createKMM),
             tryCatch(KMMController.post)
         ])

@@ -81,7 +81,7 @@ class PINEKController {
         tanggal_surat_dokumen_agunan,
         tanggal_surat_pernyataan,
         is_submitted
-        })
+        });
 
         if (!newPINEK) {
             throw Error("Failed to create PINEK");
