@@ -1,4 +1,5 @@
 import BaseRoutes from "../../base_classes/base-routes.js";
+import authToken from "../../middlewares/auth-token-middleware.js";
 
 import validateCredentials from "../../middlewares/validate-credentials-middleware.js";
 import tryCatch from "../../utils/tryCatcher.js";
@@ -8,21 +9,30 @@ import { createKSS } from "./KSS-schema.js";
 class KSSRoutes extends BaseRoutes {
     routes() {
         this.router.get("/", [
+            authToken,
             tryCatch(KSSController.get)
         ])
 
         this.router.get("/:id", [
+            authToken,
             tryCatch(KSSController.getById)
         ])
 
         this.router.post("/", [
+            authToken,
             validateCredentials(createKSS),
             tryCatch(KSSController.post)
         ])
 
-        this.router.put("/", [
+        this.router.put("/:id", [
+            authToken,
             validateCredentials(createKSS),
-            tryCatch(KSSController.post)
+            tryCatch(KSSController.put)
+        ])
+
+        this.router.delete("/:id", [
+            authToken,
+            tryCatch(KSSController.deleteById)
         ])
     }
 }

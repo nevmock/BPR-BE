@@ -3,14 +3,37 @@ import db from "../../config/db.js";
 
 class KSSService {
     async getAll(){
-        const datas = await db.KSS.findMany()
+        const datas = await db.KSS.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
         return datas
     }
 
     async getById(id) {
         const data = await db.KSS.findUnique({
             where: {
-                id: parseInt(id)
+                id: id
+            },
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
             }
         });
         return data;
@@ -22,8 +45,8 @@ class KSSService {
         nama_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
-        tanggal_surat_perintah_jalan,
-        tanggal_surat_fasilitas_kredit,
+        tanggal_surat_permohonan_kredit,
+        tanggal_surat_persetujuan_kredit,
         nomor_surat,
         plaford,
         jangka_waktu,
@@ -32,13 +55,9 @@ class KSSService {
         biaya_administrasi,
         detail_jaminan,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         nama_penjamin,
         alamat_penjamin,
         no_ktp_penjamin,
-        tanggal_surat_pernyataan,
-        hari,
-        tanggal_surat_perjanjian_kredit,
         no_ktp_debitur,
         persetujuan_dari,
         tempat_lahir_penjamin,
@@ -59,10 +78,9 @@ class KSSService {
         biaya_materai,
         biaya_notaris,
         total_biaya,
-        tanggal_surat_penyerahan_jaminan,
         nama_shm,
-        tanggal_surat_fasilitas_kredit_1,
         submitted_at,
+        userID
     }){
         const newKSS = await db.KSS.create({
             data:{
@@ -71,8 +89,8 @@ class KSSService {
             nama_debitur:nama_debitur,
             alamat_usaha_debitur:alamat_usaha_debitur,
             alamat_rumah_debitur:alamat_rumah_debitur,
-            tanggal_surat_perintah_jalan:tanggal_surat_perintah_jalan?new Date(tanggal_surat_perintah_jalan):null,
-            tanggal_surat_fasilitas_kredit:tanggal_surat_fasilitas_kredit?new Date(tanggal_surat_fasilitas_kredit):null,
+            tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
+            tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
             nomor_surat:nomor_surat,
             plaford:plaford,
             jangka_waktu:jangka_waktu,
@@ -81,13 +99,9 @@ class KSSService {
             biaya_administrasi:biaya_administrasi,
             detail_jaminan:detail_jaminan,
             pekerjaan_debitur:pekerjaan_debitur,
-            tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
             nama_penjamin:nama_penjamin,
             alamat_penjamin:alamat_penjamin,
             no_ktp_penjamin:no_ktp_penjamin,
-            tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
-            hari:hari,
-            tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
             no_ktp_debitur:no_ktp_debitur,
             persetujuan_dari:persetujuan_dari,
             tempat_lahir_penjamin:tempat_lahir_penjamin,
@@ -108,10 +122,9 @@ class KSSService {
             biaya_materai:biaya_materai,
             biaya_notaris:biaya_notaris,
             total_biaya:total_biaya,
-            tanggal_surat_penyerahan_jaminan:tanggal_surat_penyerahan_jaminan?new Date(tanggal_surat_penyerahan_jaminan):null,
             nama_shm:nama_shm,
-            tanggal_surat_fasilitas_kredit_1:tanggal_surat_fasilitas_kredit_1?new Date(tanggal_surat_fasilitas_kredit_1):null,
-            submitted_at:new Date()
+            submitted_at:new Date(),
+            userID:userID
             }
         })
         if (!newKSS) {
@@ -126,8 +139,8 @@ class KSSService {
         nama_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
-        tanggal_surat_perintah_jalan,
-        tanggal_surat_fasilitas_kredit,
+        tanggal_surat_permohonan_kredit,
+        tanggal_surat_persetujuan_kredit,
         nomor_surat,
         plaford,
         jangka_waktu,
@@ -136,13 +149,9 @@ class KSSService {
         biaya_administrasi,
         detail_jaminan,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         nama_penjamin,
         alamat_penjamin,
         no_ktp_penjamin,
-        tanggal_surat_pernyataan,
-        hari,
-        tanggal_surat_perjanjian_kredit,
         no_ktp_debitur,
         persetujuan_dari,
         tempat_lahir_penjamin,
@@ -163,15 +172,14 @@ class KSSService {
         biaya_materai,
         biaya_notaris,
         total_biaya,
-        tanggal_surat_penyerahan_jaminan,
         nama_shm,
-        tanggal_surat_fasilitas_kredit_1,
         status,
         submitted_at,
+        userID,
     }) {
         const updatedKSS = await db.KSS.update({
             where: {
-                id: parseInt(id)
+                id: id
             },
             data: {
             nama:nama,
@@ -179,8 +187,8 @@ class KSSService {
             nama_debitur:nama_debitur,
             alamat_usaha_debitur:alamat_usaha_debitur,
             alamat_rumah_debitur:alamat_rumah_debitur,
-            tanggal_surat_perintah_jalan:tanggal_surat_perintah_jalan?new Date(tanggal_surat_perintah_jalan):null,
-            tanggal_surat_fasilitas_kredit:tanggal_surat_fasilitas_kredit?new Date(tanggal_surat_fasilitas_kredit):null,
+            tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
+            tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
             nomor_surat:nomor_surat,
             plaford:plaford,
             jangka_waktu:jangka_waktu,
@@ -189,13 +197,9 @@ class KSSService {
             biaya_administrasi:biaya_administrasi,
             detail_jaminan:detail_jaminan,
             pekerjaan_debitur:pekerjaan_debitur,
-            tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
             nama_penjamin:nama_penjamin,
             alamat_penjamin:alamat_penjamin,
             no_ktp_penjamin:no_ktp_penjamin,
-            tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
-            hari:hari,
-            tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
             no_ktp_debitur:no_ktp_debitur,
             persetujuan_dari:persetujuan_dari,
             tempat_lahir_penjamin:tempat_lahir_penjamin,
@@ -216,16 +220,24 @@ class KSSService {
             biaya_materai:biaya_materai,
             biaya_notaris:biaya_notaris,
             total_biaya:total_biaya,
-            tanggal_surat_penyerahan_jaminan:tanggal_surat_penyerahan_jaminan?new Date(tanggal_surat_penyerahan_jaminan):null,
             nama_shm:nama_shm,
-            tanggal_surat_fasilitas_kredit_1:tanggal_surat_fasilitas_kredit_1?new Date(tanggal_surat_fasilitas_kredit_1):null,
             status:status,
             updated_at: new Date(),
-            submitted_at
+            submitted_at,
+            userID:userID,
             }
         });
 
         return updatedKSS;
+    }
+
+    async deleteById(id) {
+        const data = await db.KSS.delete({
+            where: {
+                id: id
+            }
+        });
+        return data;
     }
 }
 

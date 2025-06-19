@@ -9,22 +9,36 @@ import { createKSSM } from "./KSSM-schema.js";
 class KSSMRoutes extends BaseRoutes {
     routes() {
         this.router.get("/", [
+            authToken,
             tryCatch(KSSMController.get)
         ])
 
         this.router.get("/:id", [
+            authToken,
             tryCatch(KSSMController.getById)
         ])
 
         this.router.post("/", [
+            authToken,
             validateCredentials(createKSSM),
             tryCatch(KSSMController.post)
         ])
         
-        this.router.put("/", [
+        this.router.put("/:id", [
+            authToken,
             validateCredentials(createKSSM),
-            tryCatch(KSSMController.post)
+            tryCatch(KSSMController.put)
         ])
+
+        this.router.delete("/:id", [
+            authToken,
+            tryCatch(KSSMController.deleteById)
+        ])
+
+        this.router.post('/generate-pdf', [
+            authToken,
+          tryCatch(KSSMController.generatePDF)
+        ]);
     }
 }
 

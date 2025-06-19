@@ -1,14 +1,37 @@
 import db from "../../config/db.js";
 class KEFService {
     async getAll(){
-        const datas = await db.KEF.findMany()
+        const datas = await db.KEF.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
         return datas
     }
 
     async getById(id) {
         const data = await db.KEF.findUnique({
             where: {
-                id: parseInt(id)
+                id: id
+            },
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
             }
         });
         return data;
@@ -16,8 +39,7 @@ class KEFService {
 
     async create({
         nomor_surat,
-        hari,
-        tanggal_surat_perjanjian_kredit,
+        tanggal_surat_persetujuan_kredit,
         nama_debitur,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
@@ -46,23 +68,19 @@ class KEFService {
         biaya_fidusia_sebesar,
         total_biaya,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         nik_debitur,
         jenis_kelamin_debitur,
         detail_jaminan,
         harga_jaminan,
-        tanggal_surat_kuasa,
         no_hp_debitur,
-        hari_pembuatan_surat,
-        tanggal_surat_perjanjian_sewabeli,
         total_harga_keseluruhan_barang,
         submitted_at,
+        userID,
     }){
         const newKEF = await db.KEF.create({
             data:{
             nomor_surat:nomor_surat,
-            hari:hari,
-            tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
+            tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
             nama_debitur:nama_debitur,
             tempat_lahir_debitur:tempat_lahir_debitur,
             tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
@@ -91,17 +109,14 @@ class KEFService {
             biaya_fidusia_sebesar:biaya_fidusia_sebesar,
             total_biaya:total_biaya,
             pekerjaan_debitur:pekerjaan_debitur,
-            tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
             nik_debitur:nik_debitur,
             jenis_kelamin_debitur:jenis_kelamin_debitur,
             detail_jaminan:detail_jaminan,
             harga_jaminan:harga_jaminan,
-            tanggal_surat_kuasa:tanggal_surat_kuasa?new Date(tanggal_surat_kuasa):null,
             no_hp_debitur:no_hp_debitur,
-            hari_pembuatan_surat:hari_pembuatan_surat,
-            tanggal_surat_perjanjian_sewabeli:tanggal_surat_perjanjian_sewabeli?new Date(tanggal_surat_perjanjian_sewabeli):null,
             total_harga_keseluruhan_barang:total_harga_keseluruhan_barang,
-            submitted_at:new Date()
+            submitted_at:new Date(),
+            userID:userID
             }
         })
         if (!newKEF) {
@@ -112,8 +127,7 @@ class KEFService {
 
     async update(id, {
         nomor_surat,
-        hari,
-        tanggal_surat_perjanjian_kredit,
+        tanggal_surat_persetujuan_kredit,
         nama_debitur,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
@@ -142,27 +156,23 @@ class KEFService {
         biaya_fidusia_sebesar,
         total_biaya,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         nik_debitur,
         jenis_kelamin_debitur,
         detail_jaminan,
         harga_jaminan,
-        tanggal_surat_kuasa,
         no_hp_debitur,
-        hari_pembuatan_surat,
-        tanggal_surat_perjanjian_sewabeli,
         total_harga_keseluruhan_barang,
         status,
         submitted_at,
+        userID,
     }) {
         const updatedKEF = await db.KEF.update({
             where: {
-                id: parseInt(id)
+                id: id
             },
             data: {
                 nomor_surat:nomor_surat,
-                hari:hari,
-                tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
+                tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nama_debitur:nama_debitur,
                 tempat_lahir_debitur:tempat_lahir_debitur,
                 tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
@@ -191,23 +201,29 @@ class KEFService {
                 biaya_fidusia_sebesar:biaya_fidusia_sebesar,
                 total_biaya:total_biaya,
                 pekerjaan_debitur:pekerjaan_debitur,
-                tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
                 nik_debitur:nik_debitur,
                 jenis_kelamin_debitur:jenis_kelamin_debitur,
                 detail_jaminan:detail_jaminan,
                 harga_jaminan:harga_jaminan,
-                tanggal_surat_kuasa:tanggal_surat_kuasa?new Date(tanggal_surat_kuasa):null,
                 no_hp_debitur:no_hp_debitur,
-                hari_pembuatan_surat:hari_pembuatan_surat,
-                tanggal_surat_perjanjian_sewabeli:tanggal_surat_perjanjian_sewabeli?new Date(tanggal_surat_perjanjian_sewabeli):null,
                 total_harga_keseluruhan_barang:total_harga_keseluruhan_barang,
                 status:status,
                 updated_at: new Date(),
-                submitted_at
+                submitted_at,
+                userID:userID,
             }
         });
 
         return updatedKEF;
+    }
+
+    async deleteById(id) {
+        const data = await db.KEF.delete({
+            where: {
+                id: id
+            }
+        });
+        return data;
     }
 }
 

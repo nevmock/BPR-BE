@@ -8,10 +8,10 @@ import { parseJWT, generateToken } from "../../utils/jwtTokenConfig.js";
 import { matchPassword, hashPassword } from "../../utils/passwordConfig.js";
 
 class AuthService {
-    async login(email, password) {
+    async login(username, password) {
         let user = await db.user.findUnique({
             where: {
-                email: email
+                username: username
             }
         })
 
@@ -34,7 +34,7 @@ class AuthService {
     async register(data) {
         const emailExist = await db.user.findUnique({
             where: {
-                email: data.email
+                username: data.username
             }
         })
 
@@ -42,11 +42,11 @@ class AuthService {
             let validation = "";
             let stack = [];
 
-            validation += "Email already taken.";
+            validation += "Username already taken.";
 
             stack.push({
-                message: "Email already taken.",
-                path: ["email"]
+                message: "Username already taken.",
+                path: ["username"]
             });
 
             throw new joi.ValidationError(validation, stack);
@@ -54,10 +54,9 @@ class AuthService {
 
         const createdUser = await db.user.create({
             data: {
-                name: data.name,
-                email: data.email,
+                username: data.username,
                 password: await hashPassword(data.password),
-                role: "Admin"
+                role: "PIC"
             }
         })
         
@@ -104,8 +103,7 @@ class AuthService {
             },
             select: {
                 id: true,
-                name: true,
-                email: true,
+                username: true,
                 created_at: true,
                 updated_at: true
             }
@@ -116,43 +114,6 @@ class AuthService {
         }
 
         return user;
-    }
-
-    async updateProfile(id, data) {
-        const user = await db.user.findUnique({
-            where: {
-                id: id
-            },
-            select: {
-                id: true,
-                name: true,
-                email: true,
-                created_at: true,
-                updated_at: true
-            }
-        });
-
-        if (!user) {
-            throw BaseError.notFound("User not found");
-        }
-
-        const updatedUser = await db.user.update({
-            where: {
-                id: id
-            },
-            data: {
-                name: data.name
-            },
-            select: {
-                id: true,
-                name: true,
-                email: true,
-                created_at: true,
-                updated_at: true
-            }
-        });
-
-        return updatedUser;
     }
 }
 

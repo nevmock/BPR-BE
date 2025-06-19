@@ -1,14 +1,37 @@
 import db from "../../config/db.js";
 class KMSMService {
     async getAll(){
-        const datas = await db.KMSM.findMany()
+        const datas = await db.KMSM.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
         return datas
     }
 
     async getById(id) {
         const data = await db.KMSM.findUnique({
             where: {
-                id: parseInt(id)
+                id: id
+            },
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
             }
         });
         return data;
@@ -20,8 +43,8 @@ class KMSMService {
         nama_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
-        tanggal_surat_perintah_jalan,
-        tanggal_surat_pemberian_kredit,
+        tanggal_surat_permohonan_kredit,
+        tanggal_surat_persetujuan_kredit,
         nomor_surat,
         nominal,
         tujuan_penggunaan,
@@ -31,12 +54,8 @@ class KMSMService {
         biaya_administrasi,
         detail_jaminan,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         tanggal_lahir_debitur,
         no_ktp_debitur,
-        tanggal_surat_kuasa_kendaraan,
-        hari,
-        tanggal_surat_perjanjian_kredit,
         tempat_lahir_debitur,
         hubungan_debitur_penjamin,
         nama_penjamin,
@@ -56,14 +75,11 @@ class KMSMService {
         biaya_notaris,
         total_biaya,
         nama_barang,
-        tanggal_surat_penyerahan_jaminan,
-        tanggal_surat_fasilitas_kredit,
-        tanggal_surat_pernyataan,
         nik_debitur,
         jenis_kelamin_debitur,
         harga_jaminan,
-        tanggal_surat_kuasa,
         submitted_at,
+        userID,
     }){
         const newKMSM = await db.KMSM.create({
             data:{
@@ -72,8 +88,8 @@ class KMSMService {
                 nama_debitur:nama_debitur,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
-                tanggal_surat_perintah_jalan:tanggal_surat_perintah_jalan?new Date(tanggal_surat_perintah_jalan):null,
-                tanggal_surat_pemberian_kredit:tanggal_surat_pemberian_kredit?new Date(tanggal_surat_pemberian_kredit):null,
+                tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
+                tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nomor_surat:nomor_surat,
                 nominal:nominal,
                 tujuan_penggunaan:tujuan_penggunaan,
@@ -83,12 +99,8 @@ class KMSMService {
                 biaya_administrasi:biaya_administrasi,
                 detail_jaminan:detail_jaminan,
                 pekerjaan_debitur:pekerjaan_debitur,
-                tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
                 tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
                 no_ktp_debitur:no_ktp_debitur,
-                tanggal_surat_kuasa_kendaraan:tanggal_surat_kuasa_kendaraan?new Date(tanggal_surat_kuasa_kendaraan):null,
-                hari:hari,
-                tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
                 tempat_lahir_debitur:tempat_lahir_debitur,
                 hubungan_debitur_penjamin:hubungan_debitur_penjamin,
                 nama_penjamin:nama_penjamin,
@@ -108,14 +120,11 @@ class KMSMService {
                 biaya_notaris:biaya_notaris,
                 total_biaya:total_biaya,
                 nama_barang:nama_barang,
-                tanggal_surat_penyerahan_jaminan:tanggal_surat_penyerahan_jaminan?new Date(tanggal_surat_penyerahan_jaminan):null,
-                tanggal_surat_fasilitas_kredit:tanggal_surat_fasilitas_kredit?new Date(tanggal_surat_fasilitas_kredit):null,
-                tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
                 nik_debitur:nik_debitur,
                 jenis_kelamin_debitur:jenis_kelamin_debitur,
                 harga_jaminan:harga_jaminan,
-                tanggal_surat_kuasa:tanggal_surat_kuasa?new Date(tanggal_surat_kuasa):null,
-                submitted_at:new Date()
+                submitted_at:new Date(),
+                userID:userID,
             }
         })
         if (!newKMSM) {
@@ -130,8 +139,8 @@ class KMSMService {
         nama_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
-        tanggal_surat_perintah_jalan,
-        tanggal_surat_pemberian_kredit,
+        tanggal_surat_permohonan_kredit,
+        tanggal_surat_persetujuan_kredit,
         nomor_surat,
         nominal,
         tujuan_penggunaan,
@@ -141,12 +150,8 @@ class KMSMService {
         biaya_administrasi,
         detail_jaminan,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         tanggal_lahir_debitur,
         no_ktp_debitur,
-        tanggal_surat_kuasa_kendaraan,
-        hari,
-        tanggal_surat_perjanjian_kredit,
         tempat_lahir_debitur,
         hubungan_debitur_penjamin,
         nama_penjamin,
@@ -166,19 +171,16 @@ class KMSMService {
         biaya_notaris,
         total_biaya,
         nama_barang,
-        tanggal_surat_penyerahan_jaminan,
-        tanggal_surat_fasilitas_kredit,
-        tanggal_surat_pernyataan,
         nik_debitur,
         jenis_kelamin_debitur,
         harga_jaminan,
-        tanggal_surat_kuasa,
         status,
         submitted_at,
+        userID,
     }) {
         const updatedKMSM = await db.KMSM.update({
             where: {
-                id: parseInt(id)
+                id: id
             },
             data: {
                 nama:nama,
@@ -186,8 +188,8 @@ class KMSMService {
                 nama_debitur:nama_debitur,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
-                tanggal_surat_perintah_jalan:tanggal_surat_perintah_jalan?new Date(tanggal_surat_perintah_jalan):null,
-                tanggal_surat_pemberian_kredit:tanggal_surat_pemberian_kredit?new Date(tanggal_surat_pemberian_kredit):null,
+                tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
+                tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nomor_surat:nomor_surat,
                 nominal:nominal,
                 tujuan_penggunaan:tujuan_penggunaan,
@@ -197,12 +199,8 @@ class KMSMService {
                 biaya_administrasi:biaya_administrasi,
                 detail_jaminan:detail_jaminan,
                 pekerjaan_debitur:pekerjaan_debitur,
-                tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
                 tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
                 no_ktp_debitur:no_ktp_debitur,
-                tanggal_surat_kuasa_kendaraan:tanggal_surat_kuasa_kendaraan?new Date(tanggal_surat_kuasa_kendaraan):null,
-                hari:hari,
-                tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
                 tempat_lahir_debitur:tempat_lahir_debitur,
                 hubungan_debitur_penjamin:hubungan_debitur_penjamin,
                 nama_penjamin:nama_penjamin,
@@ -222,20 +220,26 @@ class KMSMService {
                 biaya_notaris:biaya_notaris,
                 total_biaya:total_biaya,
                 nama_barang:nama_barang,
-                tanggal_surat_penyerahan_jaminan:tanggal_surat_penyerahan_jaminan?new Date(tanggal_surat_penyerahan_jaminan):null,
-                tanggal_surat_fasilitas_kredit:tanggal_surat_fasilitas_kredit?new Date(tanggal_surat_fasilitas_kredit):null,
-                tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
                 nik_debitur:nik_debitur,
                 jenis_kelamin_debitur:jenis_kelamin_debitur,
                 harga_jaminan:harga_jaminan,
-                tanggal_surat_kuasa:tanggal_surat_kuasa?new Date(tanggal_surat_kuasa):null,
                 status:status,
                 updated_at: new Date(),
-                submitted_at
+                submitted_at,
+                userID:userID,
             }
         });
 
         return updatedKMSM;
+    }
+
+    async deleteById(id) {
+        const data = await db.KMSM.delete({
+            where: {
+                id: id
+            }
+        });
+        return data;
     }
 }
 

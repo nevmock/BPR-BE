@@ -2,14 +2,37 @@ import db from "../../config/db.js";
 
 class KMSService {
     async getAll(){
-        const datas = await db.KMS.findMany()
+        const datas = await db.KMS.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
         return datas
     }
 
     async getById(id) {
         const data = await db.KMS.findUnique({
             where: {
-                id: parseInt(id)
+                id: id
+            },
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
             }
         });
         return data;
@@ -21,22 +44,18 @@ class KMSService {
         nama_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
-        tanggal_surat_perintah_jalan,
-        tanggal_surat_penawaran_kredit,
+        tanggal_surat_permohonan_kredit,
+        tanggal_surat_persetujuan_kredit,
         nomor_surat,
         tujuan,
         plafond,
         jangka_waktu,
         suku_bunga,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         nama_penjamin,
         alamat_penjamin,
         no_ktp_penjamin,
         detail_jaminan,
-        tanggal_surat_pernyataan,
-        hari,
-        tanggal_surat_perjanjian_kredit,
         telah_persetujuan_dari,
         nama_penjamin_1,
         tempat_lahir_penjamin,
@@ -57,10 +76,8 @@ class KMSService {
         biaya_materai_sebesar,
         biaya_notaris_sebesar,
         biaya_jumlah,
-        tanggal_surat_penyerahan_jaminan,
-        tanggal_surat_fasilitas_kredit,
-        tanggal_surat_pernyataan_1,
         submitted_at,
+        userID
     }){
         const newKMS = await db.KMS.create({
             data:{
@@ -69,22 +86,18 @@ class KMSService {
             nama_debitur:nama_debitur,
             alamat_usaha_debitur:alamat_usaha_debitur,
             alamat_rumah_debitur:alamat_rumah_debitur,
-            tanggal_surat_perintah_jalan:tanggal_surat_perintah_jalan?new Date(tanggal_surat_perintah_jalan):null,
-            tanggal_surat_penawaran_kredit:tanggal_surat_penawaran_kredit?new Date(tanggal_surat_penawaran_kredit):null,
+            tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
+            tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
             nomor_surat:nomor_surat,
             tujuan:tujuan,
             plafond:plafond,
             jangka_waktu:jangka_waktu,
             suku_bunga:suku_bunga,
             pekerjaan_debitur:pekerjaan_debitur,
-            tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
             nama_penjamin:nama_penjamin,
             alamat_penjamin:alamat_penjamin,
             no_ktp_penjamin:no_ktp_penjamin,
             detail_jaminan:detail_jaminan,
-            tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
-            hari:hari,
-            tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
             telah_persetujuan_dari:telah_persetujuan_dari,
             nama_penjamin_1:nama_penjamin_1,
             tempat_lahir_penjamin:tempat_lahir_penjamin,
@@ -94,7 +107,7 @@ class KMSService {
             debitur_adalah_pemilik_rekening:debitur_adalah_pemilik_rekening,
             melunasi_hutang_sebesar:melunasi_hutang_sebesar,
             tanggal_mengangsur_terakhir:tanggal_mengangsur_terakhir?new Date(tanggal_mengangsur_terakhir):null,
-            tanggal_mengangsur_tiap_bulan:tanggal_mengangsur_tiap_bulan?new Date(tanggal_mengangsur_tiap_bulan):null,
+            tanggal_mengangsur_tiap_bulan:tanggal_mengangsur_tiap_bulan,
             tanggal_mengangsur_pertama:tanggal_mengangsur_pertama?new Date(tanggal_mengangsur_pertama):null,
             nominal_angsuran:nominal_angsuran,
             biaya_provisi_sebesar:biaya_provisi_sebesar,
@@ -105,10 +118,8 @@ class KMSService {
             biaya_materai_sebesar:biaya_materai_sebesar,
             biaya_notaris_sebesar:biaya_notaris_sebesar,
             biaya_jumlah:biaya_jumlah,
-            tanggal_surat_penyerahan_jaminan:tanggal_surat_penyerahan_jaminan?new Date(tanggal_surat_penyerahan_jaminan):null,
-            tanggal_surat_fasilitas_kredit:tanggal_surat_fasilitas_kredit?new Date(tanggal_surat_fasilitas_kredit):null,
-            tanggal_surat_pernyataan_1:tanggal_surat_pernyataan_1?new Date(tanggal_surat_pernyataan_1):null,
-            submitted_at:new Date()
+            submitted_at:new Date(),
+            userID:userID,
             }
         })
         if (!newKMS) {
@@ -123,22 +134,18 @@ class KMSService {
         nama_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
-        tanggal_surat_perintah_jalan,
-        tanggal_surat_penawaran_kredit,
+        tanggal_surat_permohonan_kredit,
+        tanggal_surat_persetujuan_kredit,
         nomor_surat,
         tujuan,
         plafond,
         jangka_waktu,
         suku_bunga,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         nama_penjamin,
         alamat_penjamin,
         no_ktp_penjamin,
         detail_jaminan,
-        tanggal_surat_pernyataan,
-        hari,
-        tanggal_surat_perjanjian_kredit,
         telah_persetujuan_dari,
         nama_penjamin_1,
         tempat_lahir_penjamin,
@@ -159,15 +166,13 @@ class KMSService {
         biaya_materai_sebesar,
         biaya_notaris_sebesar,
         biaya_jumlah,
-        tanggal_surat_penyerahan_jaminan,
-        tanggal_surat_fasilitas_kredit,
-        tanggal_surat_pernyataan_1,
         status,
         submitted_at,
+        userID,
     }) {
         const updatedKMS = await db.KMS.update({
             where: {
-                id: parseInt(id)
+                id: id
             },
             data: {
                 nama:nama,
@@ -175,22 +180,18 @@ class KMSService {
                 nama_debitur:nama_debitur,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
-                tanggal_surat_perintah_jalan:tanggal_surat_perintah_jalan?new Date(tanggal_surat_perintah_jalan):null,
-                tanggal_surat_penawaran_kredit:tanggal_surat_penawaran_kredit?new Date(tanggal_surat_penawaran_kredit):null,
+                tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
+                tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nomor_surat:nomor_surat,
                 tujuan:tujuan,
                 plafond:plafond,
                 jangka_waktu:jangka_waktu,
                 suku_bunga:suku_bunga,
                 pekerjaan_debitur:pekerjaan_debitur,
-                tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
                 nama_penjamin:nama_penjamin,
                 alamat_penjamin:alamat_penjamin,
                 no_ktp_penjamin:no_ktp_penjamin,
                 detail_jaminan:detail_jaminan,
-                tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
-                hari:hari,
-                tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
                 telah_persetujuan_dari:telah_persetujuan_dari,
                 nama_penjamin_1:nama_penjamin_1,
                 tempat_lahir_penjamin:tempat_lahir_penjamin,
@@ -200,7 +201,7 @@ class KMSService {
                 debitur_adalah_pemilik_rekening:debitur_adalah_pemilik_rekening,
                 melunasi_hutang_sebesar:melunasi_hutang_sebesar,
                 tanggal_mengangsur_terakhir:tanggal_mengangsur_terakhir?new Date(tanggal_mengangsur_terakhir):null,
-                tanggal_mengangsur_tiap_bulan:tanggal_mengangsur_tiap_bulan?new Date(tanggal_mengangsur_tiap_bulan):null,
+                tanggal_mengangsur_tiap_bulan:tanggal_mengangsur_tiap_bulan,
                 tanggal_mengangsur_pertama:tanggal_mengangsur_pertama?new Date(tanggal_mengangsur_pertama):null,
                 nominal_angsuran:nominal_angsuran,
                 biaya_provisi_sebesar:biaya_provisi_sebesar,
@@ -211,16 +212,23 @@ class KMSService {
                 biaya_materai_sebesar:biaya_materai_sebesar,
                 biaya_notaris_sebesar:biaya_notaris_sebesar,
                 biaya_jumlah:biaya_jumlah,
-                tanggal_surat_penyerahan_jaminan:tanggal_surat_penyerahan_jaminan?new Date(tanggal_surat_penyerahan_jaminan):null,
-                tanggal_surat_fasilitas_kredit:tanggal_surat_fasilitas_kredit?new Date(tanggal_surat_fasilitas_kredit):null,
-                tanggal_surat_pernyataan_1:tanggal_surat_pernyataan_1?new Date(tanggal_surat_pernyataan_1):null,
                 status:status,
                 updated_at: new Date(),
-                submitted_at
+                submitted_at,
+                userID:userID
             }
         });
 
         return updatedKMS;
+    }
+
+    async deleteById(id) {
+        const data = await db.KMS.delete({
+            where: {
+                id: id
+            }
+        });
+        return data;
     }
 }
 

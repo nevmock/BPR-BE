@@ -1,21 +1,43 @@
 import db from "../../config/db.js";
 class PINEKService {
     async getAll(){
-        const datas = await db.PINEK.findMany()
+        const datas = await db.PINEK.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
         return datas
     }
     async getById(id) {
         const data = await db.PINEK.findUnique({
             where: {
-                id: parseInt(id)
+                id: id
+            },
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
             }
         });
         return data;
     }
     async create({
         nomor_surat,
-        hari,
-        tanggal_surat_perjanjian_kredit,
+        tanggal_surat_persetujuan_kredit,
         nama_debitur,
         pekerjaan_debitur,
         tempat_lahir_debitur,
@@ -37,17 +59,13 @@ class PINEKService {
         tanggal_mengangsur_terakhir,
         biaya,
         total_biaya,
-        tanggal_surat_kuasa_debet,
-        tanggal_surat_pemotongan_gaji,
-        tanggal_surat_dokumen_agunan,
-        tanggal_surat_pernyataan,
         submitted_at,
+        userID
     }){
         const newPINEK = await db.PINEK.create({
             data:{
                 nomor_surat:nomor_surat,
-                hari:hari,
-                tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
+                tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nama_debitur:nama_debitur,
                 pekerjaan_debitur:pekerjaan_debitur,
                 tempat_lahir_debitur:tempat_lahir_debitur,
@@ -69,11 +87,8 @@ class PINEKService {
                 tanggal_mengangsur_terakhir:tanggal_mengangsur_terakhir?new Date(tanggal_mengangsur_terakhir):null,
                 biaya:biaya,
                 total_biaya:total_biaya,
-                tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
-                tanggal_surat_pemotongan_gaji:tanggal_surat_pemotongan_gaji?new Date(tanggal_surat_pemotongan_gaji):null,
-                tanggal_surat_dokumen_agunan:tanggal_surat_dokumen_agunan?new Date(tanggal_surat_dokumen_agunan):null,
-                tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
-                submitted_at:new Date()
+                submitted_at:new Date(),
+                userID:userID
             }
         })
         if (!newPINEK) {
@@ -83,8 +98,7 @@ class PINEKService {
     }
     async update(id, {
         nomor_surat,
-        hari,
-        tanggal_surat_perjanjian_kredit,
+        tanggal_surat_persetujuan_kredit,
         nama_debitur,
         pekerjaan_debitur,
         tempat_lahir_debitur,
@@ -106,21 +120,17 @@ class PINEKService {
         tanggal_mengangsur_terakhir,
         biaya,
         total_biaya,
-        tanggal_surat_kuasa_debet,
-        tanggal_surat_pemotongan_gaji,
-        tanggal_surat_dokumen_agunan,
-        tanggal_surat_pernyataan,
         status,
         submitted_at,
+        userID
     }) {
         const updatedPINEK = await db.PINEK.update({
             where: {
-                id: parseInt(id)
+                id: id
             },
             data: {
                 nomor_surat:nomor_surat,
-                hari:hari,
-                tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
+                tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nama_debitur:nama_debitur,
                 pekerjaan_debitur:pekerjaan_debitur,
                 tempat_lahir_debitur:tempat_lahir_debitur,
@@ -142,17 +152,23 @@ class PINEKService {
                 tanggal_mengangsur_terakhir:tanggal_mengangsur_terakhir?new Date(tanggal_mengangsur_terakhir):null,
                 biaya:biaya,
                 total_biaya:total_biaya,
-                tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
-                tanggal_surat_pemotongan_gaji:tanggal_surat_pemotongan_gaji?new Date(tanggal_surat_pemotongan_gaji):null,
-                tanggal_surat_dokumen_agunan:tanggal_surat_dokumen_agunan?new Date(tanggal_surat_dokumen_agunan):null,
-                tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
                 status:status,
                 updated_at: new Date(),
-                submitted_at
+                submitted_at,
+                userID:userID
             }
         });
 
         return updatedPINEK;
+    }
+
+    async deleteById(id) {
+        const data = await db.PINEK.delete({
+            where: {
+                id: id
+            }
+        });
+        return data;
     }
 }
 

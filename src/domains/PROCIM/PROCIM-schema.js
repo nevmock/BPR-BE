@@ -1,64 +1,77 @@
 import Joi from "joi";
+import JoiDate from '@joi/date';
 
-const createPROCIM = Joi.object({
-    nomor_perjanjian_kredit : Joi.string()
-            .optional().min(0),
-    hari : Joi.string()
-            .optional().min(0),
-    tanggal_surat_perjanjian_kredit : Joi.string()
-            .optional().min(0),
-    nama_debitur : Joi.string()
-            .optional().min(0),
-    tempat_lahir_debitur : Joi.string()
-            .optional().min(0),
-    tanggal_lahir_debitur : Joi.string()
-            .optional().min(0),
-    alamat_debitur : Joi.string()
-            .optional().min(0),
-    no_ktp_debitur : Joi.string()
-            .optional().min(0),
-    nominal_plafond : Joi.string()
-            .optional().min(0),
-    suku_bunga_pinjaman : Joi.string()
-            .optional().min(0),
-    jangka_waktu_pinjaman : Joi.string()
-            .optional().min(0),
-    angsuran_pinjaman : Joi.string()
-            .optional().min(0),
-    tanggal_angsuran_pertama : Joi.string()
-            .optional().min(0),
-    hari_pembayaran_angsuran : Joi.string()
-            .optional().min(0),
-    tanggal_pencairan : Joi.string()
-            .optional().min(0),
-    nomor_rekening_pinjaman : Joi.string()
-            .optional().min(0),
-    nama_penjamin : Joi.string()
-            .optional().min(0),
-    nomor_surat_pernyataan_jaminan : Joi.string()
-            .optional().min(0),
-    tempat_lahir_penjamin : Joi.string()
-            .optional().min(0),
-    tanggal_lahir_penjamin : Joi.string()
-            .optional().min(0),
-    alamat_penjamin : Joi.string()
-            .optional().min(0),
-    no_ktp_penjamin : Joi.string()
-            .optional().min(0),
-    barang_elektronik : Joi.string()
-            .optional().min(0),
-    barang_furniture : Joi.string()
-            .optional().min(0),
-    barang_jaminan_lainnya : Joi.string()
-            .optional().min(0),
-    tanggal_surat_pernyataan_jaminan : Joi.string()
-            .optional().min(0),
-    tanggal_surat_penyerahan_jaminan : Joi.string()
-            .optional().min(0),
-        status : Joi.string()
-                .optional().min(0),
-        is_submitted : Joi.boolean()
-                .required()
-})
+const JoiExtended = Joi.extend(JoiDate);
+
+const createPROCIM = JoiExtended.object({
+    nomor_surat : JoiExtended.string()
+            .optional()
+            .min(0),
+    tanggal_surat_perjanjian_kredit : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    nama_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    tempat_lahir_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    tanggal_lahir_debitur : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    alamat_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    no_ktp_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    nominal_plafond : JoiExtended.number()
+            .optional()
+            .min(0),
+    suku_bunga_pinjaman : JoiExtended.number()
+            .optional()
+            .min(0),
+    jangka_waktu_pinjaman : JoiExtended.number()
+            .optional()
+            .min(0),
+    angsuran_pinjaman : JoiExtended.number()
+            .optional()
+            .min(0),
+    tanggal_angsuran_pertama : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    nomor_rekening_pinjaman : JoiExtended.string()
+            .optional()
+            .min(0),
+    nama_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
+    tempat_lahir_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
+    tanggal_lahir_penjamin : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    alamat_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
+    no_ktp_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
+    barang_elektronik : JoiExtended.string()
+            .optional()
+            .min(0),
+    barang_furniture : JoiExtended.string()
+            .optional()
+            .min(0),
+    barang_jaminan_lainnya : JoiExtended.string()
+            .optional()
+            .min(0),
+        status : JoiExtended.string()
+                .optional()
+                .min(0),
+        is_submitted : JoiExtended.boolean()
+                .required(),
+});
 
 export {createPROCIM};

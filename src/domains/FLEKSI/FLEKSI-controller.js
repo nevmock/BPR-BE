@@ -3,7 +3,7 @@ import FLEKSIService from "./FLEKSI-service.js";
 
 class FLEKSIController {
     async get(req, res) {
-        const datas = FLEKSIService.getAll()
+        const datas = await FLEKSIService.getAll()
         return successResponse(res, datas)
     }
     
@@ -20,9 +20,8 @@ class FLEKSIController {
 
     async post(req, res) {
         const {
-        nomor_surat_perjanjian_kredit,
-        hari,
-        tanggal_surat_perjanjian_kredit,
+        nomor_surat,
+        tanggal_surat_persetujuan_kredit,
         nama_debitur,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
@@ -33,12 +32,9 @@ class FLEKSIController {
         jangka_waktu_pinjaman,
         angsuran_pinjaman,
         tanggal_angsuran_pertama,
-        hari_pembayaran_angsuran,
-        tanggal_pencairan,
         nomor_rekening_pinjaman,
         tujuan_penggunaan,
         nama_penjamin,
-        nomor_surat_pernyataan_jaminan,
         tempat_lahir_penjamin,
         tanggal_lahir_penjamin,
         alamat_penjamin,
@@ -46,16 +42,15 @@ class FLEKSIController {
         barang_elektronik,
         barang_furniture,
         barang_jaminan_lainnya,
-        tanggal_surat_pernyataan_jaminan,
         nama_penjamin_hubungan,
-        tanggal_surat_penyerahan_jaminan,
         is_submitted,
         } = req.body;
 
+        const userID = req.app.locals.user
+
         const newFLEKSI = await FLEKSIService.create({
-            nomor_surat_perjanjian_kredit,
-            hari,
-            tanggal_surat_perjanjian_kredit,
+            nomor_surat,
+            tanggal_surat_persetujuan_kredit,
             nama_debitur,
             tempat_lahir_debitur,
             tanggal_lahir_debitur,
@@ -66,12 +61,9 @@ class FLEKSIController {
             jangka_waktu_pinjaman,
             angsuran_pinjaman,
             tanggal_angsuran_pertama,
-            hari_pembayaran_angsuran,
-            tanggal_pencairan,
             nomor_rekening_pinjaman,
             tujuan_penggunaan,
             nama_penjamin,
-            nomor_surat_pernyataan_jaminan,
             tempat_lahir_penjamin,
             tanggal_lahir_penjamin,
             alamat_penjamin,
@@ -79,10 +71,9 @@ class FLEKSIController {
             barang_elektronik,
             barang_furniture,
             barang_jaminan_lainnya,
-            tanggal_surat_pernyataan_jaminan,
             nama_penjamin_hubungan,
-            tanggal_surat_penyerahan_jaminan,
-            is_submitted
+            is_submitted,
+            userID
         })
 
         if (!newFLEKSI) {
@@ -94,39 +85,10 @@ class FLEKSIController {
 
     async put(req, res) {
         const { id } = req.params;
-        const payload = {
-            nomor_surat_perjanjian_kredit,
-            hari,
-            tanggal_surat_perjanjian_kredit,
-            nama_debitur,
-            tempat_lahir_debitur,
-            tanggal_lahir_debitur,
-            alamat_debitur,
-            no_ktp_debitur,
-            besar_pinjaman,
-            bunga_pinjaman,
-            jangka_waktu_pinjaman,
-            angsuran_pinjaman,
-            tanggal_angsuran_pertama,
-            hari_pembayaran_angsuran,
-            tanggal_pencairan,
-            nomor_rekening_pinjaman,
-            tujuan_penggunaan,
-            nama_penjamin,
-            nomor_surat_pernyataan_jaminan,
-            tempat_lahir_penjamin,
-            tanggal_lahir_penjamin,
-            alamat_penjamin,
-            no_ktp_penjamin,
-            barang_elektronik,
-            barang_furniture,
-            barang_jaminan_lainnya,
-            tanggal_surat_pernyataan_jaminan,
-            nama_penjamin_hubungan,
-            tanggal_surat_penyerahan_jaminan,
-            status,
-        } = req.body;
+        let payload = req.body;
 
+        const userID = req.app.locals.user
+        payload.userID = userID
         const updatedFLEKSI = await FLEKSIService.update(id, payload);
         
         if (!updatedFLEKSI) {
@@ -134,6 +96,17 @@ class FLEKSIController {
         }
 
         return successResponse(res, updatedFLEKSI);
+    }
+
+    async deleteById(req, res) {
+        const { id } = req.params;
+        const data = await FLEKSIService.deleteById(id);
+        
+        if (!data) {
+            return res.status(404).json({ message: "FLEKSI not found" });
+        }
+        
+        return successResponse(res, data);
     }
 }
 

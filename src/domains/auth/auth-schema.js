@@ -1,10 +1,10 @@
 import Joi from "joi";
 
 const loginSchema = Joi.object({
-    email : Joi.string()
+    username : Joi.string()
         .required()
         .messages({
-            "string.empty": "Email is required."
+            "string.empty": "Username is required."
         }),
     password : Joi.string()
         .required()
@@ -14,17 +14,10 @@ const loginSchema = Joi.object({
 });
 
 const registerSchema = Joi.object({
-    name : Joi.string().required().min(4)
-        .messages({
-            "string.empty": "Name is required.",
-            "string.min": "Name must be at least 4 characters long."
-        }),
-    email : Joi.string()
-        .email()
+    username : Joi.string()
         .required()
         .messages({
-            "string.empty": "Email is required.",
-            "string.email": "Email must be a valid email address."
+            "string.empty": "Username is required.",
         }),
     password : Joi.string()
         .required()
@@ -44,24 +37,6 @@ const registerSchema = Joi.object({
         }),
 });
 
-const profileSchema = Joi.object({
-    name : Joi.string().required().min(4)
-        .messages({
-            "string.empty": "Name is required.",
-            "string.min": "Name must be at least 4 characters long."
-        }),
-}) 
-
-const sendOtpSchema = Joi.object({
-    email : Joi.string()
-        .email()
-        .required()
-        .messages({
-            "string.empty": "Email is required.",
-            "string.email": "Email must be a valid email address."
-        }),
-})
-
 const refreshTokenSchema = Joi.object({
     refresh_token : Joi.string()
         .required()
@@ -70,4 +45,4 @@ const refreshTokenSchema = Joi.object({
         }),
 })
 
-export { loginSchema, registerSchema, profileSchema, sendOtpSchema, refreshTokenSchema };
+export { loginSchema, registerSchema, refreshTokenSchema };

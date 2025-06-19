@@ -2,14 +2,37 @@ import db from "../../config/db.js";
 
 class KARService {
     async getAll(){
-        const datas = await db.KAR.findMany()
+        const datas = await db.KAR.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
         return datas
     }
 
     async getById(id) {
         const data = await db.KAR.findUnique({
             where: {
-                id: parseInt(id)
+                id: id
+            },
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
             }
         });
         return data;
@@ -21,7 +44,7 @@ class KARService {
         nama_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
-        tanggal_surat_perintah_jalan,
+        tanggal_surat_permohonan_kredit,
         tanggal_surat_persetujuan_kredit,
         nomor_surat,
         nominal,
@@ -31,13 +54,9 @@ class KARService {
         biaya_administrasi,
         detail_jaminan,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
         no_ktp_debitur,
-        tanggal_surat_kuasa_kendaraan,
-        hari,
-        tanggal_surat_perjanjian_kredit,
         hubungan_debitur_penjamin,
         nama_penjamin,
         tempat_lahir_penjamin,
@@ -51,15 +70,11 @@ class KARService {
         biaya_provisi_sebesar,
         biaya_materai_sebesar,
         biaya_asuransi_jiwa_sebesar,
-        biaya_administrasi_sebesar,
         biaya_notaris_sebesar,
         total_biaya,
         nama_barang,
-        tanggal_surat_penyerahan_jaminan,
-        tanggal_surat_fasilitas_kredit,
-        tanggal_surat_pernyataan,
-        tanggal_surat_pemotongan_gaji,
         submitted_at,
+        userID,
     }){
         const newKAR = await db.KAR.create({
             data:{
@@ -68,7 +83,7 @@ class KARService {
             nama_debitur:nama_debitur,
             alamat_usaha_debitur:alamat_usaha_debitur,
             alamat_rumah_debitur:alamat_rumah_debitur,
-            tanggal_surat_perintah_jalan:tanggal_surat_perintah_jalan?new Date(tanggal_surat_perintah_jalan):null,
+            tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
             tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
             nomor_surat:nomor_surat,
             nominal:nominal,
@@ -78,13 +93,9 @@ class KARService {
             biaya_administrasi:biaya_administrasi,
             detail_jaminan:detail_jaminan,
             pekerjaan_debitur:pekerjaan_debitur,
-            tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
             tempat_lahir_debitur:tempat_lahir_debitur,
             tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
             no_ktp_debitur:no_ktp_debitur,
-            tanggal_surat_kuasa_kendaraan:tanggal_surat_kuasa_kendaraan?new Date(tanggal_surat_kuasa_kendaraan):null,
-            hari:hari,
-            tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
             hubungan_debitur_penjamin:hubungan_debitur_penjamin,
             nama_penjamin:nama_penjamin,
             tempat_lahir_penjamin:tempat_lahir_penjamin,
@@ -98,15 +109,11 @@ class KARService {
             biaya_provisi_sebesar:biaya_provisi_sebesar,
             biaya_materai_sebesar:biaya_materai_sebesar,
             biaya_asuransi_jiwa_sebesar:biaya_asuransi_jiwa_sebesar,
-            biaya_administrasi_sebesar:biaya_administrasi_sebesar,
             biaya_notaris_sebesar:biaya_notaris_sebesar,
             total_biaya:total_biaya,
             nama_barang:nama_barang,
-            tanggal_surat_penyerahan_jaminan:tanggal_surat_penyerahan_jaminan?new Date(tanggal_surat_penyerahan_jaminan):null,
-            tanggal_surat_fasilitas_kredit:tanggal_surat_fasilitas_kredit?new Date(tanggal_surat_fasilitas_kredit):null,
-            tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
-            tanggal_surat_pemotongan_gaji:tanggal_surat_pemotongan_gaji?new Date(tanggal_surat_pemotongan_gaji):null,
-            submitted_at:new Date()
+            submitted_at:new Date(),
+            userID:userID,
             }
         })
         if (!newKAR) {
@@ -121,7 +128,7 @@ class KARService {
         nama_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
-        tanggal_surat_perintah_jalan,
+        tanggal_surat_permohonan_kredit,
         tanggal_surat_persetujuan_kredit,
         nomor_surat,
         nominal,
@@ -131,13 +138,9 @@ class KARService {
         biaya_administrasi,
         detail_jaminan,
         pekerjaan_debitur,
-        tanggal_surat_kuasa_debet,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
         no_ktp_debitur,
-        tanggal_surat_kuasa_kendaraan,
-        hari,
-        tanggal_surat_perjanjian_kredit,
         hubungan_debitur_penjamin,
         nama_penjamin,
         tempat_lahir_penjamin,
@@ -151,20 +154,16 @@ class KARService {
         biaya_provisi_sebesar,
         biaya_materai_sebesar,
         biaya_asuransi_jiwa_sebesar,
-        biaya_administrasi_sebesar,
         biaya_notaris_sebesar,
         total_biaya,
         nama_barang,
-        tanggal_surat_penyerahan_jaminan,
-        tanggal_surat_fasilitas_kredit,
-        tanggal_surat_pernyataan,
-        tanggal_surat_pemotongan_gaji,
         status,
         submitted_at,
+        userID,
     }) {
         const updatedKAR = await db.KAR.update({
             where: {
-                id: parseInt(id)
+                id: id
             },
             data: {
                 nama:nama,
@@ -172,7 +171,7 @@ class KARService {
                 nama_debitur:nama_debitur,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
-                tanggal_surat_perintah_jalan:tanggal_surat_perintah_jalan?new Date(tanggal_surat_perintah_jalan):null,
+                tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
                 tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nomor_surat:nomor_surat,
                 nominal:nominal,
@@ -182,13 +181,9 @@ class KARService {
                 biaya_administrasi:biaya_administrasi,
                 detail_jaminan:detail_jaminan,
                 pekerjaan_debitur:pekerjaan_debitur,
-                tanggal_surat_kuasa_debet:tanggal_surat_kuasa_debet?new Date(tanggal_surat_kuasa_debet):null,
                 tempat_lahir_debitur:tempat_lahir_debitur,
                 tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
                 no_ktp_debitur:no_ktp_debitur,
-                tanggal_surat_kuasa_kendaraan:tanggal_surat_kuasa_kendaraan?new Date(tanggal_surat_kuasa_kendaraan):null,
-                hari:hari,
-                tanggal_surat_perjanjian_kredit:tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
                 hubungan_debitur_penjamin:hubungan_debitur_penjamin,
                 nama_penjamin:nama_penjamin,
                 tempat_lahir_penjamin:tempat_lahir_penjamin,
@@ -202,21 +197,26 @@ class KARService {
                 biaya_provisi_sebesar:biaya_provisi_sebesar,
                 biaya_materai_sebesar:biaya_materai_sebesar,
                 biaya_asuransi_jiwa_sebesar:biaya_asuransi_jiwa_sebesar,
-                biaya_administrasi_sebesar:biaya_administrasi_sebesar,
                 biaya_notaris_sebesar:biaya_notaris_sebesar,
                 total_biaya:total_biaya,
                 nama_barang:nama_barang,
-                tanggal_surat_penyerahan_jaminan:tanggal_surat_penyerahan_jaminan?new Date(tanggal_surat_penyerahan_jaminan):null,
-                tanggal_surat_fasilitas_kredit:tanggal_surat_fasilitas_kredit?new Date(tanggal_surat_fasilitas_kredit):null,
-                tanggal_surat_pernyataan:tanggal_surat_pernyataan?new Date(tanggal_surat_pernyataan):null,
-                tanggal_surat_pemotongan_gaji:tanggal_surat_pemotongan_gaji?new Date(tanggal_surat_pemotongan_gaji):null,
                 status:status,
                 updated_at: new Date(),
-                submitted_at
+                submitted_at,
+                userID:userID,
             }
         });
 
         return updatedKAR;
+    }
+
+    async deleteById(id) {
+        const data = await db.KAR.delete({
+            where: {
+                id: id
+            }
+        });
+        return data;
     }
 }
 

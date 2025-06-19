@@ -1,100 +1,131 @@
 import Joi from "joi";
+import JoiDate from '@joi/date';
 
-const createKSS = Joi.object({
-    nama : Joi.string()
-        .optional().min(0),
-    jabatan : Joi.string()
-        .optional().min(0),
-    nama_debitur : Joi.string()
-            .optional().min(0),
-    alamat_usaha_debitur : Joi.string()
-            .optional().min(0),
-    alamat_rumah_debitur : Joi.string()
-            .optional().min(0),
-    tanggal_surat_perintah_jalan : Joi.string()
-            .optional().min(0),
-    tanggal_surat_fasilitas_kredit : Joi.string()
-            .optional().min(0),
-    nomor_surat : Joi.string()
-            .optional().min(0),
-    plaford : Joi.string()
-            .optional().min(0),
-    jangka_waktu : Joi.string()
-            .optional().min(0),
-    suku_bunga : Joi.string()
-            .optional().min(0),
-    biaya_provisi : Joi.string()
-            .optional().min(0),
-    biaya_administrasi : Joi.string()
-            .optional().min(0),
-    detail_jaminan : Joi.string()
-            .optional().min(0),
-    pekerjaan_debitur : Joi.string()
-            .optional().min(0),
-    tanggal_surat_kuasa_debet : Joi.string()
-            .optional().min(0),
-    nama_penjamin : Joi.string()
-            .optional().min(0),
-    alamat_penjamin : Joi.string()
-            .optional().min(0),
-    no_ktp_penjamin : Joi.string()
-            .optional().min(0),
-    tanggal_surat_pernyataan : Joi.string()
-            .optional().min(0),
-    hari : Joi.string()
-            .optional().min(0),
-    tanggal_surat_perjanjian_kredit : Joi.string()
-            .optional().min(0),
-    no_ktp_debitur : Joi.string()
-            .optional().min(0),
-    persetujuan_dari : Joi.string()
-            .optional().min(0),
-    tempat_lahir_penjamin : Joi.string()
-            .optional().min(0),
-    tanggal_lahir_penjamin : Joi.string()
-            .optional().min(0),
-    tinggal_sama_dengan : Joi.string()
-            .optional().min(0),
-    jumlah_bank_menyerahkan_uang : Joi.string()
-            .optional().min(0),
-    bunga_pinjaman : Joi.string()
-            .optional().min(0),
-    tujuan_penggunaan_kredit : Joi.string()
-            .optional().min(0),
-    total_seluruh_pinjaman : Joi.string()
-            .optional().min(0),
-    tanggal_angsuran_dimulai : Joi.string()
-            .optional().min(0),
-    tanggal_angsuran_terakhir : Joi.string()
-            .optional().min(0),
-    angsuran_tiap_bulan : Joi.string()
-            .optional().min(0),
-    nominal_provisi : Joi.string()
-            .optional().min(0),
-    nominal_administrasi : Joi.string()
-            .optional().min(0),
-    nama_asuransi : Joi.string()
-            .optional().min(0),
-    jangka_asuransi : Joi.string()
-            .optional().min(0),
-    biaya_asuransi : Joi.string()
-            .optional().min(0),
-    biaya_materai : Joi.string()
-            .optional().min(0),
-    biaya_notaris : Joi.string()
-            .optional().min(0),
-    total_biaya : Joi.string()
-            .optional().min(0),
-    tanggal_surat_penyerahan_jaminan : Joi.string()
-            .optional().min(0),
-    nama_shm : Joi.string()
-            .optional().min(0),
-    tanggal_surat_fasilitas_kredit_1 : Joi.string()
-            .optional().min(0),
-        status : Joi.string()
-                .optional().min(0),
-    is_submitted : Joi.boolean()
-        .required()
-})
+const JoiExtended = Joi.extend(JoiDate);
+
+const createKSS = JoiExtended.object({
+    nama : JoiExtended.string()
+        .optional()
+        .min(0),
+    jabatan : JoiExtended.string()
+        .optional()
+        .min(0),
+    nama_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    alamat_usaha_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    alamat_rumah_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    tanggal_surat_permohonan_kredit : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    tanggal_surat_persetujuan_kredit : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    nomor_surat : JoiExtended.string()
+            .optional()
+            .min(0),
+    plaford : JoiExtended.number()
+            .optional()
+            .min(0),
+    jangka_waktu : JoiExtended.number()
+            .optional()
+            .min(0),
+    suku_bunga : JoiExtended.number()
+            .optional()
+            .min(0),
+    biaya_provisi : JoiExtended.number()
+            .optional()
+            .min(0),
+    biaya_administrasi : JoiExtended.number()
+            .optional()
+            .min(0),
+    detail_jaminan : JoiExtended.string()
+            .optional()
+            .min(0),
+    pekerjaan_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    nama_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
+    alamat_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
+    no_ktp_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
+    no_ktp_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+    persetujuan_dari : JoiExtended.string()
+            .optional()
+            .min(0),
+    tempat_lahir_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
+    tanggal_lahir_penjamin : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    tinggal_sama_dengan : JoiExtended.string()
+            .optional()
+            .min(0),
+    jumlah_bank_menyerahkan_uang : JoiExtended.number()
+            .optional()
+            .min(0),
+    bunga_pinjaman : JoiExtended.number()
+            .optional()
+            .min(0),
+    tujuan_penggunaan_kredit : JoiExtended.string()
+            .optional()
+            .min(0),
+    total_seluruh_pinjaman : JoiExtended.number()
+            .optional()
+            .min(0),
+    tanggal_angsuran_dimulai : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    tanggal_angsuran_terakhir : JoiExtended.date()
+            .format('YYYY/MM/DD')
+            .min(0),
+    angsuran_tiap_bulan : JoiExtended.number()
+            .optional()
+            .min(0),
+    nominal_provisi : JoiExtended.number()
+            .optional()
+            .min(0),
+    nominal_administrasi : JoiExtended.number()
+            .optional()
+            .min(0),
+    nama_asuransi : JoiExtended.string()
+            .optional()
+            .min(0),
+    jangka_asuransi : JoiExtended.number()
+            .optional()
+            .min(0),
+    biaya_asuransi : JoiExtended.number()
+            .optional()
+            .min(0),
+    biaya_materai : JoiExtended.number()
+            .optional()
+            .min(0),
+    biaya_notaris : JoiExtended.number()
+            .optional()
+            .min(0),
+    total_biaya : JoiExtended.number()
+            .optional()
+            .min(0),
+    nama_shm : JoiExtended.string()
+            .optional()
+            .min(0),
+        status : JoiExtended.string()
+                .optional()
+                .min(0),
+    is_submitted : JoiExtended.boolean()
+        .required(),
+});
 
 export {createKSS};
