@@ -60,6 +60,8 @@ model KSSM {
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
   no_ktp_debitur String?
+  persetujuan_dari String?
+  nama_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
   no_ktp_penjamin String?

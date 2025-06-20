@@ -33,6 +33,11 @@ class FLEKSIRoutes extends BaseRoutes {
             authToken,
             tryCatch(FLEKSIController.deleteById)
         ])
+
+        this.router.get('/:id/generate-pdf', [
+            authToken,
+            tryCatch(FLEKSIController.generatePDF)
+        ]);
     }
 }
 

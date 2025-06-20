@@ -1,5 +1,10 @@
 import { createdResponse, successResponse } from "../../utils/response.js";
 import FLEKSIService from "./FLEKSI-service.js";
+import path from 'path';
+import PizZip from 'pizzip';
+import Docxtemplater from 'docxtemplater';
+import { exec } from "child_process";
+import fs from 'fs';
 
 class FLEKSIController {
     async get(req, res) {
@@ -81,6 +86,167 @@ class FLEKSIController {
         }
 
         return createdResponse(res, newFLEKSI);
+    }
+
+    async generatePDF(req, res) {
+      try {
+        const { id } = req.params;
+        const dbData = await FLEKSIService.getById(id);
+
+        if (!dbData) {
+          return res.status(404).json({ message: "FLEKSI not found" });
+        }
+
+        const tanggal = new Date(dbData.tanggal_surat_persetujuan_kredit);
+        const tanggal1 = new Date(dbData.tanggal_lahir_debitur);
+        const tanggal2 = new Date(dbData.tanggal_angsuran_pertama);
+        const tanggal3 = new Date(dbData.tanggal_lahir_penjamin);
+        const bulanIndonesia = [
+         "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+         "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+        const formattedTanggal = `${tanggal.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+
+
+        //table
+        const elektronik = dbData.barang_elektronik.map((item, index) => ({
+            no: index + 1,
+            nama_barang: item.nama_barang,
+            tipe: item.tipe,
+            harga: "Rp. " + item.harga,
+        }));
+        const furniture = dbData.barang_furniture.map((item, index) => ({
+            no: index + 1,
+            nama_barang: item.nama_barang,
+            tipe: item.tipe,
+            harga: "Rp. " + item.harga,
+        }));
+
+        const data = {
+          nomor_surat: dbData.nomor_surat,
+        tanggal_surat_persetujuan_kredit: formattedTanggal,
+        nama_debitur: dbData.nama_debitur,
+        tempat_lahir_debitur: dbData.tempat_lahir_debitur,
+        tanggal_lahir_debitur: formattedTanggal1,
+        alamat_debitur: dbData.alamat_debitur,
+        no_ktp_debitur: dbData.no_ktp_debitur,
+        besar_pinjaman: dbData.besar_pinjaman,
+        bunga_pinjaman: dbData.bunga_pinjaman,
+        jangka_waktu_pinjaman: dbData.jangka_waktu_pinjaman,
+        angsuran_pinjaman: dbData.angsuran_pinjaman,
+        tanggal_angsuran_pertama: formattedTanggal2,
+        nomor_rekening_pinjaman: dbData.nomor_rekening_pinjaman,
+        tujuan_penggunaan: dbData.tujuan_penggunaan,
+        nama_penjamin: dbData.nama_penjamin,
+        tempat_lahir_penjamin: dbData.tempat_lahir_penjamin,
+        tanggal_lahir_penjamin: formattedTanggal3,
+        alamat_penjamin: dbData.alamat_penjamin,
+        no_ktp_penjamin: dbData.no_ktp_penjamin,
+        barang_elektronik: elektronik,
+        barang_furniture: furniture,
+        barang_jaminan_lainnya: dbData.barang_jaminan_lainnya,
+        nama_penjamin_hubungan: dbData.nama_penjamin_hubungan,
+        };
+
+        const templatePath = path.resolve("src/templates/", "FLEKSI.docx");
+
+        if (!fs.existsSync(templatePath)) {
+          return res.status(404).json({
+            error: "Template file tidak ditemukan",
+            path: templatePath,
+          });
+        }
+
+        const content = fs.readFileSync(templatePath, "binary");
+        const zip = new PizZip(content);
+
+        const doc = new Docxtemplater(zip, {
+          paragraphLoop: true,
+          linebreaks: true,
+          delimiters: {
+            start: "{{",
+            end: "}}",
+          },
+        });
+
+        doc.setData(data);
+
+        try {
+          doc.render();
+        } catch (renderError) {
+          return res.status(400).json({
+            error: "Template rendering failed",
+            message: renderError.message,
+            details: renderError.properties?.errors || [],
+          });
+        }
+
+        const buf = doc.getZip().generate({ type: "nodebuffer" });
+
+        const outputDir = path.resolve("../../../output");
+        if (!fs.existsSync(outputDir)) {
+          fs.mkdirSync(outputDir);
+        }
+
+        const timestamp = Date.now();
+        const docxFilename = `FLEKSI_${id}_${timestamp}.docx`;
+        const pdfFilename = docxFilename.replace(".docx", ".pdf");
+
+        const docxPath = path.join(outputDir, docxFilename);
+        const pdfPath = path.join(outputDir, pdfFilename);
+
+        fs.writeFileSync(docxPath, buf);
+
+        // Convert DOCX to PDF using LibreOffice
+        const convertToPdfWithSoffice = (inputPath, outputPath) => {
+          return new Promise((resolve, reject) => {
+            const cmd = `soffice --headless --convert-to pdf --outdir "${outputDir}" "${inputPath}"`;
+            exec(cmd, (error, stdout, stderr) => {
+              if (error) {
+                return reject(new Error(`LibreOffice error: ${stderr || stdout}`));
+              }
+
+              fs.readFile(outputPath, (err, pdfBuffer) => {
+                if (err) {
+                  return reject(new Error(`Gagal membaca PDF: ${outputPath}`));
+                }
+                resolve(pdfBuffer);
+              });
+            });
+          });
+        };
+
+        try {
+          const pdfBuffer = await convertToPdfWithSoffice(docxPath, pdfPath);
+
+          res.set({
+            "Content-Type": "application/pdf",
+            "Content-Disposition": `attachment; filename="${pdfFilename}"`,
+            "Content-Length": pdfBuffer.length,
+          });
+
+          res.send(pdfBuffer);
+
+          fs.unlinkSync(docxPath);
+          fs.unlinkSync(pdfPath);
+        } catch (pdfError) {
+          console.error("Gagal konversi ke PDF:", pdfError);
+          return res.status(500).json({
+            error: "PDF conversion failed",
+            message: pdfError.message,
+          });
+        }
+      } catch (error) {
+        console.error("Gagal generate PDF:", error);
+        res.status(500).json({
+          error: "Failed to generate PDF",
+          message: error.message,
+          timestamp: new Date().toISOString(),
+        });
+      }
     }
 
     async put(req, res) {

@@ -61,12 +61,21 @@ const createFLEKSI = JoiExtended.object({
     no_ktp_penjamin : JoiExtended.string()
             .optional()
             .min(0),
-    barang_elektronik : JoiExtended.string()
-            .optional()
-            .min(0),
-    barang_furniture : JoiExtended.string()
-            .optional()
-            .min(0),
+   barang_elektronik: Joi.array().items(
+          Joi.object({
+            nama_barang: Joi.string().required(),
+            tipe: Joi.string().required(),
+            harga: Joi.string().required()
+          })
+        ),
+
+   barang_furniture: Joi.array().items(
+          Joi.object({
+            nama_barang: Joi.string().required(),
+            tipe: Joi.string().required(),
+            harga: Joi.string().required()
+          })
+        ),
     barang_jaminan_lainnya : JoiExtended.string()
             .optional()
             .min(0),

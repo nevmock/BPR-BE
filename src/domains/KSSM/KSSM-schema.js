@@ -63,6 +63,12 @@ const createKSSM = JoiExtended.object({
   no_ktp_debitur: JoiExtended.string()
     .optional()
     .min(0),
+  persetujuan_dari: JoiExtended.string()
+    .optional()
+    .min(0),
+  nama_penjamin: JoiExtended.string()
+    .optional()
+    .min(0),
   tempat_lahir_penjamin: JoiExtended.string()
     .optional()
     .min(0),
