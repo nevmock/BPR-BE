@@ -6,7 +6,6 @@ import path from 'path';
 import ejs from 'ejs';
 import puppeteer from 'puppeteer';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 import fs from 'fs';
 import mammoth from 'mammoth';
 import PizZip from 'pizzip';
@@ -15,6 +14,7 @@ import { renderAsync } from 'docx-preview';
 import { JSDOM } from 'jsdom';
 import docxConverter from 'docx-pdf';
 import { exec } from "child_process";
+import { __dirname, __filename } from "../../utils/path.js";
 
 class KSSMController {
     async get(req, res) {
@@ -237,8 +237,8 @@ class KSSMController {
         }
 
         const buf = doc.getZip().generate({ type: "nodebuffer" });
-
-        const outputDir = path.resolve("../../../output");
+        const outputDir = path.resolve(`output`);
+        console.log(outputDir)
         if (!fs.existsSync(outputDir)) {
           fs.mkdirSync(outputDir);
         }
