@@ -70,25 +70,25 @@ class FLEKSIService {
     }){
         const newFLEKSI = await db.FLEKSI.create({
           data: {
-            nomor_surat,
+            nomor_surat:nomor_surat,
             tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit ? new Date(tanggal_surat_persetujuan_kredit) : null,
-            nama_debitur,
-            tempat_lahir_debitur,
+            nama_debitur:nama_debitur,
+            tempat_lahir_debitur:tempat_lahir_debitur,
             tanggal_lahir_debitur: tanggal_lahir_debitur ? new Date(tanggal_lahir_debitur) : null,
-            alamat_debitur,
-            no_ktp_debitur,
-            besar_pinjaman,
-            bunga_pinjaman,
-            jangka_waktu_pinjaman,
-            angsuran_pinjaman,
+            alamat_debitur:alamat_debitur,
+            no_ktp_debitur:no_ktp_debitur,
+            besar_pinjaman:besar_pinjaman,
+            bunga_pinjaman:bunga_pinjaman,
+            jangka_waktu_pinjaman:jangka_waktu_pinjaman,
+            angsuran_pinjaman:angsuran_pinjaman,
             tanggal_angsuran_pertama: tanggal_angsuran_pertama ? new Date(tanggal_angsuran_pertama) : null,
-            nomor_rekening_pinjaman,
-            tujuan_penggunaan,
-            nama_penjamin,
-            tempat_lahir_penjamin,
+            nomor_rekening_pinjaman:nomor_rekening_pinjaman,
+            tujuan_penggunaan:tujuan_penggunaan,
+            nama_penjamin:nama_penjamin,
+            tempat_lahir_penjamin:tempat_lahir_penjamin,
             tanggal_lahir_penjamin: tanggal_lahir_penjamin ? new Date(tanggal_lahir_penjamin) : null,
-            alamat_penjamin,
-            no_ktp_penjamin,
+            alamat_penjamin:alamat_penjamin,
+            no_ktp_penjamin:no_ktp_penjamin,
             barang_elektronik: {
               create: barang_elektronik?.map(item => ({
                 nama_barang: item.nama_barang,
@@ -103,8 +103,8 @@ class FLEKSIService {
                 harga: item.harga
               }))
             },
-            barang_jaminan_lainnya,
-            nama_penjamin_hubungan,
+            barang_jaminan_lainnya:barang_jaminan_lainnya,
+            nama_penjamin_hubungan:nama_penjamin_hubungan,
             submitted_at: new Date(),
             userID
           },

@@ -73,12 +73,6 @@ const createKSS = JoiExtended.object({
     tinggal_sama_dengan : JoiExtended.string()
             .optional()
             .min(0),
-    jumlah_bank_menyerahkan_uang : JoiExtended.number()
-            .optional()
-            .min(0),
-    bunga_pinjaman : JoiExtended.number()
-            .optional()
-            .min(0),
     tujuan_penggunaan_kredit : JoiExtended.string()
             .optional()
             .min(0),
@@ -101,9 +95,6 @@ const createKSS = JoiExtended.object({
             .optional()
             .min(0),
     nama_asuransi : JoiExtended.string()
-            .optional()
-            .min(0),
-    jangka_asuransi : JoiExtended.number()
             .optional()
             .min(0),
     biaya_asuransi : JoiExtended.number()

@@ -25,6 +25,9 @@ const createPINEK = JoiExtended.object({
     tempat_tinggal_debitur : JoiExtended.string()
             .optional()
             .min(0),
+        no_ktp_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
     mendapat_persetujuan : JoiExtended.string()
             .optional()
             .min(0),
@@ -37,10 +40,13 @@ const createPINEK = JoiExtended.object({
     tanggal_lahir_penjamin : JoiExtended.date()
             .format('YYYY/MM/DD')
             .min(0),
+        no_ktp_penjamin : JoiExtended.string()
+            .optional()
+            .min(0),
     tempat_tinggal_penjamin : JoiExtended.string()
             .optional()
             .min(0),
-    tanggal_pengajuan_kredit : JoiExtended.date()
+    tanggal_permohonan_kredit : JoiExtended.date()
             .format('YYYY/MM/DD')
             .min(0),
     debitur_menerima_pinjaman : JoiExtended.number()

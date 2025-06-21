@@ -33,6 +33,11 @@ class PROCIMRoutes extends BaseRoutes {
             authToken,
             tryCatch(PROCIMController.deleteById)
         ])
+
+        this.router.get('/:id/generate-pdf', [
+            authToken,
+            tryCatch(PROCIMController.generatePDF)
+        ]);
     }
 }
 

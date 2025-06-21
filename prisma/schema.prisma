@@ -114,8 +114,6 @@ model KSS {
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
   tinggal_sama_dengan String?
-  jumlah_bank_menyerahkan_uang Int?
-  bunga_pinjaman Float?
   tujuan_penggunaan_kredit String?
   total_seluruh_pinjaman Int?
   tanggal_angsuran_dimulai DateTime? @db.Date
@@ -124,7 +122,6 @@ model KSS {
   nominal_provisi Int?
   nominal_administrasi Int?
   nama_asuransi String?
-  jangka_asuransi Int?
   biaya_asuransi Int?
   biaya_materai Int?
   biaya_notaris Int?
@@ -146,12 +143,14 @@ model PINEK {
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
   tempat_tinggal_debitur String?
+  no_ktp_debitur String?
   mendapat_persetujuan String?
   nama_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
+  no_ktp_penjamin String?
   tempat_tinggal_penjamin String?
-  tanggal_pengajuan_kredit DateTime? @db.Date
+  tanggal_permohonan_kredit DateTime? @db.Date
   debitur_menerima_pinjaman Int?
   dikenakan_bunga Float?
   total_seluruh_hutang Int?
@@ -270,7 +269,6 @@ model KSM {
   biaya_notaris Int?
   total_biaya Int?
   nama_barang String?
-  nik_debitur String?
   jenis_kelamin_debitur String?
   harga_jaminan_saat_ini Int?
   created_at DateTime? @default(now())

@@ -11,7 +11,9 @@ class PROCIMService {
                         created_at:true,
                         updated_at:true
                     }
-                }
+                },
+                barang_elektronik: true,   
+                barang_furniture: true 
             }
         })
         return datas
@@ -31,7 +33,9 @@ class PROCIMService {
                         created_at:true,
                         updated_at:true
                     }
-                }
+                },
+                barang_elektronik: true,   
+                barang_furniture: true 
             }
         });
         return data;
@@ -82,12 +86,28 @@ class PROCIMService {
             tanggal_lahir_penjamin:tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
             alamat_penjamin:alamat_penjamin,
             no_ktp_penjamin:no_ktp_penjamin,
-            barang_elektronik:barang_elektronik,
-            barang_furniture:barang_furniture,
+            barang_elektronik: {
+              create: barang_elektronik?.map(item => ({
+                nama_barang: item.nama_barang,
+                tipe: item.tipe,
+                harga: item.harga
+              }))
+            },
+            barang_furniture: {
+              create: barang_furniture?.map(item => ({
+                nama_barang: item.nama_barang,
+                tipe: item.tipe,
+                harga: item.harga
+              }))
+            },
             barang_jaminan_lainnya:barang_jaminan_lainnya,
             submitted_at:new Date(),
             userID:userID
-            }
+            },
+            include: {
+            barang_elektronik: true,
+            barang_furniture: true
+          }
         })
         if (!newPROCIM) {
             throw new Error("Create PROCIM failed");
@@ -144,8 +164,20 @@ class PROCIMService {
             tanggal_lahir_penjamin:tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
             alamat_penjamin:alamat_penjamin,
             no_ktp_penjamin:no_ktp_penjamin,
-            barang_elektronik:barang_elektronik,
-            barang_furniture:barang_furniture,
+            barang_elektronik: {
+              create: barang_elektronik?.map(item => ({
+                nama_barang: item.nama_barang,
+                tipe: item.tipe,
+                harga: item.harga
+              }))
+            },
+            barang_furniture: {
+              create: barang_furniture?.map(item => ({
+                nama_barang: item.nama_barang,
+                tipe: item.tipe,
+                harga: item.harga
+              }))
+            },
             barang_jaminan_lainnya:barang_jaminan_lainnya,
             status:status,
             updated_at: new Date(),
@@ -158,6 +190,13 @@ class PROCIMService {
     }
 
     async deleteById(id) {
+        await db.procimBarangElektronik.deleteMany({
+            where: { procim_id: id },
+        });
+
+        await db.procimBarangFurniture.deleteMany({
+            where: { procim_id: id },
+        });
         const data = await db.PROCIM.delete({
             where: {
                 id: id

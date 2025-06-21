@@ -7,7 +7,7 @@ const createPROCIM = JoiExtended.object({
     nomor_surat : JoiExtended.string()
             .optional()
             .min(0),
-    tanggal_surat_perjanjian_kredit : JoiExtended.date()
+    tanggal_surat_persetujuan_kredit : JoiExtended.date()
             .format('YYYY/MM/DD')
             .min(0),
     nama_debitur : JoiExtended.string()
@@ -58,12 +58,21 @@ const createPROCIM = JoiExtended.object({
     no_ktp_penjamin : JoiExtended.string()
             .optional()
             .min(0),
-    barang_elektronik : JoiExtended.string()
-            .optional()
-            .min(0),
-    barang_furniture : JoiExtended.string()
-            .optional()
-            .min(0),
+    barang_elektronik: Joi.array().items(
+        Joi.object({
+        nama_barang: Joi.string().optional(),
+        tipe: Joi.string().optional(),
+        harga: Joi.string().optional()
+        })
+        ),
+
+barang_furniture: Joi.array().items(
+        Joi.object({
+        nama_barang: Joi.string().optional(),
+        tipe: Joi.string().optional(),
+        harga: Joi.string().optional()
+        })
+        ),
     barang_jaminan_lainnya : JoiExtended.string()
             .optional()
             .min(0),

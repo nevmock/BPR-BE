@@ -33,6 +33,11 @@ class KSMRoutes extends BaseRoutes {
             authToken,
             tryCatch(KSMController.deleteById)
         ])
+
+        this.router.get('/:id/generate-pdf', [
+            authToken,
+          tryCatch(KSMController.generatePDF)
+        ]);
     }
 }
 

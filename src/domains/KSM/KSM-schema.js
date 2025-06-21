@@ -115,9 +115,6 @@ const createKSM = JoiExtended.object({
     nama_barang : JoiExtended.string()
             .optional()
             .min(0),
-    nik_debitur : JoiExtended.string()
-            .optional()
-            .min(0),
     jenis_kelamin_debitur : JoiExtended.string()
             .optional()
             .min(0),
