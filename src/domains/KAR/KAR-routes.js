@@ -33,6 +33,11 @@ class KARRoutes extends BaseRoutes {
             authToken,
             tryCatch(KARController.deleteById)
         ])
+
+        this.router.get('/:id/generate-pdf', [
+            authToken,
+          tryCatch(KARController.generatePDF)
+        ]);
     }
 }
 

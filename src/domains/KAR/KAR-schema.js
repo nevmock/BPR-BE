@@ -70,6 +70,9 @@ const createKAR = JoiExtended.object({
     tanggal_lahir_penjamin : JoiExtended.date()
         .format('YYYY/MM/DD')
         .min(0),
+    bertempat_tinggal_sama: JoiExtended.string()
+        .optional()
+        .min(0),
     no_ktp_penjamin : JoiExtended.string()
         .optional()
         .min(0),

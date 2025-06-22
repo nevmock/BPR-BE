@@ -532,6 +532,7 @@ model KAR {
   nama_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
+  bertempat_tinggal_sama String?
   no_ktp_penjamin String?
   utang_atas_kredit_sebesar Int?
   tenggat_mengangsur_tiap_bulan Int?
