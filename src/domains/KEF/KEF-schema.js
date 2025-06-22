@@ -43,6 +43,9 @@ const createKEF = JoiExtended.object({
     bertempat_tinggal_dengan : JoiExtended.string()
         .optional()
         .min(0),
+    tanggal_surat_permohonan_kredit : JoiExtended.date()
+        .format('YYYY/MM/DD')
+        .min(0),
     nama_barang : JoiExtended.string()
         .optional()
         .min(0),
@@ -94,22 +97,13 @@ const createKEF = JoiExtended.object({
     pekerjaan_debitur : JoiExtended.string()
         .optional()
         .min(0),
-    nik_debitur : JoiExtended.string()
-        .optional()
-        .min(0),
     jenis_kelamin_debitur : JoiExtended.string()
         .optional()
         .min(0),
     detail_jaminan : JoiExtended.string()
         .optional()
         .min(0),
-    harga_jaminan : JoiExtended.number()
-        .optional()
-        .min(0),
     no_hp_debitur : JoiExtended.string()
-        .optional()
-        .min(0),
-    total_harga_keseluruhan_barang : JoiExtended.number()
         .optional()
         .min(0),
     status : JoiExtended.string()

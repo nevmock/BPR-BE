@@ -55,6 +55,9 @@ const createKMS = JoiExtended.object({
     detail_jaminan : JoiExtended.string()
         .optional()
         .min(0),
+    no_ktp_debitur : JoiExtended.string()
+        .optional()
+        .min(0),
     telah_persetujuan_dari : JoiExtended.string()
         .optional()
         .min(0),
@@ -98,9 +101,6 @@ const createKMS = JoiExtended.object({
         .optional()
         .min(0),
     nama_asuransi_jiwa : JoiExtended.string()
-        .optional()
-        .min(0),
-    waktu_asuransi_jiwa : JoiExtended.number()
         .optional()
         .min(0),
     biaya_asuransi_jiwa_sebesar : JoiExtended.number()

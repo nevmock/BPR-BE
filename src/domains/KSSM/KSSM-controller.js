@@ -237,8 +237,8 @@ class KSSMController {
         }
 
         const buf = doc.getZip().generate({ type: "nodebuffer" });
+        
         const outputDir = path.resolve(`output`);
-        console.log(outputDir)
         if (!fs.existsSync(outputDir)) {
           fs.mkdirSync(outputDir);
         }

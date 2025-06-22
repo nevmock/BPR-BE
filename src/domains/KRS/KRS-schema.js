@@ -85,9 +85,6 @@ const createKRS = JoiExtended.object({
     melunasi_hutang_sebesar : JoiExtended.number()
             .optional()
             .min(0),
-    jangka_waktu_angsuran : JoiExtended.number()
-            .optional()
-            .min(0),
     tanggal_mengangsur_terakhir : JoiExtended.date()
             .format('YYYY/MM/DD')
             .min(0),
@@ -104,9 +101,6 @@ const createKRS = JoiExtended.object({
             .optional()
             .min(0),
     biaya_administrasi_sebesar : JoiExtended.number()
-            .optional()
-            .min(0),
-    waktu_asuransi_jiwa : JoiExtended.number()
             .optional()
             .min(0),
     biaya_asuransi_jiwa : JoiExtended.number()

@@ -97,9 +97,6 @@ const createKMSM = JoiExtended.object({
     biaya_materai : JoiExtended.number()
             .optional()
             .min(0),
-    waktu_asuransi_tlo : JoiExtended.number()
-            .optional()
-            .min(0),
     biaya_asuransi_tlo : JoiExtended.number()
             .optional()
             .min(0),
@@ -113,9 +110,6 @@ const createKMSM = JoiExtended.object({
             .optional()
             .min(0),
     nama_barang : JoiExtended.string()
-            .optional()
-            .min(0),
-    nik_debitur : JoiExtended.string()
             .optional()
             .min(0),
     jenis_kelamin_debitur : JoiExtended.string()

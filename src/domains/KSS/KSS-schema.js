@@ -73,6 +73,9 @@ const createKSS = JoiExtended.object({
     tinggal_sama_dengan : JoiExtended.string()
             .optional()
             .min(0),
+        pemilik_rekening_pada : JoiExtended.string()
+            .optional()
+            .min(0),
     tujuan_penggunaan_kredit : JoiExtended.string()
             .optional()
             .min(0),

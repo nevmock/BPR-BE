@@ -33,6 +33,11 @@ class KEFRoutes extends BaseRoutes {
             authToken,
             tryCatch(KEFController.deleteById)
         ])
+
+        this.router.get('/:id/generate-pdf', [
+            authToken,
+          tryCatch(KEFController.generatePDF)
+        ]);
     }
 }
 

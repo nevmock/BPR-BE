@@ -114,6 +114,7 @@ model KSS {
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
   tinggal_sama_dengan String?
+  pemilik_rekening_pada String?
   tujuan_penggunaan_kredit String?
   total_seluruh_pinjaman Int?
   tanggal_angsuran_dimulai DateTime? @db.Date
@@ -311,13 +312,11 @@ model KMSM {
   tanggal_mengangsur_terakhir DateTime? @db.Date
   biaya_provisi_sebesar Int?
   biaya_materai Int?
-  waktu_asuransi_tlo Int?
   biaya_asuransi_tlo Int?
   biaya_administrasi_sebesar Int?
   biaya_notaris Int?
   total_biaya Int?
   nama_barang String?
-  nik_debitur String?
   jenis_kelamin_debitur String?
   harga_jaminan Int?
   created_at DateTime? @default(now())
@@ -356,14 +355,12 @@ model KRS {
   bertempat_tinggal_sama_dengan String?
   debitur_pemilik_rekening String?
   melunasi_hutang_sebesar Int?
-  jangka_waktu_angsuran Int?
   tanggal_mengangsur_terakhir DateTime? @db.Date
   tanggal_mengangsur_paling_lambat Int?
   tanggal_mengangsur_pertama DateTime? @db.Date
   nominal_angsuran Int?
   biaya_provisi_sebesar Int?
   biaya_administrasi_sebesar Int?
-  waktu_asuransi_jiwa Int?
   biaya_asuransi_jiwa Int?
   biaya_materai_sebesar Int?
   biaya_jumlah Int?
@@ -413,7 +410,6 @@ model KMM {
   biaya_notaris_sebesar Int?
   total_biaya Int?
   nama_barang String?
-  nik_debitur String?
   jenis_kelamin_debitur String?
   harga_jaminan Int?
   created_at DateTime? @default(now())
@@ -442,6 +438,7 @@ model KMS {
   alamat_penjamin String?
   no_ktp_penjamin String?
   detail_jaminan String?
+  no_ktp_debitur String?
   telah_persetujuan_dari String?
   nama_penjamin_1 String?
   tempat_lahir_penjamin String?
@@ -457,7 +454,6 @@ model KMS {
   biaya_provisi_sebesar Int?
   biaya_administrasi_sebesar Int?
   nama_asuransi_jiwa String?
-  waktu_asuransi_jiwa Int?
   biaya_asuransi_jiwa_sebesar Int?
   biaya_materai_sebesar Int?
   biaya_notaris_sebesar Int?
@@ -484,6 +480,7 @@ model KEF {
   tanggal_lahir_penjamin DateTime? @db.Date
   no_ktp_penjamin String?
   bertempat_tinggal_dengan String?
+  tanggal_surat_permohonan_kredit DateTime? @db.Date
   nama_barang String?
   nama_toko String?
   alamat_toko String?
@@ -501,12 +498,9 @@ model KEF {
   biaya_fidusia_sebesar String?
   total_biaya Int?
   pekerjaan_debitur String?
-  nik_debitur String?
   jenis_kelamin_debitur String?
   detail_jaminan String?
-  harga_jaminan Int?
   no_hp_debitur String?
-  total_harga_keseluruhan_barang Int?
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
   submitted_at DateTime?

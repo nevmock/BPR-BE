@@ -5,6 +5,7 @@ import fs from 'fs';
 import PizZip from 'pizzip';
 import Docxtemplater from 'docxtemplater';
 import { exec } from "child_process";
+import { __dirname, __filename } from "../../utils/path.js";
 
 class KMSMController {
     async get(req, res) {
@@ -56,13 +57,11 @@ class KMSMController {
             tanggal_mengangsur_terakhir,
             biaya_provisi_sebesar,
             biaya_materai,
-            waktu_asuransi_tlo,
             biaya_asuransi_tlo,
             biaya_administrasi_sebesar,
             biaya_notaris,
             total_biaya,
             nama_barang,
-            nik_debitur,
             jenis_kelamin_debitur,
             harga_jaminan,
             is_submitted,
@@ -102,13 +101,11 @@ class KMSMController {
             tanggal_mengangsur_terakhir,
             biaya_provisi_sebesar,
             biaya_materai,
-            waktu_asuransi_tlo,
             biaya_asuransi_tlo,
             biaya_administrasi_sebesar,
             biaya_notaris,
             total_biaya,
             nama_barang,
-            nik_debitur,
             jenis_kelamin_debitur,
             harga_jaminan,
             is_submitted,
@@ -132,7 +129,7 @@ class KMSMController {
         }
 
         const tanggal = new Date(dbData.tanggal_surat_permohonan_kredit);
-        const tanggal1 = new Date(dbData.tanggal_surat_keputusan_kredit);
+        const tanggal1 = new Date(dbData.tanggal_surat_persetujuan_kredit);
         const tanggal2 = new Date(dbData.tanggal_lahir_debitur);
         const tanggal3 = new Date(dbData.tanggal_lahir_penjamin);
         const tanggal4 = new Date(dbData.tanggal_mengangsur_pertama);
@@ -149,47 +146,44 @@ class KMSMController {
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
 
         const data = {
-          nama: dbData.nama,
-          jabatan: dbData.jabatan,
-          nama_debitur: dbData.nama_debitur,
-          alamat_usaha_debitur: dbData.alamat_usaha_debitur,
-          alamat_rumah_debitur: dbData.alamat_rumah_debitur,
-          tanggal_surat_permohonan_kredit: formattedTanggal,
-          tanggal_surat_keputusan_kredit: formattedTanggal1,
-          nomor_surat: dbData.nomor_surat,
-          nominal: dbData.nominal,
-          tujuan_penggunaan: dbData.tujuan_penggunaan,
-          suku_bunga: dbData.suku_bunga,
-          jangka_waktu: dbData.jangka_waktu,
-          biaya_provisi: dbData.biaya_provisi,
-          biaya_administrasi: dbData.biaya_administrasi,
-          detail_jaminan: dbData.detail_jaminan,
-          pekerjaan_debitur: dbData.pekerjaan_debitur,
-          tempat_lahir_debitur: dbData.tempat_lahir_debitur,
-          tanggal_lahir_debitur: formattedTanggal2,
-          no_ktp_debitur: dbData.no_ktp_debitur,
-          persetujuan_dari: dbData.persetujuan_dari,
-          nama_penjamin: dbData.nama_penjamin,
-          tempat_lahir_penjamin: dbData.tempat_lahir_penjamin,
-          tanggal_lahir_penjamin: formattedTanggal3,
-          no_ktp_penjamin: dbData.no_ktp_penjamin,
-          utang_atas_kredit: dbData.utang_atas_kredit,
-          tenggat_mengangsur: dbData.tenggat_mengangsur,
-          nilai_mengangsur: dbData.nilai_mengangsur,
-          tanggal_mengangsur_pertama: formattedTanggal4,
-          tanggal_mengangsur_terakhir: formattedTanggal5,
-          nominal_provisi: dbData.nominal_provisi,
-          nominal_materai: dbData.nominal_materai,
-          nominal_asuransi_jiwa: dbData.nominal_asuransi_jiwa,
-          jangka_asuransi_tlo: dbData.jangka_asuransi_tlo,
-          nominal_asuransi_tlo: dbData.nominal_asuransi_tlo,
-          nominal_administrasi: dbData.nominal_administrasi,
-          nominal_notaris: dbData.nominal_notaris,
-          total_biaya: dbData.total_biaya,
-          nama_barang: dbData.nama_barang,
-          nik_debitur: dbData.nik_debitur,
-          jenis_kelamin_debitur: dbData.jenis_kelamin_debitur,
-          harga_jaminan: dbData.harga_jaminan,
+            nama: dbData.nama,
+            jabatan: dbData.jabatan,
+            nama_debitur: dbData.nama_debitur,
+            alamat_usaha_debitur: dbData.alamat_usaha_debitur,
+            alamat_rumah_debitur: dbData.alamat_rumah_debitur,
+            tanggal_surat_permohonan_kredit: formattedTanggal,
+            tanggal_surat_persetujuan_kredit: formattedTanggal1,
+            nomor_surat: dbData.nomor_surat,
+            nominal: dbData.nominal,
+            tujuan_penggunaan: dbData.tujuan_penggunaan,
+            suku_bunga: dbData.suku_bunga,
+            jangka_waktu: dbData.jangka_waktu,
+            biaya_provisi: dbData.biaya_provisi,
+            biaya_administrasi: dbData.biaya_administrasi,
+            detail_jaminan: dbData.detail_jaminan,
+            pekerjaan_debitur: dbData.pekerjaan_debitur,
+            tanggal_lahir_debitur: formattedTanggal2,
+            no_ktp_debitur: dbData.no_ktp_debitur,
+            tempat_lahir_debitur: dbData.tempat_lahir_debitur,
+            hubungan_debitur_penjamin: dbData.hubungan_debitur_penjamin,
+            nama_penjamin: dbData.nama_penjamin,
+            tempat_lahir_penjamin: dbData.tempat_lahir_penjamin,
+            tanggal_lahir_penjamin: formattedTanggal3,
+            no_ktp_penjamin: dbData.no_ktp_penjamin,
+            utang_atas_kredit: dbData.utang_atas_kredit,
+            tenggat_mengangsur_tanggal: dbData.tenggat_mengangsur_tanggal,
+            nilai_mengangsur: dbData.nilai_mengangsur,
+            tanggal_mengangsur_pertama: formattedTanggal4,
+            tanggal_mengangsur_terakhir: formattedTanggal5,
+            biaya_provisi_sebesar: dbData.biaya_provisi_sebesar,
+            biaya_materai: dbData.biaya_materai,
+            biaya_asuransi_tlo: dbData.biaya_asuransi_tlo,
+            biaya_administrasi_sebesar: dbData.biaya_administrasi_sebesar,
+            biaya_notaris: dbData.biaya_notaris,
+            total_biaya: dbData.total_biaya,
+            nama_barang: dbData.nama_barang,
+            jenis_kelamin_debitur: dbData.jenis_kelamin_debitur,
+            harga_jaminan: dbData.harga_jaminan,
         };
 
         const templatePath = path.resolve("src/templates/", "KMSM.docx");
@@ -227,7 +221,7 @@ class KMSMController {
 
         const buf = doc.getZip().generate({ type: "nodebuffer" });
 
-        const outputDir = path.resolve("../../../output");
+        const outputDir = path.resolve(`output`);
         if (!fs.existsSync(outputDir)) {
           fs.mkdirSync(outputDir);
         }

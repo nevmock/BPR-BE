@@ -33,6 +33,11 @@ class KRSRoutes extends BaseRoutes {
             authToken,
             tryCatch(KRSController.deleteById)
         ])
+
+        this.router.get('/:id/generate-pdf', [
+            authToken,
+          tryCatch(KRSController.generatePDF)
+        ]);
     }
 }
 
