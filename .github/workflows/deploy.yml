@@ -53,4 +53,5 @@ jobs:
           npm install
           npm run build
           npx prisma migrate deploy   
+          npx prisma generate
           pm2 reload bpr-be:service
