@@ -65,7 +65,7 @@ const createFLEKSI = JoiExtended.object({
           Joi.object({
             nama_barang: Joi.string().optional(),
             tipe: Joi.string().optional(),
-            harga: Joi.string().optional()
+            harga: Joi.number().optional()
           })
         ),
 
@@ -73,7 +73,7 @@ const createFLEKSI = JoiExtended.object({
           Joi.object({
             nama_barang: Joi.string().optional(),
             tipe: Joi.string().optional(),
-            harga: Joi.string().optional()
+            harga: Joi.number().optional()
           })
         ),
     barang_jaminan_lainnya : JoiExtended.string()

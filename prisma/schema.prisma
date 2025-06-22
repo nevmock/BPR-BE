@@ -492,10 +492,10 @@ model KEF {
   tenggat_mengangsur_pada Int?
   tanggal_angsuran_pertama DateTime? @db.Date
   nilai_mengangsur Int?
-  biaya_provisi_sebesar String?
-  biaya_administrasi_sebesar String?
-  biaya_materai_sebesar String?
-  biaya_fidusia_sebesar String?
+  biaya_provisi_sebesar Int?
+  biaya_administrasi_sebesar Int?
+  biaya_materai_sebesar Int?
+  biaya_fidusia_sebesar Int?
   total_biaya Int?
   pekerjaan_debitur String?
   jenis_kelamin_debitur String?
@@ -557,7 +557,7 @@ model FleksiBarangElektronik {
   fleksi_id String
   nama_barang String?
   tipe String?
-  harga String?
+  harga Int?
   fleksi FLEKSI @relation(fields: [fleksi_id], references: [id])
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
@@ -568,7 +568,7 @@ model FleksiBarangFurniture {
   fleksi_id String
   nama_barang String?
   tipe String?
-  harga String?
+  harga Int?
   fleksi FLEKSI @relation(fields: [fleksi_id], references: [id])
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
@@ -579,7 +579,7 @@ model ProcimBarangElektronik {
   procim_id String
   nama_barang String?
   tipe String?
-  harga String?
+  harga Int?
   procim PROCIM @relation(fields: [procim_id], references: [id])
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
@@ -590,7 +590,7 @@ model ProcimBarangFurniture {
   procim_id String
   nama_barang String?
   tipe String?
-  harga String?
+  harga Int?
   procim PROCIM @relation(fields: [procim_id], references: [id])
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt

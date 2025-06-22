@@ -215,7 +215,7 @@ class KSSController {
 
         const buf = doc.getZip().generate({ type: "nodebuffer" });
 
-        const outputDir = path.resolve("../../../output");
+        const outputDir = path.resolve(`output`);
         if (!fs.existsSync(outputDir)) {
           fs.mkdirSync(outputDir);
         }
