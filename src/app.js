@@ -35,9 +35,9 @@ class ExpressApplication {
     this.app = express();
     this.port = port;
 
+    this.app.use(cors());
     this.app.use(express.json({ type: "application/json" }));
     this.app.use(express.urlencoded({ extended: false }));
-    this.app.use(cors());
     //  __init__
     this.configureAssets();
     this.setupRoute();
