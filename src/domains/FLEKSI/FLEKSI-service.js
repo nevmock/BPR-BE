@@ -148,9 +148,17 @@ class FLEKSIService {
         submitted_at,
         userID,
     }) {
-        const updatedFLEKSI = await db.FLEKSI.update({
-            where: {
-                id: id
+        // First delete related records
+          await db.fleksiBarangElektronik.deleteMany({
+              where: { fleksi_id: id }
+          });
+
+          await db.fleksiBarangFurniture.deleteMany({
+              where: { fleksi_id: id }
+          });
+          const updatedFLEKSI = await db.FLEKSI.update({
+              where: {
+                  id: id
             },
             data: {
                 nomor_surat:nomor_surat,

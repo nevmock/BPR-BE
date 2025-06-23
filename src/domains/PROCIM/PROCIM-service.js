@@ -141,6 +141,14 @@ class PROCIMService {
         submitted_at,
         userID
     }) {
+        // First delete related records
+        await db.procimBarangElektronik.deleteMany({
+            where: { procim_id: id }
+        });
+
+        await db.procimBarangFurniture.deleteMany({
+            where: { procim_id: id }
+        });
         const updatedPROCIM = await db.PROCIM.update({
             where: {
                 id: id
@@ -183,6 +191,10 @@ class PROCIMService {
             updated_at: new Date(),
             submitted_at,
             userID:userID
+            },
+            include: {
+            barang_elektronik: true,
+            barang_furniture: true
             }
         });
 
