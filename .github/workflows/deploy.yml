@@ -41,17 +41,16 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}
         script: |
-          export NVM_DIR="/home/kanzen/.nvm"
+          export NVM_DIR="/home/digivise/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
           nvm use 20
 
-          cd /home/kanzen/BPR/BE
+          cd /home/digivise/BPR-BE
           git reset --hard HEAD
           git pull origin main
           npm install
           npm run build
           npx prisma migrate deploy   
           npx prisma generate
-          pm2 reload bpr-be:service
+          pm2 reload bpr-api
