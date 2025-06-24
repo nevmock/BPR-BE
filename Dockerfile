@@ -19,7 +19,7 @@ COPY . .
 RUN npm run build
 
 # Ubah port ke 5XXX untuk lingkungan development
-EXPOSE 5002
+EXPOSE 3000
 
 # Jalankan aplikasi
 CMD ["npm", "run", "start"]
