@@ -7,9 +7,24 @@ import KMSMService from "../KMSM/KMSM-service.js";
 import KRSService from "../KRS/KRS-service.js";
 import KSMService from "../KSM/KSM-service.js";
 import KSSMService from "../KSSM/KSSM-service.js";
-// ...add remaining services as needed
+import db from "../../config/db.js";
+import {startOfMonth, endOfMonth, subMonths, eachDayOfInterval, format} from 'date-fns';
 
 class DashboardService {
+  productTables = [
+    'KSSM',
+    'KSS',
+    'PINEK',
+    'FLEKSI',
+    'PROCIM',
+    'KSM',
+    'KMSM',
+    'KRS',
+    'KMM',
+    'KMS',
+    'KEF',
+    'KAR',
+  ];
   async getAllProductStats() {
     const now = new Date();
     const startOfThisMonth = new Date(now.getFullYear(), now.getMonth(), 1);
@@ -50,6 +65,124 @@ class DashboardService {
       getStat(KSSMService, "KSSM"),
       // ...add remaining products
     ]);
+  }
+
+  async getProductStats() {
+    const now = new Date();
+    const startCurrentMonth = startOfMonth(now);
+    const endCurrentMonth = endOfMonth(now);
+    const startLastMonth = startOfMonth(subMonths(now, 1));
+    const endLastMonth = endOfMonth(subMonths(now, 1));
+
+    const results = await Promise.all(
+        this.productTables.map(async (productName) => {
+          const model = db[productName];
+
+          const allUnique = await model.findMany({
+            select: { no_ktp_debitur: true },
+            distinct: ['no_ktp_debitur'],
+          });
+
+          const currentMonth = await model.findMany({
+            where: {
+              created_at: {
+                gte: startCurrentMonth,
+                lte: endCurrentMonth,
+              },
+            },
+            select: { no_ktp_debitur: true },
+            distinct: ['no_ktp_debitur'],
+          });
+
+          const lastMonth = await model.findMany({
+            where: {
+              created_at: {
+                gte: startLastMonth,
+                lte: endLastMonth,
+              },
+            },
+            select: { no_ktp_debitur: true },
+            distinct: ['no_ktp_debitur'],
+          });
+
+          const count = await db[productName].count();
+
+          const current = currentMonth.length;
+          const last = lastMonth.length;
+
+          const increase_nasabah =
+              last === 0 ? 0 : Number((((current - last) / last) * 100).toFixed(2));
+
+          return {
+            nama_produk: productName,
+            jumlah_produk: count,
+            unique_nasabah: allUnique.length,
+            increase_nasabah,
+          };
+        })
+    );
+
+    return results;
+  }
+
+  async getDailyProductsTraffic() {
+    const now = new Date();
+    const start = startOfMonth(now);
+    const end = endOfMonth(now);
+
+    const days = eachDayOfInterval({ start, end });
+
+    const chartData = [];
+
+    for (const day of days) {
+      const startOfDay = new Date(`${format(day, 'yyyy-MM-dd')}T00:00:00`);
+      const endOfDay = new Date(`${format(day, 'yyyy-MM-dd')}T23:59:59`);
+
+      const row = {
+        date: format(day, 'yyyy-MM-dd'),
+      };
+
+      for (const table of this.productTables) {
+        try {
+          const count = await db[table].count({
+            where: {
+              created_at: {
+                gte: startOfDay,
+                lte: endOfDay,
+              },
+            },
+          });
+
+          row[table.toLowerCase()] = count;
+        } catch (err) {
+          console.error(`Error on ${table}:`, err);
+          row[table.toLowerCase()] = 0;
+        }
+      }
+
+      chartData.push(row);
+    }
+
+    return chartData;
+  }
+
+  async getCountProducts() {
+    let result = [];
+    for (const table of this.productTables) {
+      let row = {}
+      try {
+        const count = await db[table].count();
+
+        row[table.toLowerCase()] = count;
+
+        result.push(row);
+      } catch (err) {
+        console.error(`Error on ${table}:`, err);
+        row[table.toLowerCase()] = 0;
+      }
+    }
+
+    return result;
   }
 }
 

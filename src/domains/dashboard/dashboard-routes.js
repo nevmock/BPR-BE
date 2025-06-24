@@ -5,9 +5,21 @@ import authToken from "../../middlewares/auth-token-middleware.js";
 
 const router = Router();
 
-router.get("/", [
-  authToken,
-  tryCatch(DashboardController.getDashboard)
+router.get("/products-stats", [
+  // authToken,
+  tryCatch(DashboardController.getProductStats)
 ]);
+
+router.get("/daily-products", [
+  authToken,
+  tryCatch(DashboardController.getDailyProductsTraffic)
+]);
+
+router.get("/products-total-report", [
+  authToken,
+  tryCatch(DashboardController.getCountProducts)
+]);
+
+
 
 export default router;
