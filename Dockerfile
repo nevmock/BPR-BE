@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Install LibreOffice dan dependencies lainnya
 RUN apt-get update && apt-get install -y \
-    libreoffice
+    libreoffice \
     fontconfig \
     ttf-mscorefonts-installer \
     && fc-cache -f -v
