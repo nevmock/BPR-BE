@@ -55,6 +55,7 @@ jobs:
               -e DATABASE_URL="${{ secrets.DATABASE_URL }}" \
               -e JWT_SECRET="${{ secrets.JWT_SECRET }}" \
               -p "${{ secrets.PORT }}":3000 \
+              -v bpr-api-stg:/app/public \
               nevmock/bpr-api-stg:latest
 
             echo "🧹 Cleaning up unused Docker resources..."
