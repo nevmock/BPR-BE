@@ -64,4 +64,4 @@ jobs:
             echo "🔄 Running Prisma migrations..."
             docker exec -it bpr-api-stg npx prisma migrate deploy
 
-            echo "✅ Deployment to stgelopment environment completed successfully!"
+            echo "✅ Deployment to Staging environment completed successfully!"
