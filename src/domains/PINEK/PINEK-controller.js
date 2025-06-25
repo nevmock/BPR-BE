@@ -8,7 +8,8 @@ import { exec } from "child_process";
 
 class PINEKController {
     async get(req, res) {
-        const datas = await PINEKService.getAll();
+        const {page, limit} = req.query
+        const datas = await PINEKService.getAll(page, limit);
         return successResponse(res, datas)
     }
 

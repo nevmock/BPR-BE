@@ -2,8 +2,26 @@ import db from "../../config/db.js";
 
 
 class KSSService {
-    async getAll(){
-        const datas = await db.KSS.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page, limit){
+            datas = await db.KSS.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })    
+        } else {
+            datas = await db.KSS.findMany({
             include:{
                 User:{
                     select:{
@@ -16,6 +34,7 @@ class KSSService {
                 }
             }
         })
+        }
         return datas
     }
 

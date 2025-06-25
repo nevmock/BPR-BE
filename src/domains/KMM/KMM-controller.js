@@ -9,7 +9,8 @@ import { __dirname, __filename } from "../../utils/path.js";
 
 class KMMController {
     async get(req, res) {
-        const datas = await KMMService.getAll()
+        const {page, limit} = req.query
+        const datas = await KMMService.getAll(page, limit)
         return successResponse(res, datas)
     }
 

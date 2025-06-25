@@ -1,7 +1,27 @@
 import db from "../../config/db.js";
 class PROCIMService {
-    async getAll(){
-        const datas = await db.PROCIM.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.PROCIM.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                },
+                barang_elektronik: true,   
+                barang_furniture: true 
+            }
+        })    
+        } else {
+            datas = await db.PROCIM.findMany({
             include:{
                 User:{
                     select:{
@@ -16,6 +36,7 @@ class PROCIMService {
                 barang_furniture: true 
             }
         })
+        }
         return datas
     }
 

@@ -9,7 +9,8 @@ import { __dirname, __filename } from "../../utils/path.js";
 
 class KEFController {
     async get(req, res) {
-        const datas = await KEFService.getAll()
+        const {page, limit} = req.query
+        const datas = await KEFService.getAll(page, limit)
         return successResponse(res, datas)
     }
 

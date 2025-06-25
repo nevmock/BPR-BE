@@ -1,8 +1,12 @@
 import db from "../../config/db.js";
 class FLEKSIService {
-    async getAll(){
-        const datas = await db.FLEKSI.findMany({
-            include:{
+    async getAll(page, limit){
+      let datas;
+      if (page && limit){
+        datas = await db.FLEKSI.findMany({
+          take: limit,
+          skip: (page - 1) * limit,
+          include:{
                 User:{
                     select:{
                         id:true,
@@ -16,7 +20,24 @@ class FLEKSIService {
                 barang_furniture: true 
             }
         })
-        return datas
+      } else {
+        datas = await db.FLEKSI.findMany({
+          include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                },
+                barang_elektronik: true,   
+                barang_furniture: true 
+            }
+        })
+      }
+      return datas
     }
 
     async getById(id) {

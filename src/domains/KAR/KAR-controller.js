@@ -9,7 +9,8 @@ import { __dirname, __filename } from "../../utils/path.js";
 
 class KARController {
     async get(req, res) {
-        const datas = await KARService.getAll()
+        const {page, limit} = req.query
+        const datas = await KARService.getAll(page, limit)
         return successResponse(res, datas)
     }
 

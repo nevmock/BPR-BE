@@ -1,7 +1,25 @@
 import db from "../../config/db.js";
 class PINEKService {
-    async getAll(){
-        const datas = await db.PINEK.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.PINEK.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })    
+        } else {
+            datas = await db.PINEK.findMany({
             include:{
                 User:{
                     select:{
@@ -14,6 +32,7 @@ class PINEKService {
                 }
             }
         })
+        }
         return datas
     }
     async getById(id) {

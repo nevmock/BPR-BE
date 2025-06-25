@@ -1,7 +1,11 @@
 import db from "../../config/db.js";
 class KEFService {
-    async getAll(){
-        const datas = await db.KEF.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KEF.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
             include:{
                 User:{
                     select:{
@@ -13,7 +17,22 @@ class KEFService {
                     }
                 }
             }
-        })
+        })    
+        } else {
+            datas = await db.KEF.findMany({
+                include:{
+                    User:{
+                        select:{
+                            id:true,
+                            username:true,
+                            role:true,
+                            created_at:true,
+                            updated_at:true
+                        }
+                    }
+                }
+            })
+        }
         return datas
     }
 

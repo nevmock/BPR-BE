@@ -7,8 +7,26 @@ import { parseJWT, generateToken } from "../../utils/jwtTokenConfig.js";
 import { matchPassword, hashPassword } from "../../utils/passwordConfig.js";
 
 class KSSMService {
-    async getAll(){
-        const datas = await db.KSSM.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KSSM.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })    
+        } else {
+        datas = await db.KSSM.findMany({
             include:{
                 User:{
                     select:{
@@ -21,6 +39,7 @@ class KSSMService {
                 }
             }
         })
+        }
         return datas
     }
 
