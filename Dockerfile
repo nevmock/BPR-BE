@@ -1,13 +1,14 @@
-# Gunakan Node.js versi 22 berbasis Debian
 FROM node:22
 
-# Set working directory di dalam container
 WORKDIR /app
 
-# Install LibreOffice dan dependencies lainnya
-RUN apt-get update && apt-get install -y \
-    libreoffice \
+# Tambahkan repo non-free dan contrib agar bisa install font Microsoft
+RUN sed -i 's/main/main contrib non-free non-free-firmware/' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y \
+    software-properties-common \
     fontconfig \
+    libreoffice \
     ttf-mscorefonts-installer \
     && fc-cache -f -v
 
@@ -24,5 +25,4 @@ RUN npm run build
 # Ubah port ke 5XXX untuk lingkungan development
 EXPOSE 3000
 
-# Jalankan aplikasi
 CMD ["npm", "run", "start"]
