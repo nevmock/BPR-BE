@@ -1,7 +1,25 @@
 import db from "../../config/db.js";
 class KMSMService {
-    async getAll(){
-        const datas = await db.KMSM.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KMSM.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })    
+        } else {
+            datas = await db.KMSM.findMany({
             include:{
                 User:{
                     select:{
@@ -14,6 +32,7 @@ class KMSMService {
                 }
             }
         })
+        }
         return datas
     }
 

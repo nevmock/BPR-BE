@@ -1,7 +1,11 @@
 import db from "../../config/db.js";
 class KSMService {
-    async getAll(){
-        const datas = await db.KSM.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KSM.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
             include:{
                 User:{
                     select:{
@@ -14,6 +18,21 @@ class KSMService {
                 }
             }
         })
+        } else {
+            datas = await db.KSM.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
+        }
         return datas
     }
 

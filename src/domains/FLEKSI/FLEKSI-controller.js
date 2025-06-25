@@ -8,7 +8,8 @@ import fs from 'fs';
 
 class FLEKSIController {
     async get(req, res) {
-        const datas = await FLEKSIService.getAll()
+        const {page, limit} = req.query
+        const datas = await FLEKSIService.getAll(page, limit)
         return successResponse(res, datas)
     }
     

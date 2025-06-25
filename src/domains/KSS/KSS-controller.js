@@ -8,7 +8,8 @@ import { exec } from "child_process";
 
 class KSSController {
     async get(req, res) {
-        const datas = await KSSService.getAll()
+        const {page, limit} = req.query
+        const datas = await KSSService.getAll(page, limit)
         return successResponse(res, datas)
     }
 

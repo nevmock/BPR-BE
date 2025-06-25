@@ -1,7 +1,11 @@
 import db from "../../config/db.js";
 class KRSService {
-    async getAll(){
-        const datas = await db.KRS.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KRS.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
             include:{
                 User:{
                     select:{
@@ -14,6 +18,21 @@ class KRSService {
                 }
             }
         })
+        } else {
+            datas = await db.KRS.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
+        }
         return datas
     }
 

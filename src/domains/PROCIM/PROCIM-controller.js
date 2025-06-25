@@ -8,7 +8,8 @@ import fs from 'fs';
 
 class PROCIMController {
     async get(req, res) {
-        const datas = await PROCIMService.getAll()
+        const {page, limit} = req.query
+        const datas = await PROCIMService.getAll(page, limit)
         return successResponse(res, datas)
     }
 

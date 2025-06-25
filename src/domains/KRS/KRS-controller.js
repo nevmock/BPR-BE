@@ -9,7 +9,8 @@ import { __dirname, __filename } from "../../utils/path.js";
 
 class KRSController {
     async get(req, res) {
-        const datas = await KRSService.getAll()
+        const {page, limit} = req.query
+        const datas = await KRSService.getAll(page, limit)
         return successResponse(res, datas)
     }
 
