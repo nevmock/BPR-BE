@@ -1,6 +1,6 @@
-# Gunakan Node.js versi 22 berbasis Debian
 FROM node:22
 
+<<<<<<< HEAD
 # Non-interaktif untuk instalasi
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -42,5 +42,4 @@ RUN npm run build
 # Expose port 3000 (ubah jika perlu)
 EXPOSE 3000
 
-# Jalankan aplikasi
 CMD ["npm", "run", "start"]
