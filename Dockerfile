@@ -1,12 +1,10 @@
 FROM node:22
 
-# Non-interaktif untuk instalasi
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Set working directory di dalam container
 WORKDIR /app
 
-# Install LibreOffice, font dependencies, dan Microsoft Core Fonts
+# Install font dependencies dan LibreOffice
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     software-properties-common \
@@ -15,30 +13,26 @@ RUN apt-get update && \
     cabextract \
     xfonts-utils \
     libreoffice \
-    && apt-add-repository multiverse \
-    && apt-get update && \
+    && apt-add-repository multiverse && \
+    apt-get update && \
     echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections && \
     apt-get install -y ttf-mscorefonts-installer && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Tambahkan font custom dari folder lokal ke image
-# Pastikan kamu punya folder fonts/ dengan .ttf seperti Bernard, Calibri, Bodoni
+# Tambahkan font custom seperti Calibri, Bernard, Bodoni (harus legal dan disertakan dalam folder fonts/)
 COPY fonts/ /usr/share/fonts/truetype/custom/
 
-# Update font cache agar dikenali sistem
+# Update font cache
 RUN fc-cache -f -v
 
-# Copy file dependency dan install
+# Node dependencies
 COPY package*.json ./
 RUN npm install
 
-# Salin seluruh source code
 COPY . .
 
-# Build aplikasi
 RUN npm run build
 
-# Expose port 3000 (ubah jika perlu)
 EXPOSE 3000
 
 CMD ["npm", "run", "start"]
