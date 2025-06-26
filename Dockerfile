@@ -1,6 +1,5 @@
 FROM node:22
 
-<<<<<<< HEAD
 # Non-interaktif untuk instalasi
 ENV DEBIAN_FRONTEND=noninteractive
 
