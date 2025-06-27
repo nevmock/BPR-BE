@@ -5,17 +5,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /app
 
 # Install font dependencies dan LibreOffice
-RUN apt-get update --allow-releaseinfo-change && \
+RUN apt-get update && \
     echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections && \
-    apt-get update && \
     apt-get install -y --no-install-recommends \
-    software-properties-common \
     fontconfig \
     wget \
     cabextract \
     xfonts-utils \
     libreoffice \
-    && apt-add-repository multiverse && \
     apt-get update && \
     echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections && \
     apt-get install -y ttf-mscorefonts-installer && \
