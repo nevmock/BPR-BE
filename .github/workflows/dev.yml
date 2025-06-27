@@ -56,10 +56,12 @@ jobs:
               -e JWT_SECRET="${{ secrets.JWT_SECRET }}" \
               -p "${{ secrets.PORT }}":3000 \
               -v bpr-api-dev:/app/public \
-               "🧹 Cleaning up unused Docker resources..."
-            docker system prune -f
-
+              nevmock/bpr-api-dev:latest
+            
             echo "🔄 Running Prisma migrations..."
             docker exec -it bpr-api-dev npx prisma migrate deploy
+            
+            echo "🧹 Cleaning up unused Docker resources..."
+            docker system prune -f
 
             echo "✅ Deployment to Development environment completed successfully!"
