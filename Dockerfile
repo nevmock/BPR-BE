@@ -20,7 +20,7 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Tambahkan font custom seperti Calibri, Bernard, Bodoni (harus legal dan disertakan dalam folder fonts/)
-COPY fonts/ /usr/share/fonts/truetype/custom/
+COPY src/fonts/ /usr/share/fonts/truetype/custom/
 
 # Update font cache
 RUN fc-cache -f -v
