@@ -1,11 +1,11 @@
-FROM node:22-bookworm-slim
+FROM node:22-bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
 
 # Install font dependencies dan LibreOffice
-RUN sed -i 's/main$/main contrib non-free non-free-firmware/' /etc/apt/sources.list && \
+RUN echo "deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware" > /etc/apt/sources.list && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
     software-properties-common \
