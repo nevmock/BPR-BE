@@ -39,6 +39,11 @@ class KSSRoutes extends BaseRoutes {
             authToken,
           tryCatch(KSSController.generatePDF)
         ]);
+
+        this.router.get('/:id/generate-docx', [
+            authToken,
+            tryCatch(KSSController.generateDOCX)
+        ]);
     }
 }
 
