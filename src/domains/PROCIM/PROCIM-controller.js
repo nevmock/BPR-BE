@@ -245,6 +245,118 @@ class PROCIMController {
       }
     }
 
+    async generateDOCX(req, res) {
+      try {
+        const { id } = req.params;
+        const dbData = await PROCIMService.getById(id);
+
+        if (!dbData) {
+          return res.status(404).json({ message: "FLEKSI not found" });
+        }
+
+        const tanggal = new Date(dbData.tanggal_surat_persetujuan_kredit);
+        const tanggal1 = new Date(dbData.tanggal_lahir_debitur);
+        const tanggal2 = new Date(dbData.tanggal_angsuran_pertama);
+        const tanggal3 = new Date(dbData.tanggal_lahir_penjamin);
+        const bulanIndonesia = [
+         "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+         "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+        const formattedTanggal = `${tanggal.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+
+
+        //table
+        const elektronik = dbData.barang_elektronik.map((item, index) => ({
+            no: index + 1,
+            nama_barang: item.nama_barang,
+            tipe: item.tipe,
+            harga: "Rp. " + item.harga,
+        }));
+        const furniture = dbData.barang_furniture.map((item, index) => ({
+            no: index + 1,
+            nama_barang: item.nama_barang,
+            tipe: item.tipe,
+            harga: "Rp. " + item.harga,
+        }));
+
+        const data = {
+            nomor_surat: dbData.nomor_surat,
+            tanggal_surat_persetujuan_kredit: formattedTanggal,
+            nama_debitur: dbData.nama_debitur,
+            tempat_lahir_debitur: dbData.tempat_lahir_debitur,
+            tanggal_lahir_debitur: formattedTanggal1,
+            alamat_debitur: dbData.alamat_debitur,
+            no_ktp_debitur: dbData.no_ktp_debitur,
+            nominal_plafond: dbData.nominal_plafond,
+            suku_bunga_pinjaman: dbData.suku_bunga_pinjaman,
+            jangka_waktu_pinjaman: dbData.jangka_waktu_pinjaman,
+            angsuran_pinjaman: dbData.angsuran_pinjaman,
+            tanggal_angsuran_pertama: formattedTanggal2,
+            nomor_rekening_pinjaman: dbData.nomor_rekening_pinjaman,
+            nama_penjamin: dbData.nama_penjamin,
+            tempat_lahir_penjamin: dbData.tempat_lahir_penjamin,
+            tanggal_lahir_penjamin: formattedTanggal3,
+            alamat_penjamin: dbData.alamat_penjamin,
+            no_ktp_penjamin: dbData.no_ktp_penjamin,
+            barang_elektronik: elektronik,
+            barang_furniture: furniture,
+            barang_jaminan_lainnya: dbData.barang_jaminan_lainnya,
+        };
+
+        const templatePath = path.resolve("src/templates/", "PROCIM.docx");
+
+        if (!fs.existsSync(templatePath)) {
+          return res.status(404).json({
+            error: "Template file tidak ditemukan",
+            path: templatePath,
+          });
+        }
+
+        const content = fs.readFileSync(templatePath, "binary");
+        const zip = new PizZip(content);
+
+        const doc = new Docxtemplater(zip, {
+          paragraphLoop: true,
+          linebreaks: true,
+          delimiters: {
+            start: "{{",
+            end: "}}",
+          },
+        });
+
+        doc.setData(data);
+
+        try {
+          doc.render();
+        } catch (renderError) {
+          return res.status(400).json({
+            error: "Template rendering failed",
+            message: renderError.message,
+            details: renderError.properties?.errors || [],
+          });
+        }
+
+        const buf = doc.getZip().generate({ type: "nodebuffer" });
+        const timestamp = Date.now();
+        const docxFilename = `PROCIM_${id}_${timestamp}.docx`;
+        
+        res.set({
+          "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "Content-Disposition": `attachment; filename="${docxFilename}"`,
+          "Content-Length": buf.length,
+        });
+
+        res.send(buf);
+
+      } catch (err) {
+        console.error("Gagal generate DOCX:", err);
+        res.status(500).json({ error: "Failed to generate Word document", message: err.message });
+      }
+    }
+
 
     async put(req, res) {
         const { id } = req.params;
