@@ -12,9 +12,7 @@ RUN apt-get update && \
     wget \
     cabextract \
     xfonts-utils \
-    libreoffice \
-    apt-get update && \
-    echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections && \
+    libreoffice && \
     apt-get install -y ttf-mscorefonts-installer && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     fc-cache -f -v
