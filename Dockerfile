@@ -1,4 +1,4 @@
-FROM node:22
+FROM node:22-jammy
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -17,17 +17,15 @@ RUN apt-get update && \
     apt-get update && \
     echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections && \
     apt-get install -y ttf-mscorefonts-installer && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    apt-get clean && rm -rf /var/lib/apt/lists/* && \
+    fc-cache -f -v
 
 # Tambahkan font custom seperti Calibri, Bernard, Bodoni (harus legal dan disertakan dalam folder fonts/)
 COPY src/fonts/ /usr/share/fonts/truetype/custom/
 
-# Update font cache
-RUN fc-cache -f -v
-
 # Node dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 COPY . .
 
