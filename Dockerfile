@@ -1,11 +1,12 @@
-FROM node:22-jammy
+FROM node:22-bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
 
 # Install font dependencies dan LibreOffice
-RUN apt-get update && \
+RUN sed -i 's/main$/main contrib non-free non-free-firmware/' /etc/apt/sources.list && \
+    apt-get update && \
     apt-get install -y --no-install-recommends \
     software-properties-common \
     fontconfig \
