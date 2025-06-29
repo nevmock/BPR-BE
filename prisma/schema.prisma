@@ -44,6 +44,8 @@ model KSSM {
   nama String?
   jabatan String?
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
@@ -94,6 +96,7 @@ model KSS {
   nama String?
   jabatan String?
   nama_debitur String?
+  status_debitur String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
@@ -140,6 +143,8 @@ model PINEK {
   nomor_surat String?
   tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   pekerjaan_debitur String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
@@ -174,6 +179,8 @@ model FLEKSI {
   nomor_surat String?
   tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
   alamat_debitur String?
@@ -206,6 +213,8 @@ model PROCIM {
   nomor_surat String?
   tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
   alamat_debitur String?
@@ -236,6 +245,8 @@ model KSM {
   nama String?
   jabatan String?
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
@@ -284,6 +295,8 @@ model KMSM {
   nama String?
   jabatan String?
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
@@ -331,6 +344,8 @@ model KRS {
   nama String?
   jabatan String?
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
@@ -376,6 +391,8 @@ model KMM {
   nama String?
   jabatan String?
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
@@ -424,6 +441,7 @@ model KMS {
   nama String?
   jabatan String?
   nama_debitur String?
+  status_debitur String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
@@ -434,16 +452,16 @@ model KMS {
   jangka_waktu Int?
   suku_bunga Float?
   pekerjaan_debitur String?
-  nama_penjamin String?
+  nama_SHM String?
   alamat_penjamin String?
-  no_ktp_penjamin String?
+  no_ktp_SHM String?
   detail_jaminan String?
   no_ktp_debitur String?
   telah_persetujuan_dari String?
-  nama_penjamin_1 String?
+  nama_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
-  no_ktp_penjamin_1 String?
+  no_ktp_penjamin String?
   bertempat_sama_dengan String?
   debitur_adalah_pemilik_rekening String?
   melunasi_hutang_sebesar Int?
@@ -470,6 +488,8 @@ model KEF {
   nomor_surat String?
   tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
   alamat_rumah_debitur String?
@@ -513,6 +533,8 @@ model KAR {
   nama String?
   jabatan String?
   nama_debitur String?
+  status_debitur String?
+  nama_SHM String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date

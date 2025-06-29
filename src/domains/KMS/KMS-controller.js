@@ -30,6 +30,7 @@ class KMSController {
             nama,
             jabatan,
             nama_debitur,
+            status_debitur,
             alamat_usaha_debitur,
             alamat_rumah_debitur,
             tanggal_surat_permohonan_kredit,
@@ -40,16 +41,16 @@ class KMSController {
             jangka_waktu,
             suku_bunga,
             pekerjaan_debitur,
-            nama_penjamin,
+            nama_SHM,
             alamat_penjamin,
-            no_ktp_penjamin,
+            no_ktp_SHM,
             detail_jaminan,
             no_ktp_debitur,
             telah_persetujuan_dari,
-            nama_penjamin_1,
+            nama_penjamin,
             tempat_lahir_penjamin,
             tanggal_lahir_penjamin,
-            no_ktp_penjamin_1,
+            no_ktp_penjamin,
             bertempat_sama_dengan,
             debitur_adalah_pemilik_rekening,
             melunasi_hutang_sebesar,
@@ -73,6 +74,7 @@ class KMSController {
             nama,
             jabatan,
             nama_debitur,
+            status_debitur,
             alamat_usaha_debitur,
             alamat_rumah_debitur,
             tanggal_surat_permohonan_kredit,
@@ -83,16 +85,16 @@ class KMSController {
             jangka_waktu,
             suku_bunga,
             pekerjaan_debitur,
-            nama_penjamin,
+            nama_SHM,
             alamat_penjamin,
-            no_ktp_penjamin,
+            no_ktp_SHM,
             detail_jaminan,
             no_ktp_debitur,
             telah_persetujuan_dari,
-            nama_penjamin_1,
+            nama_penjamin,
             tempat_lahir_penjamin,
             tanggal_lahir_penjamin,
-            no_ktp_penjamin_1,
+            no_ktp_penjamin,
             bertempat_sama_dengan,
             debitur_adalah_pemilik_rekening,
             melunasi_hutang_sebesar,
@@ -137,10 +139,10 @@ class KMSController {
          "Juli", "Agustus", "September", "Oktober", "November", "Desember"
         ];
         const formattedTanggal = `${tanggal.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal1.getMonth()]} ${tanggal1.getFullYear()}`;
+        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
+        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
+        const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
 
         const data = {
             nama: dbData.nama,
@@ -156,16 +158,16 @@ class KMSController {
             jangka_waktu: dbData.jangka_waktu,
             suku_bunga: dbData.suku_bunga,
             pekerjaan_debitur: dbData.pekerjaan_debitur,
-            nama_penjamin: dbData.nama_penjamin,
+            nama_SHM: dbData.nama_SHM,
             alamat_penjamin: dbData.alamat_penjamin,
-            no_ktp_penjamin: dbData.no_ktp_penjamin,
+            no_ktp_SHM: dbData.no_ktp_SHM,
             detail_jaminan: dbData.detail_jaminan,
             no_ktp_debitur: dbData.no_ktp_debitur,
             telah_persetujuan_dari: dbData.telah_persetujuan_dari,
-            nama_penjamin_1: dbData.nama_penjamin_1,
+            nama_penjamin: dbData.nama_penjamin,
             tempat_lahir_penjamin: dbData.tempat_lahir_penjamin,
             tanggal_lahir_penjamin: formattedTanggal2,
-            no_ktp_penjamin_1: dbData.no_ktp_penjamin_1,
+            no_ktp_penjamin: dbData.no_ktp_penjamin,
             bertempat_sama_dengan: dbData.bertempat_sama_dengan,
             debitur_adalah_pemilik_rekening: dbData.debitur_adalah_pemilik_rekening,
             melunasi_hutang_sebesar: dbData.melunasi_hutang_sebesar,
@@ -299,10 +301,10 @@ class KMSController {
          "Juli", "Agustus", "September", "Oktober", "November", "Desember"
         ];
         const formattedTanggal = `${tanggal.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal1.getMonth()]} ${tanggal1.getFullYear()}`;
+        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
+        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
+        const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
 
         const data = {
             nama: dbData.nama,
@@ -318,16 +320,16 @@ class KMSController {
             jangka_waktu: dbData.jangka_waktu,
             suku_bunga: dbData.suku_bunga,
             pekerjaan_debitur: dbData.pekerjaan_debitur,
-            nama_penjamin: dbData.nama_penjamin,
+            nama_SHM: dbData.nama_SHM,
             alamat_penjamin: dbData.alamat_penjamin,
-            no_ktp_penjamin: dbData.no_ktp_penjamin,
+            no_ktp_SHM: dbData.no_ktp_SHM,
             detail_jaminan: dbData.detail_jaminan,
             no_ktp_debitur: dbData.no_ktp_debitur,
             telah_persetujuan_dari: dbData.telah_persetujuan_dari,
-            nama_penjamin_1: dbData.nama_penjamin_1,
+            nama_penjamin: dbData.nama_penjamin,
             tempat_lahir_penjamin: dbData.tempat_lahir_penjamin,
             tanggal_lahir_penjamin: formattedTanggal2,
-            no_ktp_penjamin_1: dbData.no_ktp_penjamin_1,
+            no_ktp_penjamin: dbData.no_ktp_penjamin,
             bertempat_sama_dengan: dbData.bertempat_sama_dengan,
             debitur_adalah_pemilik_rekening: dbData.debitur_adalah_pemilik_rekening,
             melunasi_hutang_sebesar: dbData.melunasi_hutang_sebesar,
