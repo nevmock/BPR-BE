@@ -29,6 +29,8 @@ class FLEKSIController {
         nomor_surat,
         tanggal_surat_persetujuan_kredit,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
         alamat_debitur,
@@ -58,6 +60,8 @@ class FLEKSIController {
             nomor_surat,
             tanggal_surat_persetujuan_kredit,
             nama_debitur,
+            status_debitur,
+            nama_SHM,
             tempat_lahir_debitur,
             tanggal_lahir_debitur,
             alamat_debitur,
@@ -107,9 +111,9 @@ class FLEKSIController {
          "Juli", "Agustus", "September", "Oktober", "November", "Desember"
         ];
         const formattedTanggal = `${tanggal.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal1.getMonth()]} ${tanggal1.getFullYear()}`;
+        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
+        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
 
 
         //table
@@ -268,9 +272,9 @@ class FLEKSIController {
          "Juli", "Agustus", "September", "Oktober", "November", "Desember"
         ];
         const formattedTanggal = `${tanggal.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal1.getMonth()]} ${tanggal1.getFullYear()}`;
+        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
+        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
 
 
         //table
