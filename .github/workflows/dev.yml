@@ -59,7 +59,7 @@ jobs:
               nevmock/bpr-api-dev:latest
             
             echo "🔄 Running Prisma migrations..."
-            docker exec -it bpr-api-dev npx prisma migrate deploy
+            docker exec bpr-api-dev npx prisma migrate deploy --preview-feature
             
             echo "🧹 Cleaning up unused Docker resources..."
             docker system prune -f
