@@ -1,7 +1,25 @@
 import db from "../../config/db.js";
 class PINEKService {
-    async getAll(){
-        const datas = await db.PINEK.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.PINEK.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })    
+        } else {
+            datas = await db.PINEK.findMany({
             include:{
                 User:{
                     select:{
@@ -14,6 +32,7 @@ class PINEKService {
                 }
             }
         })
+        }
         return datas
     }
     async getById(id) {
@@ -39,6 +58,8 @@ class PINEKService {
         nomor_surat,
         tanggal_surat_persetujuan_kredit,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         pekerjaan_debitur,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
@@ -69,6 +90,8 @@ class PINEKService {
                 nomor_surat:nomor_surat,
                 tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nama_debitur:nama_debitur,
+                status_debitur:status_debitur,
+                nama_SHM:nama_SHM,
                 pekerjaan_debitur:pekerjaan_debitur,
                 tempat_lahir_debitur:tempat_lahir_debitur,
                 tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
@@ -104,6 +127,8 @@ class PINEKService {
         nomor_surat,
         tanggal_surat_persetujuan_kredit,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         pekerjaan_debitur,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
@@ -138,6 +163,8 @@ class PINEKService {
                 nomor_surat:nomor_surat,
                 tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nama_debitur:nama_debitur,
+                status_debitur:status_debitur,
+                nama_SHM:nama_SHM,
                 pekerjaan_debitur:pekerjaan_debitur,
                 tempat_lahir_debitur:tempat_lahir_debitur,
                 tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,

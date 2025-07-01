@@ -8,7 +8,8 @@ import { exec } from "child_process";
 
 class KSSController {
     async get(req, res) {
-        const datas = await KSSService.getAll()
+        const {page, limit} = req.query
+        const datas = await KSSService.getAll(page, limit)
         return successResponse(res, datas)
     }
 
@@ -28,6 +29,7 @@ class KSSController {
             nama,
             jabatan,
             nama_debitur,
+            status_debitur,
             alamat_usaha_debitur,
             alamat_rumah_debitur,
             tanggal_surat_permohonan_kredit,
@@ -71,6 +73,7 @@ class KSSController {
             nama,
             jabatan,
             nama_debitur,
+            status_debitur,
             alamat_usaha_debitur,
             alamat_rumah_debitur,
             tanggal_surat_permohonan_kredit,
@@ -135,10 +138,10 @@ class KSSController {
          "Juli", "Agustus", "September", "Oktober", "November", "Desember"
         ];
         const formattedTanggal = `${tanggal.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
-        const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal1.getMonth()]} ${tanggal1.getFullYear()}`;
+        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
+        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
+        const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
 
         const data = {
             nama: dbData.nama,
@@ -275,6 +278,121 @@ class KSSController {
           message: error.message,
           timestamp: new Date().toISOString(),
         });
+      }
+    }
+
+    async generateDOCX(req, res) {
+      try {
+        const { id } = req.params;
+        const dbData = await KSSService.getById(id);
+
+        if (!dbData) {
+          return res.status(404).json({ message: "KSS not found" });
+        }
+
+        const tanggal = new Date(dbData.tanggal_surat_permohonan_kredit);
+        const tanggal1 = new Date(dbData.tanggal_surat_persetujuan_kredit);
+        const tanggal2 = new Date(dbData.tanggal_lahir_penjamin);
+        const tanggal3 = new Date(dbData.tanggal_angsuran_dimulai);
+        const tanggal4 = new Date(dbData.tanggal_angsuran_terakhir);
+        const bulanIndonesia = [
+         "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+         "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+        const formattedTanggal = `${tanggal.getDate()} ${bulanIndonesia[tanggal.getMonth()]} ${tanggal.getFullYear()}`;
+        const formattedTanggal1 = `${tanggal1.getDate()} ${bulanIndonesia[tanggal1.getMonth()]} ${tanggal1.getFullYear()}`;
+        const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
+        const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
+        const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
+
+        const data = {
+            nama: dbData.nama,
+            jabatan: dbData.jabatan,
+            nama_debitur: dbData.nama_debitur,
+            alamat_usaha_debitur: dbData.alamat_usaha_debitur,
+            alamat_rumah_debitur: dbData.alamat_rumah_debitur,
+            tanggal_surat_permohonan_kredit: formattedTanggal,
+            tanggal_surat_persetujuan_kredit: formattedTanggal1,
+            nomor_surat: dbData.nomor_surat,
+            plaford: dbData.plaford,
+            jangka_waktu: dbData.jangka_waktu,
+            suku_bunga: dbData.suku_bunga,
+            biaya_provisi: dbData.biaya_provisi,
+            biaya_administrasi: dbData.biaya_administrasi,
+            detail_jaminan: dbData.detail_jaminan,
+            pekerjaan_debitur: dbData.pekerjaan_debitur,
+            nama_penjamin: dbData.nama_penjamin,
+            alamat_penjamin: dbData.alamat_penjamin,
+            no_ktp_penjamin: dbData.no_ktp_penjamin,
+            no_ktp_debitur: dbData.no_ktp_debitur,
+            persetujuan_dari: dbData.persetujuan_dari,
+            tempat_lahir_penjamin: dbData.tempat_lahir_penjamin,
+            tanggal_lahir_penjamin: formattedTanggal2,
+            tinggal_sama_dengan: dbData.tinggal_sama_dengan,
+            pemilik_rekening_pada: dbData.pemilik_rekening_pada,
+            tujuan_penggunaan_kredit: dbData.tujuan_penggunaan_kredit,
+            total_seluruh_pinjaman: dbData.total_seluruh_pinjaman,
+            tanggal_angsuran_dimulai: formattedTanggal3,
+            tanggal_angsuran_terakhir: formattedTanggal4,
+            angsuran_tiap_bulan: dbData.angsuran_tiap_bulan,
+            nominal_provisi: dbData.nominal_provisi,
+            nominal_administrasi: dbData.nominal_administrasi,
+            nama_asuransi: dbData.nama_asuransi,
+            biaya_asuransi: dbData.biaya_asuransi,
+            biaya_materai: dbData.biaya_materai,
+            biaya_notaris: dbData.biaya_notaris,
+            total_biaya: dbData.total_biaya,
+            nama_shm: dbData.nama_shm,
+        };
+
+        const templatePath = path.resolve("src/templates/", "KSS.docx");
+
+        if (!fs.existsSync(templatePath)) {
+          return res.status(404).json({
+            error: "Template file tidak ditemukan",
+            path: templatePath,
+          });
+        }
+
+        const content = fs.readFileSync(templatePath, "binary");
+        const zip = new PizZip(content);
+
+        const doc = new Docxtemplater(zip, {
+          paragraphLoop: true,
+          linebreaks: true,
+          delimiters: {
+            start: "{{",
+            end: "}}",
+          },
+        });
+
+        doc.setData(data);
+
+        try {
+          doc.render();
+        } catch (renderError) {
+          return res.status(400).json({
+            error: "Template rendering failed",
+            message: renderError.message,
+            details: renderError.properties?.errors || [],
+          });
+        }
+
+        const buf = doc.getZip().generate({ type: "nodebuffer" });
+        const timestamp = Date.now();
+        const docxFilename = `KSS_${id}_${timestamp}.docx`;
+
+        res.set({
+          "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "Content-Disposition": `attachment; filename="${docxFilename}"`,
+          "Content-Length": buf.length,
+        });
+
+        res.send(buf);
+
+      } catch (err) {
+        console.error("Gagal generate DOCX:", err);
+        res.status(500).json({ error: "Failed to generate Word document", message: err.message });
       }
     }
 

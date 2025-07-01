@@ -7,8 +7,26 @@ import { parseJWT, generateToken } from "../../utils/jwtTokenConfig.js";
 import { matchPassword, hashPassword } from "../../utils/passwordConfig.js";
 
 class KSSMService {
-    async getAll(){
-        const datas = await db.KSSM.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KSSM.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })    
+        } else {
+        datas = await db.KSSM.findMany({
             include:{
                 User:{
                     select:{
@@ -21,6 +39,7 @@ class KSSMService {
                 }
             }
         })
+        }
         return datas
     }
 
@@ -47,6 +66,8 @@ class KSSMService {
     async create({nama,
             jabatan, 
             nama_debitur,
+            status_debitur,
+            nama_SHM,
             alamat_usaha_debitur,
             alamat_rumah_debitur,
             tanggal_surat_permohonan_kredit,
@@ -93,6 +114,8 @@ class KSSMService {
             nama:nama,
             jabatan:jabatan,
             nama_debitur:nama_debitur,
+            status_debitur:status_debitur,
+            nama_SHM:nama_SHM,
             alamat_usaha_debitur:alamat_usaha_debitur,
             alamat_rumah_debitur:alamat_rumah_debitur,
             tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
@@ -145,6 +168,8 @@ class KSSMService {
         nama,
         jabatan, 
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
         tanggal_surat_permohonan_kredit,
@@ -195,6 +220,8 @@ class KSSMService {
                 nama:nama,
                 jabatan:jabatan,
                 nama_debitur:nama_debitur,
+                status_debitur:status_debitur,
+                nama_SHM:nama_SHM,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
                 tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,

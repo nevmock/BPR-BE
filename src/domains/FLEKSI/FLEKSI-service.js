@@ -1,8 +1,12 @@
 import db from "../../config/db.js";
 class FLEKSIService {
-    async getAll(){
-        const datas = await db.FLEKSI.findMany({
-            include:{
+    async getAll(page, limit){
+      let datas;
+      if (page && limit){
+        datas = await db.FLEKSI.findMany({
+          take: limit,
+          skip: (page - 1) * limit,
+          include:{
                 User:{
                     select:{
                         id:true,
@@ -16,7 +20,24 @@ class FLEKSIService {
                 barang_furniture: true 
             }
         })
-        return datas
+      } else {
+        datas = await db.FLEKSI.findMany({
+          include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                },
+                barang_elektronik: true,   
+                barang_furniture: true 
+            }
+        })
+      }
+      return datas
     }
 
     async getById(id) {
@@ -45,6 +66,8 @@ class FLEKSIService {
         nomor_surat,
         tanggal_surat_persetujuan_kredit,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
         alamat_debitur,
@@ -73,6 +96,8 @@ class FLEKSIService {
             nomor_surat:nomor_surat,
             tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit ? new Date(tanggal_surat_persetujuan_kredit) : null,
             nama_debitur:nama_debitur,
+            status_debitur:status_debitur,
+            nama_SHM:nama_SHM,
             tempat_lahir_debitur:tempat_lahir_debitur,
             tanggal_lahir_debitur: tanggal_lahir_debitur ? new Date(tanggal_lahir_debitur) : null,
             alamat_debitur:alamat_debitur,
@@ -124,6 +149,8 @@ class FLEKSIService {
         nomor_surat,
         tanggal_surat_persetujuan_kredit,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         tempat_lahir_debitur,
         tanggal_lahir_debitur,
         alamat_debitur,
@@ -164,6 +191,8 @@ class FLEKSIService {
                 nomor_surat:nomor_surat,
                 tanggal_surat_persetujuan_kredit:tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
                 nama_debitur:nama_debitur,
+                status_debitur:status_debitur,
+                nama_SHM:nama_SHM,
                 tempat_lahir_debitur:tempat_lahir_debitur,
                 tanggal_lahir_debitur:tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
                 alamat_debitur:alamat_debitur,

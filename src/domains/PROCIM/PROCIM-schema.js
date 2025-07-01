@@ -13,6 +13,12 @@ const createPROCIM = JoiExtended.object({
     nama_debitur : JoiExtended.string()
             .optional()
             .min(0),
+        status_debitur : JoiExtended.string()
+            .optional()
+            .min(0),
+        nama_SHM : JoiExtended.string()
+            .optional()
+            .min(0),
     tempat_lahir_debitur : JoiExtended.string()
             .optional()
             .min(0),

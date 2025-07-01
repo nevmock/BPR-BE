@@ -11,6 +11,7 @@ import helmet from "helmet";
 import logger from "./utils/logger.js";
 import multer from "multer";
 import path from "path";
+import morgan from "morgan";
 
 import BaseError from "./base_classes/base-error.js";
 import authRoutes from "./domains/auth/auth-routes.js";

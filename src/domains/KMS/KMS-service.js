@@ -1,8 +1,12 @@
 import db from "../../config/db.js";
 
 class KMSService {
-    async getAll(){
-        const datas = await db.KMS.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KMS.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
             include:{
                 User:{
                     select:{
@@ -15,6 +19,21 @@ class KMSService {
                 }
             }
         })
+        } else {
+            datas = await db.KMS.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
+        }
         return datas
     }
 
@@ -42,6 +61,7 @@ class KMSService {
         nama,
         jabatan,
         nama_debitur,
+        status_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
         tanggal_surat_permohonan_kredit,
@@ -52,16 +72,16 @@ class KMSService {
         jangka_waktu,
         suku_bunga,
         pekerjaan_debitur,
-        nama_penjamin,
+        nama_SHM,
         alamat_penjamin,
-        no_ktp_penjamin,
+        no_ktp_SHM,
         detail_jaminan,
         no_ktp_debitur,
         telah_persetujuan_dari,
-        nama_penjamin_1,
+        nama_penjamin,
         tempat_lahir_penjamin,
         tanggal_lahir_penjamin,
-        no_ktp_penjamin_1,
+        no_ktp_penjamin,
         bertempat_sama_dengan,
         debitur_adalah_pemilik_rekening,
         melunasi_hutang_sebesar,
@@ -84,6 +104,7 @@ class KMSService {
             nama:nama,
             jabatan:jabatan,
             nama_debitur:nama_debitur,
+            status_debitur:status_debitur,
             alamat_usaha_debitur:alamat_usaha_debitur,
             alamat_rumah_debitur:alamat_rumah_debitur,
             tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
@@ -94,16 +115,16 @@ class KMSService {
             jangka_waktu:jangka_waktu,
             suku_bunga:suku_bunga,
             pekerjaan_debitur:pekerjaan_debitur,
-            nama_penjamin:nama_penjamin,
+            nama_SHM:nama_SHM,
             alamat_penjamin:alamat_penjamin,
-            no_ktp_penjamin:no_ktp_penjamin,
+            no_ktp_SHM:no_ktp_SHM,
             detail_jaminan:detail_jaminan,
             no_ktp_debitur:no_ktp_debitur,
             telah_persetujuan_dari:telah_persetujuan_dari,
-            nama_penjamin_1:nama_penjamin_1,
+            nama_penjamin:nama_penjamin,
             tempat_lahir_penjamin:tempat_lahir_penjamin,
             tanggal_lahir_penjamin:tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
-            no_ktp_penjamin_1:no_ktp_penjamin_1,
+            no_ktp_penjamin:no_ktp_penjamin,
             bertempat_sama_dengan:bertempat_sama_dengan,
             debitur_adalah_pemilik_rekening:debitur_adalah_pemilik_rekening,
             melunasi_hutang_sebesar:melunasi_hutang_sebesar,
@@ -132,6 +153,7 @@ class KMSService {
         nama,
         jabatan,
         nama_debitur,
+        status_debitur,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
         tanggal_surat_permohonan_kredit,
@@ -142,16 +164,16 @@ class KMSService {
         jangka_waktu,
         suku_bunga,
         pekerjaan_debitur,
-        nama_penjamin,
+        nama_SHM,
         alamat_penjamin,
-        no_ktp_penjamin,
+        no_ktp_SHM,
         detail_jaminan,
         no_ktp_debitur,
         telah_persetujuan_dari,
-        nama_penjamin_1,
+        nama_penjamin,
         tempat_lahir_penjamin,
         tanggal_lahir_penjamin,
-        no_ktp_penjamin_1,
+        no_ktp_penjamin,
         bertempat_sama_dengan,
         debitur_adalah_pemilik_rekening,
         melunasi_hutang_sebesar,
@@ -178,6 +200,7 @@ class KMSService {
                 nama:nama,
                 jabatan:jabatan,
                 nama_debitur:nama_debitur,
+                status_debitur:status_debitur,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
                 tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
@@ -188,16 +211,16 @@ class KMSService {
                 jangka_waktu:jangka_waktu,
                 suku_bunga:suku_bunga,
                 pekerjaan_debitur:pekerjaan_debitur,
-                nama_penjamin:nama_penjamin,
+                nama_SHM:nama_SHM,
                 alamat_penjamin:alamat_penjamin,
-                no_ktp_penjamin:no_ktp_penjamin,
+                no_ktp_SHM:no_ktp_SHM,
                 detail_jaminan:detail_jaminan,
                 no_ktp_debitur:no_ktp_debitur,
                 telah_persetujuan_dari:telah_persetujuan_dari,
-                nama_penjamin_1:nama_penjamin_1,
+                nama_penjamin:nama_penjamin,
                 tempat_lahir_penjamin:tempat_lahir_penjamin,
                 tanggal_lahir_penjamin:tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
-                no_ktp_penjamin_1:no_ktp_penjamin_1,
+                no_ktp_penjamin:no_ktp_penjamin,
                 bertempat_sama_dengan:bertempat_sama_dengan,
                 debitur_adalah_pemilik_rekening:debitur_adalah_pemilik_rekening,
                 melunasi_hutang_sebesar:melunasi_hutang_sebesar,
