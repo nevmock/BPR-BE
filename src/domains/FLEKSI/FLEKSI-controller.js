@@ -50,7 +50,7 @@ class FLEKSIController {
         barang_elektronik,
         barang_furniture,
         barang_jaminan_lainnya,
-        nama_penjamin_hubungan,
+        hubungan_debitur_penjamin,
         is_submitted,
         } = req.body;
 
@@ -81,7 +81,7 @@ class FLEKSIController {
             barang_elektronik,
             barang_furniture,
             barang_jaminan_lainnya,
-            nama_penjamin_hubungan,
+            hubungan_debitur_penjamin,
             is_submitted,
             userID
         })
@@ -153,7 +153,7 @@ class FLEKSIController {
         barang_elektronik: elektronik,
         barang_furniture: furniture,
         barang_jaminan_lainnya: dbData.barang_jaminan_lainnya,
-        nama_penjamin_hubungan: dbData.nama_penjamin_hubungan,
+        hubungan_debitur_penjamin: dbData.hubungan_debitur_penjamin,
         };
 
         const templatePath = path.resolve("src/templates/", "FLEKSI.docx");
@@ -314,7 +314,7 @@ class FLEKSIController {
         barang_elektronik: elektronik,
         barang_furniture: furniture,
         barang_jaminan_lainnya: dbData.barang_jaminan_lainnya,
-        nama_penjamin_hubungan: dbData.nama_penjamin_hubungan,
+        hubungan_debitur_penjamin: dbData.hubungan_debitur_penjamin,
         };
 
         const templatePath = path.resolve("src/templates/", "FLEKSI.docx");
