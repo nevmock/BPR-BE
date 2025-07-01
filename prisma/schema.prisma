@@ -200,7 +200,7 @@ model FLEKSI {
   barang_elektronik FleksiBarangElektronik[]
   barang_furniture FleksiBarangFurniture[]
   barang_jaminan_lainnya String?
-  nama_penjamin_hubungan String?
+  hubungan_debitur_penjamin String?
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
   submitted_at DateTime?

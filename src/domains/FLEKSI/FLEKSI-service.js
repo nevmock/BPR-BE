@@ -87,7 +87,7 @@ class FLEKSIService {
         barang_elektronik,
         barang_furniture,
         barang_jaminan_lainnya,
-        nama_penjamin_hubungan,
+        hubungan_debitur_penjamin,
         submitted_at,
         userID
     }){
@@ -129,7 +129,7 @@ class FLEKSIService {
               }))
             },
             barang_jaminan_lainnya:barang_jaminan_lainnya,
-            nama_penjamin_hubungan:nama_penjamin_hubungan,
+            hubungan_debitur_penjamin:hubungan_debitur_penjamin,
             submitted_at: new Date(),
             userID
           },
@@ -170,7 +170,7 @@ class FLEKSIService {
         barang_elektronik,
         barang_furniture,
         barang_jaminan_lainnya,
-        nama_penjamin_hubungan,
+        hubungan_debitur_penjamin,
         status,
         submitted_at,
         userID,
@@ -224,7 +224,7 @@ class FLEKSIService {
                 }))
                 },
                 barang_jaminan_lainnya:barang_jaminan_lainnya,
-                nama_penjamin_hubungan:nama_penjamin_hubungan,
+                hubungan_debitur_penjamin:hubungan_debitur_penjamin,
                 status:status,
                 updated_at: new Date(),
                 submitted_at,

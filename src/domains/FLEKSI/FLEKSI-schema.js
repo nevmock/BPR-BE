@@ -85,7 +85,7 @@ const createFLEKSI = JoiExtended.object({
     barang_jaminan_lainnya : JoiExtended.string()
             .optional()
             .min(0),
-    nama_penjamin_hubungan : JoiExtended.string()
+    hubungan_debitur_penjamin : JoiExtended.string()
             .optional()
             .min(0),
         status : JoiExtended.string()
