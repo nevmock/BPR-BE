@@ -1,7 +1,11 @@
 import db from "../../config/db.js";
 class KRSService {
-    async getAll(){
-        const datas = await db.KRS.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KRS.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
             include:{
                 User:{
                     select:{
@@ -14,6 +18,21 @@ class KRSService {
                 }
             }
         })
+        } else {
+            datas = await db.KRS.findMany({
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })
+        }
         return datas
     }
 
@@ -41,6 +60,8 @@ class KRSService {
         nama,
         jabatan,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
         tanggal_surat_permohonan_kredit,
@@ -82,6 +103,8 @@ class KRSService {
             nama:nama,
             jabatan:jabatan,
             nama_debitur:nama_debitur,
+            status_debitur:status_debitur,
+            nama_SHM:nama_SHM,
             alamat_usaha_debitur:alamat_usaha_debitur,
             alamat_rumah_debitur:alamat_rumah_debitur,
             tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
@@ -129,6 +152,8 @@ class KRSService {
         nama,
         jabatan,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
         tanggal_surat_permohonan_kredit,
@@ -174,6 +199,8 @@ class KRSService {
                 nama:nama,
                 jabatan:jabatan,
                 nama_debitur:nama_debitur,
+                status_debitur:status_debitur,
+                nama_SHM:nama_SHM,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
                 tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,

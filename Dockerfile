@@ -1,25 +1,35 @@
-# Gunakan Node.js versi 22 berbasis Debian
-FROM node:22
+FROM node:22-bookworm
 
-# Set working directory di dalam container
+ENV DEBIAN_FRONTEND=noninteractive
+
 WORKDIR /app
 
-# Install LibreOffice dan dependencies lainnya
-RUN apt-get update && apt-get install -y \
-    libreoffice
+# Install font dependencies, LibreOffice, dan download Courier New
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    fontconfig \
+    wget \
+    cabextract \
+    xfonts-utils \
+    libreoffice && \
+    mkdir -p /usr/share/fonts/truetype/custom && \
+    wget -O "/usr/share/fonts/truetype/custom/Courier New.ttf" "https://raw.githubusercontent.com/maseyyi/font-courier-new/master/Courier%20New.ttf" && \
+    fc-cache -f -v && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Copy file dependency dan install
+# Tambahkan font custom seperti Calibri, Bernard, Bodoni (harus legal dan disertakan dalam folder fonts/)
+COPY src/fonts/ /usr/share/fonts/truetype/custom/
+RUN fc-cache -f -v
+
+# Node dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
-# Salin seluruh source code
 COPY . .
 
-# Build aplikasi
 RUN npm run build
 
-# Ubah port ke 5XXX untuk lingkungan development
-EXPOSE 5001
+EXPOSE 3000
 
-# Jalankan aplikasi
 CMD ["npm", "run", "start"]
+

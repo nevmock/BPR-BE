@@ -13,6 +13,12 @@ const createKAR = JoiExtended.object({
     nama_debitur : JoiExtended.string()
         .optional()
         .min(0),
+    status_debitur : JoiExtended.string()
+        .optional()
+        .min(0),
+    nama_SHM : JoiExtended.string()
+        .optional()
+        .min(0),
     alamat_usaha_debitur : JoiExtended.string()
         .optional()
         .min(0),

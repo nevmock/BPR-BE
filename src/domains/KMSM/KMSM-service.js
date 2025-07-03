@@ -1,7 +1,25 @@
 import db from "../../config/db.js";
 class KMSMService {
-    async getAll(){
-        const datas = await db.KMSM.findMany({
+    async getAll(page, limit){
+        let datas;
+        if (page && limit){
+            datas = await db.KMSM.findMany({
+            take: limit,
+            skip: (page - 1) * limit,
+            include:{
+                User:{
+                    select:{
+                        id:true,
+                        username:true,
+                        role:true,
+                        created_at:true,
+                        updated_at:true
+                    }
+                }
+            }
+        })    
+        } else {
+            datas = await db.KMSM.findMany({
             include:{
                 User:{
                     select:{
@@ -14,6 +32,7 @@ class KMSMService {
                 }
             }
         })
+        }
         return datas
     }
 
@@ -41,6 +60,8 @@ class KMSMService {
         nama,
         jabatan,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
         tanggal_surat_permohonan_kredit,
@@ -84,6 +105,8 @@ class KMSMService {
                 nama:nama,
                 jabatan:jabatan,
                 nama_debitur:nama_debitur,
+                status_debitur:status_debitur,
+                nama_SHM:nama_SHM,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
                 tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
@@ -133,6 +156,8 @@ class KMSMService {
         nama,
         jabatan,
         nama_debitur,
+        status_debitur,
+        nama_SHM,
         alamat_usaha_debitur,
         alamat_rumah_debitur,
         tanggal_surat_permohonan_kredit,
@@ -180,6 +205,8 @@ class KMSMService {
                 nama:nama,
                 jabatan:jabatan,
                 nama_debitur:nama_debitur,
+                status_debitur:status_debitur,
+                nama_SHM:nama_SHM,
                 alamat_usaha_debitur:alamat_usaha_debitur,
                 alamat_rumah_debitur:alamat_rumah_debitur,
                 tanggal_surat_permohonan_kredit:tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,

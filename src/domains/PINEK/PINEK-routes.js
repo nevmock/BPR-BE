@@ -38,6 +38,11 @@ class PINEKRoutes extends BaseRoutes {
             authToken,
           tryCatch(PINEKController.generatePDF)
         ]);
+
+        this.router.get('/:id/generate-docx', [
+            authToken,
+            tryCatch(PINEKController.generateDOCX)
+        ]);
     }
 }
 

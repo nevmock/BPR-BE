@@ -1,0 +1,68 @@
+name: 🚀 CI/CD Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: Production
+
+    steps:
+      - name: 📦 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🧰 Setup Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📥 Install Dependencies
+        run: npm install
+
+      - name: 🔐 Docker Login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: 🛠 Build Docker Image
+        run: docker build -t nevmock/bpr-api-prod:latest .
+
+      - name: 📤 Push Docker Image
+        run: docker push nevmock/bpr-api-prod:latest
+
+      - name: 🚢 Deploy to VPS Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "🔁 Pulling latest Docker image..."
+            docker pull nevmock/bpr-api-prod:latest
+
+            echo "🛑 Stopping and removing old container (if exists)..."
+            docker stop bpr-api-prod || true
+            docker rm bpr-api-prod || true
+
+            echo "🚀 Running new container..."
+            docker run -d \
+              --name bpr-api-prod \
+              --network prod-postgresql-network \
+              --restart unless-stopped \
+              -e NODE_ENV="production" \
+              -e PORT="3000" \
+              -e DATABASE_URL="${{ secrets.DATABASE_URL }}" \
+              -e JWT_SECRET="${{ secrets.JWT_SECRET }}" \
+              -p "${{ secrets.PORT }}":3000 \
+              -v bpr-api-prod:/app/public \
+              nevmock/bpr-api-prod:latest
+            
+            echo "🔄 Running Prisma migrations..."
+            docker exec bpr-api-prod npx prisma migrate deploy --preview-feature
+            
+            echo "🧹 Cleaning up unused Docker resources..."
+            docker system prune -f
+
+            echo "✅ Deployment to Production environment completed successfully!"
+            

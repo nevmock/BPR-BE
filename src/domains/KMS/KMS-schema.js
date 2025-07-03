@@ -13,6 +13,9 @@ const createKMS = JoiExtended.object({
     nama_debitur : JoiExtended.string()
         .optional()
         .min(0),
+    status_debitur : JoiExtended.string()
+        .optional()
+        .min(0),
     alamat_usaha_debitur : JoiExtended.string()
         .optional()
         .min(0),
@@ -43,13 +46,13 @@ const createKMS = JoiExtended.object({
     pekerjaan_debitur : JoiExtended.string()
         .optional()
         .min(0),
-    nama_penjamin : JoiExtended.string()
+    nama_SHM : JoiExtended.string()
         .optional()
         .min(0),
     alamat_penjamin : JoiExtended.string()
         .optional()
         .min(0),
-    no_ktp_penjamin : JoiExtended.string()
+    no_ktp_SHM : JoiExtended.string()
         .optional()
         .min(0),
     detail_jaminan : JoiExtended.string()
@@ -61,7 +64,7 @@ const createKMS = JoiExtended.object({
     telah_persetujuan_dari : JoiExtended.string()
         .optional()
         .min(0),
-    nama_penjamin_1 : JoiExtended.string()
+    nama_penjamin : JoiExtended.string()
         .optional()
         .min(0),
     tempat_lahir_penjamin : JoiExtended.string()
@@ -70,7 +73,7 @@ const createKMS = JoiExtended.object({
     tanggal_lahir_penjamin : JoiExtended.date()
         .format('YYYY/MM/DD')
         .min(0),
-    no_ktp_penjamin_1 : JoiExtended.string()
+    no_ktp_penjamin : JoiExtended.string()
         .optional()
         .min(0),
     bertempat_sama_dengan : JoiExtended.string()
