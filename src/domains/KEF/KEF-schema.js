@@ -55,6 +55,18 @@ const createKEF = JoiExtended.object({
     nama_barang : JoiExtended.string()
         .optional()
         .min(0),
+    merek_barang : JoiExtended.string()
+        .optional()
+        .min(0),
+    tipe_barang : JoiExtended.string()
+        .optional()
+        .min(0),
+    ukuran_barang : JoiExtended.string()
+        .optional()
+        .min(0),
+    warna_barang : JoiExtended.string()
+        .optional()
+        .min(0),
     nama_toko : JoiExtended.string()
         .optional()
         .min(0),
