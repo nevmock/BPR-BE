@@ -106,6 +106,9 @@ const createKMM = JoiExtended.object({
     biaya_asuransi_jiwa_sebesar : JoiExtended.number()
             .optional()
             .min(0),
+        nama_asuransi_jiwa : JoiExtended.string()
+            .optional()
+            .min(0),
     biaya_asuransi_tlo : JoiExtended.number()
             .optional()
             .min(0),

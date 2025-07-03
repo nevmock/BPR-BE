@@ -55,6 +55,18 @@ const createKEF = JoiExtended.object({
     nama_barang : JoiExtended.string()
         .optional()
         .min(0),
+    merek_barang : JoiExtended.string()
+        .optional()
+        .min(0),
+    tipe_barang : JoiExtended.string()
+        .optional()
+        .min(0),
+    ukuran_barang : JoiExtended.string()
+        .optional()
+        .min(0),
+    warna_barang : JoiExtended.string()
+        .optional()
+        .min(0),
     nama_toko : JoiExtended.string()
         .optional()
         .min(0),
@@ -83,6 +95,12 @@ const createKEF = JoiExtended.object({
         .format('YYYY/MM/DD')
         .min(0),
     nilai_mengangsur : JoiExtended.number()
+        .optional()
+        .min(0),
+    biaya_provisi : JoiExtended.number()
+        .optional()
+        .min(0),
+    biaya_administrasi : JoiExtended.number()
         .optional()
         .min(0),
     biaya_provisi_sebesar : JoiExtended.number()

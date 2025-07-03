@@ -75,7 +75,6 @@ model KSSM {
   nominal_provisi Int?
   nominal_materai Int?
   nominal_asuransi_jiwa Int?
-  jangka_asuransi_tlo Int?
   nominal_asuransi_tlo Int?
   nominal_administrasi Int?
   nominal_notaris Int?
@@ -256,6 +255,7 @@ model KSM {
   tujuan_penggunaan String?
   suku_bunga Float?
   provisi Float?
+  administrasi Float?
   jangka_waktu Int?
   detail_jaminan String?
   pekerjaan_debitur String?
@@ -376,6 +376,7 @@ model KRS {
   nominal_angsuran Int?
   biaya_provisi_sebesar Int?
   biaya_administrasi_sebesar Int?
+  nama_asuransi_jiwa String?
   biaya_asuransi_jiwa Int?
   biaya_materai_sebesar Int?
   biaya_jumlah Int?
@@ -422,6 +423,7 @@ model KMM {
   biaya_provisi_sebesar Int?
   biaya_materai_sebesar Int?
   biaya_asuransi_jiwa_sebesar Int?
+  nama_asuransi_jiwa String?
   biaya_asuransi_tlo Int?
   biaya_administrasi_sebesar Int?
   biaya_notaris_sebesar Int?
@@ -451,6 +453,8 @@ model KMS {
   plafond Int?
   jangka_waktu Int?
   suku_bunga Float?
+  biaya_provisi Float?
+  biaya_administrasi Float?
   pekerjaan_debitur String?
   nama_SHM String?
   alamat_penjamin String?
@@ -502,6 +506,10 @@ model KEF {
   bertempat_tinggal_dengan String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
   nama_barang String?
+  merek_barang String?
+  tipe_barang String?
+  ukuran_barang String?
+  warna_barang String?
   nama_toko String?
   alamat_toko String?
   harga_barang Int?
@@ -512,6 +520,8 @@ model KEF {
   tenggat_mengangsur_pada Int?
   tanggal_angsuran_pertama DateTime? @db.Date
   nilai_mengangsur Int?
+  biaya_provisi Float?
+  biaya_administrasi Float?
   biaya_provisi_sebesar Int?
   biaya_administrasi_sebesar Int?
   biaya_materai_sebesar Int?

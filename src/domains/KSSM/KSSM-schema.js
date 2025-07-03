@@ -108,9 +108,6 @@ const createKSSM = JoiExtended.object({
   nominal_asuransi_jiwa: JoiExtended.number()
     .optional()
     .min(0),
-  jangka_asuransi_tlo: JoiExtended.number()
-    .optional()
-    .min(0),
   nominal_asuransi_tlo: JoiExtended.number()
     .optional()
     .min(0),
