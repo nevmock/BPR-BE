@@ -46,6 +46,9 @@ const createKSM = JoiExtended.object({
     provisi : JoiExtended.number()
             .optional()
             .min(0),
+        administrasi : JoiExtended.number()
+            .optional()
+            .min(0),
     jangka_waktu : JoiExtended.number()
             .optional()
             .min(0),

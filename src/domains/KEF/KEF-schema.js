@@ -97,6 +97,12 @@ const createKEF = JoiExtended.object({
     nilai_mengangsur : JoiExtended.number()
         .optional()
         .min(0),
+    biaya_provisi : JoiExtended.number()
+        .optional()
+        .min(0),
+    biaya_administrasi : JoiExtended.number()
+        .optional()
+        .min(0),
     biaya_provisi_sebesar : JoiExtended.number()
         .optional()
         .min(0),

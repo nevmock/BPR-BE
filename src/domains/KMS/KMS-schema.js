@@ -43,6 +43,12 @@ const createKMS = JoiExtended.object({
     suku_bunga : JoiExtended.number()
         .optional()
         .min(0),
+    biaya_provisi : JoiExtended.number()
+        .optional()
+        .min(0),
+    biaya_administrasi : JoiExtended.number()
+        .optional()
+        .min(0),
     pekerjaan_debitur : JoiExtended.string()
         .optional()
         .min(0),
