@@ -502,6 +502,10 @@ model KEF {
   bertempat_tinggal_dengan String?
   tanggal_surat_permohonan_kredit DateTime? @db.Date
   nama_barang String?
+  merek_barang String?
+  tipe_barang String?
+  ukuran_barang String?
+  warna_barang String?
   nama_toko String?
   alamat_toko String?
   harga_barang Int?
