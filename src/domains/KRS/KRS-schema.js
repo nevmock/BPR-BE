@@ -109,6 +109,9 @@ const createKRS = JoiExtended.object({
     biaya_administrasi_sebesar : JoiExtended.number()
             .optional()
             .min(0),
+        nama_asuransi_jiwa : JoiExtended.string()
+            .optional()
+            .min(0),
     biaya_asuransi_jiwa : JoiExtended.number()
             .optional()
             .min(0),
