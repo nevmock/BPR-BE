@@ -154,6 +154,7 @@ exports.Prisma.KSSMScalarFieldEnum = {
   alamat_rumah_penjamin: 'alamat_rumah_penjamin',
   nama_SHM: 'nama_SHM',
   nama_barang: 'nama_barang',
+  no_bpkb: 'no_bpkb',
   harga_barang: 'harga_barang',
   detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',

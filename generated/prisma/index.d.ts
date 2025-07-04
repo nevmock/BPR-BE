@@ -4128,6 +4128,7 @@ export namespace Prisma {
     alamat_rumah_penjamin: string | null
     nama_SHM: string | null
     nama_barang: string | null
+    no_bpkb: string | null
     harga_barang: number | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
@@ -4179,6 +4180,7 @@ export namespace Prisma {
     alamat_rumah_penjamin: string | null
     nama_SHM: string | null
     nama_barang: string | null
+    no_bpkb: string | null
     harga_barang: number | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
@@ -4230,6 +4232,7 @@ export namespace Prisma {
     alamat_rumah_penjamin: number
     nama_SHM: number
     nama_barang: number
+    no_bpkb: number
     harga_barang: number
     detail_jaminan: number
     nominal_pinjaman: number
@@ -4321,6 +4324,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: true
     nama_SHM?: true
     nama_barang?: true
+    no_bpkb?: true
     harga_barang?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
@@ -4372,6 +4376,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: true
     nama_SHM?: true
     nama_barang?: true
+    no_bpkb?: true
     harga_barang?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
@@ -4423,6 +4428,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: true
     nama_SHM?: true
     nama_barang?: true
+    no_bpkb?: true
     harga_barang?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
@@ -4561,6 +4567,7 @@ export namespace Prisma {
     alamat_rumah_penjamin: string | null
     nama_SHM: string | null
     nama_barang: string | null
+    no_bpkb: string | null
     harga_barang: number | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
@@ -4631,6 +4638,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: boolean
     nama_SHM?: boolean
     nama_barang?: boolean
+    no_bpkb?: boolean
     harga_barang?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
@@ -4683,6 +4691,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: boolean
     nama_SHM?: boolean
     nama_barang?: boolean
+    no_bpkb?: boolean
     harga_barang?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
@@ -4735,6 +4744,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: boolean
     nama_SHM?: boolean
     nama_barang?: boolean
+    no_bpkb?: boolean
     harga_barang?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
@@ -4787,6 +4797,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: boolean
     nama_SHM?: boolean
     nama_barang?: boolean
+    no_bpkb?: boolean
     harga_barang?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
@@ -4813,7 +4824,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KSSMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "pekerjaan_debitur" | "jenis_kelamin_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_SHM" | "nama_barang" | "harga_barang" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "asuransi_jiwa_nominal" | "asuransi_tlo_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSSM"]>
+  export type KSSMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "pekerjaan_debitur" | "jenis_kelamin_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_SHM" | "nama_barang" | "no_bpkb" | "harga_barang" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "asuransi_jiwa_nominal" | "asuransi_tlo_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSSM"]>
   export type KSSMInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -4854,6 +4865,7 @@ export namespace Prisma {
       alamat_rumah_penjamin: string | null
       nama_SHM: string | null
       nama_barang: string | null
+      no_bpkb: string | null
       harga_barang: number | null
       detail_jaminan: string | null
       nominal_pinjaman: number | null
@@ -5326,6 +5338,7 @@ export namespace Prisma {
     readonly alamat_rumah_penjamin: FieldRef<"KSSM", 'String'>
     readonly nama_SHM: FieldRef<"KSSM", 'String'>
     readonly nama_barang: FieldRef<"KSSM", 'String'>
+    readonly no_bpkb: FieldRef<"KSSM", 'String'>
     readonly harga_barang: FieldRef<"KSSM", 'Int'>
     readonly detail_jaminan: FieldRef<"KSSM", 'String'>
     readonly nominal_pinjaman: FieldRef<"KSSM", 'Int'>
@@ -29306,6 +29319,7 @@ export namespace Prisma {
     alamat_rumah_penjamin: 'alamat_rumah_penjamin',
     nama_SHM: 'nama_SHM',
     nama_barang: 'nama_barang',
+    no_bpkb: 'no_bpkb',
     harga_barang: 'harga_barang',
     detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
@@ -30141,6 +30155,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: StringNullableFilter<"KSSM"> | string | null
     nama_SHM?: StringNullableFilter<"KSSM"> | string | null
     nama_barang?: StringNullableFilter<"KSSM"> | string | null
+    no_bpkb?: StringNullableFilter<"KSSM"> | string | null
     harga_barang?: IntNullableFilter<"KSSM"> | number | null
     detail_jaminan?: StringNullableFilter<"KSSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSSM"> | number | null
@@ -30193,6 +30208,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
     nama_SHM?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
+    no_bpkb?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
@@ -30248,6 +30264,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: StringNullableFilter<"KSSM"> | string | null
     nama_SHM?: StringNullableFilter<"KSSM"> | string | null
     nama_barang?: StringNullableFilter<"KSSM"> | string | null
+    no_bpkb?: StringNullableFilter<"KSSM"> | string | null
     harga_barang?: IntNullableFilter<"KSSM"> | number | null
     detail_jaminan?: StringNullableFilter<"KSSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSSM"> | number | null
@@ -30300,6 +30317,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
     nama_SHM?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
+    no_bpkb?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
@@ -30359,6 +30377,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
     nama_SHM?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
     nama_barang?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
+    no_bpkb?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
     harga_barang?: IntNullableWithAggregatesFilter<"KSSM"> | number | null
     detail_jaminan?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"KSSM"> | number | null
@@ -33537,6 +33556,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_SHM?: string | null
     nama_barang?: string | null
+    no_bpkb?: string | null
     harga_barang?: number | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -33588,6 +33608,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_SHM?: string | null
     nama_barang?: string | null
+    no_bpkb?: string | null
     harga_barang?: number | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -33639,6 +33660,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -33690,6 +33712,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -33741,6 +33764,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_SHM?: string | null
     nama_barang?: string | null
+    no_bpkb?: string | null
     harga_barang?: number | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -33792,6 +33816,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -33842,6 +33867,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -37988,6 +38014,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrder
     nama_SHM?: SortOrder
     nama_barang?: SortOrder
+    no_bpkb?: SortOrder
     harga_barang?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
@@ -38058,6 +38085,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrder
     nama_SHM?: SortOrder
     nama_barang?: SortOrder
+    no_bpkb?: SortOrder
     harga_barang?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
@@ -38109,6 +38137,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrder
     nama_SHM?: SortOrder
     nama_barang?: SortOrder
+    no_bpkb?: SortOrder
     harga_barang?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
@@ -41461,6 +41490,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_SHM?: string | null
     nama_barang?: string | null
+    no_bpkb?: string | null
     harga_barang?: number | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -41511,6 +41541,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_SHM?: string | null
     nama_barang?: string | null
+    no_bpkb?: string | null
     harga_barang?: number | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -42706,6 +42737,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: StringNullableFilter<"KSSM"> | string | null
     nama_SHM?: StringNullableFilter<"KSSM"> | string | null
     nama_barang?: StringNullableFilter<"KSSM"> | string | null
+    no_bpkb?: StringNullableFilter<"KSSM"> | string | null
     harga_barang?: IntNullableFilter<"KSSM"> | number | null
     detail_jaminan?: StringNullableFilter<"KSSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSSM"> | number | null
@@ -45587,6 +45619,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_SHM?: string | null
     nama_barang?: string | null
+    no_bpkb?: string | null
     harga_barang?: number | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -46131,6 +46164,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46181,6 +46215,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46231,6 +46266,7 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
