@@ -41,48 +41,49 @@ model User {
 
 model KSSM {
   id String @id @default(uuid())
+  nomor_surat String?
+  tanggal_surat_permohonan_kredit DateTime? @db.Date
+  tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama String?
   jabatan String?
   nama_debitur String?
+  nik_debitur String?
   status_debitur String?
-  nama_SHM String?
+  hubungan_debitur_penjamin String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
-  tanggal_surat_permohonan_kredit DateTime? @db.Date
-  tanggal_surat_keputusan_kredit DateTime? @db.Date
-  nomor_surat String?
-  nominal Int?
-  tujuan_penggunaan String?
-  suku_bunga Float?
-  jangka_waktu Int?
-  biaya_provisi Float?
-  biaya_administrasi Float?
-  detail_jaminan String?
-  pekerjaan_debitur String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
-  no_ktp_debitur String?
-  persetujuan_dari String?
+  pekerjaan_debitur String?
+  jenis_kelamin_debitur String?
   nama_penjamin String?
+  nik_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
-  no_ktp_penjamin String?
-  utang_atas_kredit Int?
-  tenggat_mengangsur Int?
-  nilai_mengangsur Int? 
-  tanggal_mengangsur_pertama DateTime? @db.Date
-  tanggal_mengangsur_terakhir DateTime? @db.Date
-  nominal_provisi Int?
-  nominal_materai Int?
-  nominal_asuransi_jiwa Int?
-  nominal_asuransi_tlo Int?
-  nominal_administrasi Int?
-  nominal_notaris Int?
-  total_biaya Int?
+  hubungan_penjamin_debitur String?
+  alamat_rumah_penjamin String?
+  nama_SHM String?
   nama_barang String?
-  nik_debitur String?
-  jenis_kelamin_debitur String?
-  harga_jaminan Int?
+  harga_barang Int?
+  detail_jaminan String?
+  nominal_pinjaman Int?
+  bunga_pinjaman Float?
+  jangka_waktu Int?
+  tujuan_penggunaan String?
+  nominal_angsuran Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
+  tanggal_angsuran_terakhir DateTime? @db.Date
+  hutang_keseluruhan Int?
+  tenggat_angsuran Int?
+  provisi_persen Float?
+  provisi_nominal Int?
+  administrasi_persen Float?
+  administrasi_nominal Int?
+  materai_nominal Int?
+  asuransi_jiwa_nominal Int?
+  asuransi_tlo_nominal Int?
+  notaris_nominal Int?
+  total_biaya Int?
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
   submitted_at DateTime?
@@ -103,9 +104,9 @@ model KSS {
   nomor_surat String?
   plaford Int?
   jangka_waktu Int?
-  suku_bunga Float?
-  biaya_provisi Float?
-  biaya_administrasi Float?
+  bunga_pinjaman Float?
+  provisi_persen Float?
+  administrasi_persen Float?
   detail_jaminan String?
   pekerjaan_debitur String?
   nama_penjamin String?
@@ -122,8 +123,8 @@ model KSS {
   tanggal_angsuran_dimulai DateTime? @db.Date
   tanggal_angsuran_terakhir DateTime? @db.Date
   angsuran_tiap_bulan Int?
-  nominal_provisi Int?
-  nominal_administrasi Int?
+  provisi_nominal Int?
+  administrasi_nominal Int?
   nama_asuransi String?
   biaya_asuransi Int?
   biaya_materai Int?
@@ -140,31 +141,37 @@ model KSS {
 model PINEK {
   id String @id @default(uuid())
   nomor_surat String?
+  tanggal_surat_permohonan_kredit DateTime? @db.Date
   tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama_debitur String?
+  nik_debitur String?
   status_debitur String?
-  nama_SHM String?
-  pekerjaan_debitur String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
-  tempat_tinggal_debitur String?
-  no_ktp_debitur String?
-  mendapat_persetujuan String?
+  alamat_rumah_debitur String?
+  pekerjaan_debitur String?
   nama_penjamin String?
+  nik_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
-  no_ktp_penjamin String?
-  tempat_tinggal_penjamin String?
-  tanggal_permohonan_kredit DateTime? @db.Date
-  debitur_menerima_pinjaman Int?
-  dikenakan_bunga Float?
-  total_seluruh_hutang Int?
-  jangka_waktu_hutang Int?
-  mengangsur_paling_lambat Int?
-  pemotongan_gaji Int?
-  tanggal_mengangsur_pertama DateTime? @db.Date
-  tanggal_mengangsur_terakhir DateTime? @db.Date
-  biaya String?
+  hubungan_penjamin_debitur String?
+  alamat_rumah_penjamin String?
+  nama_shm String?
+  nominal_pinjaman Int?
+  bunga_pinjaman Float?
+  jangka_waktu Int?
+  nominal_angsuran Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
+  tanggal_angsuran_terakhir DateTime? @db.Date
+  hutang_keseluruhan Int?
+  tenggat_angsuran Int?
+  rekening_pinjaman String?
+  tujuan_penggunaan String?
+  provisi_persen Float?
+  provisi_nominal Int?
+  nama_asuransi String?
+  asuransi_jiwa_nominal Int?
+  materai_nominal Int?
   total_biaya Int?
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
@@ -179,27 +186,28 @@ model FLEKSI {
   tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama_debitur String?
   status_debitur String?
-  nama_SHM String?
+  jenis_kelamin_debitur String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
-  alamat_debitur String?
-  no_ktp_debitur String?
-  besar_pinjaman Int?
-  bunga_pinjaman Float?
-  jangka_waktu_pinjaman Int?
-  angsuran_pinjaman Int?
-  tanggal_angsuran_pertama DateTime? @db.Date
-  nomor_rekening_pinjaman String?
-  tujuan_penggunaan String?
+  alamat_rumah_debitur String?
+  nik_debitur String?
   nama_penjamin String?
+  nik_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
-  alamat_penjamin String?
-  no_ktp_penjamin String?
+  hubungan_penjamin_debitur String?
+  alamat_rumah_penjamin String?
+  nama_shm String?
+  nominal_pinjaman Int?
+  bunga_pinjaman Float?
+  jangka_waktu Int?
+  tujuan_penggunaan String?
+  rekening_pinjaman String?
+  nominal_angsuran Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
   barang_elektronik FleksiBarangElektronik[]
   barang_furniture FleksiBarangFurniture[]
   barang_jaminan_lainnya String?
-  hubungan_debitur_penjamin String?
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
   submitted_at DateTime?
@@ -212,23 +220,23 @@ model PROCIM {
   nomor_surat String?
   tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama_debitur String?
+  nik_debitur String?
   status_debitur String?
-  nama_SHM String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
-  alamat_debitur String?
-  no_ktp_debitur String?
-  nominal_plafond Int?
-  suku_bunga_pinjaman Float?
-  jangka_waktu_pinjaman Int?
-  angsuran_pinjaman Int?
-  tanggal_angsuran_pertama DateTime? @db.Date
-  nomor_rekening_pinjaman String?
+  alamat_rumah_debitur String?
   nama_penjamin String?
+  nik_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
-  alamat_penjamin String?
-  no_ktp_penjamin String?
+  alamat_rumah_penjamin String?
+  nama_SHM String?
+  nominal_pinjaman Int?
+  bunga_pinjaman Float?
+  jangka_waktu Int?
+  rekening_pinjaman String?
+  nominal_angsuran Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
   barang_elektronik ProcimBarangElektronik[]
   barang_furniture ProcimBarangFurniture[]
   barang_jaminan_lainnya String?
@@ -253,7 +261,7 @@ model KSM {
   nomor_surat String?
   nominal Int?
   tujuan_penggunaan String?
-  suku_bunga Float?
+  bunga_pinjaman Float?
   provisi Float?
   administrasi Float?
   jangka_waktu Int?
@@ -269,10 +277,10 @@ model KSM {
   tempat_tinggal_sama_dengan String?
   no_ktp_penjamin String?
   seluruh_hutang_sebesar Int?
-  tanggal_mengangsur_paling_lambat Int?
+  tanggal_angsuran_paling_lambat Int?
   biaya_angsuran Int?
-  tanggal_mengangsur_pertama DateTime? @db.Date
-  tanggal_mengangsur_terakhir DateTime? @db.Date
+  tanggal_angsuran_pertama DateTime? @db.Date
+  tanggal_angsuran_terakhir DateTime? @db.Date
   biaya_provisi Int?
   biaya_materai Int?
   biaya_asuransi Int?
@@ -304,10 +312,10 @@ model KMSM {
   nomor_surat String?
   nominal Int?
   tujuan_penggunaan String?
-  suku_bunga Float?
+  bunga_pinjaman Float?
   jangka_waktu Int?
-  biaya_provisi Float?
-  biaya_administrasi Float?
+  provisi_persen Float?
+  administrasi_persen Float?
   detail_jaminan String?
   pekerjaan_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
@@ -318,11 +326,11 @@ model KMSM {
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
   no_ktp_penjamin String?
-  utang_atas_kredit Int?
-  tenggat_mengangsur_tanggal Int?
-  nilai_mengangsur Int?
-  tanggal_mengangsur_pertama DateTime? @db.Date
-  tanggal_mengangsur_terakhir DateTime? @db.Date
+  hutang_keseluruhan Int?
+  tenggat_angsuran_tanggal Int?
+  nominal_angsuran Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
+  tanggal_angsuran_terakhir DateTime? @db.Date
   biaya_provisi_sebesar Int?
   biaya_materai Int?
   biaya_asuransi_tlo Int?
@@ -354,9 +362,9 @@ model KRS {
   tujuan_penggunaan String?
   plafond Int?
   jangka_waktu Int?
-  suku_bunga Float?
-  biaya_provisi Float?
-  biaya_administrasi Float?
+  bunga_pinjaman Float?
+  provisi_persen Float?
+  administrasi_persen Float?
   detail_jaminan String?
   pekerjaan_debitur String?
   no_ktp_debitur String?
@@ -370,9 +378,9 @@ model KRS {
   bertempat_tinggal_sama_dengan String?
   debitur_pemilik_rekening String?
   melunasi_hutang_sebesar Int?
-  tanggal_mengangsur_terakhir DateTime? @db.Date
-  tanggal_mengangsur_paling_lambat Int?
-  tanggal_mengangsur_pertama DateTime? @db.Date
+  tanggal_angsuran_terakhir DateTime? @db.Date
+  tanggal_angsuran_paling_lambat Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
   nominal_angsuran Int?
   biaya_provisi_sebesar Int?
   biaya_administrasi_sebesar Int?
@@ -401,9 +409,9 @@ model KMM {
   nomor_surat String?
   nominal Int?
   tujuan_penggunaan String?
-  suku_bunga Float?
+  bunga_pinjaman Float?
   jangka_waktu Int?
-  biaya_provisi Float?
+  provisi_persen Float?
   biaya_administasi Float?
   detail_jaminan String?
   pekerjaan_debitur String?
@@ -415,11 +423,11 @@ model KMM {
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
   no_ktp_penjamin String?
-  utang_atas_kredit Int?
-  tenggat_mengangsur_tiap_bulan Int?
-  nilai_mengangsur_tiap_bulan Int?
-  tanggal_mengangsur_pertama DateTime? @db.Date
-  tanggal_mengangsur_terakhir DateTime? @db.Date
+  hutang_keseluruhan Int?
+  tenggat_angsuran_tiap_bulan Int?
+  nominal_angsuran_tiap_bulan Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
+  tanggal_angsuran_terakhir DateTime? @db.Date
   biaya_provisi_sebesar Int?
   biaya_materai_sebesar Int?
   biaya_asuransi_jiwa_sebesar Int?
@@ -452,9 +460,9 @@ model KMS {
   tujuan String?
   plafond Int?
   jangka_waktu Int?
-  suku_bunga Float?
-  biaya_provisi Float?
-  biaya_administrasi Float?
+  bunga_pinjaman Float?
+  provisi_persen Float?
+  administrasi_persen Float?
   pekerjaan_debitur String?
   nama_SHM String?
   alamat_penjamin String?
@@ -469,9 +477,9 @@ model KMS {
   bertempat_sama_dengan String?
   debitur_adalah_pemilik_rekening String?
   melunasi_hutang_sebesar Int?
-  tanggal_mengangsur_terakhir DateTime? @db.Date
-  tanggal_mengangsur_tiap_bulan Int?
-  tanggal_mengangsur_pertama DateTime? @db.Date
+  tanggal_angsuran_terakhir DateTime? @db.Date
+  tanggal_angsuran_tiap_bulan Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
   nominal_angsuran Int?
   biaya_provisi_sebesar Int?
   biaya_administrasi_sebesar Int?
@@ -517,11 +525,11 @@ model KEF {
   total_pinjaman Int?
   jangka_waktu Int?
   tanggal_angsuran_berakhir DateTime? @db.Date
-  tenggat_mengangsur_pada Int?
+  tenggat_angsuran_pada Int?
   tanggal_angsuran_pertama DateTime? @db.Date
-  nilai_mengangsur Int?
-  biaya_provisi Float?
-  biaya_administrasi Float?
+  nominal_angsuran Int?
+  provisi_persen Float?
+  administrasi_persen Float?
   biaya_provisi_sebesar Int?
   biaya_administrasi_sebesar Int?
   biaya_materai_sebesar Int?
@@ -540,43 +548,46 @@ model KEF {
 
 model KAR {
   id String @id @default(uuid())
+  nomor_surat String?
+  tanggal_surat_permohonan_kredit DateTime? @db.Date
+  tanggal_surat_persetujuan_kredit DateTime? @db.Date
   nama String?
   jabatan String?
   nama_debitur String?
+  nik_debitur String?
   status_debitur String?
-  nama_SHM String?
-  alamat_usaha_debitur String?
-  alamat_rumah_debitur String?
-  tanggal_surat_permohonan_kredit DateTime? @db.Date
-  tanggal_surat_persetujuan_kredit DateTime? @db.Date
-  nomor_surat String?
-  nominal Int?
-  suku_bunga Float?
-  jangka_waktu Int?
-  biaya_provisi Float?
-  biaya_administrasi Int?
-  detail_jaminan String?
-  pekerjaan_debitur String?
+  hubungan_debitur_penjamin String?
+  jenis_kelamin_debitur String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
-  no_ktp_debitur String?
-  hubungan_debitur_penjamin String?
+  alamat_usaha_debitur String?
+  alamat_rumah_debitur String?
+  pekerjaan_debitur String?
   nama_penjamin String?
+  nik_penjamin String?
   tempat_lahir_penjamin String?
   tanggal_lahir_penjamin DateTime? @db.Date
-  bertempat_tinggal_sama String?
-  no_ktp_penjamin String?
-  utang_atas_kredit_sebesar Int?
-  tenggat_mengangsur_tiap_bulan Int?
-  nilai_mengangsur Int?
-  tanggal_mengangsur_pertama DateTime? @db.Date
-  tanggal_mengangsur_terakhir DateTime? @db.Date
-  biaya_provisi_sebesar Int?
-  biaya_materai_sebesar Int?
-  biaya_asuransi_jiwa_sebesar Int?
-  biaya_notaris_sebesar Int?
-  total_biaya Int?
+  hubungan_penjamin_debitur String?
+  alamat_rumah_penjamin String?
   nama_barang String?
+  nama_shm String?
+  detail_jaminan String?
+  nominal_pinjaman Int?
+  bunga_pinjaman Float?
+  jangka_waktu Int?
+  nominal_angsuran Int?
+  tanggal_angsuran_pertama DateTime? @db.Date
+  tanggal_angsuran_terakhir DateTime? @db.Date
+  hutang_keseluruhan Int?
+  tenggat_angsuran Int?
+  provisi_persen Float?
+  administrasi_nominal Int?
+  provisi_nominal Int?
+  materai_nominal Int?
+  asuransi_jiwa_nominal Int?
+  nama_asuransi String?
+  notaris_nominal Int?
+  total_biaya Int?
   created_at DateTime? @default(now())
   updated_at DateTime? @updatedAt
   submitted_at DateTime?
