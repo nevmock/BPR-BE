@@ -106,7 +106,6 @@ model KSS {
   hubungan_debitur_penjamin String?
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
-  is_rekening_bpr String?
   pekerjaan_debitur String?
   tempat_lahir_debitur String?
   tanggal_lahir_debitur DateTime? @db.Date
@@ -369,7 +368,6 @@ model KRS {
   alamat_usaha_debitur String?
   alamat_rumah_debitur String?
   pekerjaan_debitur String?
-  is_rekening_bpr String?
   nama_penjamin String?
   nik_penjamin String?
   tempat_lahir_penjamin String?
@@ -465,7 +463,6 @@ model KMS {
   alamat_usaha_debitur String? // alamat_usaha_debitur String?
   alamat_rumah_debitur String?  // alamat_rumah_debitur String?
   nik_debitur String? // no_ktp_debitur String? 
-  is_rekening_bpr String? // debitur_adalah_pemilik_rekening String?
   pekerjaan_debitur String? // pekerjaan_debitur String?
   hubungan_debitur_penjamin String? // bertempat_sama_dengan String?
   alamat_rumah_penjamin String? // alamat_penjamin String?
