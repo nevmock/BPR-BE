@@ -18,7 +18,6 @@ const createKMS = JoiExtended.object({
   alamat_usaha_debitur: JoiExtended.string().optional(),
   alamat_rumah_debitur: JoiExtended.string().optional(),
   nik_debitur: JoiExtended.string().optional(),
-  is_rekening_bpr: JoiExtended.string().optional(),
   pekerjaan_debitur: JoiExtended.string().optional(),
   hubungan_debitur_penjamin: JoiExtended.string().optional(),
   alamat_rumah_penjamin: JoiExtended.string().optional(),

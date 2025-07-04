@@ -23,7 +23,6 @@ const createKRS = JoiExtended.object({
   alamat_usaha_debitur: JoiExtended.string().optional(),
   alamat_rumah_debitur: JoiExtended.string().optional(),
   pekerjaan_debitur: JoiExtended.string().optional(),
-  is_rekening_bpr: JoiExtended.string().optional(),
   nama_penjamin: JoiExtended.string().optional(),
   nik_penjamin: JoiExtended.string().optional(),
   tempat_lahir_penjamin: JoiExtended.string().optional(),

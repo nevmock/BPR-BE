@@ -5834,7 +5834,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin: string | null
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
-    is_rekening_bpr: string | null
     pekerjaan_debitur: string | null
     tempat_lahir_debitur: string | null
     tanggal_lahir_debitur: Date | null
@@ -5882,7 +5881,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin: string | null
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
-    is_rekening_bpr: string | null
     pekerjaan_debitur: string | null
     tempat_lahir_debitur: string | null
     tanggal_lahir_debitur: Date | null
@@ -5930,7 +5928,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin: number
     alamat_usaha_debitur: number
     alamat_rumah_debitur: number
-    is_rekening_bpr: number
     pekerjaan_debitur: number
     tempat_lahir_debitur: number
     tanggal_lahir_debitur: number
@@ -6012,7 +6009,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: true
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
-    is_rekening_bpr?: true
     pekerjaan_debitur?: true
     tempat_lahir_debitur?: true
     tanggal_lahir_debitur?: true
@@ -6060,7 +6056,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: true
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
-    is_rekening_bpr?: true
     pekerjaan_debitur?: true
     tempat_lahir_debitur?: true
     tanggal_lahir_debitur?: true
@@ -6108,7 +6103,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: true
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
-    is_rekening_bpr?: true
     pekerjaan_debitur?: true
     tempat_lahir_debitur?: true
     tanggal_lahir_debitur?: true
@@ -6243,7 +6237,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin: string | null
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
-    is_rekening_bpr: string | null
     pekerjaan_debitur: string | null
     tempat_lahir_debitur: string | null
     tanggal_lahir_debitur: Date | null
@@ -6310,7 +6303,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: boolean
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
-    is_rekening_bpr?: boolean
     pekerjaan_debitur?: boolean
     tempat_lahir_debitur?: boolean
     tanggal_lahir_debitur?: boolean
@@ -6359,7 +6351,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: boolean
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
-    is_rekening_bpr?: boolean
     pekerjaan_debitur?: boolean
     tempat_lahir_debitur?: boolean
     tanggal_lahir_debitur?: boolean
@@ -6408,7 +6399,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: boolean
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
-    is_rekening_bpr?: boolean
     pekerjaan_debitur?: boolean
     tempat_lahir_debitur?: boolean
     tanggal_lahir_debitur?: boolean
@@ -6457,7 +6447,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: boolean
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
-    is_rekening_bpr?: boolean
     pekerjaan_debitur?: boolean
     tempat_lahir_debitur?: boolean
     tanggal_lahir_debitur?: boolean
@@ -6492,7 +6481,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KSSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "is_rekening_bpr" | "pekerjaan_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "nama_penjamin" | "nik_penjamin" | "alamat_rumah_penjamin" | "tempat_lahir_penjamin" | "hubungan_penjamin_debitur" | "tanggal_lahir_penjamin" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_dimulai" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "administrasi_nominal" | "nama_asuransi" | "asuransi_nominal" | "materai_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSS"]>
+  export type KSSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "nama_penjamin" | "nik_penjamin" | "alamat_rumah_penjamin" | "tempat_lahir_penjamin" | "hubungan_penjamin_debitur" | "tanggal_lahir_penjamin" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_dimulai" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "administrasi_nominal" | "nama_asuransi" | "asuransi_nominal" | "materai_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSS"]>
   export type KSSInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -6521,7 +6510,6 @@ export namespace Prisma {
       hubungan_debitur_penjamin: string | null
       alamat_usaha_debitur: string | null
       alamat_rumah_debitur: string | null
-      is_rekening_bpr: string | null
       pekerjaan_debitur: string | null
       tempat_lahir_debitur: string | null
       tanggal_lahir_debitur: Date | null
@@ -6990,7 +6978,6 @@ export namespace Prisma {
     readonly hubungan_debitur_penjamin: FieldRef<"KSS", 'String'>
     readonly alamat_usaha_debitur: FieldRef<"KSS", 'String'>
     readonly alamat_rumah_debitur: FieldRef<"KSS", 'String'>
-    readonly is_rekening_bpr: FieldRef<"KSS", 'String'>
     readonly pekerjaan_debitur: FieldRef<"KSS", 'String'>
     readonly tempat_lahir_debitur: FieldRef<"KSS", 'String'>
     readonly tanggal_lahir_debitur: FieldRef<"KSS", 'DateTime'>
@@ -15347,7 +15334,6 @@ export namespace Prisma {
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
     pekerjaan_debitur: string | null
-    is_rekening_bpr: string | null
     nama_penjamin: string | null
     nik_penjamin: string | null
     tempat_lahir_penjamin: string | null
@@ -15395,7 +15381,6 @@ export namespace Prisma {
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
     pekerjaan_debitur: string | null
-    is_rekening_bpr: string | null
     nama_penjamin: string | null
     nik_penjamin: string | null
     tempat_lahir_penjamin: string | null
@@ -15443,7 +15428,6 @@ export namespace Prisma {
     alamat_usaha_debitur: number
     alamat_rumah_debitur: number
     pekerjaan_debitur: number
-    is_rekening_bpr: number
     nama_penjamin: number
     nik_penjamin: number
     tempat_lahir_penjamin: number
@@ -15525,7 +15509,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
     pekerjaan_debitur?: true
-    is_rekening_bpr?: true
     nama_penjamin?: true
     nik_penjamin?: true
     tempat_lahir_penjamin?: true
@@ -15573,7 +15556,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
     pekerjaan_debitur?: true
-    is_rekening_bpr?: true
     nama_penjamin?: true
     nik_penjamin?: true
     tempat_lahir_penjamin?: true
@@ -15621,7 +15603,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
     pekerjaan_debitur?: true
-    is_rekening_bpr?: true
     nama_penjamin?: true
     nik_penjamin?: true
     tempat_lahir_penjamin?: true
@@ -15756,7 +15737,6 @@ export namespace Prisma {
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
     pekerjaan_debitur: string | null
-    is_rekening_bpr: string | null
     nama_penjamin: string | null
     nik_penjamin: string | null
     tempat_lahir_penjamin: string | null
@@ -15823,7 +15803,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
     pekerjaan_debitur?: boolean
-    is_rekening_bpr?: boolean
     nama_penjamin?: boolean
     nik_penjamin?: boolean
     tempat_lahir_penjamin?: boolean
@@ -15872,7 +15851,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
     pekerjaan_debitur?: boolean
-    is_rekening_bpr?: boolean
     nama_penjamin?: boolean
     nik_penjamin?: boolean
     tempat_lahir_penjamin?: boolean
@@ -15921,7 +15899,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
     pekerjaan_debitur?: boolean
-    is_rekening_bpr?: boolean
     nama_penjamin?: boolean
     nik_penjamin?: boolean
     tempat_lahir_penjamin?: boolean
@@ -15970,7 +15947,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
     pekerjaan_debitur?: boolean
-    is_rekening_bpr?: boolean
     nama_penjamin?: boolean
     nik_penjamin?: boolean
     tempat_lahir_penjamin?: boolean
@@ -16001,7 +15977,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KRSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "is_rekening_bpr" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "administrasi_nominal" | "nama_asuransi" | "asuransi_jiwa_nominal" | "materai_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kRS"]>
+  export type KRSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "administrasi_nominal" | "nama_asuransi" | "asuransi_jiwa_nominal" | "materai_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kRS"]>
   export type KRSInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -16034,7 +16010,6 @@ export namespace Prisma {
       alamat_usaha_debitur: string | null
       alamat_rumah_debitur: string | null
       pekerjaan_debitur: string | null
-      is_rekening_bpr: string | null
       nama_penjamin: string | null
       nik_penjamin: string | null
       tempat_lahir_penjamin: string | null
@@ -16503,7 +16478,6 @@ export namespace Prisma {
     readonly alamat_usaha_debitur: FieldRef<"KRS", 'String'>
     readonly alamat_rumah_debitur: FieldRef<"KRS", 'String'>
     readonly pekerjaan_debitur: FieldRef<"KRS", 'String'>
-    readonly is_rekening_bpr: FieldRef<"KRS", 'String'>
     readonly nama_penjamin: FieldRef<"KRS", 'String'>
     readonly nik_penjamin: FieldRef<"KRS", 'String'>
     readonly tempat_lahir_penjamin: FieldRef<"KRS", 'String'>
@@ -18715,7 +18689,6 @@ export namespace Prisma {
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
     nik_debitur: string | null
-    is_rekening_bpr: string | null
     pekerjaan_debitur: string | null
     hubungan_debitur_penjamin: string | null
     alamat_rumah_penjamin: string | null
@@ -18763,7 +18736,6 @@ export namespace Prisma {
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
     nik_debitur: string | null
-    is_rekening_bpr: string | null
     pekerjaan_debitur: string | null
     hubungan_debitur_penjamin: string | null
     alamat_rumah_penjamin: string | null
@@ -18811,7 +18783,6 @@ export namespace Prisma {
     alamat_usaha_debitur: number
     alamat_rumah_debitur: number
     nik_debitur: number
-    is_rekening_bpr: number
     pekerjaan_debitur: number
     hubungan_debitur_penjamin: number
     alamat_rumah_penjamin: number
@@ -18895,7 +18866,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
     nik_debitur?: true
-    is_rekening_bpr?: true
     pekerjaan_debitur?: true
     hubungan_debitur_penjamin?: true
     alamat_rumah_penjamin?: true
@@ -18943,7 +18913,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
     nik_debitur?: true
-    is_rekening_bpr?: true
     pekerjaan_debitur?: true
     hubungan_debitur_penjamin?: true
     alamat_rumah_penjamin?: true
@@ -18991,7 +18960,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: true
     alamat_rumah_debitur?: true
     nik_debitur?: true
-    is_rekening_bpr?: true
     pekerjaan_debitur?: true
     hubungan_debitur_penjamin?: true
     alamat_rumah_penjamin?: true
@@ -19126,7 +19094,6 @@ export namespace Prisma {
     alamat_usaha_debitur: string | null
     alamat_rumah_debitur: string | null
     nik_debitur: string | null
-    is_rekening_bpr: string | null
     pekerjaan_debitur: string | null
     hubungan_debitur_penjamin: string | null
     alamat_rumah_penjamin: string | null
@@ -19193,7 +19160,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
     nik_debitur?: boolean
-    is_rekening_bpr?: boolean
     pekerjaan_debitur?: boolean
     hubungan_debitur_penjamin?: boolean
     alamat_rumah_penjamin?: boolean
@@ -19242,7 +19208,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
     nik_debitur?: boolean
-    is_rekening_bpr?: boolean
     pekerjaan_debitur?: boolean
     hubungan_debitur_penjamin?: boolean
     alamat_rumah_penjamin?: boolean
@@ -19291,7 +19256,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
     nik_debitur?: boolean
-    is_rekening_bpr?: boolean
     pekerjaan_debitur?: boolean
     hubungan_debitur_penjamin?: boolean
     alamat_rumah_penjamin?: boolean
@@ -19340,7 +19304,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: boolean
     alamat_rumah_debitur?: boolean
     nik_debitur?: boolean
-    is_rekening_bpr?: boolean
     pekerjaan_debitur?: boolean
     hubungan_debitur_penjamin?: boolean
     alamat_rumah_penjamin?: boolean
@@ -19376,7 +19339,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KMSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "status_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "nik_debitur" | "is_rekening_bpr" | "pekerjaan_debitur" | "hubungan_debitur_penjamin" | "alamat_rumah_penjamin" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "nik_shm" | "detail_jaminan" | "nominal_pinjaman" | "tujuan_penggunaan" | "jangka_waktu" | "bunga_pinjaman" | "tanggal_angsuran_terakhir" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "nominal_angsuran" | "hutang_keseluruhan" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "notaris_nominal" | "nama_asuransi_jiwa" | "asuransi_jiwa_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kMS"]>
+  export type KMSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "status_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "nik_debitur" | "pekerjaan_debitur" | "hubungan_debitur_penjamin" | "alamat_rumah_penjamin" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "nik_shm" | "detail_jaminan" | "nominal_pinjaman" | "tujuan_penggunaan" | "jangka_waktu" | "bunga_pinjaman" | "tanggal_angsuran_terakhir" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "nominal_angsuran" | "hutang_keseluruhan" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "notaris_nominal" | "nama_asuransi_jiwa" | "asuransi_jiwa_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kMS"]>
   export type KMSInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -19404,7 +19367,6 @@ export namespace Prisma {
       alamat_usaha_debitur: string | null
       alamat_rumah_debitur: string | null
       nik_debitur: string | null
-      is_rekening_bpr: string | null
       pekerjaan_debitur: string | null
       hubungan_debitur_penjamin: string | null
       alamat_rumah_penjamin: string | null
@@ -19873,7 +19835,6 @@ export namespace Prisma {
     readonly alamat_usaha_debitur: FieldRef<"KMS", 'String'>
     readonly alamat_rumah_debitur: FieldRef<"KMS", 'String'>
     readonly nik_debitur: FieldRef<"KMS", 'String'>
-    readonly is_rekening_bpr: FieldRef<"KMS", 'String'>
     readonly pekerjaan_debitur: FieldRef<"KMS", 'String'>
     readonly hubungan_debitur_penjamin: FieldRef<"KMS", 'String'>
     readonly alamat_rumah_penjamin: FieldRef<"KMS", 'String'>
@@ -29362,7 +29323,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin: 'hubungan_debitur_penjamin',
     alamat_usaha_debitur: 'alamat_usaha_debitur',
     alamat_rumah_debitur: 'alamat_rumah_debitur',
-    is_rekening_bpr: 'is_rekening_bpr',
     pekerjaan_debitur: 'pekerjaan_debitur',
     tempat_lahir_debitur: 'tempat_lahir_debitur',
     tanggal_lahir_debitur: 'tanggal_lahir_debitur',
@@ -29633,7 +29593,6 @@ export namespace Prisma {
     alamat_usaha_debitur: 'alamat_usaha_debitur',
     alamat_rumah_debitur: 'alamat_rumah_debitur',
     pekerjaan_debitur: 'pekerjaan_debitur',
-    is_rekening_bpr: 'is_rekening_bpr',
     nama_penjamin: 'nama_penjamin',
     nik_penjamin: 'nik_penjamin',
     tempat_lahir_penjamin: 'tempat_lahir_penjamin',
@@ -29733,7 +29692,6 @@ export namespace Prisma {
     alamat_usaha_debitur: 'alamat_usaha_debitur',
     alamat_rumah_debitur: 'alamat_rumah_debitur',
     nik_debitur: 'nik_debitur',
-    is_rekening_bpr: 'is_rekening_bpr',
     pekerjaan_debitur: 'pekerjaan_debitur',
     hubungan_debitur_penjamin: 'hubungan_debitur_penjamin',
     alamat_rumah_penjamin: 'alamat_rumah_penjamin',
@@ -30420,7 +30378,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: StringNullableFilter<"KSS"> | string | null
     alamat_usaha_debitur?: StringNullableFilter<"KSS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KSS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KSS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KSS"> | string | null
     tempat_lahir_debitur?: StringNullableFilter<"KSS"> | string | null
     tanggal_lahir_debitur?: DateTimeNullableFilter<"KSS"> | Date | string | null
@@ -30469,7 +30426,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: SortOrderInput | SortOrder
     alamat_usaha_debitur?: SortOrderInput | SortOrder
     alamat_rumah_debitur?: SortOrderInput | SortOrder
-    is_rekening_bpr?: SortOrderInput | SortOrder
     pekerjaan_debitur?: SortOrderInput | SortOrder
     tempat_lahir_debitur?: SortOrderInput | SortOrder
     tanggal_lahir_debitur?: SortOrderInput | SortOrder
@@ -30521,7 +30477,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: StringNullableFilter<"KSS"> | string | null
     alamat_usaha_debitur?: StringNullableFilter<"KSS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KSS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KSS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KSS"> | string | null
     tempat_lahir_debitur?: StringNullableFilter<"KSS"> | string | null
     tanggal_lahir_debitur?: DateTimeNullableFilter<"KSS"> | Date | string | null
@@ -30570,7 +30525,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: SortOrderInput | SortOrder
     alamat_usaha_debitur?: SortOrderInput | SortOrder
     alamat_rumah_debitur?: SortOrderInput | SortOrder
-    is_rekening_bpr?: SortOrderInput | SortOrder
     pekerjaan_debitur?: SortOrderInput | SortOrder
     tempat_lahir_debitur?: SortOrderInput | SortOrder
     tanggal_lahir_debitur?: SortOrderInput | SortOrder
@@ -30626,7 +30580,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: StringNullableWithAggregatesFilter<"KSS"> | string | null
     alamat_usaha_debitur?: StringNullableWithAggregatesFilter<"KSS"> | string | null
     alamat_rumah_debitur?: StringNullableWithAggregatesFilter<"KSS"> | string | null
-    is_rekening_bpr?: StringNullableWithAggregatesFilter<"KSS"> | string | null
     pekerjaan_debitur?: StringNullableWithAggregatesFilter<"KSS"> | string | null
     tempat_lahir_debitur?: StringNullableWithAggregatesFilter<"KSS"> | string | null
     tanggal_lahir_debitur?: DateTimeNullableWithAggregatesFilter<"KSS"> | Date | string | null
@@ -31783,7 +31736,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: StringNullableFilter<"KRS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KRS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KRS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KRS"> | string | null
     nama_penjamin?: StringNullableFilter<"KRS"> | string | null
     nik_penjamin?: StringNullableFilter<"KRS"> | string | null
     tempat_lahir_penjamin?: StringNullableFilter<"KRS"> | string | null
@@ -31832,7 +31784,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrderInput | SortOrder
     alamat_rumah_debitur?: SortOrderInput | SortOrder
     pekerjaan_debitur?: SortOrderInput | SortOrder
-    is_rekening_bpr?: SortOrderInput | SortOrder
     nama_penjamin?: SortOrderInput | SortOrder
     nik_penjamin?: SortOrderInput | SortOrder
     tempat_lahir_penjamin?: SortOrderInput | SortOrder
@@ -31884,7 +31835,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: StringNullableFilter<"KRS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KRS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KRS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KRS"> | string | null
     nama_penjamin?: StringNullableFilter<"KRS"> | string | null
     nik_penjamin?: StringNullableFilter<"KRS"> | string | null
     tempat_lahir_penjamin?: StringNullableFilter<"KRS"> | string | null
@@ -31933,7 +31883,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrderInput | SortOrder
     alamat_rumah_debitur?: SortOrderInput | SortOrder
     pekerjaan_debitur?: SortOrderInput | SortOrder
-    is_rekening_bpr?: SortOrderInput | SortOrder
     nama_penjamin?: SortOrderInput | SortOrder
     nik_penjamin?: SortOrderInput | SortOrder
     tempat_lahir_penjamin?: SortOrderInput | SortOrder
@@ -31989,7 +31938,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: StringNullableWithAggregatesFilter<"KRS"> | string | null
     alamat_rumah_debitur?: StringNullableWithAggregatesFilter<"KRS"> | string | null
     pekerjaan_debitur?: StringNullableWithAggregatesFilter<"KRS"> | string | null
-    is_rekening_bpr?: StringNullableWithAggregatesFilter<"KRS"> | string | null
     nama_penjamin?: StringNullableWithAggregatesFilter<"KRS"> | string | null
     nik_penjamin?: StringNullableWithAggregatesFilter<"KRS"> | string | null
     tempat_lahir_penjamin?: StringNullableWithAggregatesFilter<"KRS"> | string | null
@@ -32307,7 +32255,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: StringNullableFilter<"KMS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KMS"> | string | null
     nik_debitur?: StringNullableFilter<"KMS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KMS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KMS"> | string | null
     hubungan_debitur_penjamin?: StringNullableFilter<"KMS"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"KMS"> | string | null
@@ -32356,7 +32303,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrderInput | SortOrder
     alamat_rumah_debitur?: SortOrderInput | SortOrder
     nik_debitur?: SortOrderInput | SortOrder
-    is_rekening_bpr?: SortOrderInput | SortOrder
     pekerjaan_debitur?: SortOrderInput | SortOrder
     hubungan_debitur_penjamin?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
@@ -32408,7 +32354,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: StringNullableFilter<"KMS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KMS"> | string | null
     nik_debitur?: StringNullableFilter<"KMS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KMS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KMS"> | string | null
     hubungan_debitur_penjamin?: StringNullableFilter<"KMS"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"KMS"> | string | null
@@ -32457,7 +32402,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrderInput | SortOrder
     alamat_rumah_debitur?: SortOrderInput | SortOrder
     nik_debitur?: SortOrderInput | SortOrder
-    is_rekening_bpr?: SortOrderInput | SortOrder
     pekerjaan_debitur?: SortOrderInput | SortOrder
     hubungan_debitur_penjamin?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
@@ -32513,7 +32457,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     alamat_rumah_debitur?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     nik_debitur?: StringNullableWithAggregatesFilter<"KMS"> | string | null
-    is_rekening_bpr?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     pekerjaan_debitur?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     hubungan_debitur_penjamin?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     alamat_rumah_penjamin?: StringNullableWithAggregatesFilter<"KMS"> | string | null
@@ -33907,7 +33850,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: string | null
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     tempat_lahir_debitur?: string | null
     tanggal_lahir_debitur?: Date | string | null
@@ -33955,7 +33897,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: string | null
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     tempat_lahir_debitur?: string | null
     tanggal_lahir_debitur?: Date | string | null
@@ -34003,7 +33944,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -34051,7 +33991,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -34099,7 +34038,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: string | null
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     tempat_lahir_debitur?: string | null
     tanggal_lahir_debitur?: Date | string | null
@@ -34147,7 +34085,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -34194,7 +34131,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -35664,7 +35600,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     pekerjaan_debitur?: string | null
-    is_rekening_bpr?: string | null
     nama_penjamin?: string | null
     nik_penjamin?: string | null
     tempat_lahir_penjamin?: string | null
@@ -35712,7 +35647,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     pekerjaan_debitur?: string | null
-    is_rekening_bpr?: string | null
     nama_penjamin?: string | null
     nik_penjamin?: string | null
     tempat_lahir_penjamin?: string | null
@@ -35760,7 +35694,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -35808,7 +35741,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -35856,7 +35788,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     pekerjaan_debitur?: string | null
-    is_rekening_bpr?: string | null
     nama_penjamin?: string | null
     nik_penjamin?: string | null
     tempat_lahir_penjamin?: string | null
@@ -35904,7 +35835,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -35951,7 +35881,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -36350,7 +36279,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     nik_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     hubungan_debitur_penjamin?: string | null
     alamat_rumah_penjamin?: string | null
@@ -36398,7 +36326,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     nik_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     hubungan_debitur_penjamin?: string | null
     alamat_rumah_penjamin?: string | null
@@ -36446,7 +36373,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -36494,7 +36420,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -36542,7 +36467,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     nik_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     hubungan_debitur_penjamin?: string | null
     alamat_rumah_penjamin?: string | null
@@ -36590,7 +36514,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -36637,7 +36560,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -38260,7 +38182,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: SortOrder
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     pekerjaan_debitur?: SortOrder
     tempat_lahir_debitur?: SortOrder
     tanggal_lahir_debitur?: SortOrder
@@ -38324,7 +38245,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: SortOrder
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     pekerjaan_debitur?: SortOrder
     tempat_lahir_debitur?: SortOrder
     tanggal_lahir_debitur?: SortOrder
@@ -38372,7 +38292,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: SortOrder
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     pekerjaan_debitur?: SortOrder
     tempat_lahir_debitur?: SortOrder
     tanggal_lahir_debitur?: SortOrder
@@ -39213,7 +39132,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
     pekerjaan_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     nama_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     tempat_lahir_penjamin?: SortOrder
@@ -39277,7 +39195,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
     pekerjaan_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     nama_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     tempat_lahir_penjamin?: SortOrder
@@ -39325,7 +39242,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
     pekerjaan_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     nama_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     tempat_lahir_penjamin?: SortOrder
@@ -39575,7 +39491,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
     nik_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     pekerjaan_debitur?: SortOrder
     hubungan_debitur_penjamin?: SortOrder
     alamat_rumah_penjamin?: SortOrder
@@ -39640,7 +39555,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
     nik_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     pekerjaan_debitur?: SortOrder
     hubungan_debitur_penjamin?: SortOrder
     alamat_rumah_penjamin?: SortOrder
@@ -39688,7 +39602,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: SortOrder
     alamat_rumah_debitur?: SortOrder
     nik_debitur?: SortOrder
-    is_rekening_bpr?: SortOrder
     pekerjaan_debitur?: SortOrder
     hubungan_debitur_penjamin?: SortOrder
     alamat_rumah_penjamin?: SortOrder
@@ -41590,7 +41503,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: string | null
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     tempat_lahir_debitur?: string | null
     tanggal_lahir_debitur?: Date | string | null
@@ -41637,7 +41549,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: string | null
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     tempat_lahir_debitur?: string | null
     tanggal_lahir_debitur?: Date | string | null
@@ -42148,7 +42059,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     pekerjaan_debitur?: string | null
-    is_rekening_bpr?: string | null
     nama_penjamin?: string | null
     nik_penjamin?: string | null
     tempat_lahir_penjamin?: string | null
@@ -42195,7 +42105,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     pekerjaan_debitur?: string | null
-    is_rekening_bpr?: string | null
     nama_penjamin?: string | null
     nik_penjamin?: string | null
     tempat_lahir_penjamin?: string | null
@@ -42357,7 +42266,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     nik_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     hubungan_debitur_penjamin?: string | null
     alamat_rumah_penjamin?: string | null
@@ -42404,7 +42312,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     nik_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     hubungan_debitur_penjamin?: string | null
     alamat_rumah_penjamin?: string | null
@@ -42796,7 +42703,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: StringNullableFilter<"KSS"> | string | null
     alamat_usaha_debitur?: StringNullableFilter<"KSS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KSS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KSS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KSS"> | string | null
     tempat_lahir_debitur?: StringNullableFilter<"KSS"> | string | null
     tanggal_lahir_debitur?: DateTimeNullableFilter<"KSS"> | Date | string | null
@@ -43163,7 +43069,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: StringNullableFilter<"KRS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KRS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KRS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KRS"> | string | null
     nama_penjamin?: StringNullableFilter<"KRS"> | string | null
     nik_penjamin?: StringNullableFilter<"KRS"> | string | null
     tempat_lahir_penjamin?: StringNullableFilter<"KRS"> | string | null
@@ -43295,7 +43200,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: StringNullableFilter<"KMS"> | string | null
     alamat_rumah_debitur?: StringNullableFilter<"KMS"> | string | null
     nik_debitur?: StringNullableFilter<"KMS"> | string | null
-    is_rekening_bpr?: StringNullableFilter<"KMS"> | string | null
     pekerjaan_debitur?: StringNullableFilter<"KMS"> | string | null
     hubungan_debitur_penjamin?: StringNullableFilter<"KMS"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"KMS"> | string | null
@@ -45658,7 +45562,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: string | null
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     tempat_lahir_debitur?: string | null
     tanggal_lahir_debitur?: Date | string | null
@@ -45905,7 +45808,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     pekerjaan_debitur?: string | null
-    is_rekening_bpr?: string | null
     nama_penjamin?: string | null
     nik_penjamin?: string | null
     tempat_lahir_penjamin?: string | null
@@ -45997,7 +45899,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: string | null
     alamat_rumah_debitur?: string | null
     nik_debitur?: string | null
-    is_rekening_bpr?: string | null
     pekerjaan_debitur?: string | null
     hubungan_debitur_penjamin?: string | null
     alamat_rumah_penjamin?: string | null
@@ -46305,7 +46206,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -46352,7 +46252,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -46399,7 +46298,6 @@ export namespace Prisma {
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -47046,7 +46944,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47093,7 +46990,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47140,7 +47036,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47332,7 +47227,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47379,7 +47273,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47426,7 +47319,6 @@ export namespace Prisma {
     alamat_usaha_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    is_rekening_bpr?: NullableStringFieldUpdateOperationsInput | string | null
     pekerjaan_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_debitur_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null

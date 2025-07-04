@@ -19,7 +19,6 @@ const createKSS = JoiExtended.object({
   hubungan_debitur_penjamin: JoiExtended.string().optional().min(0),
   alamat_usaha_debitur: JoiExtended.string().optional().min(0),
   alamat_rumah_debitur: JoiExtended.string().optional().min(0),
-  is_rekening_bpr: JoiExtended.string().optional().min(0),
   pekerjaan_debitur: JoiExtended.string().optional().min(0),
   tempat_lahir_debitur: JoiExtended.string().optional().min(0),
   tanggal_lahir_debitur: JoiExtended.date().format("YYYY/MM/DD").optional(),
