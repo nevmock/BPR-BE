@@ -65,6 +65,7 @@ model KSSM {
   alamat_rumah_penjamin            String?
   nama_SHM                         String?
   nama_barang                      String?
+  no_bpkb                          String?
   harga_barang                     Int?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
