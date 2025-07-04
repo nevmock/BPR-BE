@@ -64,5 +64,5 @@ jobs:
             echo "🧹 Cleaning up unused Docker resources..."
             docker system prune -f
 
-            echo "✅ Deployment to Development environment completed successfully!"
             
+            echo "✅ Deployment to Development environment completed successfully!"
