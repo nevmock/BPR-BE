@@ -59,7 +59,7 @@ class KSMService {
   async create({
     nomor_surat,
     tanggal_surat_permohonan_kredit,
-    tanggal_surat_perjanjian_kredit,
+    tanggal_surat_persetujuan_kredit,
     nama,
     jabatan,
     nama_debitur,
@@ -106,7 +106,7 @@ class KSMService {
       data: {
         nomor_surat: nomor_surat,
         tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
-        tanggal_surat_perjanjian_kredit: tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
         nama: nama,
         jabatan: jabatan,
         nama_debitur: nama_debitur,
@@ -161,7 +161,7 @@ class KSMService {
     {
       nomor_surat,
       tanggal_surat_permohonan_kredit,
-      tanggal_surat_perjanjian_kredit,
+      tanggal_surat_persetujuan_kredit,
       nama,
       jabatan,
       nama_debitur,
@@ -213,7 +213,7 @@ class KSMService {
       data: {
         nomor_surat: nomor_surat,
         tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
-        tanggal_surat_perjanjian_kredit: tanggal_surat_perjanjian_kredit?new Date(tanggal_surat_perjanjian_kredit):null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
         nama: nama,
         jabatan: jabatan,
         nama_debitur: nama_debitur,

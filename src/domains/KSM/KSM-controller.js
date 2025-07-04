@@ -28,7 +28,7 @@ class KSMController {
         const{
             nomor_surat,
             tanggal_surat_permohonan_kredit,
-            tanggal_surat_perjanjian_kredit,
+            tanggal_surat_persetujuan_kredit,
             nama,
             jabatan,
             nama_debitur,
@@ -76,7 +76,7 @@ class KSMController {
         const newKSM = await KSMService.create({
             nomor_surat,
             tanggal_surat_permohonan_kredit,
-            tanggal_surat_perjanjian_kredit,
+            tanggal_surat_persetujuan_kredit,
             nama,
             jabatan,
             nama_debitur,
