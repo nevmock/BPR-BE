@@ -6,6 +6,8 @@ import PizZip from 'pizzip';
 import Docxtemplater from 'docxtemplater';
 import { exec } from "child_process";
 import { __dirname, __filename } from "../../utils/path.js";
+import { formatRupiahDenganHuruf } from "../../utils/formatTerbilangRupiah.js";
+import { formatRupiah } from "../../utils/formatRupiah.js";
 
 class KARController {
     async get(req, res) {
@@ -49,6 +51,7 @@ class KARController {
             hubungan_penjamin_debitur,
             alamat_rumah_penjamin,
             nama_barang,
+            no_bpkb,
             nama_shm,
             detail_jaminan,
             nominal_pinjaman,
@@ -95,6 +98,7 @@ class KARController {
             hubungan_penjamin_debitur,
             alamat_rumah_penjamin,
             nama_barang,
+            no_bpkb,
             nama_shm,
             detail_jaminan,
             nominal_pinjaman,
@@ -150,6 +154,17 @@ class KARController {
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal5.getMonth()]} ${tanggal5.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAdministrasiNominal = `${formatRupiah(dbData.administrasi_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+        const formatAsuransiJiwaNominal = `${formatRupiah(dbData.asuransi_jiwa_nominal)}`
+        const formatNotarisNominal = `${formatRupiah(dbData.notaris_nominal)}`
+
         const data = {
             nama: dbData.nama,
             jabatan: dbData.jabatan,
@@ -159,12 +174,13 @@ class KARController {
             tanggal_surat_permohonan_kredit: formattedTanggal,
             tanggal_surat_persetujuan_kredit: formattedTanggal1,
             nomor_surat: dbData.nomor_surat,
-            nominal: dbData.nominal_pinjaman,
+            nominal: formatNominalPinjaman,
             suku_bunga: dbData.bunga_pinjaman,
             jangka_waktu: dbData.jangka_waktu,
             biaya_provisi: dbData.provisi_persen,
-            biaya_administrasi: dbData.administrasi_nominal,
+            biaya_administrasi: formatAdministrasiNominal,
             detail_jaminan: dbData.detail_jaminan,
+            no_bpkb: dbData.no_bpkb,
             pekerjaan_debitur: dbData.pekerjaan_debitur,
             tempat_lahir_debitur: dbData.tempat_lahir_debitur,
             tanggal_lahir_debitur: formattedTanggal2,
@@ -175,17 +191,17 @@ class KARController {
             tanggal_lahir_penjamin: formattedTanggal3,
             bertempat_tinggal_sama: dbData.hubungan_penjamin_debitur,
             no_ktp_penjamin: dbData.nik_penjamin,
-            utang_atas_kredit_sebesar: dbData.hutang_keseluruhan,
+            utang_atas_kredit_sebesar: formatHutangKeseluruhan,
             tenggat_mengangsur_tiap_bulan: dbData.tenggat_angsuran,
-            nilai_mengangsur: dbData.nominal_angsuran,
+            nilai_mengangsur: formatNominalAngsuran,
             tanggal_mengangsur_pertama: formattedTanggal4,
             tanggal_mengangsur_terakhir: formattedTanggal5,
-            biaya_provisi_sebesar: dbData.provisi_nominal,
-            biaya_materai_sebesar: dbData.materai_nominal,
-            biaya_asuransi_jiwa_sebesar: dbData.asuransi_jiwa_nominal,
+            biaya_provisi_sebesar: formatProvisiNominal,
+            biaya_materai_sebesar: formatMateraiNominal,
+            biaya_asuransi_jiwa_sebesar: formatAsuransiJiwaNominal,
             nama_asuransi_jiwa: dbData.nama_asuransi,
-            biaya_notaris_sebesar: dbData.notaris_nominal,
-            total_biaya: dbData.total_biaya,
+            biaya_notaris_sebesar: formatNotarisNominal,
+            total_biaya: formatTotalBiaya,
             nama_barang: dbData.nama_barang,
         };
 
@@ -313,6 +329,17 @@ class KARController {
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal5.getMonth()]} ${tanggal5.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAdministrasiNominal = `${formatRupiah(dbData.administrasi_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+        const formatAsuransiJiwaNominal = `${formatRupiah(dbData.asuransi_jiwa_nominal)}`
+        const formatNotarisNominal = `${formatRupiah(dbData.notaris_nominal)}`
+
         const data = {
             nama: dbData.nama,
             jabatan: dbData.jabatan,
@@ -322,12 +349,13 @@ class KARController {
             tanggal_surat_permohonan_kredit: formattedTanggal,
             tanggal_surat_persetujuan_kredit: formattedTanggal1,
             nomor_surat: dbData.nomor_surat,
-            nominal: dbData.nominal_pinjaman,
+            nominal: formatNominalPinjaman,
             suku_bunga: dbData.bunga_pinjaman,
             jangka_waktu: dbData.jangka_waktu,
             biaya_provisi: dbData.provisi_persen,
-            biaya_administrasi: dbData.administrasi_nominal,
+            biaya_administrasi: formatAdministrasiNominal,
             detail_jaminan: dbData.detail_jaminan,
+            no_bpkb: dbData.no_bpkb,
             pekerjaan_debitur: dbData.pekerjaan_debitur,
             tempat_lahir_debitur: dbData.tempat_lahir_debitur,
             tanggal_lahir_debitur: formattedTanggal2,
@@ -338,17 +366,17 @@ class KARController {
             tanggal_lahir_penjamin: formattedTanggal3,
             bertempat_tinggal_sama: dbData.hubungan_penjamin_debitur,
             no_ktp_penjamin: dbData.nik_penjamin,
-            utang_atas_kredit_sebesar: dbData.hutang_keseluruhan,
+            utang_atas_kredit_sebesar: formatHutangKeseluruhan,
             tenggat_mengangsur_tiap_bulan: dbData.tenggat_angsuran,
-            nilai_mengangsur: dbData.nominal_angsuran,
+            nilai_mengangsur: formatNominalAngsuran,
             tanggal_mengangsur_pertama: formattedTanggal4,
             tanggal_mengangsur_terakhir: formattedTanggal5,
-            biaya_provisi_sebesar: dbData.provisi_nominal,
-            biaya_materai_sebesar: dbData.materai_nominal,
-            biaya_asuransi_jiwa_sebesar: dbData.asuransi_jiwa_nominal,
+            biaya_provisi_sebesar: formatProvisiNominal,
+            biaya_materai_sebesar: formatMateraiNominal,
+            biaya_asuransi_jiwa_sebesar: formatAsuransiJiwaNominal,
             nama_asuransi_jiwa: dbData.nama_asuransi,
-            biaya_notaris_sebesar: dbData.notaris_nominal,
-            total_biaya: dbData.total_biaya,
+            biaya_notaris_sebesar: formatNotarisNominal,
+            total_biaya: formatTotalBiaya,
             nama_barang: dbData.nama_barang,
         };
 

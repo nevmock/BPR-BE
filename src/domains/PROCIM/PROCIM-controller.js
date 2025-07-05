@@ -112,6 +112,9 @@ class PROCIMController {
         const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
         const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        
+        const formatNominalAngsuran = `${formatRupiah(dbData.nominal_angsuran)}`
 
         //table
         const elektronik = dbData.barang_elektronik.map((item, index) => ({
@@ -135,10 +138,10 @@ class PROCIMController {
             tanggal_lahir_debitur: formattedTanggal1,
             alamat_debitur: dbData.alamat_rumah_debitur,
             no_ktp_debitur: dbData.nik_debitur,
-            nominal_plafond: dbData.nominal_pinjaman,
+            nominal_plafond: formatNominalPinjaman,
             suku_bunga_pinjaman: dbData.bunga_pinjaman,
             jangka_waktu_pinjaman: dbData.jangka_waktu,
-            angsuran_pinjaman: dbData.nominal_angsuran,
+            angsuran_pinjaman: formatNominalAngsuran,
             tanggal_angsuran_pertama: formattedTanggal2,
             nomor_rekening_pinjaman: dbData.rekening_pinjaman,
             nama_penjamin: dbData.nama_penjamin,
@@ -271,6 +274,9 @@ class PROCIMController {
         const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
         const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        
+        const formatNominalAngsuran = `${formatRupiah(dbData.nominal_angsuran)}`
 
         //table
         const elektronik = dbData.barang_elektronik.map((item, index) => ({
@@ -294,10 +300,10 @@ class PROCIMController {
             tanggal_lahir_debitur: formattedTanggal1,
             alamat_debitur: dbData.alamat_rumah_debitur,
             no_ktp_debitur: dbData.nik_debitur,
-            nominal_plafond: dbData.nominal_pinjaman,
+            nominal_plafond: formatNominalPinjaman,
             suku_bunga_pinjaman: dbData.bunga_pinjaman,
             jangka_waktu_pinjaman: dbData.jangka_waktu,
-            angsuran_pinjaman: dbData.nominal_angsuran,
+            angsuran_pinjaman: formatNominalAngsuran,
             tanggal_angsuran_pertama: formattedTanggal2,
             nomor_rekening_pinjaman: dbData.rekening_pinjaman,
             nama_penjamin: dbData.nama_penjamin,

@@ -30,6 +30,7 @@ const createKMSM = JoiExtended.object({
   hubungan_penjamin_debitur: JoiExtended.string().optional().min(0),
   nama_barang: JoiExtended.string().optional().min(0),
   harga_barang: JoiExtended.number().optional().min(0),
+  no_bpkb: JoiExtended.string().optional().min(0),
   nama_shm: JoiExtended.string().optional().min(0),
   detail_jaminan: JoiExtended.string().optional().min(0),
   nominal_pinjaman: JoiExtended.number().optional().min(0),
