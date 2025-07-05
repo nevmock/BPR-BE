@@ -6,6 +6,8 @@ import PizZip from 'pizzip';
 import Docxtemplater from 'docxtemplater';
 import { exec } from "child_process";
 import { __dirname, __filename } from "../../utils/path.js";
+import { formatRupiahDenganHuruf } from "../../utils/formatTerbilangRupiah.js";
+import { formatRupiah } from "../../utils/formatRupiah.js";
 
 class KEFController {
     async get(req, res) {
@@ -154,6 +156,16 @@ class KEFController {
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal5.getMonth()]} ${tanggal5.getFullYear()}`;
 
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatHargaBarang = `${formatRupiahDenganHuruf(dbData.harga_barang)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAdministrasiNominal = `${formatRupiah(dbData.administrasi_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+        const formatFidusiaNominal = `${formatRupiah(dbData.fidusia_nominal)}`
+
         const data = {
             nomor_surat: dbData.nomor_surat,
             tanggal_surat_persetujuan_kredit: formattedTanggal,
@@ -176,21 +188,21 @@ class KEFController {
             warna_barang: dbData.warna_barang,
             nama_toko: dbData.nama_usaha_debitur,
             alamat_toko: dbData.alamat_usaha_debitur,
-            harga_barang: dbData.harga_barang,
+            harga_barang: formatHargaBarang,
             bunga_pinjaman: dbData.bunga_pinjaman,
-            total_pinjaman: dbData.hutang_keseluruhan,
+            total_pinjaman: formatHutangKeseluruhan,
             jangka_waktu: dbData.jangka_waktu,
             tanggal_angsuran_berakhir: formattedTanggal4,
             tenggat_mengangsur_pada: dbData.tenggat_angsuran,
             tanggal_angsuran_pertama: formattedTanggal5,
-            nilai_mengangsur: dbData.nominal_angsuran,
+            nilai_mengangsur: formatNominalAngsuran,
             biaya_provisi: dbData.provisi_persen,
             biaya_administrasi: dbData.administrasi_persen,
-            biaya_provisi_sebesar: dbData.provisi_nominal,
-            biaya_administrasi_sebesar: dbData.administrasi_nominal,
-            biaya_materai_sebesar: dbData.materai_nominal,
-            biaya_fidusia_sebesar: dbData.fidusia_nominal,
-            total_biaya: dbData.total_biaya,
+            biaya_provisi_sebesar: formatProvisiNominal,
+            biaya_administrasi_sebesar: formatAdministrasiNominal,
+            biaya_materai_sebesar: formatMateraiNominal,
+            biaya_fidusia_sebesar: formatFidusiaNominal,
+            total_biaya: formatTotalBiaya,
             pekerjaan_debitur: dbData.pekerjaan_debitur,
             jenis_kelamin_debitur: dbData.jenis_kelamin_debitur,
             detail_jaminan: dbData.detail_jaminan,
@@ -321,6 +333,16 @@ class KEFController {
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal5.getMonth()]} ${tanggal5.getFullYear()}`;
 
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatHargaBarang = `${formatRupiahDenganHuruf(dbData.harga_barang)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAdministrasiNominal = `${formatRupiah(dbData.administrasi_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+        const formatFidusiaNominal = `${formatRupiah(dbData.fidusia_nominal)}`
+
         const data = {
             nomor_surat: dbData.nomor_surat,
             tanggal_surat_persetujuan_kredit: formattedTanggal,
@@ -343,21 +365,21 @@ class KEFController {
             warna_barang: dbData.warna_barang,
             nama_toko: dbData.nama_usaha_debitur,
             alamat_toko: dbData.alamat_usaha_debitur,
-            harga_barang: dbData.harga_barang,
+            harga_barang: formatHargaBarang,
             bunga_pinjaman: dbData.bunga_pinjaman,
-            total_pinjaman: dbData.hutang_keseluruhan,
+            total_pinjaman: formatHutangKeseluruhan,
             jangka_waktu: dbData.jangka_waktu,
             tanggal_angsuran_berakhir: formattedTanggal4,
             tenggat_mengangsur_pada: dbData.tenggat_angsuran,
             tanggal_angsuran_pertama: formattedTanggal5,
-            nilai_mengangsur: dbData.nominal_angsuran,
+            nilai_mengangsur: formatNominalAngsuran,
             biaya_provisi: dbData.provisi_persen,
             biaya_administrasi: dbData.administrasi_persen,
-            biaya_provisi_sebesar: dbData.provisi_nominal,
-            biaya_administrasi_sebesar: dbData.administrasi_nominal,
-            biaya_materai_sebesar: dbData.materai_nominal,
-            biaya_fidusia_sebesar: dbData.fidusia_nominal,
-            total_biaya: dbData.total_biaya,
+            biaya_provisi_sebesar: formatProvisiNominal,
+            biaya_administrasi_sebesar: formatAdministrasiNominal,
+            biaya_materai_sebesar: formatMateraiNominal,
+            biaya_fidusia_sebesar: formatFidusiaNominal,
+            total_biaya: formatTotalBiaya,
             pekerjaan_debitur: dbData.pekerjaan_debitur,
             jenis_kelamin_debitur: dbData.jenis_kelamin_debitur,
             detail_jaminan: dbData.detail_jaminan,

@@ -6,6 +6,8 @@ import PizZip from 'pizzip';
 import Docxtemplater from 'docxtemplater';
 import { exec } from "child_process";
 import { __dirname, __filename } from "../../utils/path.js";
+import { formatRupiahDenganHuruf } from "../../utils/formatTerbilangRupiah.js";
+import { formatRupiah } from "../../utils/formatRupiah.js";
 
 class KRSController {
     async get(req, res) {
@@ -148,6 +150,16 @@ class KRSController {
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal5.getMonth()]} ${tanggal5.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAdministrasiNominal = `${formatRupiah(dbData.administrasi_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+        const formatAsuransiJiwaNominal = `${formatRupiah(dbData.asuransi_jiwa_nominal)}`
+
         const data = {
             nama: dbData.nama,
             jabatan: dbData.jabatan,
@@ -158,7 +170,7 @@ class KRSController {
             tanggal_surat_persetujuan_kredit: formattedTanggal1,
             nomor_surat: dbData.nomor_surat,
             tujuan_penggunaan: dbData.tujuan_penggunaan,
-            plafond: dbData.nominal_pinjaman,
+            plafond: formatNominalPinjaman,
             jangka_waktu: dbData.jangka_waktu,
             suku_bunga: dbData.bunga_pinjaman,
             biaya_provisi: dbData.provisi_persen,
@@ -174,17 +186,17 @@ class KRSController {
             tanggal_lahir_penjamin: formattedTanggal3,
             no_ktp_penjamin: dbData.nik_penjamin,
             bertempat_tinggal_sama_dengan: dbData.hubungan_debitur_penjamin,
-            melunasi_hutang_sebesar: dbData.hutang_keseluruhan,
+            melunasi_hutang_sebesar: formatHutangKeseluruhan,
             tanggal_mengangsur_terakhir: formattedTanggal4,
             tanggal_mengangsur_paling_lambat: dbData.tenggat_angsuran,
             tanggal_mengangsur_pertama: formattedTanggal5,
-            nominal_angsuran: dbData.nominal_angsuran,
-            biaya_provisi_sebesar: dbData.provisi_nominal,
-            biaya_administrasi_sebesar: dbData.administrasi_nominal,
+            nominal_angsuran: formatNominalAngsuran,
+            biaya_provisi_sebesar: formatProvisiNominal,
+            biaya_administrasi_sebesar: formatAdministrasiNominal,
             nama_asuransi_jiwa: dbData.nama_asuransi,
-            biaya_asuransi_jiwa: dbData.asuransi_jiwa_nominal,
-            biaya_materai_sebesar: dbData.materai_nominal,
-            biaya_jumlah: dbData.total_biaya,
+            biaya_asuransi_jiwa: formatAsuransiJiwaNominal,
+            biaya_materai_sebesar: formatMateraiNominal,
+            biaya_jumlah: formatTotalBiaya,
         };
 
         const templatePath = path.resolve("src/templates/", "KRS.docx");
@@ -311,6 +323,16 @@ class KRSController {
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal5.getMonth()]} ${tanggal5.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAdministrasiNominal = `${formatRupiah(dbData.administrasi_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+        const formatAsuransiJiwaNominal = `${formatRupiah(dbData.asuransi_jiwa_nominal)}`
+
         const data = {
             nama: dbData.nama,
             jabatan: dbData.jabatan,
@@ -321,7 +343,7 @@ class KRSController {
             tanggal_surat_persetujuan_kredit: formattedTanggal1,
             nomor_surat: dbData.nomor_surat,
             tujuan_penggunaan: dbData.tujuan_penggunaan,
-            plafond: dbData.nominal_pinjaman,
+            plafond: formatNominalPinjaman,
             jangka_waktu: dbData.jangka_waktu,
             suku_bunga: dbData.bunga_pinjaman,
             biaya_provisi: dbData.provisi_persen,
@@ -337,17 +359,17 @@ class KRSController {
             tanggal_lahir_penjamin: formattedTanggal3,
             no_ktp_penjamin: dbData.nik_penjamin,
             bertempat_tinggal_sama_dengan: dbData.hubungan_debitur_penjamin,
-            melunasi_hutang_sebesar: dbData.hutang_keseluruhan,
+            melunasi_hutang_sebesar: formatHutangKeseluruhan,
             tanggal_mengangsur_terakhir: formattedTanggal4,
             tanggal_mengangsur_paling_lambat: dbData.tenggat_angsuran,
             tanggal_mengangsur_pertama: formattedTanggal5,
-            nominal_angsuran: dbData.nominal_angsuran,
-            biaya_provisi_sebesar: dbData.provisi_nominal,
-            biaya_administrasi_sebesar: dbData.administrasi_nominal,
+            nominal_angsuran: formatNominalAngsuran,
+            biaya_provisi_sebesar: formatProvisiNominal,
+            biaya_administrasi_sebesar: formatAdministrasiNominal,
             nama_asuransi_jiwa: dbData.nama_asuransi,
-            biaya_asuransi_jiwa: dbData.asuransi_jiwa_nominal,
-            biaya_materai_sebesar: dbData.materai_nominal,
-            biaya_jumlah: dbData.total_biaya,
+            biaya_asuransi_jiwa: formatAsuransiJiwaNominal,
+            biaya_materai_sebesar: formatMateraiNominal,
+            biaya_jumlah: formatTotalBiaya,
         };
 
         const templatePath = path.resolve("src/templates/", "KRS.docx");

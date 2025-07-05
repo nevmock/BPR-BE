@@ -5,6 +5,8 @@ import fs from 'fs';
 import PizZip from 'pizzip';
 import Docxtemplater from 'docxtemplater';
 import { exec } from "child_process";
+import { formatRupiahDenganHuruf } from "../../utils/formatTerbilangRupiah.js";
+import { formatRupiah } from "../../utils/formatRupiah.js";
 
 class KSSController {
     async get(req, res) {
@@ -145,6 +147,17 @@ class KSSController {
         const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAdministrasiNominal = `${formatRupiah(dbData.administrasi_nominal)}`
+        const formatAsuransiNominal = `${formatRupiah(dbData.asuransi_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+        const formatNotarisNominal = `${formatRupiah(dbData.notaris_nominal)}`
+
         const data = {
             nama: dbData.nama,
             jabatan: dbData.jabatan,
@@ -154,7 +167,7 @@ class KSSController {
             tanggal_surat_permohonan_kredit: formattedTanggal,
             tanggal_surat_persetujuan_kredit: formattedTanggal1,
             nomor_surat: dbData.nomor_surat,
-            plaford: dbData.nominal_pinjaman,
+            plaford: formatNominalPinjaman,
             jangka_waktu: dbData.jangka_waktu,
             suku_bunga: dbData.bunga_pinjaman,
             biaya_provisi: dbData.provisi_persen,
@@ -170,17 +183,17 @@ class KSSController {
             tanggal_lahir_penjamin: formattedTanggal2,
             tinggal_sama_dengan: dbData.hubungan_debitur_penjamin,
             tujuan_penggunaan_kredit: dbData.tujuan_penggunaan,
-            total_seluruh_pinjaman: dbData.hutang_keseluruhan,
+            total_seluruh_pinjaman: formatHutangKeseluruhan,
             tanggal_angsuran_dimulai: formattedTanggal3,
             tanggal_angsuran_terakhir: formattedTanggal4,
-            angsuran_tiap_bulan: dbData.nominal_angsuran,
-            nominal_provisi: dbData.provisi_nominal,
-            nominal_administrasi: dbData.administrasi_nominal,
+            angsuran_tiap_bulan: formatNominalAngsuran,
+            nominal_provisi: formatProvisiNominal,
+            nominal_administrasi: formatAdministrasiNominal,
             nama_asuransi: dbData.nama_asuransi,
-            biaya_asuransi: dbData.asuransi_nominal,
-            biaya_materai: dbData.materai_nominal,
-            biaya_notaris: dbData.notaris_nominal,
-            total_biaya: dbData.total_biaya,
+            biaya_asuransi: formatAsuransiNominal,
+            biaya_materai: formatMateraiNominal,
+            biaya_notaris: formatNotarisNominal,
+            total_biaya: formatTotalBiaya,
             nama_shm: dbData.nama_shm,
         };
 
@@ -306,6 +319,17 @@ class KSSController {
         const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHurufiahDenganHuruf(dbData.nominal_pinjaman)}`
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAdministrasiNominal = `${formatRupiah(dbData.administrasi_nominal)}`
+        const formatAsuransiNominal = `${formatRupiah(dbData.asuransi_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+        const formatNotarisNominal = `${formatRupiah(dbData.notaris_nominal)}`
+
         const data = {
             nama: dbData.nama,
             jabatan: dbData.jabatan,
@@ -315,7 +339,7 @@ class KSSController {
             tanggal_surat_permohonan_kredit: formattedTanggal,
             tanggal_surat_persetujuan_kredit: formattedTanggal1,
             nomor_surat: dbData.nomor_surat,
-            plaford: dbData.nominal_pinjaman,
+            plaford: formatNominalPinjaman,
             jangka_waktu: dbData.jangka_waktu,
             suku_bunga: dbData.bunga_pinjaman,
             biaya_provisi: dbData.provisi_persen,
@@ -331,17 +355,17 @@ class KSSController {
             tanggal_lahir_penjamin: formattedTanggal2,
             tinggal_sama_dengan: dbData.hubungan_debitur_penjamin,
             tujuan_penggunaan_kredit: dbData.tujuan_penggunaan,
-            total_seluruh_pinjaman: dbData.hutang_keseluruhan,
+            total_seluruh_pinjaman: formatHutangKeseluruhan,
             tanggal_angsuran_dimulai: formattedTanggal3,
             tanggal_angsuran_terakhir: formattedTanggal4,
-            angsuran_tiap_bulan: dbData.nominal_angsuran,
-            nominal_provisi: dbData.provisi_nominal,
-            nominal_administrasi: dbData.administrasi_nominal,
+            angsuran_tiap_bulan: formatNominalAngsuran,
+            nominal_provisi: formatProvisiNominal,
+            nominal_administrasi: formatAdministrasiNominal,
             nama_asuransi: dbData.nama_asuransi,
-            biaya_asuransi: dbData.asuransi_nominal,
-            biaya_materai: dbData.materai_nominal,
-            biaya_notaris: dbData.notaris_nominal,
-            total_biaya: dbData.total_biaya,
+            biaya_asuransi: formatAsuransiNominal,
+            biaya_materai: formatMateraiNominal,
+            biaya_notaris: formatNotarisNominal,
+            total_biaya: formatTotalBiaya,
             nama_shm: dbData.nama_shm,
         };
 

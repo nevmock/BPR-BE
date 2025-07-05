@@ -274,6 +274,7 @@ model KSM {
   hubungan_penjamin_debitur        String?
   nama_barang                      String?
   harga_barang                     Int?
+  no_bpkb                          String?
   nama_shm                         String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
@@ -325,6 +326,7 @@ model KMSM {
   hubungan_penjamin_debitur        String?
   nama_barang                      String?
   harga_barang                     Int?
+  no_bpkb                          String?
   nama_shm                         String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
@@ -423,6 +425,7 @@ model KMM {
   hubungan_penjamin_debitur        String?
   nama_barang                      String?
   harga_barang                     Int?
+  no_bpkb                          String?
   nama_shm                         String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
@@ -574,6 +577,7 @@ model KAR {
   hubungan_penjamin_debitur        String?
   alamat_rumah_penjamin            String?
   nama_barang                      String?
+  no_bpkb                          String?
   nama_shm                         String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?

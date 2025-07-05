@@ -5,6 +5,8 @@ import PizZip from 'pizzip';
 import Docxtemplater from 'docxtemplater';
 import { exec } from "child_process";
 import fs from 'fs';
+import { formatRupiah } from "../../utils/formatRupiah.js";
+import { formatRupiahDenganHuruf } from "../../utils/formatTerbilangRupiah.js";
 
 class FLEKSIController {
     async get(req, res) {
@@ -117,6 +119,9 @@ class FLEKSIController {
         const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
         const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+
+        const formatNominalAngsuran = `${formatRupiah(dbData.nominal_angsuran)}`
 
         //table
         const elektronik = dbData.barang_elektronik.map((item, index) => ({
@@ -140,10 +145,10 @@ class FLEKSIController {
         tanggal_lahir_debitur: formattedTanggal1,
         alamat_debitur: dbData.alamat_rumah_debitur,
         no_ktp_debitur: dbData.nik_debitur,
-        besar_pinjaman: dbData.nominal_pinjaman,
+        besar_pinjaman: formatNominalPinjaman,
         bunga_pinjaman: dbData.bunga_pinjaman,
         jangka_waktu_pinjaman: dbData.jangka_waktu,
-        angsuran_pinjaman: dbData.nominal_angsuran,
+        angsuran_pinjaman: formatNominalAngsuran,
         tanggal_angsuran_pertama: formattedTanggal2,
         nomor_rekening_pinjaman: dbData.rekening_pinjaman,
         tujuan_penggunaan: dbData.tujuan_penggunaan,
@@ -278,6 +283,9 @@ class FLEKSIController {
         const formattedTanggal2 = `${tanggal2.getDate()} ${bulanIndonesia[tanggal2.getMonth()]} ${tanggal2.getFullYear()}`;
         const formattedTanggal3 = `${tanggal3.getDate()} ${bulanIndonesia[tanggal3.getMonth()]} ${tanggal3.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+
+        const formatNominalAngsuran = `${formatRupiah(dbData.nominal_angsuran)}`
 
         //table
         const elektronik = dbData.barang_elektronik.map((item, index) => ({
@@ -301,10 +309,10 @@ class FLEKSIController {
         tanggal_lahir_debitur: formattedTanggal1,
         alamat_debitur: dbData.alamat_rumah_debitur,
         no_ktp_debitur: dbData.nik_debitur,
-        besar_pinjaman: dbData.nominal_pinjaman,
+        besar_pinjaman: formatNominalPinjaman,
         bunga_pinjaman: dbData.bunga_pinjaman,
         jangka_waktu_pinjaman: dbData.jangka_waktu,
-        angsuran_pinjaman: dbData.nominal_angsuran,
+        angsuran_pinjaman: formatNominalAngsuran,
         tanggal_angsuran_pertama: formattedTanggal2,
         nomor_rekening_pinjaman: dbData.rekening_pinjaman,
         tujuan_penggunaan: dbData.tujuan_penggunaan,

@@ -5,6 +5,8 @@ import fs from 'fs';
 import PizZip from 'pizzip';
 import Docxtemplater from 'docxtemplater';
 import { exec } from "child_process";
+import { formatRupiahDenganHuruf } from "../../utils/formatTerbilangRupiah.js";
+import { formatRupiah } from "../../utils/formatRupiah.js";
 
 class PINEKController {
     async get(req, res) {
@@ -135,6 +137,15 @@ class PINEKController {
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal5.getMonth()]} ${tanggal5.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAsuransiJiwaNominal = `${formatRupiah(dbData.asuransi_jiwa_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+
         const data = {
             nomor_surat: dbData.nomor_surat,
             tanggal_surat_persetujuan_kredit: formattedTanggal,
@@ -151,20 +162,20 @@ class PINEKController {
             no_ktp_penjamin: dbData.nik_penjamin,
             tempat_tinggal_penjamin: dbData.alamat_rumah_penjamin,
             tanggal_permohonan_kredit: formattedTanggal3,
-            debitur_menerima_pinjaman: dbData.nominal_pinjaman,
+            debitur_menerima_pinjaman: formatNominalPinjaman,
             dikenakan_bunga: dbData.bunga_pinjaman,
-            total_seluruh_hutang: dbData.hutang_keseluruhan,
+            total_seluruh_hutang: formatHutangKeseluruhan,
             jangka_waktu_hutang: dbData.jangka_waktu,
             mengangsur_paling_lambat: dbData.tenggat_angsuran,
-            pemotongan_gaji: dbData.nominal_angsuran,
+            pemotongan_gaji: formatNominalAngsuran,
             tanggal_mengangsur_pertama: formattedTanggal4,
             tanggal_mengangsur_terakhir: formattedTanggal5,
             provisi_persen: dbData.provisi_persen,
-            provisi_nominal: dbData.provisi_nominal,
+            provisi_nominal: formatProvisiNominal,
             nama_asuransi: dbData.nama_asuransi,
-            asuransi_jiwa_nominal: dbData.asuransi_jiwa_nominal,
-            materai_nominal: dbData.materai_nominal,
-            total_biaya: dbData.total_biaya,
+            asuransi_jiwa_nominal: formatAsuransiJiwaNominal,
+            materai_nominal: formatMateraiNominal,
+            total_biaya: formatTotalBiaya,
         };
 
         const templatePath = path.resolve("src/templates/", "PINEK.docx");
@@ -291,6 +302,15 @@ class PINEKController {
         const formattedTanggal4 = `${tanggal4.getDate()} ${bulanIndonesia[tanggal4.getMonth()]} ${tanggal4.getFullYear()}`;
         const formattedTanggal5 = `${tanggal5.getDate()} ${bulanIndonesia[tanggal5.getMonth()]} ${tanggal5.getFullYear()}`;
 
+        const formatNominalPinjaman = `${formatRupiahDenganHuruf(dbData.nominal_pinjaman)}`
+        const formatHutangKeseluruhan = `${formatRupiahDenganHuruf(dbData.hutang_keseluruhan)}`
+        const formatNominalAngsuran = `${formatRupiahDenganHuruf(dbData.nominal_angsuran)}`
+        const formatTotalBiaya = `${formatRupiahDenganHuruf(dbData.total_biaya)}`
+
+        const formatProvisiNominal = `${formatRupiah(dbData.provisi_nominal)}`
+        const formatAsuransiJiwaNominal = `${formatRupiah(dbData.asuransi_jiwa_nominal)}`
+        const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`
+
         const data = {
             nomor_surat: dbData.nomor_surat,
             tanggal_surat_persetujuan_kredit: formattedTanggal,
@@ -307,20 +327,20 @@ class PINEKController {
             no_ktp_penjamin: dbData.nik_penjamin,
             tempat_tinggal_penjamin: dbData.alamat_rumah_penjamin,
             tanggal_permohonan_kredit: formattedTanggal3,
-            debitur_menerima_pinjaman: dbData.nominal_pinjaman,
+            debitur_menerima_pinjaman: formatNominalPinjaman,
             dikenakan_bunga: dbData.bunga_pinjaman,
-            total_seluruh_hutang: dbData.hutang_keseluruhan,
+            total_seluruh_hutang: formatHutangKeseluruhan,
             jangka_waktu_hutang: dbData.jangka_waktu,
             mengangsur_paling_lambat: dbData.tenggat_angsuran,
-            pemotongan_gaji: dbData.nominal_angsuran,
+            pemotongan_gaji: formatNominalAngsuran,
             tanggal_mengangsur_pertama: formattedTanggal4,
             tanggal_mengangsur_terakhir: formattedTanggal5,
             provisi_persen: dbData.provisi_persen,
-            provisi_nominal: dbData.provisi_nominal,
+            provisi_nominal: formatProvisiNominal,
             nama_asuransi: dbData.nama_asuransi,
-            asuransi_jiwa_nominal: dbData.asuransi_jiwa_nominal,
-            materai_nominal: dbData.materai_nominal,
-            total_biaya: dbData.total_biaya,
+            asuransi_jiwa_nominal: formatAsuransiJiwaNominal,
+            materai_nominal: formatMateraiNominal,
+            total_biaya: formatTotalBiaya,
         };
 
         const templatePath = path.resolve("src/templates/", "PINEK.docx");

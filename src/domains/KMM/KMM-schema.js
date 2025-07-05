@@ -30,6 +30,7 @@ const createKMM = JoiExtended.object({
   hubungan_penjamin_debitur: JoiExtended.string().optional(),
   nama_barang: JoiExtended.string().optional(),
   harga_barang: JoiExtended.number().optional(),
+  no_bpkb: JoiExtended.string().optional(),
   nama_shm: JoiExtended.string().optional(),
   detail_jaminan: JoiExtended.string().optional(),
   nominal_pinjaman: JoiExtended.number().optional(),
