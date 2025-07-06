@@ -89,6 +89,11 @@ export type FleksiBarangElektronik = $Result.DefaultSelection<Prisma.$FleksiBara
  */
 export type FleksiBarangFurniture = $Result.DefaultSelection<Prisma.$FleksiBarangFurniturePayload>
 /**
+ * Model FleksiBarangJaminanLainnya
+ * 
+ */
+export type FleksiBarangJaminanLainnya = $Result.DefaultSelection<Prisma.$FleksiBarangJaminanLainnyaPayload>
+/**
  * Model ProcimBarangElektronik
  * 
  */
@@ -98,6 +103,11 @@ export type ProcimBarangElektronik = $Result.DefaultSelection<Prisma.$ProcimBara
  * 
  */
 export type ProcimBarangFurniture = $Result.DefaultSelection<Prisma.$ProcimBarangFurniturePayload>
+/**
+ * Model ProcimBarangJaminanLainnya
+ * 
+ */
+export type ProcimBarangJaminanLainnya = $Result.DefaultSelection<Prisma.$ProcimBarangJaminanLainnyaPayload>
 /**
  * Model SystemLog
  * 
@@ -380,6 +390,16 @@ export class PrismaClient<
   get fleksiBarangFurniture(): Prisma.FleksiBarangFurnitureDelegate<ExtArgs, ClientOptions>;
 
   /**
+   * `prisma.fleksiBarangJaminanLainnya`: Exposes CRUD operations for the **FleksiBarangJaminanLainnya** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FleksiBarangJaminanLainnyas
+    * const fleksiBarangJaminanLainnyas = await prisma.fleksiBarangJaminanLainnya.findMany()
+    * ```
+    */
+  get fleksiBarangJaminanLainnya(): Prisma.FleksiBarangJaminanLainnyaDelegate<ExtArgs, ClientOptions>;
+
+  /**
    * `prisma.procimBarangElektronik`: Exposes CRUD operations for the **ProcimBarangElektronik** model.
     * Example usage:
     * ```ts
@@ -398,6 +418,16 @@ export class PrismaClient<
     * ```
     */
   get procimBarangFurniture(): Prisma.ProcimBarangFurnitureDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.procimBarangJaminanLainnya`: Exposes CRUD operations for the **ProcimBarangJaminanLainnya** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ProcimBarangJaminanLainnyas
+    * const procimBarangJaminanLainnyas = await prisma.procimBarangJaminanLainnya.findMany()
+    * ```
+    */
+  get procimBarangJaminanLainnya(): Prisma.ProcimBarangJaminanLainnyaDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.systemLog`: Exposes CRUD operations for the **SystemLog** model.
@@ -466,8 +496,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.8.2
-   * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
+   * Prisma Client JS version: 6.11.1
+   * Query Engine version: f40f79ec31188888a2e33acda0ecc8fd10a853a9
    */
   export type PrismaVersion = {
     client: string
@@ -863,8 +893,10 @@ export namespace Prisma {
     KAR: 'KAR',
     FleksiBarangElektronik: 'FleksiBarangElektronik',
     FleksiBarangFurniture: 'FleksiBarangFurniture',
+    FleksiBarangJaminanLainnya: 'FleksiBarangJaminanLainnya',
     ProcimBarangElektronik: 'ProcimBarangElektronik',
     ProcimBarangFurniture: 'ProcimBarangFurniture',
+    ProcimBarangJaminanLainnya: 'ProcimBarangJaminanLainnya',
     SystemLog: 'SystemLog'
   };
 
@@ -884,7 +916,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "kSSM" | "kSS" | "pINEK" | "fLEKSI" | "pROCIM" | "kSM" | "kMSM" | "kRS" | "kMM" | "kMS" | "kEF" | "kAR" | "fleksiBarangElektronik" | "fleksiBarangFurniture" | "procimBarangElektronik" | "procimBarangFurniture" | "systemLog"
+      modelProps: "user" | "kSSM" | "kSS" | "pINEK" | "fLEKSI" | "pROCIM" | "kSM" | "kMSM" | "kRS" | "kMM" | "kMS" | "kEF" | "kAR" | "fleksiBarangElektronik" | "fleksiBarangFurniture" | "fleksiBarangJaminanLainnya" | "procimBarangElektronik" | "procimBarangFurniture" | "procimBarangJaminanLainnya" | "systemLog"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1998,6 +2030,80 @@ export namespace Prisma {
           }
         }
       }
+      FleksiBarangJaminanLainnya: {
+        payload: Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>
+        fields: Prisma.FleksiBarangJaminanLainnyaFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FleksiBarangJaminanLainnyaFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FleksiBarangJaminanLainnyaFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>
+          }
+          findFirst: {
+            args: Prisma.FleksiBarangJaminanLainnyaFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FleksiBarangJaminanLainnyaFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>
+          }
+          findMany: {
+            args: Prisma.FleksiBarangJaminanLainnyaFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>[]
+          }
+          create: {
+            args: Prisma.FleksiBarangJaminanLainnyaCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>
+          }
+          createMany: {
+            args: Prisma.FleksiBarangJaminanLainnyaCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FleksiBarangJaminanLainnyaCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>[]
+          }
+          delete: {
+            args: Prisma.FleksiBarangJaminanLainnyaDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>
+          }
+          update: {
+            args: Prisma.FleksiBarangJaminanLainnyaUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>
+          }
+          deleteMany: {
+            args: Prisma.FleksiBarangJaminanLainnyaDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FleksiBarangJaminanLainnyaUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FleksiBarangJaminanLainnyaUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>[]
+          }
+          upsert: {
+            args: Prisma.FleksiBarangJaminanLainnyaUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FleksiBarangJaminanLainnyaPayload>
+          }
+          aggregate: {
+            args: Prisma.FleksiBarangJaminanLainnyaAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFleksiBarangJaminanLainnya>
+          }
+          groupBy: {
+            args: Prisma.FleksiBarangJaminanLainnyaGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FleksiBarangJaminanLainnyaGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FleksiBarangJaminanLainnyaCountArgs<ExtArgs>
+            result: $Utils.Optional<FleksiBarangJaminanLainnyaCountAggregateOutputType> | number
+          }
+        }
+      }
       ProcimBarangElektronik: {
         payload: Prisma.$ProcimBarangElektronikPayload<ExtArgs>
         fields: Prisma.ProcimBarangElektronikFieldRefs
@@ -2143,6 +2249,80 @@ export namespace Prisma {
           count: {
             args: Prisma.ProcimBarangFurnitureCountArgs<ExtArgs>
             result: $Utils.Optional<ProcimBarangFurnitureCountAggregateOutputType> | number
+          }
+        }
+      }
+      ProcimBarangJaminanLainnya: {
+        payload: Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>
+        fields: Prisma.ProcimBarangJaminanLainnyaFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ProcimBarangJaminanLainnyaFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ProcimBarangJaminanLainnyaFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>
+          }
+          findFirst: {
+            args: Prisma.ProcimBarangJaminanLainnyaFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ProcimBarangJaminanLainnyaFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>
+          }
+          findMany: {
+            args: Prisma.ProcimBarangJaminanLainnyaFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>[]
+          }
+          create: {
+            args: Prisma.ProcimBarangJaminanLainnyaCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>
+          }
+          createMany: {
+            args: Prisma.ProcimBarangJaminanLainnyaCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ProcimBarangJaminanLainnyaCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>[]
+          }
+          delete: {
+            args: Prisma.ProcimBarangJaminanLainnyaDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>
+          }
+          update: {
+            args: Prisma.ProcimBarangJaminanLainnyaUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>
+          }
+          deleteMany: {
+            args: Prisma.ProcimBarangJaminanLainnyaDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ProcimBarangJaminanLainnyaUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ProcimBarangJaminanLainnyaUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>[]
+          }
+          upsert: {
+            args: Prisma.ProcimBarangJaminanLainnyaUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcimBarangJaminanLainnyaPayload>
+          }
+          aggregate: {
+            args: Prisma.ProcimBarangJaminanLainnyaAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProcimBarangJaminanLainnya>
+          }
+          groupBy: {
+            args: Prisma.ProcimBarangJaminanLainnyaGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ProcimBarangJaminanLainnyaGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ProcimBarangJaminanLainnyaCountArgs<ExtArgs>
+            result: $Utils.Optional<ProcimBarangJaminanLainnyaCountAggregateOutputType> | number
           }
         }
       }
@@ -2319,8 +2499,10 @@ export namespace Prisma {
     kAR?: KAROmit
     fleksiBarangElektronik?: FleksiBarangElektronikOmit
     fleksiBarangFurniture?: FleksiBarangFurnitureOmit
+    fleksiBarangJaminanLainnya?: FleksiBarangJaminanLainnyaOmit
     procimBarangElektronik?: ProcimBarangElektronikOmit
     procimBarangFurniture?: ProcimBarangFurnitureOmit
+    procimBarangJaminanLainnya?: ProcimBarangJaminanLainnyaOmit
     systemLog?: SystemLogOmit
   }
 
@@ -2557,11 +2739,13 @@ export namespace Prisma {
   export type FLEKSICountOutputType = {
     barang_elektronik: number
     barang_furniture: number
+    barang_jaminan_lainnya: number
   }
 
   export type FLEKSICountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     barang_elektronik?: boolean | FLEKSICountOutputTypeCountBarang_elektronikArgs
     barang_furniture?: boolean | FLEKSICountOutputTypeCountBarang_furnitureArgs
+    barang_jaminan_lainnya?: boolean | FLEKSICountOutputTypeCountBarang_jaminan_lainnyaArgs
   }
 
   // Custom InputTypes
@@ -2589,6 +2773,13 @@ export namespace Prisma {
     where?: FleksiBarangFurnitureWhereInput
   }
 
+  /**
+   * FLEKSICountOutputType without action
+   */
+  export type FLEKSICountOutputTypeCountBarang_jaminan_lainnyaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FleksiBarangJaminanLainnyaWhereInput
+  }
+
 
   /**
    * Count Type PROCIMCountOutputType
@@ -2597,11 +2788,13 @@ export namespace Prisma {
   export type PROCIMCountOutputType = {
     barang_elektronik: number
     barang_furniture: number
+    barang_jaminan_lainnya: number
   }
 
   export type PROCIMCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     barang_elektronik?: boolean | PROCIMCountOutputTypeCountBarang_elektronikArgs
     barang_furniture?: boolean | PROCIMCountOutputTypeCountBarang_furnitureArgs
+    barang_jaminan_lainnya?: boolean | PROCIMCountOutputTypeCountBarang_jaminan_lainnyaArgs
   }
 
   // Custom InputTypes
@@ -2627,6 +2820,13 @@ export namespace Prisma {
    */
   export type PROCIMCountOutputTypeCountBarang_furnitureArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ProcimBarangFurnitureWhereInput
+  }
+
+  /**
+   * PROCIMCountOutputType without action
+   */
+  export type PROCIMCountOutputTypeCountBarang_jaminan_lainnyaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProcimBarangJaminanLainnyaWhereInput
   }
 
 
@@ -4126,7 +4326,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_SHM: string | null
     nama_barang: string | null
     no_bpkb: string | null
     harga_barang: number | null
@@ -4178,7 +4377,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_SHM: string | null
     nama_barang: string | null
     no_bpkb: string | null
     harga_barang: number | null
@@ -4230,7 +4428,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: number
     hubungan_penjamin_debitur: number
     alamat_rumah_penjamin: number
-    nama_SHM: number
     nama_barang: number
     no_bpkb: number
     harga_barang: number
@@ -4322,7 +4519,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_SHM?: true
     nama_barang?: true
     no_bpkb?: true
     harga_barang?: true
@@ -4374,7 +4570,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_SHM?: true
     nama_barang?: true
     no_bpkb?: true
     harga_barang?: true
@@ -4426,7 +4621,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_SHM?: true
     nama_barang?: true
     no_bpkb?: true
     harga_barang?: true
@@ -4565,7 +4759,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_SHM: string | null
     nama_barang: string | null
     no_bpkb: string | null
     harga_barang: number | null
@@ -4636,7 +4829,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_SHM?: boolean
     nama_barang?: boolean
     no_bpkb?: boolean
     harga_barang?: boolean
@@ -4689,7 +4881,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_SHM?: boolean
     nama_barang?: boolean
     no_bpkb?: boolean
     harga_barang?: boolean
@@ -4742,7 +4933,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_SHM?: boolean
     nama_barang?: boolean
     no_bpkb?: boolean
     harga_barang?: boolean
@@ -4795,7 +4985,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_SHM?: boolean
     nama_barang?: boolean
     no_bpkb?: boolean
     harga_barang?: boolean
@@ -4824,7 +5013,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KSSMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "pekerjaan_debitur" | "jenis_kelamin_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_SHM" | "nama_barang" | "no_bpkb" | "harga_barang" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "asuransi_jiwa_nominal" | "asuransi_tlo_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSSM"]>
+  export type KSSMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "pekerjaan_debitur" | "jenis_kelamin_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_barang" | "no_bpkb" | "harga_barang" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "asuransi_jiwa_nominal" | "asuransi_tlo_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSSM"]>
   export type KSSMInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -4863,7 +5052,6 @@ export namespace Prisma {
       tanggal_lahir_penjamin: Date | null
       hubungan_penjamin_debitur: string | null
       alamat_rumah_penjamin: string | null
-      nama_SHM: string | null
       nama_barang: string | null
       no_bpkb: string | null
       harga_barang: number | null
@@ -5336,7 +5524,6 @@ export namespace Prisma {
     readonly tanggal_lahir_penjamin: FieldRef<"KSSM", 'DateTime'>
     readonly hubungan_penjamin_debitur: FieldRef<"KSSM", 'String'>
     readonly alamat_rumah_penjamin: FieldRef<"KSSM", 'String'>
-    readonly nama_SHM: FieldRef<"KSSM", 'String'>
     readonly nama_barang: FieldRef<"KSSM", 'String'>
     readonly no_bpkb: FieldRef<"KSSM", 'String'>
     readonly harga_barang: FieldRef<"KSSM", 'Int'>
@@ -5844,6 +6031,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur: string | null
     tanggal_lahir_penjamin: Date | null
     nama_shm: string | null
+    nik_shm: string | null
+    alamat_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -5891,6 +6080,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur: string | null
     tanggal_lahir_penjamin: Date | null
     nama_shm: string | null
+    nik_shm: string | null
+    alamat_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -5938,6 +6129,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur: number
     tanggal_lahir_penjamin: number
     nama_shm: number
+    nik_shm: number
+    alamat_shm: number
     detail_jaminan: number
     nominal_pinjaman: number
     bunga_pinjaman: number
@@ -6019,6 +6212,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: true
     tanggal_lahir_penjamin?: true
     nama_shm?: true
+    nik_shm?: true
+    alamat_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -6066,6 +6261,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: true
     tanggal_lahir_penjamin?: true
     nama_shm?: true
+    nik_shm?: true
+    alamat_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -6113,6 +6310,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: true
     tanggal_lahir_penjamin?: true
     nama_shm?: true
+    nik_shm?: true
+    alamat_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -6247,6 +6446,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur: string | null
     tanggal_lahir_penjamin: Date | null
     nama_shm: string | null
+    nik_shm: string | null
+    alamat_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -6313,6 +6514,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: boolean
     tanggal_lahir_penjamin?: boolean
     nama_shm?: boolean
+    nik_shm?: boolean
+    alamat_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -6361,6 +6564,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: boolean
     tanggal_lahir_penjamin?: boolean
     nama_shm?: boolean
+    nik_shm?: boolean
+    alamat_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -6409,6 +6614,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: boolean
     tanggal_lahir_penjamin?: boolean
     nama_shm?: boolean
+    nik_shm?: boolean
+    alamat_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -6457,6 +6664,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: boolean
     tanggal_lahir_penjamin?: boolean
     nama_shm?: boolean
+    nik_shm?: boolean
+    alamat_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -6481,7 +6690,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KSSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "nama_penjamin" | "nik_penjamin" | "alamat_rumah_penjamin" | "tempat_lahir_penjamin" | "hubungan_penjamin_debitur" | "tanggal_lahir_penjamin" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_dimulai" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "administrasi_nominal" | "nama_asuransi" | "asuransi_nominal" | "materai_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSS"]>
+  export type KSSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "nama_penjamin" | "nik_penjamin" | "alamat_rumah_penjamin" | "tempat_lahir_penjamin" | "hubungan_penjamin_debitur" | "tanggal_lahir_penjamin" | "nama_shm" | "nik_shm" | "alamat_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_dimulai" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "administrasi_nominal" | "nama_asuransi" | "asuransi_nominal" | "materai_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSS"]>
   export type KSSInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -6520,6 +6729,8 @@ export namespace Prisma {
       hubungan_penjamin_debitur: string | null
       tanggal_lahir_penjamin: Date | null
       nama_shm: string | null
+      nik_shm: string | null
+      alamat_shm: string | null
       detail_jaminan: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
@@ -6988,6 +7199,8 @@ export namespace Prisma {
     readonly hubungan_penjamin_debitur: FieldRef<"KSS", 'String'>
     readonly tanggal_lahir_penjamin: FieldRef<"KSS", 'DateTime'>
     readonly nama_shm: FieldRef<"KSS", 'String'>
+    readonly nik_shm: FieldRef<"KSS", 'String'>
+    readonly alamat_shm: FieldRef<"KSS", 'String'>
     readonly detail_jaminan: FieldRef<"KSS", 'String'>
     readonly nominal_pinjaman: FieldRef<"KSS", 'Int'>
     readonly bunga_pinjaman: FieldRef<"KSS", 'Float'>
@@ -7482,7 +7695,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_shm: string | null
+    nama_barang: string | null
+    detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
@@ -7523,7 +7737,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_shm: string | null
+    nama_barang: string | null
+    detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
@@ -7564,7 +7779,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: number
     hubungan_penjamin_debitur: number
     alamat_rumah_penjamin: number
-    nama_shm: number
+    nama_barang: number
+    detail_jaminan: number
     nominal_pinjaman: number
     bunga_pinjaman: number
     jangka_waktu: number
@@ -7635,7 +7851,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_shm?: true
+    nama_barang?: true
+    detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
@@ -7676,7 +7893,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_shm?: true
+    nama_barang?: true
+    detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
@@ -7717,7 +7935,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_shm?: true
+    nama_barang?: true
+    detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
@@ -7845,7 +8064,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_shm: string | null
+    nama_barang: string | null
+    detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
@@ -7905,7 +8125,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_shm?: boolean
+    nama_barang?: boolean
+    detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
@@ -7947,7 +8168,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_shm?: boolean
+    nama_barang?: boolean
+    detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
@@ -7989,7 +8211,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_shm?: boolean
+    nama_barang?: boolean
+    detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
@@ -8031,7 +8254,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_shm?: boolean
+    nama_barang?: boolean
+    detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
@@ -8054,7 +8278,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type PINEKOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "nik_debitur" | "status_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_shm" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "rekening_pinjaman" | "tujuan_penggunaan" | "provisi_persen" | "provisi_nominal" | "nama_asuransi" | "asuransi_jiwa_nominal" | "materai_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["pINEK"]>
+  export type PINEKOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "nik_debitur" | "status_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_barang" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "rekening_pinjaman" | "tujuan_penggunaan" | "provisi_persen" | "provisi_nominal" | "nama_asuransi" | "asuransi_jiwa_nominal" | "materai_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["pINEK"]>
   export type PINEKInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -8088,7 +8312,8 @@ export namespace Prisma {
       tanggal_lahir_penjamin: Date | null
       hubungan_penjamin_debitur: string | null
       alamat_rumah_penjamin: string | null
-      nama_shm: string | null
+      nama_barang: string | null
+      detail_jaminan: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
       jangka_waktu: number | null
@@ -8550,7 +8775,8 @@ export namespace Prisma {
     readonly tanggal_lahir_penjamin: FieldRef<"PINEK", 'DateTime'>
     readonly hubungan_penjamin_debitur: FieldRef<"PINEK", 'String'>
     readonly alamat_rumah_penjamin: FieldRef<"PINEK", 'String'>
-    readonly nama_shm: FieldRef<"PINEK", 'String'>
+    readonly nama_barang: FieldRef<"PINEK", 'String'>
+    readonly detail_jaminan: FieldRef<"PINEK", 'String'>
     readonly nominal_pinjaman: FieldRef<"PINEK", 'Int'>
     readonly bunga_pinjaman: FieldRef<"PINEK", 'Float'>
     readonly jangka_waktu: FieldRef<"PINEK", 'Int'>
@@ -9028,7 +9254,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_shm: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
@@ -9036,7 +9261,6 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
-    barang_jaminan_lainnya: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -9060,7 +9284,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_shm: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
@@ -9068,7 +9291,6 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
-    barang_jaminan_lainnya: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -9092,7 +9314,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: number
     hubungan_penjamin_debitur: number
     alamat_rumah_penjamin: number
-    nama_shm: number
     nominal_pinjaman: number
     bunga_pinjaman: number
     jangka_waktu: number
@@ -9100,7 +9321,6 @@ export namespace Prisma {
     rekening_pinjaman: number
     nominal_angsuran: number
     tanggal_angsuran_pertama: number
-    barang_jaminan_lainnya: number
     created_at: number
     updated_at: number
     submitted_at: number
@@ -9140,7 +9360,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_shm?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
@@ -9148,7 +9367,6 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
-    barang_jaminan_lainnya?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -9172,7 +9390,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_shm?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
@@ -9180,7 +9397,6 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
-    barang_jaminan_lainnya?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -9204,7 +9420,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     alamat_rumah_penjamin?: true
-    nama_shm?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
@@ -9212,7 +9427,6 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
-    barang_jaminan_lainnya?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -9323,7 +9537,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     alamat_rumah_penjamin: string | null
-    nama_shm: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
@@ -9331,7 +9544,6 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
-    barang_jaminan_lainnya: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -9374,7 +9586,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_shm?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
@@ -9382,13 +9593,13 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
-    barang_jaminan_lainnya?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
     userID?: boolean
     barang_elektronik?: boolean | FLEKSI$barang_elektronikArgs<ExtArgs>
     barang_furniture?: boolean | FLEKSI$barang_furnitureArgs<ExtArgs>
+    barang_jaminan_lainnya?: boolean | FLEKSI$barang_jaminan_lainnyaArgs<ExtArgs>
     User?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | FLEKSICountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["fLEKSI"]>
@@ -9410,7 +9621,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_shm?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
@@ -9418,7 +9628,6 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
-    barang_jaminan_lainnya?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -9443,7 +9652,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_shm?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
@@ -9451,7 +9659,6 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
-    barang_jaminan_lainnya?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -9476,7 +9683,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_shm?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
@@ -9484,17 +9690,17 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
-    barang_jaminan_lainnya?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
     userID?: boolean
   }
 
-  export type FLEKSIOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "status_debitur" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "nik_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_shm" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "rekening_pinjaman" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "barang_jaminan_lainnya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["fLEKSI"]>
+  export type FLEKSIOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "status_debitur" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "nik_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "rekening_pinjaman" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["fLEKSI"]>
   export type FLEKSIInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     barang_elektronik?: boolean | FLEKSI$barang_elektronikArgs<ExtArgs>
     barang_furniture?: boolean | FLEKSI$barang_furnitureArgs<ExtArgs>
+    barang_jaminan_lainnya?: boolean | FLEKSI$barang_jaminan_lainnyaArgs<ExtArgs>
     User?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | FLEKSICountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -9510,6 +9716,7 @@ export namespace Prisma {
     objects: {
       barang_elektronik: Prisma.$FleksiBarangElektronikPayload<ExtArgs>[]
       barang_furniture: Prisma.$FleksiBarangFurniturePayload<ExtArgs>[]
+      barang_jaminan_lainnya: Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>[]
       User: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -9529,7 +9736,6 @@ export namespace Prisma {
       tanggal_lahir_penjamin: Date | null
       hubungan_penjamin_debitur: string | null
       alamat_rumah_penjamin: string | null
-      nama_shm: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
       jangka_waktu: number | null
@@ -9537,7 +9743,6 @@ export namespace Prisma {
       rekening_pinjaman: string | null
       nominal_angsuran: number | null
       tanggal_angsuran_pertama: Date | null
-      barang_jaminan_lainnya: string | null
       created_at: Date | null
       updated_at: Date | null
       submitted_at: Date | null
@@ -9938,6 +10143,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     barang_elektronik<T extends FLEKSI$barang_elektronikArgs<ExtArgs> = {}>(args?: Subset<T, FLEKSI$barang_elektronikArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FleksiBarangElektronikPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     barang_furniture<T extends FLEKSI$barang_furnitureArgs<ExtArgs> = {}>(args?: Subset<T, FLEKSI$barang_furnitureArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FleksiBarangFurniturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    barang_jaminan_lainnya<T extends FLEKSI$barang_jaminan_lainnyaArgs<ExtArgs> = {}>(args?: Subset<T, FLEKSI$barang_jaminan_lainnyaArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -9984,7 +10190,6 @@ export namespace Prisma {
     readonly tanggal_lahir_penjamin: FieldRef<"FLEKSI", 'DateTime'>
     readonly hubungan_penjamin_debitur: FieldRef<"FLEKSI", 'String'>
     readonly alamat_rumah_penjamin: FieldRef<"FLEKSI", 'String'>
-    readonly nama_shm: FieldRef<"FLEKSI", 'String'>
     readonly nominal_pinjaman: FieldRef<"FLEKSI", 'Int'>
     readonly bunga_pinjaman: FieldRef<"FLEKSI", 'Float'>
     readonly jangka_waktu: FieldRef<"FLEKSI", 'Int'>
@@ -9992,7 +10197,6 @@ export namespace Prisma {
     readonly rekening_pinjaman: FieldRef<"FLEKSI", 'String'>
     readonly nominal_angsuran: FieldRef<"FLEKSI", 'Int'>
     readonly tanggal_angsuran_pertama: FieldRef<"FLEKSI", 'DateTime'>
-    readonly barang_jaminan_lainnya: FieldRef<"FLEKSI", 'String'>
     readonly created_at: FieldRef<"FLEKSI", 'DateTime'>
     readonly updated_at: FieldRef<"FLEKSI", 'DateTime'>
     readonly submitted_at: FieldRef<"FLEKSI", 'DateTime'>
@@ -10441,6 +10645,30 @@ export namespace Prisma {
   }
 
   /**
+   * FLEKSI.barang_jaminan_lainnya
+   */
+  export type FLEKSI$barang_jaminan_lainnyaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    orderBy?: FleksiBarangJaminanLainnyaOrderByWithRelationInput | FleksiBarangJaminanLainnyaOrderByWithRelationInput[]
+    cursor?: FleksiBarangJaminanLainnyaWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FleksiBarangJaminanLainnyaScalarFieldEnum | FleksiBarangJaminanLainnyaScalarFieldEnum[]
+  }
+
+  /**
    * FLEKSI without action
    */
   export type FLEKSIDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10500,14 +10728,12 @@ export namespace Prisma {
     tempat_lahir_penjamin: string | null
     tanggal_lahir_penjamin: Date | null
     alamat_rumah_penjamin: string | null
-    nama_SHM: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
-    barang_jaminan_lainnya: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -10529,14 +10755,12 @@ export namespace Prisma {
     tempat_lahir_penjamin: string | null
     tanggal_lahir_penjamin: Date | null
     alamat_rumah_penjamin: string | null
-    nama_SHM: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
-    barang_jaminan_lainnya: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -10558,14 +10782,12 @@ export namespace Prisma {
     tempat_lahir_penjamin: number
     tanggal_lahir_penjamin: number
     alamat_rumah_penjamin: number
-    nama_SHM: number
     nominal_pinjaman: number
     bunga_pinjaman: number
     jangka_waktu: number
     rekening_pinjaman: number
     nominal_angsuran: number
     tanggal_angsuran_pertama: number
-    barang_jaminan_lainnya: number
     created_at: number
     updated_at: number
     submitted_at: number
@@ -10603,14 +10825,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: true
     tanggal_lahir_penjamin?: true
     alamat_rumah_penjamin?: true
-    nama_SHM?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
-    barang_jaminan_lainnya?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -10632,14 +10852,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: true
     tanggal_lahir_penjamin?: true
     alamat_rumah_penjamin?: true
-    nama_SHM?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
-    barang_jaminan_lainnya?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -10661,14 +10879,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: true
     tanggal_lahir_penjamin?: true
     alamat_rumah_penjamin?: true
-    nama_SHM?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
-    barang_jaminan_lainnya?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -10777,14 +10993,12 @@ export namespace Prisma {
     tempat_lahir_penjamin: string | null
     tanggal_lahir_penjamin: Date | null
     alamat_rumah_penjamin: string | null
-    nama_SHM: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
-    barang_jaminan_lainnya: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -10825,20 +11039,19 @@ export namespace Prisma {
     tempat_lahir_penjamin?: boolean
     tanggal_lahir_penjamin?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_SHM?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
-    barang_jaminan_lainnya?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
     userID?: boolean
     barang_elektronik?: boolean | PROCIM$barang_elektronikArgs<ExtArgs>
     barang_furniture?: boolean | PROCIM$barang_furnitureArgs<ExtArgs>
+    barang_jaminan_lainnya?: boolean | PROCIM$barang_jaminan_lainnyaArgs<ExtArgs>
     User?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | PROCIMCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["pROCIM"]>
@@ -10858,14 +11071,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: boolean
     tanggal_lahir_penjamin?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_SHM?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
-    barang_jaminan_lainnya?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -10888,14 +11099,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: boolean
     tanggal_lahir_penjamin?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_SHM?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
-    barang_jaminan_lainnya?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -10918,24 +11127,23 @@ export namespace Prisma {
     tempat_lahir_penjamin?: boolean
     tanggal_lahir_penjamin?: boolean
     alamat_rumah_penjamin?: boolean
-    nama_SHM?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
     jangka_waktu?: boolean
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
-    barang_jaminan_lainnya?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
     userID?: boolean
   }
 
-  export type PROCIMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "nik_debitur" | "status_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "alamat_rumah_penjamin" | "nama_SHM" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "rekening_pinjaman" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "barang_jaminan_lainnya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["pROCIM"]>
+  export type PROCIMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "nik_debitur" | "status_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "alamat_rumah_penjamin" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "rekening_pinjaman" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["pROCIM"]>
   export type PROCIMInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     barang_elektronik?: boolean | PROCIM$barang_elektronikArgs<ExtArgs>
     barang_furniture?: boolean | PROCIM$barang_furnitureArgs<ExtArgs>
+    barang_jaminan_lainnya?: boolean | PROCIM$barang_jaminan_lainnyaArgs<ExtArgs>
     User?: boolean | UserDefaultArgs<ExtArgs>
     _count?: boolean | PROCIMCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -10951,6 +11159,7 @@ export namespace Prisma {
     objects: {
       barang_elektronik: Prisma.$ProcimBarangElektronikPayload<ExtArgs>[]
       barang_furniture: Prisma.$ProcimBarangFurniturePayload<ExtArgs>[]
+      barang_jaminan_lainnya: Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>[]
       User: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -10968,14 +11177,12 @@ export namespace Prisma {
       tempat_lahir_penjamin: string | null
       tanggal_lahir_penjamin: Date | null
       alamat_rumah_penjamin: string | null
-      nama_SHM: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
       jangka_waktu: number | null
       rekening_pinjaman: string | null
       nominal_angsuran: number | null
       tanggal_angsuran_pertama: Date | null
-      barang_jaminan_lainnya: string | null
       created_at: Date | null
       updated_at: Date | null
       submitted_at: Date | null
@@ -11376,6 +11583,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     barang_elektronik<T extends PROCIM$barang_elektronikArgs<ExtArgs> = {}>(args?: Subset<T, PROCIM$barang_elektronikArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcimBarangElektronikPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     barang_furniture<T extends PROCIM$barang_furnitureArgs<ExtArgs> = {}>(args?: Subset<T, PROCIM$barang_furnitureArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcimBarangFurniturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    barang_jaminan_lainnya<T extends PROCIM$barang_jaminan_lainnyaArgs<ExtArgs> = {}>(args?: Subset<T, PROCIM$barang_jaminan_lainnyaArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     User<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -11420,14 +11628,12 @@ export namespace Prisma {
     readonly tempat_lahir_penjamin: FieldRef<"PROCIM", 'String'>
     readonly tanggal_lahir_penjamin: FieldRef<"PROCIM", 'DateTime'>
     readonly alamat_rumah_penjamin: FieldRef<"PROCIM", 'String'>
-    readonly nama_SHM: FieldRef<"PROCIM", 'String'>
     readonly nominal_pinjaman: FieldRef<"PROCIM", 'Int'>
     readonly bunga_pinjaman: FieldRef<"PROCIM", 'Float'>
     readonly jangka_waktu: FieldRef<"PROCIM", 'Int'>
     readonly rekening_pinjaman: FieldRef<"PROCIM", 'String'>
     readonly nominal_angsuran: FieldRef<"PROCIM", 'Int'>
     readonly tanggal_angsuran_pertama: FieldRef<"PROCIM", 'DateTime'>
-    readonly barang_jaminan_lainnya: FieldRef<"PROCIM", 'String'>
     readonly created_at: FieldRef<"PROCIM", 'DateTime'>
     readonly updated_at: FieldRef<"PROCIM", 'DateTime'>
     readonly submitted_at: FieldRef<"PROCIM", 'DateTime'>
@@ -11876,6 +12082,30 @@ export namespace Prisma {
   }
 
   /**
+   * PROCIM.barang_jaminan_lainnya
+   */
+  export type PROCIM$barang_jaminan_lainnyaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    orderBy?: ProcimBarangJaminanLainnyaOrderByWithRelationInput | ProcimBarangJaminanLainnyaOrderByWithRelationInput[]
+    cursor?: ProcimBarangJaminanLainnyaWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProcimBarangJaminanLainnyaScalarFieldEnum | ProcimBarangJaminanLainnyaScalarFieldEnum[]
+  }
+
+  /**
    * PROCIM without action
    */
   export type PROCIMDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -11969,7 +12199,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -12020,7 +12249,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -12071,7 +12299,6 @@ export namespace Prisma {
     nama_barang: number
     harga_barang: number
     no_bpkb: number
-    nama_shm: number
     detail_jaminan: number
     nominal_pinjaman: number
     bunga_pinjaman: number
@@ -12162,7 +12389,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -12213,7 +12439,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -12264,7 +12489,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -12402,7 +12626,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -12472,7 +12695,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -12524,7 +12746,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -12576,7 +12797,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -12628,7 +12848,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -12654,7 +12873,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KSMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "nama_barang" | "harga_barang" | "no_bpkb" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "materai_nominal" | "asuransi_nominal" | "asuransi_tlo_nominal" | "administrasi_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSM"]>
+  export type KSMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "nama_barang" | "harga_barang" | "no_bpkb" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "materai_nominal" | "asuransi_nominal" | "asuransi_tlo_nominal" | "administrasi_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kSM"]>
   export type KSMInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -12695,7 +12914,6 @@ export namespace Prisma {
       nama_barang: string | null
       harga_barang: number | null
       no_bpkb: string | null
-      nama_shm: string | null
       detail_jaminan: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
@@ -13167,7 +13385,6 @@ export namespace Prisma {
     readonly nama_barang: FieldRef<"KSM", 'String'>
     readonly harga_barang: FieldRef<"KSM", 'Int'>
     readonly no_bpkb: FieldRef<"KSM", 'String'>
-    readonly nama_shm: FieldRef<"KSM", 'String'>
     readonly detail_jaminan: FieldRef<"KSM", 'String'>
     readonly nominal_pinjaman: FieldRef<"KSM", 'Int'>
     readonly bunga_pinjaman: FieldRef<"KSM", 'Float'>
@@ -13678,7 +13895,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -13728,7 +13944,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -13778,7 +13993,6 @@ export namespace Prisma {
     nama_barang: number
     harga_barang: number
     no_bpkb: number
-    nama_shm: number
     detail_jaminan: number
     nominal_pinjaman: number
     bunga_pinjaman: number
@@ -13866,7 +14080,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -13916,7 +14129,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -13966,7 +14178,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -14103,7 +14314,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -14172,7 +14382,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -14223,7 +14432,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -14274,7 +14482,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -14325,7 +14532,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -14350,7 +14556,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KMSMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "nik_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "tanggal_lahir_debitur" | "tempat_lahir_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_barang" | "harga_barang" | "no_bpkb" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "materai_nominal" | "asuransi_tlo_nominal" | "administrasi_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kMSM"]>
+  export type KMSMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "nik_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "tanggal_lahir_debitur" | "tempat_lahir_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_barang" | "harga_barang" | "no_bpkb" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "materai_nominal" | "asuransi_tlo_nominal" | "administrasi_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kMSM"]>
   export type KMSMInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -14391,7 +14597,6 @@ export namespace Prisma {
       nama_barang: string | null
       harga_barang: number | null
       no_bpkb: string | null
-      nama_shm: string | null
       detail_jaminan: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
@@ -14862,7 +15067,6 @@ export namespace Prisma {
     readonly nama_barang: FieldRef<"KMSM", 'String'>
     readonly harga_barang: FieldRef<"KMSM", 'Int'>
     readonly no_bpkb: FieldRef<"KMSM", 'String'>
-    readonly nama_shm: FieldRef<"KMSM", 'String'>
     readonly detail_jaminan: FieldRef<"KMSM", 'String'>
     readonly nominal_pinjaman: FieldRef<"KMSM", 'Int'>
     readonly bunga_pinjaman: FieldRef<"KMSM", 'Float'>
@@ -15366,6 +15570,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     nama_shm: string | null
+    nik_shm: string | null
+    alamat_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -15413,6 +15619,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     nama_shm: string | null
+    nik_shm: string | null
+    alamat_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -15460,6 +15668,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: number
     hubungan_penjamin_debitur: number
     nama_shm: number
+    nik_shm: number
+    alamat_shm: number
     detail_jaminan: number
     nominal_pinjaman: number
     bunga_pinjaman: number
@@ -15541,6 +15751,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     nama_shm?: true
+    nik_shm?: true
+    alamat_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -15588,6 +15800,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     nama_shm?: true
+    nik_shm?: true
+    alamat_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -15635,6 +15849,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     hubungan_penjamin_debitur?: true
     nama_shm?: true
+    nik_shm?: true
+    alamat_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -15769,6 +15985,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     hubungan_penjamin_debitur: string | null
     nama_shm: string | null
+    nik_shm: string | null
+    alamat_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -15835,6 +16053,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     nama_shm?: boolean
+    nik_shm?: boolean
+    alamat_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -15883,6 +16103,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     nama_shm?: boolean
+    nik_shm?: boolean
+    alamat_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -15931,6 +16153,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     nama_shm?: boolean
+    nik_shm?: boolean
+    alamat_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -15979,6 +16203,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     nama_shm?: boolean
+    nik_shm?: boolean
+    alamat_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -16003,7 +16229,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KRSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "administrasi_nominal" | "nama_asuransi" | "asuransi_jiwa_nominal" | "materai_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kRS"]>
+  export type KRSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "nik_shm" | "alamat_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "administrasi_nominal" | "nama_asuransi" | "asuransi_jiwa_nominal" | "materai_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kRS"]>
   export type KRSInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -16042,6 +16268,8 @@ export namespace Prisma {
       tanggal_lahir_penjamin: Date | null
       hubungan_penjamin_debitur: string | null
       nama_shm: string | null
+      nik_shm: string | null
+      alamat_shm: string | null
       detail_jaminan: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
@@ -16510,6 +16738,8 @@ export namespace Prisma {
     readonly tanggal_lahir_penjamin: FieldRef<"KRS", 'DateTime'>
     readonly hubungan_penjamin_debitur: FieldRef<"KRS", 'String'>
     readonly nama_shm: FieldRef<"KRS", 'String'>
+    readonly nik_shm: FieldRef<"KRS", 'String'>
+    readonly alamat_shm: FieldRef<"KRS", 'String'>
     readonly detail_jaminan: FieldRef<"KRS", 'String'>
     readonly nominal_pinjaman: FieldRef<"KRS", 'Int'>
     readonly bunga_pinjaman: FieldRef<"KRS", 'Float'>
@@ -17021,7 +17251,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -17073,7 +17302,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -17125,7 +17353,6 @@ export namespace Prisma {
     nama_barang: number
     harga_barang: number
     no_bpkb: number
-    nama_shm: number
     detail_jaminan: number
     nominal_pinjaman: number
     bunga_pinjaman: number
@@ -17217,7 +17444,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -17269,7 +17495,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -17321,7 +17546,6 @@ export namespace Prisma {
     nama_barang?: true
     harga_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -17460,7 +17684,6 @@ export namespace Prisma {
     nama_barang: string | null
     harga_barang: number | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -17531,7 +17754,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -17584,7 +17806,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -17637,7 +17858,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -17690,7 +17910,6 @@ export namespace Prisma {
     nama_barang?: boolean
     harga_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -17717,7 +17936,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KMMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tanggal_lahir_debitur" | "tempat_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_barang" | "harga_barang" | "no_bpkb" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "materai_nominal" | "asuransi_jiwa_nominal" | "nama_asuransi" | "asuransi_tlo_nominal" | "administrasi_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kMM"]>
+  export type KMMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tanggal_lahir_debitur" | "tempat_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_barang" | "harga_barang" | "no_bpkb" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "administrasi_persen" | "provisi_nominal" | "materai_nominal" | "asuransi_jiwa_nominal" | "nama_asuransi" | "asuransi_tlo_nominal" | "administrasi_nominal" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kMM"]>
   export type KMMInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -17758,7 +17977,6 @@ export namespace Prisma {
       nama_barang: string | null
       harga_barang: number | null
       no_bpkb: string | null
-      nama_shm: string | null
       detail_jaminan: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
@@ -18231,7 +18449,6 @@ export namespace Prisma {
     readonly nama_barang: FieldRef<"KMM", 'String'>
     readonly harga_barang: FieldRef<"KMM", 'Int'>
     readonly no_bpkb: FieldRef<"KMM", 'String'>
-    readonly nama_shm: FieldRef<"KMM", 'String'>
     readonly detail_jaminan: FieldRef<"KMM", 'String'>
     readonly nominal_pinjaman: FieldRef<"KMM", 'Int'>
     readonly bunga_pinjaman: FieldRef<"KMM", 'Float'>
@@ -18737,6 +18954,7 @@ export namespace Prisma {
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
     nama_shm: string | null
+    alamat_shm: string | null
     nik_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
@@ -18784,6 +19002,7 @@ export namespace Prisma {
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
     nama_shm: string | null
+    alamat_shm: string | null
     nik_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
@@ -18831,6 +19050,7 @@ export namespace Prisma {
     nik_penjamin: number
     hubungan_penjamin_debitur: number
     nama_shm: number
+    alamat_shm: number
     nik_shm: number
     detail_jaminan: number
     nominal_pinjaman: number
@@ -18914,6 +19134,7 @@ export namespace Prisma {
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
     nama_shm?: true
+    alamat_shm?: true
     nik_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
@@ -18961,6 +19182,7 @@ export namespace Prisma {
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
     nama_shm?: true
+    alamat_shm?: true
     nik_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
@@ -19008,6 +19230,7 @@ export namespace Prisma {
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
     nama_shm?: true
+    alamat_shm?: true
     nik_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
@@ -19142,6 +19365,7 @@ export namespace Prisma {
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
     nama_shm: string | null
+    alamat_shm: string | null
     nik_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
@@ -19208,6 +19432,7 @@ export namespace Prisma {
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     nama_shm?: boolean
+    alamat_shm?: boolean
     nik_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
@@ -19256,6 +19481,7 @@ export namespace Prisma {
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     nama_shm?: boolean
+    alamat_shm?: boolean
     nik_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
@@ -19304,6 +19530,7 @@ export namespace Prisma {
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     nama_shm?: boolean
+    alamat_shm?: boolean
     nik_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
@@ -19352,6 +19579,7 @@ export namespace Prisma {
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
     nama_shm?: boolean
+    alamat_shm?: boolean
     nik_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
@@ -19378,7 +19606,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KMSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "status_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "nik_debitur" | "pekerjaan_debitur" | "hubungan_debitur_penjamin" | "alamat_rumah_penjamin" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "nik_shm" | "detail_jaminan" | "nominal_pinjaman" | "tujuan_penggunaan" | "jangka_waktu" | "bunga_pinjaman" | "tanggal_angsuran_terakhir" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "nominal_angsuran" | "hutang_keseluruhan" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "notaris_nominal" | "nama_asuransi_jiwa" | "asuransi_jiwa_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kMS"]>
+  export type KMSOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "status_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "nik_debitur" | "pekerjaan_debitur" | "hubungan_debitur_penjamin" | "alamat_rumah_penjamin" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "alamat_shm" | "nik_shm" | "detail_jaminan" | "nominal_pinjaman" | "tujuan_penggunaan" | "jangka_waktu" | "bunga_pinjaman" | "tanggal_angsuran_terakhir" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "nominal_angsuran" | "hutang_keseluruhan" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "notaris_nominal" | "nama_asuransi_jiwa" | "asuransi_jiwa_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kMS"]>
   export type KMSInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -19415,6 +19643,7 @@ export namespace Prisma {
       nik_penjamin: string | null
       hubungan_penjamin_debitur: string | null
       nama_shm: string | null
+      alamat_shm: string | null
       nik_shm: string | null
       detail_jaminan: string | null
       nominal_pinjaman: number | null
@@ -19883,6 +20112,7 @@ export namespace Prisma {
     readonly nik_penjamin: FieldRef<"KMS", 'String'>
     readonly hubungan_penjamin_debitur: FieldRef<"KMS", 'String'>
     readonly nama_shm: FieldRef<"KMS", 'String'>
+    readonly alamat_shm: FieldRef<"KMS", 'String'>
     readonly nik_shm: FieldRef<"KMS", 'String'>
     readonly detail_jaminan: FieldRef<"KMS", 'String'>
     readonly nominal_pinjaman: FieldRef<"KMS", 'Int'>
@@ -20387,7 +20617,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
-    nama_shm: string | null
     nama_barang: string | null
     merek_barang: string | null
     tipe_barang: string | null
@@ -20437,7 +20666,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
-    nama_shm: string | null
     nama_barang: string | null
     merek_barang: string | null
     tipe_barang: string | null
@@ -20487,7 +20715,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: number
     nik_penjamin: number
     hubungan_penjamin_debitur: number
-    nama_shm: number
     nama_barang: number
     merek_barang: number
     tipe_barang: number
@@ -20571,7 +20798,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
-    nama_shm?: true
     nama_barang?: true
     merek_barang?: true
     tipe_barang?: true
@@ -20621,7 +20847,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
-    nama_shm?: true
     nama_barang?: true
     merek_barang?: true
     tipe_barang?: true
@@ -20671,7 +20896,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
-    nama_shm?: true
     nama_barang?: true
     merek_barang?: true
     tipe_barang?: true
@@ -20808,7 +21032,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
-    nama_shm: string | null
     nama_barang: string | null
     merek_barang: string | null
     tipe_barang: string | null
@@ -20877,7 +21100,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
-    nama_shm?: boolean
     nama_barang?: boolean
     merek_barang?: boolean
     tipe_barang?: boolean
@@ -20928,7 +21150,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
-    nama_shm?: boolean
     nama_barang?: boolean
     merek_barang?: boolean
     tipe_barang?: boolean
@@ -20979,7 +21200,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
-    nama_shm?: boolean
     nama_barang?: boolean
     merek_barang?: boolean
     tipe_barang?: boolean
@@ -21030,7 +21250,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
-    nama_shm?: boolean
     nama_barang?: boolean
     merek_barang?: boolean
     tipe_barang?: boolean
@@ -21058,7 +21277,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KEFOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "tanggal_surat_permohonan_kredit" | "nama_debitur" | "status_debitur" | "nik_debitur" | "no_hp_debitur" | "jenis_kelamin_debitur" | "hubungan_debitur_penjamin" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "nama_usaha_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_shm" | "nama_barang" | "merek_barang" | "tipe_barang" | "ukuran_barang" | "warna_barang" | "harga_barang" | "detail_jaminan" | "bunga_pinjaman" | "jangka_waktu" | "tanggal_angsuran_terakhir" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "nominal_angsuran" | "hutang_keseluruhan" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "fidusia_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kEF"]>
+  export type KEFOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "tanggal_surat_permohonan_kredit" | "nama_debitur" | "status_debitur" | "nik_debitur" | "no_hp_debitur" | "jenis_kelamin_debitur" | "hubungan_debitur_penjamin" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "nama_usaha_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_barang" | "merek_barang" | "tipe_barang" | "ukuran_barang" | "warna_barang" | "harga_barang" | "detail_jaminan" | "bunga_pinjaman" | "jangka_waktu" | "tanggal_angsuran_terakhir" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "nominal_angsuran" | "hutang_keseluruhan" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "fidusia_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kEF"]>
   export type KEFInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -21096,7 +21315,6 @@ export namespace Prisma {
       tanggal_lahir_penjamin: Date | null
       nik_penjamin: string | null
       hubungan_penjamin_debitur: string | null
-      nama_shm: string | null
       nama_barang: string | null
       merek_barang: string | null
       tipe_barang: string | null
@@ -21567,7 +21785,6 @@ export namespace Prisma {
     readonly tanggal_lahir_penjamin: FieldRef<"KEF", 'DateTime'>
     readonly nik_penjamin: FieldRef<"KEF", 'String'>
     readonly hubungan_penjamin_debitur: FieldRef<"KEF", 'String'>
-    readonly nama_shm: FieldRef<"KEF", 'String'>
     readonly nama_barang: FieldRef<"KEF", 'String'>
     readonly merek_barang: FieldRef<"KEF", 'String'>
     readonly tipe_barang: FieldRef<"KEF", 'String'>
@@ -22076,7 +22293,6 @@ export namespace Prisma {
     alamat_rumah_penjamin: string | null
     nama_barang: string | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -22125,7 +22341,6 @@ export namespace Prisma {
     alamat_rumah_penjamin: string | null
     nama_barang: string | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -22174,7 +22389,6 @@ export namespace Prisma {
     alamat_rumah_penjamin: number
     nama_barang: number
     no_bpkb: number
-    nama_shm: number
     detail_jaminan: number
     nominal_pinjaman: number
     bunga_pinjaman: number
@@ -22257,7 +22471,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: true
     nama_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -22306,7 +22519,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: true
     nama_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -22355,7 +22567,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: true
     nama_barang?: true
     no_bpkb?: true
-    nama_shm?: true
     detail_jaminan?: true
     nominal_pinjaman?: true
     bunga_pinjaman?: true
@@ -22491,7 +22702,6 @@ export namespace Prisma {
     alamat_rumah_penjamin: string | null
     nama_barang: string | null
     no_bpkb: string | null
-    nama_shm: string | null
     detail_jaminan: string | null
     nominal_pinjaman: number | null
     bunga_pinjaman: number | null
@@ -22559,7 +22769,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: boolean
     nama_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -22609,7 +22818,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: boolean
     nama_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -22659,7 +22867,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: boolean
     nama_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -22709,7 +22916,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: boolean
     nama_barang?: boolean
     no_bpkb?: boolean
-    nama_shm?: boolean
     detail_jaminan?: boolean
     nominal_pinjaman?: boolean
     bunga_pinjaman?: boolean
@@ -22733,7 +22939,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KAROmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_barang" | "no_bpkb" | "nama_shm" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "administrasi_nominal" | "provisi_nominal" | "materai_nominal" | "asuransi_jiwa_nominal" | "nama_asuransi" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kAR"]>
+  export type KAROmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_permohonan_kredit" | "tanggal_surat_persetujuan_kredit" | "nama" | "jabatan" | "nama_debitur" | "nik_debitur" | "status_debitur" | "hubungan_debitur_penjamin" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nama_barang" | "no_bpkb" | "detail_jaminan" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tanggal_angsuran_terakhir" | "hutang_keseluruhan" | "tenggat_angsuran" | "provisi_persen" | "administrasi_nominal" | "provisi_nominal" | "materai_nominal" | "asuransi_jiwa_nominal" | "nama_asuransi" | "notaris_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kAR"]>
   export type KARInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -22774,7 +22980,6 @@ export namespace Prisma {
       alamat_rumah_penjamin: string | null
       nama_barang: string | null
       no_bpkb: string | null
-      nama_shm: string | null
       detail_jaminan: string | null
       nominal_pinjaman: number | null
       bunga_pinjaman: number | null
@@ -23244,7 +23449,6 @@ export namespace Prisma {
     readonly alamat_rumah_penjamin: FieldRef<"KAR", 'String'>
     readonly nama_barang: FieldRef<"KAR", 'String'>
     readonly no_bpkb: FieldRef<"KAR", 'String'>
-    readonly nama_shm: FieldRef<"KAR", 'String'>
     readonly detail_jaminan: FieldRef<"KAR", 'String'>
     readonly nominal_pinjaman: FieldRef<"KAR", 'Int'>
     readonly bunga_pinjaman: FieldRef<"KAR", 'Float'>
@@ -25917,6 +26121,1064 @@ export namespace Prisma {
 
 
   /**
+   * Model FleksiBarangJaminanLainnya
+   */
+
+  export type AggregateFleksiBarangJaminanLainnya = {
+    _count: FleksiBarangJaminanLainnyaCountAggregateOutputType | null
+    _min: FleksiBarangJaminanLainnyaMinAggregateOutputType | null
+    _max: FleksiBarangJaminanLainnyaMaxAggregateOutputType | null
+  }
+
+  export type FleksiBarangJaminanLainnyaMinAggregateOutputType = {
+    id: string | null
+    fleksi_id: string | null
+    nama_barang: string | null
+    created_at: Date | null
+    updated_at: Date | null
+  }
+
+  export type FleksiBarangJaminanLainnyaMaxAggregateOutputType = {
+    id: string | null
+    fleksi_id: string | null
+    nama_barang: string | null
+    created_at: Date | null
+    updated_at: Date | null
+  }
+
+  export type FleksiBarangJaminanLainnyaCountAggregateOutputType = {
+    id: number
+    fleksi_id: number
+    nama_barang: number
+    created_at: number
+    updated_at: number
+    _all: number
+  }
+
+
+  export type FleksiBarangJaminanLainnyaMinAggregateInputType = {
+    id?: true
+    fleksi_id?: true
+    nama_barang?: true
+    created_at?: true
+    updated_at?: true
+  }
+
+  export type FleksiBarangJaminanLainnyaMaxAggregateInputType = {
+    id?: true
+    fleksi_id?: true
+    nama_barang?: true
+    created_at?: true
+    updated_at?: true
+  }
+
+  export type FleksiBarangJaminanLainnyaCountAggregateInputType = {
+    id?: true
+    fleksi_id?: true
+    nama_barang?: true
+    created_at?: true
+    updated_at?: true
+    _all?: true
+  }
+
+  export type FleksiBarangJaminanLainnyaAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FleksiBarangJaminanLainnya to aggregate.
+     */
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FleksiBarangJaminanLainnyas to fetch.
+     */
+    orderBy?: FleksiBarangJaminanLainnyaOrderByWithRelationInput | FleksiBarangJaminanLainnyaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FleksiBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FleksiBarangJaminanLainnyas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FleksiBarangJaminanLainnyas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FleksiBarangJaminanLainnyas
+    **/
+    _count?: true | FleksiBarangJaminanLainnyaCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FleksiBarangJaminanLainnyaMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FleksiBarangJaminanLainnyaMaxAggregateInputType
+  }
+
+  export type GetFleksiBarangJaminanLainnyaAggregateType<T extends FleksiBarangJaminanLainnyaAggregateArgs> = {
+        [P in keyof T & keyof AggregateFleksiBarangJaminanLainnya]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFleksiBarangJaminanLainnya[P]>
+      : GetScalarType<T[P], AggregateFleksiBarangJaminanLainnya[P]>
+  }
+
+
+
+
+  export type FleksiBarangJaminanLainnyaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    orderBy?: FleksiBarangJaminanLainnyaOrderByWithAggregationInput | FleksiBarangJaminanLainnyaOrderByWithAggregationInput[]
+    by: FleksiBarangJaminanLainnyaScalarFieldEnum[] | FleksiBarangJaminanLainnyaScalarFieldEnum
+    having?: FleksiBarangJaminanLainnyaScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FleksiBarangJaminanLainnyaCountAggregateInputType | true
+    _min?: FleksiBarangJaminanLainnyaMinAggregateInputType
+    _max?: FleksiBarangJaminanLainnyaMaxAggregateInputType
+  }
+
+  export type FleksiBarangJaminanLainnyaGroupByOutputType = {
+    id: string
+    fleksi_id: string
+    nama_barang: string | null
+    created_at: Date | null
+    updated_at: Date | null
+    _count: FleksiBarangJaminanLainnyaCountAggregateOutputType | null
+    _min: FleksiBarangJaminanLainnyaMinAggregateOutputType | null
+    _max: FleksiBarangJaminanLainnyaMaxAggregateOutputType | null
+  }
+
+  type GetFleksiBarangJaminanLainnyaGroupByPayload<T extends FleksiBarangJaminanLainnyaGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FleksiBarangJaminanLainnyaGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FleksiBarangJaminanLainnyaGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FleksiBarangJaminanLainnyaGroupByOutputType[P]>
+            : GetScalarType<T[P], FleksiBarangJaminanLainnyaGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FleksiBarangJaminanLainnyaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fleksi_id?: boolean
+    nama_barang?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    fleksi?: boolean | FLEKSIDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["fleksiBarangJaminanLainnya"]>
+
+  export type FleksiBarangJaminanLainnyaSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fleksi_id?: boolean
+    nama_barang?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    fleksi?: boolean | FLEKSIDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["fleksiBarangJaminanLainnya"]>
+
+  export type FleksiBarangJaminanLainnyaSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fleksi_id?: boolean
+    nama_barang?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    fleksi?: boolean | FLEKSIDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["fleksiBarangJaminanLainnya"]>
+
+  export type FleksiBarangJaminanLainnyaSelectScalar = {
+    id?: boolean
+    fleksi_id?: boolean
+    nama_barang?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+  }
+
+  export type FleksiBarangJaminanLainnyaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fleksi_id" | "nama_barang" | "created_at" | "updated_at", ExtArgs["result"]["fleksiBarangJaminanLainnya"]>
+  export type FleksiBarangJaminanLainnyaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fleksi?: boolean | FLEKSIDefaultArgs<ExtArgs>
+  }
+  export type FleksiBarangJaminanLainnyaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fleksi?: boolean | FLEKSIDefaultArgs<ExtArgs>
+  }
+  export type FleksiBarangJaminanLainnyaIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    fleksi?: boolean | FLEKSIDefaultArgs<ExtArgs>
+  }
+
+  export type $FleksiBarangJaminanLainnyaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FleksiBarangJaminanLainnya"
+    objects: {
+      fleksi: Prisma.$FLEKSIPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      fleksi_id: string
+      nama_barang: string | null
+      created_at: Date | null
+      updated_at: Date | null
+    }, ExtArgs["result"]["fleksiBarangJaminanLainnya"]>
+    composites: {}
+  }
+
+  type FleksiBarangJaminanLainnyaGetPayload<S extends boolean | null | undefined | FleksiBarangJaminanLainnyaDefaultArgs> = $Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload, S>
+
+  type FleksiBarangJaminanLainnyaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FleksiBarangJaminanLainnyaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FleksiBarangJaminanLainnyaCountAggregateInputType | true
+    }
+
+  export interface FleksiBarangJaminanLainnyaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FleksiBarangJaminanLainnya'], meta: { name: 'FleksiBarangJaminanLainnya' } }
+    /**
+     * Find zero or one FleksiBarangJaminanLainnya that matches the filter.
+     * @param {FleksiBarangJaminanLainnyaFindUniqueArgs} args - Arguments to find a FleksiBarangJaminanLainnya
+     * @example
+     * // Get one FleksiBarangJaminanLainnya
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FleksiBarangJaminanLainnyaFindUniqueArgs>(args: SelectSubset<T, FleksiBarangJaminanLainnyaFindUniqueArgs<ExtArgs>>): Prisma__FleksiBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FleksiBarangJaminanLainnya that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FleksiBarangJaminanLainnyaFindUniqueOrThrowArgs} args - Arguments to find a FleksiBarangJaminanLainnya
+     * @example
+     * // Get one FleksiBarangJaminanLainnya
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FleksiBarangJaminanLainnyaFindUniqueOrThrowArgs>(args: SelectSubset<T, FleksiBarangJaminanLainnyaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FleksiBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FleksiBarangJaminanLainnya that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FleksiBarangJaminanLainnyaFindFirstArgs} args - Arguments to find a FleksiBarangJaminanLainnya
+     * @example
+     * // Get one FleksiBarangJaminanLainnya
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FleksiBarangJaminanLainnyaFindFirstArgs>(args?: SelectSubset<T, FleksiBarangJaminanLainnyaFindFirstArgs<ExtArgs>>): Prisma__FleksiBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FleksiBarangJaminanLainnya that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FleksiBarangJaminanLainnyaFindFirstOrThrowArgs} args - Arguments to find a FleksiBarangJaminanLainnya
+     * @example
+     * // Get one FleksiBarangJaminanLainnya
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FleksiBarangJaminanLainnyaFindFirstOrThrowArgs>(args?: SelectSubset<T, FleksiBarangJaminanLainnyaFindFirstOrThrowArgs<ExtArgs>>): Prisma__FleksiBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FleksiBarangJaminanLainnyas that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FleksiBarangJaminanLainnyaFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FleksiBarangJaminanLainnyas
+     * const fleksiBarangJaminanLainnyas = await prisma.fleksiBarangJaminanLainnya.findMany()
+     * 
+     * // Get first 10 FleksiBarangJaminanLainnyas
+     * const fleksiBarangJaminanLainnyas = await prisma.fleksiBarangJaminanLainnya.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const fleksiBarangJaminanLainnyaWithIdOnly = await prisma.fleksiBarangJaminanLainnya.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends FleksiBarangJaminanLainnyaFindManyArgs>(args?: SelectSubset<T, FleksiBarangJaminanLainnyaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FleksiBarangJaminanLainnya.
+     * @param {FleksiBarangJaminanLainnyaCreateArgs} args - Arguments to create a FleksiBarangJaminanLainnya.
+     * @example
+     * // Create one FleksiBarangJaminanLainnya
+     * const FleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.create({
+     *   data: {
+     *     // ... data to create a FleksiBarangJaminanLainnya
+     *   }
+     * })
+     * 
+     */
+    create<T extends FleksiBarangJaminanLainnyaCreateArgs>(args: SelectSubset<T, FleksiBarangJaminanLainnyaCreateArgs<ExtArgs>>): Prisma__FleksiBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FleksiBarangJaminanLainnyas.
+     * @param {FleksiBarangJaminanLainnyaCreateManyArgs} args - Arguments to create many FleksiBarangJaminanLainnyas.
+     * @example
+     * // Create many FleksiBarangJaminanLainnyas
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FleksiBarangJaminanLainnyaCreateManyArgs>(args?: SelectSubset<T, FleksiBarangJaminanLainnyaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FleksiBarangJaminanLainnyas and returns the data saved in the database.
+     * @param {FleksiBarangJaminanLainnyaCreateManyAndReturnArgs} args - Arguments to create many FleksiBarangJaminanLainnyas.
+     * @example
+     * // Create many FleksiBarangJaminanLainnyas
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FleksiBarangJaminanLainnyas and only return the `id`
+     * const fleksiBarangJaminanLainnyaWithIdOnly = await prisma.fleksiBarangJaminanLainnya.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FleksiBarangJaminanLainnyaCreateManyAndReturnArgs>(args?: SelectSubset<T, FleksiBarangJaminanLainnyaCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FleksiBarangJaminanLainnya.
+     * @param {FleksiBarangJaminanLainnyaDeleteArgs} args - Arguments to delete one FleksiBarangJaminanLainnya.
+     * @example
+     * // Delete one FleksiBarangJaminanLainnya
+     * const FleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.delete({
+     *   where: {
+     *     // ... filter to delete one FleksiBarangJaminanLainnya
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FleksiBarangJaminanLainnyaDeleteArgs>(args: SelectSubset<T, FleksiBarangJaminanLainnyaDeleteArgs<ExtArgs>>): Prisma__FleksiBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FleksiBarangJaminanLainnya.
+     * @param {FleksiBarangJaminanLainnyaUpdateArgs} args - Arguments to update one FleksiBarangJaminanLainnya.
+     * @example
+     * // Update one FleksiBarangJaminanLainnya
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FleksiBarangJaminanLainnyaUpdateArgs>(args: SelectSubset<T, FleksiBarangJaminanLainnyaUpdateArgs<ExtArgs>>): Prisma__FleksiBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FleksiBarangJaminanLainnyas.
+     * @param {FleksiBarangJaminanLainnyaDeleteManyArgs} args - Arguments to filter FleksiBarangJaminanLainnyas to delete.
+     * @example
+     * // Delete a few FleksiBarangJaminanLainnyas
+     * const { count } = await prisma.fleksiBarangJaminanLainnya.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FleksiBarangJaminanLainnyaDeleteManyArgs>(args?: SelectSubset<T, FleksiBarangJaminanLainnyaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FleksiBarangJaminanLainnyas.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FleksiBarangJaminanLainnyaUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FleksiBarangJaminanLainnyas
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FleksiBarangJaminanLainnyaUpdateManyArgs>(args: SelectSubset<T, FleksiBarangJaminanLainnyaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FleksiBarangJaminanLainnyas and returns the data updated in the database.
+     * @param {FleksiBarangJaminanLainnyaUpdateManyAndReturnArgs} args - Arguments to update many FleksiBarangJaminanLainnyas.
+     * @example
+     * // Update many FleksiBarangJaminanLainnyas
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FleksiBarangJaminanLainnyas and only return the `id`
+     * const fleksiBarangJaminanLainnyaWithIdOnly = await prisma.fleksiBarangJaminanLainnya.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FleksiBarangJaminanLainnyaUpdateManyAndReturnArgs>(args: SelectSubset<T, FleksiBarangJaminanLainnyaUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FleksiBarangJaminanLainnya.
+     * @param {FleksiBarangJaminanLainnyaUpsertArgs} args - Arguments to update or create a FleksiBarangJaminanLainnya.
+     * @example
+     * // Update or create a FleksiBarangJaminanLainnya
+     * const fleksiBarangJaminanLainnya = await prisma.fleksiBarangJaminanLainnya.upsert({
+     *   create: {
+     *     // ... data to create a FleksiBarangJaminanLainnya
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FleksiBarangJaminanLainnya we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FleksiBarangJaminanLainnyaUpsertArgs>(args: SelectSubset<T, FleksiBarangJaminanLainnyaUpsertArgs<ExtArgs>>): Prisma__FleksiBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$FleksiBarangJaminanLainnyaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FleksiBarangJaminanLainnyas.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FleksiBarangJaminanLainnyaCountArgs} args - Arguments to filter FleksiBarangJaminanLainnyas to count.
+     * @example
+     * // Count the number of FleksiBarangJaminanLainnyas
+     * const count = await prisma.fleksiBarangJaminanLainnya.count({
+     *   where: {
+     *     // ... the filter for the FleksiBarangJaminanLainnyas we want to count
+     *   }
+     * })
+    **/
+    count<T extends FleksiBarangJaminanLainnyaCountArgs>(
+      args?: Subset<T, FleksiBarangJaminanLainnyaCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FleksiBarangJaminanLainnyaCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FleksiBarangJaminanLainnya.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FleksiBarangJaminanLainnyaAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FleksiBarangJaminanLainnyaAggregateArgs>(args: Subset<T, FleksiBarangJaminanLainnyaAggregateArgs>): Prisma.PrismaPromise<GetFleksiBarangJaminanLainnyaAggregateType<T>>
+
+    /**
+     * Group by FleksiBarangJaminanLainnya.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FleksiBarangJaminanLainnyaGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FleksiBarangJaminanLainnyaGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FleksiBarangJaminanLainnyaGroupByArgs['orderBy'] }
+        : { orderBy?: FleksiBarangJaminanLainnyaGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FleksiBarangJaminanLainnyaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFleksiBarangJaminanLainnyaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FleksiBarangJaminanLainnya model
+   */
+  readonly fields: FleksiBarangJaminanLainnyaFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FleksiBarangJaminanLainnya.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FleksiBarangJaminanLainnyaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    fleksi<T extends FLEKSIDefaultArgs<ExtArgs> = {}>(args?: Subset<T, FLEKSIDefaultArgs<ExtArgs>>): Prisma__FLEKSIClient<$Result.GetResult<Prisma.$FLEKSIPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FleksiBarangJaminanLainnya model
+   */
+  interface FleksiBarangJaminanLainnyaFieldRefs {
+    readonly id: FieldRef<"FleksiBarangJaminanLainnya", 'String'>
+    readonly fleksi_id: FieldRef<"FleksiBarangJaminanLainnya", 'String'>
+    readonly nama_barang: FieldRef<"FleksiBarangJaminanLainnya", 'String'>
+    readonly created_at: FieldRef<"FleksiBarangJaminanLainnya", 'DateTime'>
+    readonly updated_at: FieldRef<"FleksiBarangJaminanLainnya", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FleksiBarangJaminanLainnya findUnique
+   */
+  export type FleksiBarangJaminanLainnyaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which FleksiBarangJaminanLainnya to fetch.
+     */
+    where: FleksiBarangJaminanLainnyaWhereUniqueInput
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya findUniqueOrThrow
+   */
+  export type FleksiBarangJaminanLainnyaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which FleksiBarangJaminanLainnya to fetch.
+     */
+    where: FleksiBarangJaminanLainnyaWhereUniqueInput
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya findFirst
+   */
+  export type FleksiBarangJaminanLainnyaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which FleksiBarangJaminanLainnya to fetch.
+     */
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FleksiBarangJaminanLainnyas to fetch.
+     */
+    orderBy?: FleksiBarangJaminanLainnyaOrderByWithRelationInput | FleksiBarangJaminanLainnyaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FleksiBarangJaminanLainnyas.
+     */
+    cursor?: FleksiBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FleksiBarangJaminanLainnyas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FleksiBarangJaminanLainnyas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FleksiBarangJaminanLainnyas.
+     */
+    distinct?: FleksiBarangJaminanLainnyaScalarFieldEnum | FleksiBarangJaminanLainnyaScalarFieldEnum[]
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya findFirstOrThrow
+   */
+  export type FleksiBarangJaminanLainnyaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which FleksiBarangJaminanLainnya to fetch.
+     */
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FleksiBarangJaminanLainnyas to fetch.
+     */
+    orderBy?: FleksiBarangJaminanLainnyaOrderByWithRelationInput | FleksiBarangJaminanLainnyaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FleksiBarangJaminanLainnyas.
+     */
+    cursor?: FleksiBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FleksiBarangJaminanLainnyas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FleksiBarangJaminanLainnyas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FleksiBarangJaminanLainnyas.
+     */
+    distinct?: FleksiBarangJaminanLainnyaScalarFieldEnum | FleksiBarangJaminanLainnyaScalarFieldEnum[]
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya findMany
+   */
+  export type FleksiBarangJaminanLainnyaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which FleksiBarangJaminanLainnyas to fetch.
+     */
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FleksiBarangJaminanLainnyas to fetch.
+     */
+    orderBy?: FleksiBarangJaminanLainnyaOrderByWithRelationInput | FleksiBarangJaminanLainnyaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FleksiBarangJaminanLainnyas.
+     */
+    cursor?: FleksiBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FleksiBarangJaminanLainnyas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FleksiBarangJaminanLainnyas.
+     */
+    skip?: number
+    distinct?: FleksiBarangJaminanLainnyaScalarFieldEnum | FleksiBarangJaminanLainnyaScalarFieldEnum[]
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya create
+   */
+  export type FleksiBarangJaminanLainnyaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FleksiBarangJaminanLainnya.
+     */
+    data: XOR<FleksiBarangJaminanLainnyaCreateInput, FleksiBarangJaminanLainnyaUncheckedCreateInput>
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya createMany
+   */
+  export type FleksiBarangJaminanLainnyaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FleksiBarangJaminanLainnyas.
+     */
+    data: FleksiBarangJaminanLainnyaCreateManyInput | FleksiBarangJaminanLainnyaCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya createManyAndReturn
+   */
+  export type FleksiBarangJaminanLainnyaCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * The data used to create many FleksiBarangJaminanLainnyas.
+     */
+    data: FleksiBarangJaminanLainnyaCreateManyInput | FleksiBarangJaminanLainnyaCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya update
+   */
+  export type FleksiBarangJaminanLainnyaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FleksiBarangJaminanLainnya.
+     */
+    data: XOR<FleksiBarangJaminanLainnyaUpdateInput, FleksiBarangJaminanLainnyaUncheckedUpdateInput>
+    /**
+     * Choose, which FleksiBarangJaminanLainnya to update.
+     */
+    where: FleksiBarangJaminanLainnyaWhereUniqueInput
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya updateMany
+   */
+  export type FleksiBarangJaminanLainnyaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FleksiBarangJaminanLainnyas.
+     */
+    data: XOR<FleksiBarangJaminanLainnyaUpdateManyMutationInput, FleksiBarangJaminanLainnyaUncheckedUpdateManyInput>
+    /**
+     * Filter which FleksiBarangJaminanLainnyas to update
+     */
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    /**
+     * Limit how many FleksiBarangJaminanLainnyas to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya updateManyAndReturn
+   */
+  export type FleksiBarangJaminanLainnyaUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * The data used to update FleksiBarangJaminanLainnyas.
+     */
+    data: XOR<FleksiBarangJaminanLainnyaUpdateManyMutationInput, FleksiBarangJaminanLainnyaUncheckedUpdateManyInput>
+    /**
+     * Filter which FleksiBarangJaminanLainnyas to update
+     */
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    /**
+     * Limit how many FleksiBarangJaminanLainnyas to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya upsert
+   */
+  export type FleksiBarangJaminanLainnyaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FleksiBarangJaminanLainnya to update in case it exists.
+     */
+    where: FleksiBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * In case the FleksiBarangJaminanLainnya found by the `where` argument doesn't exist, create a new FleksiBarangJaminanLainnya with this data.
+     */
+    create: XOR<FleksiBarangJaminanLainnyaCreateInput, FleksiBarangJaminanLainnyaUncheckedCreateInput>
+    /**
+     * In case the FleksiBarangJaminanLainnya was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FleksiBarangJaminanLainnyaUpdateInput, FleksiBarangJaminanLainnyaUncheckedUpdateInput>
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya delete
+   */
+  export type FleksiBarangJaminanLainnyaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter which FleksiBarangJaminanLainnya to delete.
+     */
+    where: FleksiBarangJaminanLainnyaWhereUniqueInput
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya deleteMany
+   */
+  export type FleksiBarangJaminanLainnyaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FleksiBarangJaminanLainnyas to delete
+     */
+    where?: FleksiBarangJaminanLainnyaWhereInput
+    /**
+     * Limit how many FleksiBarangJaminanLainnyas to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FleksiBarangJaminanLainnya without action
+   */
+  export type FleksiBarangJaminanLainnyaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FleksiBarangJaminanLainnya
+     */
+    select?: FleksiBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FleksiBarangJaminanLainnya
+     */
+    omit?: FleksiBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FleksiBarangJaminanLainnyaInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Model ProcimBarangElektronik
    */
 
@@ -28153,6 +29415,1064 @@ export namespace Prisma {
 
 
   /**
+   * Model ProcimBarangJaminanLainnya
+   */
+
+  export type AggregateProcimBarangJaminanLainnya = {
+    _count: ProcimBarangJaminanLainnyaCountAggregateOutputType | null
+    _min: ProcimBarangJaminanLainnyaMinAggregateOutputType | null
+    _max: ProcimBarangJaminanLainnyaMaxAggregateOutputType | null
+  }
+
+  export type ProcimBarangJaminanLainnyaMinAggregateOutputType = {
+    id: string | null
+    procim_id: string | null
+    nama_barang: string | null
+    created_at: Date | null
+    updated_at: Date | null
+  }
+
+  export type ProcimBarangJaminanLainnyaMaxAggregateOutputType = {
+    id: string | null
+    procim_id: string | null
+    nama_barang: string | null
+    created_at: Date | null
+    updated_at: Date | null
+  }
+
+  export type ProcimBarangJaminanLainnyaCountAggregateOutputType = {
+    id: number
+    procim_id: number
+    nama_barang: number
+    created_at: number
+    updated_at: number
+    _all: number
+  }
+
+
+  export type ProcimBarangJaminanLainnyaMinAggregateInputType = {
+    id?: true
+    procim_id?: true
+    nama_barang?: true
+    created_at?: true
+    updated_at?: true
+  }
+
+  export type ProcimBarangJaminanLainnyaMaxAggregateInputType = {
+    id?: true
+    procim_id?: true
+    nama_barang?: true
+    created_at?: true
+    updated_at?: true
+  }
+
+  export type ProcimBarangJaminanLainnyaCountAggregateInputType = {
+    id?: true
+    procim_id?: true
+    nama_barang?: true
+    created_at?: true
+    updated_at?: true
+    _all?: true
+  }
+
+  export type ProcimBarangJaminanLainnyaAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProcimBarangJaminanLainnya to aggregate.
+     */
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProcimBarangJaminanLainnyas to fetch.
+     */
+    orderBy?: ProcimBarangJaminanLainnyaOrderByWithRelationInput | ProcimBarangJaminanLainnyaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ProcimBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProcimBarangJaminanLainnyas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProcimBarangJaminanLainnyas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ProcimBarangJaminanLainnyas
+    **/
+    _count?: true | ProcimBarangJaminanLainnyaCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ProcimBarangJaminanLainnyaMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ProcimBarangJaminanLainnyaMaxAggregateInputType
+  }
+
+  export type GetProcimBarangJaminanLainnyaAggregateType<T extends ProcimBarangJaminanLainnyaAggregateArgs> = {
+        [P in keyof T & keyof AggregateProcimBarangJaminanLainnya]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateProcimBarangJaminanLainnya[P]>
+      : GetScalarType<T[P], AggregateProcimBarangJaminanLainnya[P]>
+  }
+
+
+
+
+  export type ProcimBarangJaminanLainnyaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    orderBy?: ProcimBarangJaminanLainnyaOrderByWithAggregationInput | ProcimBarangJaminanLainnyaOrderByWithAggregationInput[]
+    by: ProcimBarangJaminanLainnyaScalarFieldEnum[] | ProcimBarangJaminanLainnyaScalarFieldEnum
+    having?: ProcimBarangJaminanLainnyaScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ProcimBarangJaminanLainnyaCountAggregateInputType | true
+    _min?: ProcimBarangJaminanLainnyaMinAggregateInputType
+    _max?: ProcimBarangJaminanLainnyaMaxAggregateInputType
+  }
+
+  export type ProcimBarangJaminanLainnyaGroupByOutputType = {
+    id: string
+    procim_id: string
+    nama_barang: string | null
+    created_at: Date | null
+    updated_at: Date | null
+    _count: ProcimBarangJaminanLainnyaCountAggregateOutputType | null
+    _min: ProcimBarangJaminanLainnyaMinAggregateOutputType | null
+    _max: ProcimBarangJaminanLainnyaMaxAggregateOutputType | null
+  }
+
+  type GetProcimBarangJaminanLainnyaGroupByPayload<T extends ProcimBarangJaminanLainnyaGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ProcimBarangJaminanLainnyaGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ProcimBarangJaminanLainnyaGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ProcimBarangJaminanLainnyaGroupByOutputType[P]>
+            : GetScalarType<T[P], ProcimBarangJaminanLainnyaGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ProcimBarangJaminanLainnyaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    procim_id?: boolean
+    nama_barang?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    procim?: boolean | PROCIMDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["procimBarangJaminanLainnya"]>
+
+  export type ProcimBarangJaminanLainnyaSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    procim_id?: boolean
+    nama_barang?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    procim?: boolean | PROCIMDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["procimBarangJaminanLainnya"]>
+
+  export type ProcimBarangJaminanLainnyaSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    procim_id?: boolean
+    nama_barang?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    procim?: boolean | PROCIMDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["procimBarangJaminanLainnya"]>
+
+  export type ProcimBarangJaminanLainnyaSelectScalar = {
+    id?: boolean
+    procim_id?: boolean
+    nama_barang?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+  }
+
+  export type ProcimBarangJaminanLainnyaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "procim_id" | "nama_barang" | "created_at" | "updated_at", ExtArgs["result"]["procimBarangJaminanLainnya"]>
+  export type ProcimBarangJaminanLainnyaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    procim?: boolean | PROCIMDefaultArgs<ExtArgs>
+  }
+  export type ProcimBarangJaminanLainnyaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    procim?: boolean | PROCIMDefaultArgs<ExtArgs>
+  }
+  export type ProcimBarangJaminanLainnyaIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    procim?: boolean | PROCIMDefaultArgs<ExtArgs>
+  }
+
+  export type $ProcimBarangJaminanLainnyaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ProcimBarangJaminanLainnya"
+    objects: {
+      procim: Prisma.$PROCIMPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      procim_id: string
+      nama_barang: string | null
+      created_at: Date | null
+      updated_at: Date | null
+    }, ExtArgs["result"]["procimBarangJaminanLainnya"]>
+    composites: {}
+  }
+
+  type ProcimBarangJaminanLainnyaGetPayload<S extends boolean | null | undefined | ProcimBarangJaminanLainnyaDefaultArgs> = $Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload, S>
+
+  type ProcimBarangJaminanLainnyaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ProcimBarangJaminanLainnyaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ProcimBarangJaminanLainnyaCountAggregateInputType | true
+    }
+
+  export interface ProcimBarangJaminanLainnyaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ProcimBarangJaminanLainnya'], meta: { name: 'ProcimBarangJaminanLainnya' } }
+    /**
+     * Find zero or one ProcimBarangJaminanLainnya that matches the filter.
+     * @param {ProcimBarangJaminanLainnyaFindUniqueArgs} args - Arguments to find a ProcimBarangJaminanLainnya
+     * @example
+     * // Get one ProcimBarangJaminanLainnya
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ProcimBarangJaminanLainnyaFindUniqueArgs>(args: SelectSubset<T, ProcimBarangJaminanLainnyaFindUniqueArgs<ExtArgs>>): Prisma__ProcimBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ProcimBarangJaminanLainnya that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ProcimBarangJaminanLainnyaFindUniqueOrThrowArgs} args - Arguments to find a ProcimBarangJaminanLainnya
+     * @example
+     * // Get one ProcimBarangJaminanLainnya
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ProcimBarangJaminanLainnyaFindUniqueOrThrowArgs>(args: SelectSubset<T, ProcimBarangJaminanLainnyaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProcimBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProcimBarangJaminanLainnya that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcimBarangJaminanLainnyaFindFirstArgs} args - Arguments to find a ProcimBarangJaminanLainnya
+     * @example
+     * // Get one ProcimBarangJaminanLainnya
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ProcimBarangJaminanLainnyaFindFirstArgs>(args?: SelectSubset<T, ProcimBarangJaminanLainnyaFindFirstArgs<ExtArgs>>): Prisma__ProcimBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProcimBarangJaminanLainnya that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcimBarangJaminanLainnyaFindFirstOrThrowArgs} args - Arguments to find a ProcimBarangJaminanLainnya
+     * @example
+     * // Get one ProcimBarangJaminanLainnya
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ProcimBarangJaminanLainnyaFindFirstOrThrowArgs>(args?: SelectSubset<T, ProcimBarangJaminanLainnyaFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProcimBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ProcimBarangJaminanLainnyas that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcimBarangJaminanLainnyaFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ProcimBarangJaminanLainnyas
+     * const procimBarangJaminanLainnyas = await prisma.procimBarangJaminanLainnya.findMany()
+     * 
+     * // Get first 10 ProcimBarangJaminanLainnyas
+     * const procimBarangJaminanLainnyas = await prisma.procimBarangJaminanLainnya.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const procimBarangJaminanLainnyaWithIdOnly = await prisma.procimBarangJaminanLainnya.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ProcimBarangJaminanLainnyaFindManyArgs>(args?: SelectSubset<T, ProcimBarangJaminanLainnyaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ProcimBarangJaminanLainnya.
+     * @param {ProcimBarangJaminanLainnyaCreateArgs} args - Arguments to create a ProcimBarangJaminanLainnya.
+     * @example
+     * // Create one ProcimBarangJaminanLainnya
+     * const ProcimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.create({
+     *   data: {
+     *     // ... data to create a ProcimBarangJaminanLainnya
+     *   }
+     * })
+     * 
+     */
+    create<T extends ProcimBarangJaminanLainnyaCreateArgs>(args: SelectSubset<T, ProcimBarangJaminanLainnyaCreateArgs<ExtArgs>>): Prisma__ProcimBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ProcimBarangJaminanLainnyas.
+     * @param {ProcimBarangJaminanLainnyaCreateManyArgs} args - Arguments to create many ProcimBarangJaminanLainnyas.
+     * @example
+     * // Create many ProcimBarangJaminanLainnyas
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ProcimBarangJaminanLainnyaCreateManyArgs>(args?: SelectSubset<T, ProcimBarangJaminanLainnyaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ProcimBarangJaminanLainnyas and returns the data saved in the database.
+     * @param {ProcimBarangJaminanLainnyaCreateManyAndReturnArgs} args - Arguments to create many ProcimBarangJaminanLainnyas.
+     * @example
+     * // Create many ProcimBarangJaminanLainnyas
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ProcimBarangJaminanLainnyas and only return the `id`
+     * const procimBarangJaminanLainnyaWithIdOnly = await prisma.procimBarangJaminanLainnya.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ProcimBarangJaminanLainnyaCreateManyAndReturnArgs>(args?: SelectSubset<T, ProcimBarangJaminanLainnyaCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ProcimBarangJaminanLainnya.
+     * @param {ProcimBarangJaminanLainnyaDeleteArgs} args - Arguments to delete one ProcimBarangJaminanLainnya.
+     * @example
+     * // Delete one ProcimBarangJaminanLainnya
+     * const ProcimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.delete({
+     *   where: {
+     *     // ... filter to delete one ProcimBarangJaminanLainnya
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ProcimBarangJaminanLainnyaDeleteArgs>(args: SelectSubset<T, ProcimBarangJaminanLainnyaDeleteArgs<ExtArgs>>): Prisma__ProcimBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ProcimBarangJaminanLainnya.
+     * @param {ProcimBarangJaminanLainnyaUpdateArgs} args - Arguments to update one ProcimBarangJaminanLainnya.
+     * @example
+     * // Update one ProcimBarangJaminanLainnya
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ProcimBarangJaminanLainnyaUpdateArgs>(args: SelectSubset<T, ProcimBarangJaminanLainnyaUpdateArgs<ExtArgs>>): Prisma__ProcimBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ProcimBarangJaminanLainnyas.
+     * @param {ProcimBarangJaminanLainnyaDeleteManyArgs} args - Arguments to filter ProcimBarangJaminanLainnyas to delete.
+     * @example
+     * // Delete a few ProcimBarangJaminanLainnyas
+     * const { count } = await prisma.procimBarangJaminanLainnya.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ProcimBarangJaminanLainnyaDeleteManyArgs>(args?: SelectSubset<T, ProcimBarangJaminanLainnyaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProcimBarangJaminanLainnyas.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcimBarangJaminanLainnyaUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ProcimBarangJaminanLainnyas
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ProcimBarangJaminanLainnyaUpdateManyArgs>(args: SelectSubset<T, ProcimBarangJaminanLainnyaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProcimBarangJaminanLainnyas and returns the data updated in the database.
+     * @param {ProcimBarangJaminanLainnyaUpdateManyAndReturnArgs} args - Arguments to update many ProcimBarangJaminanLainnyas.
+     * @example
+     * // Update many ProcimBarangJaminanLainnyas
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ProcimBarangJaminanLainnyas and only return the `id`
+     * const procimBarangJaminanLainnyaWithIdOnly = await prisma.procimBarangJaminanLainnya.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ProcimBarangJaminanLainnyaUpdateManyAndReturnArgs>(args: SelectSubset<T, ProcimBarangJaminanLainnyaUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ProcimBarangJaminanLainnya.
+     * @param {ProcimBarangJaminanLainnyaUpsertArgs} args - Arguments to update or create a ProcimBarangJaminanLainnya.
+     * @example
+     * // Update or create a ProcimBarangJaminanLainnya
+     * const procimBarangJaminanLainnya = await prisma.procimBarangJaminanLainnya.upsert({
+     *   create: {
+     *     // ... data to create a ProcimBarangJaminanLainnya
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ProcimBarangJaminanLainnya we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ProcimBarangJaminanLainnyaUpsertArgs>(args: SelectSubset<T, ProcimBarangJaminanLainnyaUpsertArgs<ExtArgs>>): Prisma__ProcimBarangJaminanLainnyaClient<$Result.GetResult<Prisma.$ProcimBarangJaminanLainnyaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ProcimBarangJaminanLainnyas.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcimBarangJaminanLainnyaCountArgs} args - Arguments to filter ProcimBarangJaminanLainnyas to count.
+     * @example
+     * // Count the number of ProcimBarangJaminanLainnyas
+     * const count = await prisma.procimBarangJaminanLainnya.count({
+     *   where: {
+     *     // ... the filter for the ProcimBarangJaminanLainnyas we want to count
+     *   }
+     * })
+    **/
+    count<T extends ProcimBarangJaminanLainnyaCountArgs>(
+      args?: Subset<T, ProcimBarangJaminanLainnyaCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ProcimBarangJaminanLainnyaCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ProcimBarangJaminanLainnya.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcimBarangJaminanLainnyaAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ProcimBarangJaminanLainnyaAggregateArgs>(args: Subset<T, ProcimBarangJaminanLainnyaAggregateArgs>): Prisma.PrismaPromise<GetProcimBarangJaminanLainnyaAggregateType<T>>
+
+    /**
+     * Group by ProcimBarangJaminanLainnya.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcimBarangJaminanLainnyaGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ProcimBarangJaminanLainnyaGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ProcimBarangJaminanLainnyaGroupByArgs['orderBy'] }
+        : { orderBy?: ProcimBarangJaminanLainnyaGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ProcimBarangJaminanLainnyaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProcimBarangJaminanLainnyaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ProcimBarangJaminanLainnya model
+   */
+  readonly fields: ProcimBarangJaminanLainnyaFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ProcimBarangJaminanLainnya.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ProcimBarangJaminanLainnyaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    procim<T extends PROCIMDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PROCIMDefaultArgs<ExtArgs>>): Prisma__PROCIMClient<$Result.GetResult<Prisma.$PROCIMPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ProcimBarangJaminanLainnya model
+   */
+  interface ProcimBarangJaminanLainnyaFieldRefs {
+    readonly id: FieldRef<"ProcimBarangJaminanLainnya", 'String'>
+    readonly procim_id: FieldRef<"ProcimBarangJaminanLainnya", 'String'>
+    readonly nama_barang: FieldRef<"ProcimBarangJaminanLainnya", 'String'>
+    readonly created_at: FieldRef<"ProcimBarangJaminanLainnya", 'DateTime'>
+    readonly updated_at: FieldRef<"ProcimBarangJaminanLainnya", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ProcimBarangJaminanLainnya findUnique
+   */
+  export type ProcimBarangJaminanLainnyaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which ProcimBarangJaminanLainnya to fetch.
+     */
+    where: ProcimBarangJaminanLainnyaWhereUniqueInput
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya findUniqueOrThrow
+   */
+  export type ProcimBarangJaminanLainnyaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which ProcimBarangJaminanLainnya to fetch.
+     */
+    where: ProcimBarangJaminanLainnyaWhereUniqueInput
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya findFirst
+   */
+  export type ProcimBarangJaminanLainnyaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which ProcimBarangJaminanLainnya to fetch.
+     */
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProcimBarangJaminanLainnyas to fetch.
+     */
+    orderBy?: ProcimBarangJaminanLainnyaOrderByWithRelationInput | ProcimBarangJaminanLainnyaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProcimBarangJaminanLainnyas.
+     */
+    cursor?: ProcimBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProcimBarangJaminanLainnyas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProcimBarangJaminanLainnyas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProcimBarangJaminanLainnyas.
+     */
+    distinct?: ProcimBarangJaminanLainnyaScalarFieldEnum | ProcimBarangJaminanLainnyaScalarFieldEnum[]
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya findFirstOrThrow
+   */
+  export type ProcimBarangJaminanLainnyaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which ProcimBarangJaminanLainnya to fetch.
+     */
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProcimBarangJaminanLainnyas to fetch.
+     */
+    orderBy?: ProcimBarangJaminanLainnyaOrderByWithRelationInput | ProcimBarangJaminanLainnyaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProcimBarangJaminanLainnyas.
+     */
+    cursor?: ProcimBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProcimBarangJaminanLainnyas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProcimBarangJaminanLainnyas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProcimBarangJaminanLainnyas.
+     */
+    distinct?: ProcimBarangJaminanLainnyaScalarFieldEnum | ProcimBarangJaminanLainnyaScalarFieldEnum[]
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya findMany
+   */
+  export type ProcimBarangJaminanLainnyaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter, which ProcimBarangJaminanLainnyas to fetch.
+     */
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProcimBarangJaminanLainnyas to fetch.
+     */
+    orderBy?: ProcimBarangJaminanLainnyaOrderByWithRelationInput | ProcimBarangJaminanLainnyaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ProcimBarangJaminanLainnyas.
+     */
+    cursor?: ProcimBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProcimBarangJaminanLainnyas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProcimBarangJaminanLainnyas.
+     */
+    skip?: number
+    distinct?: ProcimBarangJaminanLainnyaScalarFieldEnum | ProcimBarangJaminanLainnyaScalarFieldEnum[]
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya create
+   */
+  export type ProcimBarangJaminanLainnyaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ProcimBarangJaminanLainnya.
+     */
+    data: XOR<ProcimBarangJaminanLainnyaCreateInput, ProcimBarangJaminanLainnyaUncheckedCreateInput>
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya createMany
+   */
+  export type ProcimBarangJaminanLainnyaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ProcimBarangJaminanLainnyas.
+     */
+    data: ProcimBarangJaminanLainnyaCreateManyInput | ProcimBarangJaminanLainnyaCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya createManyAndReturn
+   */
+  export type ProcimBarangJaminanLainnyaCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * The data used to create many ProcimBarangJaminanLainnyas.
+     */
+    data: ProcimBarangJaminanLainnyaCreateManyInput | ProcimBarangJaminanLainnyaCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya update
+   */
+  export type ProcimBarangJaminanLainnyaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ProcimBarangJaminanLainnya.
+     */
+    data: XOR<ProcimBarangJaminanLainnyaUpdateInput, ProcimBarangJaminanLainnyaUncheckedUpdateInput>
+    /**
+     * Choose, which ProcimBarangJaminanLainnya to update.
+     */
+    where: ProcimBarangJaminanLainnyaWhereUniqueInput
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya updateMany
+   */
+  export type ProcimBarangJaminanLainnyaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ProcimBarangJaminanLainnyas.
+     */
+    data: XOR<ProcimBarangJaminanLainnyaUpdateManyMutationInput, ProcimBarangJaminanLainnyaUncheckedUpdateManyInput>
+    /**
+     * Filter which ProcimBarangJaminanLainnyas to update
+     */
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    /**
+     * Limit how many ProcimBarangJaminanLainnyas to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya updateManyAndReturn
+   */
+  export type ProcimBarangJaminanLainnyaUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * The data used to update ProcimBarangJaminanLainnyas.
+     */
+    data: XOR<ProcimBarangJaminanLainnyaUpdateManyMutationInput, ProcimBarangJaminanLainnyaUncheckedUpdateManyInput>
+    /**
+     * Filter which ProcimBarangJaminanLainnyas to update
+     */
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    /**
+     * Limit how many ProcimBarangJaminanLainnyas to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya upsert
+   */
+  export type ProcimBarangJaminanLainnyaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ProcimBarangJaminanLainnya to update in case it exists.
+     */
+    where: ProcimBarangJaminanLainnyaWhereUniqueInput
+    /**
+     * In case the ProcimBarangJaminanLainnya found by the `where` argument doesn't exist, create a new ProcimBarangJaminanLainnya with this data.
+     */
+    create: XOR<ProcimBarangJaminanLainnyaCreateInput, ProcimBarangJaminanLainnyaUncheckedCreateInput>
+    /**
+     * In case the ProcimBarangJaminanLainnya was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProcimBarangJaminanLainnyaUpdateInput, ProcimBarangJaminanLainnyaUncheckedUpdateInput>
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya delete
+   */
+  export type ProcimBarangJaminanLainnyaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+    /**
+     * Filter which ProcimBarangJaminanLainnya to delete.
+     */
+    where: ProcimBarangJaminanLainnyaWhereUniqueInput
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya deleteMany
+   */
+  export type ProcimBarangJaminanLainnyaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProcimBarangJaminanLainnyas to delete
+     */
+    where?: ProcimBarangJaminanLainnyaWhereInput
+    /**
+     * Limit how many ProcimBarangJaminanLainnyas to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProcimBarangJaminanLainnya without action
+   */
+  export type ProcimBarangJaminanLainnyaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcimBarangJaminanLainnya
+     */
+    select?: ProcimBarangJaminanLainnyaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcimBarangJaminanLainnya
+     */
+    omit?: ProcimBarangJaminanLainnyaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProcimBarangJaminanLainnyaInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Model SystemLog
    */
 
@@ -29330,7 +31650,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
     hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
     alamat_rumah_penjamin: 'alamat_rumah_penjamin',
-    nama_SHM: 'nama_SHM',
     nama_barang: 'nama_barang',
     no_bpkb: 'no_bpkb',
     harga_barang: 'harga_barang',
@@ -29385,6 +31704,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
     tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
     nama_shm: 'nama_shm',
+    nik_shm: 'nik_shm',
+    alamat_shm: 'alamat_shm',
     detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
@@ -29430,7 +31751,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
     hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
     alamat_rumah_penjamin: 'alamat_rumah_penjamin',
-    nama_shm: 'nama_shm',
+    nama_barang: 'nama_barang',
+    detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
     jangka_waktu: 'jangka_waktu',
@@ -29473,7 +31795,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
     hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
     alamat_rumah_penjamin: 'alamat_rumah_penjamin',
-    nama_shm: 'nama_shm',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
     jangka_waktu: 'jangka_waktu',
@@ -29481,7 +31802,6 @@ export namespace Prisma {
     rekening_pinjaman: 'rekening_pinjaman',
     nominal_angsuran: 'nominal_angsuran',
     tanggal_angsuran_pertama: 'tanggal_angsuran_pertama',
-    barang_jaminan_lainnya: 'barang_jaminan_lainnya',
     created_at: 'created_at',
     updated_at: 'updated_at',
     submitted_at: 'submitted_at',
@@ -29506,14 +31826,12 @@ export namespace Prisma {
     tempat_lahir_penjamin: 'tempat_lahir_penjamin',
     tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
     alamat_rumah_penjamin: 'alamat_rumah_penjamin',
-    nama_SHM: 'nama_SHM',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
     jangka_waktu: 'jangka_waktu',
     rekening_pinjaman: 'rekening_pinjaman',
     nominal_angsuran: 'nominal_angsuran',
     tanggal_angsuran_pertama: 'tanggal_angsuran_pertama',
-    barang_jaminan_lainnya: 'barang_jaminan_lainnya',
     created_at: 'created_at',
     updated_at: 'updated_at',
     submitted_at: 'submitted_at',
@@ -29548,7 +31866,6 @@ export namespace Prisma {
     nama_barang: 'nama_barang',
     harga_barang: 'harga_barang',
     no_bpkb: 'no_bpkb',
-    nama_shm: 'nama_shm',
     detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
@@ -29602,7 +31919,6 @@ export namespace Prisma {
     nama_barang: 'nama_barang',
     harga_barang: 'harga_barang',
     no_bpkb: 'no_bpkb',
-    nama_shm: 'nama_shm',
     detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
@@ -29653,6 +31969,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
     hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
     nama_shm: 'nama_shm',
+    nik_shm: 'nik_shm',
+    alamat_shm: 'alamat_shm',
     detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
@@ -29705,7 +32023,6 @@ export namespace Prisma {
     nama_barang: 'nama_barang',
     harga_barang: 'harga_barang',
     no_bpkb: 'no_bpkb',
-    nama_shm: 'nama_shm',
     detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
@@ -29756,6 +32073,7 @@ export namespace Prisma {
     nik_penjamin: 'nik_penjamin',
     hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
     nama_shm: 'nama_shm',
+    alamat_shm: 'alamat_shm',
     nik_shm: 'nik_shm',
     detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
@@ -29807,7 +32125,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
     nik_penjamin: 'nik_penjamin',
     hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
-    nama_shm: 'nama_shm',
     nama_barang: 'nama_barang',
     merek_barang: 'merek_barang',
     tipe_barang: 'tipe_barang',
@@ -29863,7 +32180,6 @@ export namespace Prisma {
     alamat_rumah_penjamin: 'alamat_rumah_penjamin',
     nama_barang: 'nama_barang',
     no_bpkb: 'no_bpkb',
-    nama_shm: 'nama_shm',
     detail_jaminan: 'detail_jaminan',
     nominal_pinjaman: 'nominal_pinjaman',
     bunga_pinjaman: 'bunga_pinjaman',
@@ -29916,6 +32232,17 @@ export namespace Prisma {
   export type FleksiBarangFurnitureScalarFieldEnum = (typeof FleksiBarangFurnitureScalarFieldEnum)[keyof typeof FleksiBarangFurnitureScalarFieldEnum]
 
 
+  export const FleksiBarangJaminanLainnyaScalarFieldEnum: {
+    id: 'id',
+    fleksi_id: 'fleksi_id',
+    nama_barang: 'nama_barang',
+    created_at: 'created_at',
+    updated_at: 'updated_at'
+  };
+
+  export type FleksiBarangJaminanLainnyaScalarFieldEnum = (typeof FleksiBarangJaminanLainnyaScalarFieldEnum)[keyof typeof FleksiBarangJaminanLainnyaScalarFieldEnum]
+
+
   export const ProcimBarangElektronikScalarFieldEnum: {
     id: 'id',
     procim_id: 'procim_id',
@@ -29940,6 +32267,17 @@ export namespace Prisma {
   };
 
   export type ProcimBarangFurnitureScalarFieldEnum = (typeof ProcimBarangFurnitureScalarFieldEnum)[keyof typeof ProcimBarangFurnitureScalarFieldEnum]
+
+
+  export const ProcimBarangJaminanLainnyaScalarFieldEnum: {
+    id: 'id',
+    procim_id: 'procim_id',
+    nama_barang: 'nama_barang',
+    created_at: 'created_at',
+    updated_at: 'updated_at'
+  };
+
+  export type ProcimBarangJaminanLainnyaScalarFieldEnum = (typeof ProcimBarangJaminanLainnyaScalarFieldEnum)[keyof typeof ProcimBarangJaminanLainnyaScalarFieldEnum]
 
 
   export const SystemLogScalarFieldEnum: {
@@ -30167,7 +32505,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KSSM"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KSSM"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"KSSM"> | string | null
-    nama_SHM?: StringNullableFilter<"KSSM"> | string | null
     nama_barang?: StringNullableFilter<"KSSM"> | string | null
     no_bpkb?: StringNullableFilter<"KSSM"> | string | null
     harga_barang?: IntNullableFilter<"KSSM"> | number | null
@@ -30220,7 +32557,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
-    nama_SHM?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
@@ -30276,7 +32612,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KSSM"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KSSM"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"KSSM"> | string | null
-    nama_SHM?: StringNullableFilter<"KSSM"> | string | null
     nama_barang?: StringNullableFilter<"KSSM"> | string | null
     no_bpkb?: StringNullableFilter<"KSSM"> | string | null
     harga_barang?: IntNullableFilter<"KSSM"> | number | null
@@ -30329,7 +32664,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
-    nama_SHM?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
@@ -30389,7 +32723,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableWithAggregatesFilter<"KSSM"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
     alamat_rumah_penjamin?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
-    nama_SHM?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
     nama_barang?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
     no_bpkb?: StringNullableWithAggregatesFilter<"KSSM"> | string | null
     harga_barang?: IntNullableWithAggregatesFilter<"KSSM"> | number | null
@@ -30444,6 +32777,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: StringNullableFilter<"KSS"> | string | null
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KSS"> | Date | string | null
     nama_shm?: StringNullableFilter<"KSS"> | string | null
+    nik_shm?: StringNullableFilter<"KSS"> | string | null
+    alamat_shm?: StringNullableFilter<"KSS"> | string | null
     detail_jaminan?: StringNullableFilter<"KSS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSS"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KSS"> | number | null
@@ -30492,6 +32827,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     nama_shm?: SortOrderInput | SortOrder
+    nik_shm?: SortOrderInput | SortOrder
+    alamat_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -30543,6 +32880,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: StringNullableFilter<"KSS"> | string | null
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KSS"> | Date | string | null
     nama_shm?: StringNullableFilter<"KSS"> | string | null
+    nik_shm?: StringNullableFilter<"KSS"> | string | null
+    alamat_shm?: StringNullableFilter<"KSS"> | string | null
     detail_jaminan?: StringNullableFilter<"KSS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSS"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KSS"> | number | null
@@ -30591,6 +32930,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     nama_shm?: SortOrderInput | SortOrder
+    nik_shm?: SortOrderInput | SortOrder
+    alamat_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -30646,6 +32987,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: StringNullableWithAggregatesFilter<"KSS"> | string | null
     tanggal_lahir_penjamin?: DateTimeNullableWithAggregatesFilter<"KSS"> | Date | string | null
     nama_shm?: StringNullableWithAggregatesFilter<"KSS"> | string | null
+    nik_shm?: StringNullableWithAggregatesFilter<"KSS"> | string | null
+    alamat_shm?: StringNullableWithAggregatesFilter<"KSS"> | string | null
     detail_jaminan?: StringNullableWithAggregatesFilter<"KSS"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"KSS"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"KSS"> | number | null
@@ -30691,7 +33034,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"PINEK"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"PINEK"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"PINEK"> | string | null
-    nama_shm?: StringNullableFilter<"PINEK"> | string | null
+    nama_barang?: StringNullableFilter<"PINEK"> | string | null
+    detail_jaminan?: StringNullableFilter<"PINEK"> | string | null
     nominal_pinjaman?: IntNullableFilter<"PINEK"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"PINEK"> | number | null
     jangka_waktu?: IntNullableFilter<"PINEK"> | number | null
@@ -30733,7 +33077,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
+    nama_barang?: SortOrderInput | SortOrder
+    detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
     jangka_waktu?: SortOrderInput | SortOrder
@@ -30778,7 +33123,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"PINEK"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"PINEK"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"PINEK"> | string | null
-    nama_shm?: StringNullableFilter<"PINEK"> | string | null
+    nama_barang?: StringNullableFilter<"PINEK"> | string | null
+    detail_jaminan?: StringNullableFilter<"PINEK"> | string | null
     nominal_pinjaman?: IntNullableFilter<"PINEK"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"PINEK"> | number | null
     jangka_waktu?: IntNullableFilter<"PINEK"> | number | null
@@ -30820,7 +33166,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
+    nama_barang?: SortOrderInput | SortOrder
+    detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
     jangka_waktu?: SortOrderInput | SortOrder
@@ -30869,7 +33216,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableWithAggregatesFilter<"PINEK"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableWithAggregatesFilter<"PINEK"> | string | null
     alamat_rumah_penjamin?: StringNullableWithAggregatesFilter<"PINEK"> | string | null
-    nama_shm?: StringNullableWithAggregatesFilter<"PINEK"> | string | null
+    nama_barang?: StringNullableWithAggregatesFilter<"PINEK"> | string | null
+    detail_jaminan?: StringNullableWithAggregatesFilter<"PINEK"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"PINEK"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"PINEK"> | number | null
     jangka_waktu?: IntNullableWithAggregatesFilter<"PINEK"> | number | null
@@ -30912,7 +33260,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"FLEKSI"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"FLEKSI"> | string | null
-    nama_shm?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_pinjaman?: IntNullableFilter<"FLEKSI"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"FLEKSI"> | number | null
     jangka_waktu?: IntNullableFilter<"FLEKSI"> | number | null
@@ -30920,13 +33267,13 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_angsuran?: IntNullableFilter<"FLEKSI"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
-    barang_jaminan_lainnya?: StringNullableFilter<"FLEKSI"> | string | null
     created_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     userID?: StringFilter<"FLEKSI"> | string
     barang_elektronik?: FleksiBarangElektronikListRelationFilter
     barang_furniture?: FleksiBarangFurnitureListRelationFilter
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaListRelationFilter
     User?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
@@ -30947,7 +33294,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
     jangka_waktu?: SortOrderInput | SortOrder
@@ -30955,13 +33301,13 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrderInput | SortOrder
     nominal_angsuran?: SortOrderInput | SortOrder
     tanggal_angsuran_pertama?: SortOrderInput | SortOrder
-    barang_jaminan_lainnya?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     submitted_at?: SortOrderInput | SortOrder
     userID?: SortOrder
     barang_elektronik?: FleksiBarangElektronikOrderByRelationAggregateInput
     barang_furniture?: FleksiBarangFurnitureOrderByRelationAggregateInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaOrderByRelationAggregateInput
     User?: UserOrderByWithRelationInput
   }
 
@@ -30985,7 +33331,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"FLEKSI"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"FLEKSI"> | string | null
-    nama_shm?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_pinjaman?: IntNullableFilter<"FLEKSI"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"FLEKSI"> | number | null
     jangka_waktu?: IntNullableFilter<"FLEKSI"> | number | null
@@ -30993,13 +33338,13 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_angsuran?: IntNullableFilter<"FLEKSI"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
-    barang_jaminan_lainnya?: StringNullableFilter<"FLEKSI"> | string | null
     created_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     userID?: StringFilter<"FLEKSI"> | string
     barang_elektronik?: FleksiBarangElektronikListRelationFilter
     barang_furniture?: FleksiBarangFurnitureListRelationFilter
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaListRelationFilter
     User?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
@@ -31020,7 +33365,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
     jangka_waktu?: SortOrderInput | SortOrder
@@ -31028,7 +33372,6 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrderInput | SortOrder
     nominal_angsuran?: SortOrderInput | SortOrder
     tanggal_angsuran_pertama?: SortOrderInput | SortOrder
-    barang_jaminan_lainnya?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     submitted_at?: SortOrderInput | SortOrder
@@ -31060,7 +33403,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableWithAggregatesFilter<"FLEKSI"> | string | null
     alamat_rumah_penjamin?: StringNullableWithAggregatesFilter<"FLEKSI"> | string | null
-    nama_shm?: StringNullableWithAggregatesFilter<"FLEKSI"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"FLEKSI"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"FLEKSI"> | number | null
     jangka_waktu?: IntNullableWithAggregatesFilter<"FLEKSI"> | number | null
@@ -31068,7 +33410,6 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableWithAggregatesFilter<"FLEKSI"> | string | null
     nominal_angsuran?: IntNullableWithAggregatesFilter<"FLEKSI"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
-    barang_jaminan_lainnya?: StringNullableWithAggregatesFilter<"FLEKSI"> | string | null
     created_at?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
     submitted_at?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
@@ -31093,20 +33434,19 @@ export namespace Prisma {
     tempat_lahir_penjamin?: StringNullableFilter<"PROCIM"> | string | null
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"PROCIM"> | string | null
-    nama_SHM?: StringNullableFilter<"PROCIM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"PROCIM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"PROCIM"> | number | null
     jangka_waktu?: IntNullableFilter<"PROCIM"> | number | null
     rekening_pinjaman?: StringNullableFilter<"PROCIM"> | string | null
     nominal_angsuran?: IntNullableFilter<"PROCIM"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
-    barang_jaminan_lainnya?: StringNullableFilter<"PROCIM"> | string | null
     created_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     userID?: StringFilter<"PROCIM"> | string
     barang_elektronik?: ProcimBarangElektronikListRelationFilter
     barang_furniture?: ProcimBarangFurnitureListRelationFilter
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaListRelationFilter
     User?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
@@ -31125,20 +33465,19 @@ export namespace Prisma {
     tempat_lahir_penjamin?: SortOrderInput | SortOrder
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
-    nama_SHM?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
     jangka_waktu?: SortOrderInput | SortOrder
     rekening_pinjaman?: SortOrderInput | SortOrder
     nominal_angsuran?: SortOrderInput | SortOrder
     tanggal_angsuran_pertama?: SortOrderInput | SortOrder
-    barang_jaminan_lainnya?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     submitted_at?: SortOrderInput | SortOrder
     userID?: SortOrder
     barang_elektronik?: ProcimBarangElektronikOrderByRelationAggregateInput
     barang_furniture?: ProcimBarangFurnitureOrderByRelationAggregateInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaOrderByRelationAggregateInput
     User?: UserOrderByWithRelationInput
   }
 
@@ -31160,20 +33499,19 @@ export namespace Prisma {
     tempat_lahir_penjamin?: StringNullableFilter<"PROCIM"> | string | null
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"PROCIM"> | string | null
-    nama_SHM?: StringNullableFilter<"PROCIM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"PROCIM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"PROCIM"> | number | null
     jangka_waktu?: IntNullableFilter<"PROCIM"> | number | null
     rekening_pinjaman?: StringNullableFilter<"PROCIM"> | string | null
     nominal_angsuran?: IntNullableFilter<"PROCIM"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
-    barang_jaminan_lainnya?: StringNullableFilter<"PROCIM"> | string | null
     created_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     userID?: StringFilter<"PROCIM"> | string
     barang_elektronik?: ProcimBarangElektronikListRelationFilter
     barang_furniture?: ProcimBarangFurnitureListRelationFilter
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaListRelationFilter
     User?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
@@ -31192,14 +33530,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: SortOrderInput | SortOrder
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
-    nama_SHM?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
     jangka_waktu?: SortOrderInput | SortOrder
     rekening_pinjaman?: SortOrderInput | SortOrder
     nominal_angsuran?: SortOrderInput | SortOrder
     tanggal_angsuran_pertama?: SortOrderInput | SortOrder
-    barang_jaminan_lainnya?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     submitted_at?: SortOrderInput | SortOrder
@@ -31229,14 +33565,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: StringNullableWithAggregatesFilter<"PROCIM"> | string | null
     tanggal_lahir_penjamin?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
     alamat_rumah_penjamin?: StringNullableWithAggregatesFilter<"PROCIM"> | string | null
-    nama_SHM?: StringNullableWithAggregatesFilter<"PROCIM"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"PROCIM"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"PROCIM"> | number | null
     jangka_waktu?: IntNullableWithAggregatesFilter<"PROCIM"> | number | null
     rekening_pinjaman?: StringNullableWithAggregatesFilter<"PROCIM"> | string | null
     nominal_angsuran?: IntNullableWithAggregatesFilter<"PROCIM"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
-    barang_jaminan_lainnya?: StringNullableWithAggregatesFilter<"PROCIM"> | string | null
     created_at?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
     submitted_at?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
@@ -31271,7 +33605,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KSM"> | string | null
     harga_barang?: IntNullableFilter<"KSM"> | number | null
     no_bpkb?: StringNullableFilter<"KSM"> | string | null
-    nama_shm?: StringNullableFilter<"KSM"> | string | null
     detail_jaminan?: StringNullableFilter<"KSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KSM"> | number | null
@@ -31323,7 +33656,6 @@ export namespace Prisma {
     nama_barang?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -31378,7 +33710,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KSM"> | string | null
     harga_barang?: IntNullableFilter<"KSM"> | number | null
     no_bpkb?: StringNullableFilter<"KSM"> | string | null
-    nama_shm?: StringNullableFilter<"KSM"> | string | null
     detail_jaminan?: StringNullableFilter<"KSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KSM"> | number | null
@@ -31430,7 +33761,6 @@ export namespace Prisma {
     nama_barang?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -31489,7 +33819,6 @@ export namespace Prisma {
     nama_barang?: StringNullableWithAggregatesFilter<"KSM"> | string | null
     harga_barang?: IntNullableWithAggregatesFilter<"KSM"> | number | null
     no_bpkb?: StringNullableWithAggregatesFilter<"KSM"> | string | null
-    nama_shm?: StringNullableWithAggregatesFilter<"KSM"> | string | null
     detail_jaminan?: StringNullableWithAggregatesFilter<"KSM"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"KSM"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"KSM"> | number | null
@@ -31543,7 +33872,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KMSM"> | string | null
     harga_barang?: IntNullableFilter<"KMSM"> | number | null
     no_bpkb?: StringNullableFilter<"KMSM"> | string | null
-    nama_shm?: StringNullableFilter<"KMSM"> | string | null
     detail_jaminan?: StringNullableFilter<"KMSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMSM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KMSM"> | number | null
@@ -31594,7 +33922,6 @@ export namespace Prisma {
     nama_barang?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -31648,7 +33975,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KMSM"> | string | null
     harga_barang?: IntNullableFilter<"KMSM"> | number | null
     no_bpkb?: StringNullableFilter<"KMSM"> | string | null
-    nama_shm?: StringNullableFilter<"KMSM"> | string | null
     detail_jaminan?: StringNullableFilter<"KMSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMSM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KMSM"> | number | null
@@ -31699,7 +34025,6 @@ export namespace Prisma {
     nama_barang?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -31757,7 +34082,6 @@ export namespace Prisma {
     nama_barang?: StringNullableWithAggregatesFilter<"KMSM"> | string | null
     harga_barang?: IntNullableWithAggregatesFilter<"KMSM"> | number | null
     no_bpkb?: StringNullableWithAggregatesFilter<"KMSM"> | string | null
-    nama_shm?: StringNullableWithAggregatesFilter<"KMSM"> | string | null
     detail_jaminan?: StringNullableWithAggregatesFilter<"KMSM"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"KMSM"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"KMSM"> | number | null
@@ -31808,6 +34132,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KRS"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KRS"> | string | null
     nama_shm?: StringNullableFilter<"KRS"> | string | null
+    nik_shm?: StringNullableFilter<"KRS"> | string | null
+    alamat_shm?: StringNullableFilter<"KRS"> | string | null
     detail_jaminan?: StringNullableFilter<"KRS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KRS"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KRS"> | number | null
@@ -31856,6 +34182,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     nama_shm?: SortOrderInput | SortOrder
+    nik_shm?: SortOrderInput | SortOrder
+    alamat_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -31907,6 +34235,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KRS"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KRS"> | string | null
     nama_shm?: StringNullableFilter<"KRS"> | string | null
+    nik_shm?: StringNullableFilter<"KRS"> | string | null
+    alamat_shm?: StringNullableFilter<"KRS"> | string | null
     detail_jaminan?: StringNullableFilter<"KRS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KRS"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KRS"> | number | null
@@ -31955,6 +34285,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     nama_shm?: SortOrderInput | SortOrder
+    nik_shm?: SortOrderInput | SortOrder
+    alamat_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -32010,6 +34342,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableWithAggregatesFilter<"KRS"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableWithAggregatesFilter<"KRS"> | string | null
     nama_shm?: StringNullableWithAggregatesFilter<"KRS"> | string | null
+    nik_shm?: StringNullableWithAggregatesFilter<"KRS"> | string | null
+    alamat_shm?: StringNullableWithAggregatesFilter<"KRS"> | string | null
     detail_jaminan?: StringNullableWithAggregatesFilter<"KRS"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"KRS"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"KRS"> | number | null
@@ -32062,7 +34396,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KMM"> | string | null
     harga_barang?: IntNullableFilter<"KMM"> | number | null
     no_bpkb?: StringNullableFilter<"KMM"> | string | null
-    nama_shm?: StringNullableFilter<"KMM"> | string | null
     detail_jaminan?: StringNullableFilter<"KMM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KMM"> | number | null
@@ -32115,7 +34448,6 @@ export namespace Prisma {
     nama_barang?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -32171,7 +34503,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KMM"> | string | null
     harga_barang?: IntNullableFilter<"KMM"> | number | null
     no_bpkb?: StringNullableFilter<"KMM"> | string | null
-    nama_shm?: StringNullableFilter<"KMM"> | string | null
     detail_jaminan?: StringNullableFilter<"KMM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KMM"> | number | null
@@ -32224,7 +34555,6 @@ export namespace Prisma {
     nama_barang?: SortOrderInput | SortOrder
     harga_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -32284,7 +34614,6 @@ export namespace Prisma {
     nama_barang?: StringNullableWithAggregatesFilter<"KMM"> | string | null
     harga_barang?: IntNullableWithAggregatesFilter<"KMM"> | number | null
     no_bpkb?: StringNullableWithAggregatesFilter<"KMM"> | string | null
-    nama_shm?: StringNullableWithAggregatesFilter<"KMM"> | string | null
     detail_jaminan?: StringNullableWithAggregatesFilter<"KMM"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"KMM"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"KMM"> | number | null
@@ -32335,6 +34664,7 @@ export namespace Prisma {
     nik_penjamin?: StringNullableFilter<"KMS"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KMS"> | string | null
     nama_shm?: StringNullableFilter<"KMS"> | string | null
+    alamat_shm?: StringNullableFilter<"KMS"> | string | null
     nik_shm?: StringNullableFilter<"KMS"> | string | null
     detail_jaminan?: StringNullableFilter<"KMS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMS"> | number | null
@@ -32383,6 +34713,7 @@ export namespace Prisma {
     nik_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     nama_shm?: SortOrderInput | SortOrder
+    alamat_shm?: SortOrderInput | SortOrder
     nik_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
@@ -32434,6 +34765,7 @@ export namespace Prisma {
     nik_penjamin?: StringNullableFilter<"KMS"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KMS"> | string | null
     nama_shm?: StringNullableFilter<"KMS"> | string | null
+    alamat_shm?: StringNullableFilter<"KMS"> | string | null
     nik_shm?: StringNullableFilter<"KMS"> | string | null
     detail_jaminan?: StringNullableFilter<"KMS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMS"> | number | null
@@ -32482,6 +34814,7 @@ export namespace Prisma {
     nik_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
     nama_shm?: SortOrderInput | SortOrder
+    alamat_shm?: SortOrderInput | SortOrder
     nik_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
@@ -32537,6 +34870,7 @@ export namespace Prisma {
     nik_penjamin?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     hubungan_penjamin_debitur?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     nama_shm?: StringNullableWithAggregatesFilter<"KMS"> | string | null
+    alamat_shm?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     nik_shm?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     detail_jaminan?: StringNullableWithAggregatesFilter<"KMS"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"KMS"> | number | null
@@ -32588,7 +34922,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KEF"> | Date | string | null
     nik_penjamin?: StringNullableFilter<"KEF"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KEF"> | string | null
-    nama_shm?: StringNullableFilter<"KEF"> | string | null
     nama_barang?: StringNullableFilter<"KEF"> | string | null
     merek_barang?: StringNullableFilter<"KEF"> | string | null
     tipe_barang?: StringNullableFilter<"KEF"> | string | null
@@ -32639,7 +34972,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     nik_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
     merek_barang?: SortOrderInput | SortOrder
     tipe_barang?: SortOrderInput | SortOrder
@@ -32693,7 +35025,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KEF"> | Date | string | null
     nik_penjamin?: StringNullableFilter<"KEF"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KEF"> | string | null
-    nama_shm?: StringNullableFilter<"KEF"> | string | null
     nama_barang?: StringNullableFilter<"KEF"> | string | null
     merek_barang?: StringNullableFilter<"KEF"> | string | null
     tipe_barang?: StringNullableFilter<"KEF"> | string | null
@@ -32744,7 +35075,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     nik_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
     merek_barang?: SortOrderInput | SortOrder
     tipe_barang?: SortOrderInput | SortOrder
@@ -32802,7 +35132,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableWithAggregatesFilter<"KEF"> | Date | string | null
     nik_penjamin?: StringNullableWithAggregatesFilter<"KEF"> | string | null
     hubungan_penjamin_debitur?: StringNullableWithAggregatesFilter<"KEF"> | string | null
-    nama_shm?: StringNullableWithAggregatesFilter<"KEF"> | string | null
     nama_barang?: StringNullableWithAggregatesFilter<"KEF"> | string | null
     merek_barang?: StringNullableWithAggregatesFilter<"KEF"> | string | null
     tipe_barang?: StringNullableWithAggregatesFilter<"KEF"> | string | null
@@ -32858,7 +35187,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: StringNullableFilter<"KAR"> | string | null
     nama_barang?: StringNullableFilter<"KAR"> | string | null
     no_bpkb?: StringNullableFilter<"KAR"> | string | null
-    nama_shm?: StringNullableFilter<"KAR"> | string | null
     detail_jaminan?: StringNullableFilter<"KAR"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KAR"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KAR"> | number | null
@@ -32908,7 +35236,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -32961,7 +35288,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: StringNullableFilter<"KAR"> | string | null
     nama_barang?: StringNullableFilter<"KAR"> | string | null
     no_bpkb?: StringNullableFilter<"KAR"> | string | null
-    nama_shm?: StringNullableFilter<"KAR"> | string | null
     detail_jaminan?: StringNullableFilter<"KAR"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KAR"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KAR"> | number | null
@@ -33011,7 +35337,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
     no_bpkb?: SortOrderInput | SortOrder
-    nama_shm?: SortOrderInput | SortOrder
     detail_jaminan?: SortOrderInput | SortOrder
     nominal_pinjaman?: SortOrderInput | SortOrder
     bunga_pinjaman?: SortOrderInput | SortOrder
@@ -33068,7 +35393,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: StringNullableWithAggregatesFilter<"KAR"> | string | null
     nama_barang?: StringNullableWithAggregatesFilter<"KAR"> | string | null
     no_bpkb?: StringNullableWithAggregatesFilter<"KAR"> | string | null
-    nama_shm?: StringNullableWithAggregatesFilter<"KAR"> | string | null
     detail_jaminan?: StringNullableWithAggregatesFilter<"KAR"> | string | null
     nominal_pinjaman?: IntNullableWithAggregatesFilter<"KAR"> | number | null
     bunga_pinjaman?: FloatNullableWithAggregatesFilter<"KAR"> | number | null
@@ -33226,6 +35550,61 @@ export namespace Prisma {
     updated_at?: DateTimeNullableWithAggregatesFilter<"FleksiBarangFurniture"> | Date | string | null
   }
 
+  export type FleksiBarangJaminanLainnyaWhereInput = {
+    AND?: FleksiBarangJaminanLainnyaWhereInput | FleksiBarangJaminanLainnyaWhereInput[]
+    OR?: FleksiBarangJaminanLainnyaWhereInput[]
+    NOT?: FleksiBarangJaminanLainnyaWhereInput | FleksiBarangJaminanLainnyaWhereInput[]
+    id?: StringFilter<"FleksiBarangJaminanLainnya"> | string
+    fleksi_id?: StringFilter<"FleksiBarangJaminanLainnya"> | string
+    nama_barang?: StringNullableFilter<"FleksiBarangJaminanLainnya"> | string | null
+    created_at?: DateTimeNullableFilter<"FleksiBarangJaminanLainnya"> | Date | string | null
+    updated_at?: DateTimeNullableFilter<"FleksiBarangJaminanLainnya"> | Date | string | null
+    fleksi?: XOR<FLEKSIScalarRelationFilter, FLEKSIWhereInput>
+  }
+
+  export type FleksiBarangJaminanLainnyaOrderByWithRelationInput = {
+    id?: SortOrder
+    fleksi_id?: SortOrder
+    nama_barang?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    fleksi?: FLEKSIOrderByWithRelationInput
+  }
+
+  export type FleksiBarangJaminanLainnyaWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: FleksiBarangJaminanLainnyaWhereInput | FleksiBarangJaminanLainnyaWhereInput[]
+    OR?: FleksiBarangJaminanLainnyaWhereInput[]
+    NOT?: FleksiBarangJaminanLainnyaWhereInput | FleksiBarangJaminanLainnyaWhereInput[]
+    fleksi_id?: StringFilter<"FleksiBarangJaminanLainnya"> | string
+    nama_barang?: StringNullableFilter<"FleksiBarangJaminanLainnya"> | string | null
+    created_at?: DateTimeNullableFilter<"FleksiBarangJaminanLainnya"> | Date | string | null
+    updated_at?: DateTimeNullableFilter<"FleksiBarangJaminanLainnya"> | Date | string | null
+    fleksi?: XOR<FLEKSIScalarRelationFilter, FLEKSIWhereInput>
+  }, "id">
+
+  export type FleksiBarangJaminanLainnyaOrderByWithAggregationInput = {
+    id?: SortOrder
+    fleksi_id?: SortOrder
+    nama_barang?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    _count?: FleksiBarangJaminanLainnyaCountOrderByAggregateInput
+    _max?: FleksiBarangJaminanLainnyaMaxOrderByAggregateInput
+    _min?: FleksiBarangJaminanLainnyaMinOrderByAggregateInput
+  }
+
+  export type FleksiBarangJaminanLainnyaScalarWhereWithAggregatesInput = {
+    AND?: FleksiBarangJaminanLainnyaScalarWhereWithAggregatesInput | FleksiBarangJaminanLainnyaScalarWhereWithAggregatesInput[]
+    OR?: FleksiBarangJaminanLainnyaScalarWhereWithAggregatesInput[]
+    NOT?: FleksiBarangJaminanLainnyaScalarWhereWithAggregatesInput | FleksiBarangJaminanLainnyaScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"FleksiBarangJaminanLainnya"> | string
+    fleksi_id?: StringWithAggregatesFilter<"FleksiBarangJaminanLainnya"> | string
+    nama_barang?: StringNullableWithAggregatesFilter<"FleksiBarangJaminanLainnya"> | string | null
+    created_at?: DateTimeNullableWithAggregatesFilter<"FleksiBarangJaminanLainnya"> | Date | string | null
+    updated_at?: DateTimeNullableWithAggregatesFilter<"FleksiBarangJaminanLainnya"> | Date | string | null
+  }
+
   export type ProcimBarangElektronikWhereInput = {
     AND?: ProcimBarangElektronikWhereInput | ProcimBarangElektronikWhereInput[]
     OR?: ProcimBarangElektronikWhereInput[]
@@ -33358,6 +35737,61 @@ export namespace Prisma {
     harga?: IntNullableWithAggregatesFilter<"ProcimBarangFurniture"> | number | null
     created_at?: DateTimeNullableWithAggregatesFilter<"ProcimBarangFurniture"> | Date | string | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"ProcimBarangFurniture"> | Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaWhereInput = {
+    AND?: ProcimBarangJaminanLainnyaWhereInput | ProcimBarangJaminanLainnyaWhereInput[]
+    OR?: ProcimBarangJaminanLainnyaWhereInput[]
+    NOT?: ProcimBarangJaminanLainnyaWhereInput | ProcimBarangJaminanLainnyaWhereInput[]
+    id?: StringFilter<"ProcimBarangJaminanLainnya"> | string
+    procim_id?: StringFilter<"ProcimBarangJaminanLainnya"> | string
+    nama_barang?: StringNullableFilter<"ProcimBarangJaminanLainnya"> | string | null
+    created_at?: DateTimeNullableFilter<"ProcimBarangJaminanLainnya"> | Date | string | null
+    updated_at?: DateTimeNullableFilter<"ProcimBarangJaminanLainnya"> | Date | string | null
+    procim?: XOR<PROCIMScalarRelationFilter, PROCIMWhereInput>
+  }
+
+  export type ProcimBarangJaminanLainnyaOrderByWithRelationInput = {
+    id?: SortOrder
+    procim_id?: SortOrder
+    nama_barang?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    procim?: PROCIMOrderByWithRelationInput
+  }
+
+  export type ProcimBarangJaminanLainnyaWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ProcimBarangJaminanLainnyaWhereInput | ProcimBarangJaminanLainnyaWhereInput[]
+    OR?: ProcimBarangJaminanLainnyaWhereInput[]
+    NOT?: ProcimBarangJaminanLainnyaWhereInput | ProcimBarangJaminanLainnyaWhereInput[]
+    procim_id?: StringFilter<"ProcimBarangJaminanLainnya"> | string
+    nama_barang?: StringNullableFilter<"ProcimBarangJaminanLainnya"> | string | null
+    created_at?: DateTimeNullableFilter<"ProcimBarangJaminanLainnya"> | Date | string | null
+    updated_at?: DateTimeNullableFilter<"ProcimBarangJaminanLainnya"> | Date | string | null
+    procim?: XOR<PROCIMScalarRelationFilter, PROCIMWhereInput>
+  }, "id">
+
+  export type ProcimBarangJaminanLainnyaOrderByWithAggregationInput = {
+    id?: SortOrder
+    procim_id?: SortOrder
+    nama_barang?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    _count?: ProcimBarangJaminanLainnyaCountOrderByAggregateInput
+    _max?: ProcimBarangJaminanLainnyaMaxOrderByAggregateInput
+    _min?: ProcimBarangJaminanLainnyaMinOrderByAggregateInput
+  }
+
+  export type ProcimBarangJaminanLainnyaScalarWhereWithAggregatesInput = {
+    AND?: ProcimBarangJaminanLainnyaScalarWhereWithAggregatesInput | ProcimBarangJaminanLainnyaScalarWhereWithAggregatesInput[]
+    OR?: ProcimBarangJaminanLainnyaScalarWhereWithAggregatesInput[]
+    NOT?: ProcimBarangJaminanLainnyaScalarWhereWithAggregatesInput | ProcimBarangJaminanLainnyaScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ProcimBarangJaminanLainnya"> | string
+    procim_id?: StringWithAggregatesFilter<"ProcimBarangJaminanLainnya"> | string
+    nama_barang?: StringNullableWithAggregatesFilter<"ProcimBarangJaminanLainnya"> | string | null
+    created_at?: DateTimeNullableWithAggregatesFilter<"ProcimBarangJaminanLainnya"> | Date | string | null
+    updated_at?: DateTimeNullableWithAggregatesFilter<"ProcimBarangJaminanLainnya"> | Date | string | null
   }
 
   export type SystemLogWhereInput = {
@@ -33573,7 +36007,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
     harga_barang?: number | null
@@ -33625,7 +36058,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
     harga_barang?: number | null
@@ -33677,7 +36109,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
@@ -33729,7 +36160,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
@@ -33781,7 +36211,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
     harga_barang?: number | null
@@ -33833,7 +36262,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
@@ -33884,7 +36312,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
@@ -33936,6 +36363,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -33983,6 +36412,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -34030,6 +36461,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -34077,6 +36510,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -34124,6 +36559,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -34171,6 +36608,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -34217,6 +36656,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -34259,7 +36700,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
+    nama_barang?: string | null
+    detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -34300,7 +36742,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
+    nama_barang?: string | null
+    detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -34341,7 +36784,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -34382,7 +36826,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -34423,7 +36868,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
+    nama_barang?: string | null
+    detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -34464,7 +36910,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -34504,7 +36951,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -34544,7 +36992,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -34552,12 +36999,12 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_elektronik?: FleksiBarangElektronikCreateNestedManyWithoutFleksiInput
     barang_furniture?: FleksiBarangFurnitureCreateNestedManyWithoutFleksiInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaCreateNestedManyWithoutFleksiInput
     User: UserCreateNestedOneWithoutFLEKSIInput
   }
 
@@ -34578,7 +37025,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -34586,13 +37032,13 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     userID: string
     barang_elektronik?: FleksiBarangElektronikUncheckedCreateNestedManyWithoutFleksiInput
     barang_furniture?: FleksiBarangFurnitureUncheckedCreateNestedManyWithoutFleksiInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUncheckedCreateNestedManyWithoutFleksiInput
   }
 
   export type FLEKSIUpdateInput = {
@@ -34612,7 +37058,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -34620,12 +37065,12 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_elektronik?: FleksiBarangElektronikUpdateManyWithoutFleksiNestedInput
     barang_furniture?: FleksiBarangFurnitureUpdateManyWithoutFleksiNestedInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUpdateManyWithoutFleksiNestedInput
     User?: UserUpdateOneRequiredWithoutFLEKSINestedInput
   }
 
@@ -34646,7 +37091,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -34654,13 +37098,13 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     userID?: StringFieldUpdateOperationsInput | string
     barang_elektronik?: FleksiBarangElektronikUncheckedUpdateManyWithoutFleksiNestedInput
     barang_furniture?: FleksiBarangFurnitureUncheckedUpdateManyWithoutFleksiNestedInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUncheckedUpdateManyWithoutFleksiNestedInput
   }
 
   export type FLEKSICreateManyInput = {
@@ -34680,7 +37124,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -34688,7 +37131,6 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -34712,7 +37154,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -34720,7 +37161,6 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -34743,7 +37183,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -34751,7 +37190,6 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -34773,19 +37211,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_elektronik?: ProcimBarangElektronikCreateNestedManyWithoutProcimInput
     barang_furniture?: ProcimBarangFurnitureCreateNestedManyWithoutProcimInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaCreateNestedManyWithoutProcimInput
     User: UserCreateNestedOneWithoutPROCIMInput
   }
 
@@ -34804,20 +37241,19 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     userID: string
     barang_elektronik?: ProcimBarangElektronikUncheckedCreateNestedManyWithoutProcimInput
     barang_furniture?: ProcimBarangFurnitureUncheckedCreateNestedManyWithoutProcimInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUncheckedCreateNestedManyWithoutProcimInput
   }
 
   export type PROCIMUpdateInput = {
@@ -34835,19 +37271,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_elektronik?: ProcimBarangElektronikUpdateManyWithoutProcimNestedInput
     barang_furniture?: ProcimBarangFurnitureUpdateManyWithoutProcimNestedInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUpdateManyWithoutProcimNestedInput
     User?: UserUpdateOneRequiredWithoutPROCIMNestedInput
   }
 
@@ -34866,20 +37301,19 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     userID?: StringFieldUpdateOperationsInput | string
     barang_elektronik?: ProcimBarangElektronikUncheckedUpdateManyWithoutProcimNestedInput
     barang_furniture?: ProcimBarangFurnitureUncheckedUpdateManyWithoutProcimNestedInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUncheckedUpdateManyWithoutProcimNestedInput
   }
 
   export type PROCIMCreateManyInput = {
@@ -34897,14 +37331,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -34926,14 +37358,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -34954,14 +37384,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -34993,7 +37421,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35044,7 +37471,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35095,7 +37521,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35146,7 +37571,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35197,7 +37621,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35248,7 +37671,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35298,7 +37720,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35349,7 +37770,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35399,7 +37819,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35449,7 +37868,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35499,7 +37917,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35549,7 +37966,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35599,7 +38015,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35648,7 +38063,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35696,6 +38110,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35743,6 +38159,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35790,6 +38208,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35837,6 +38257,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35884,6 +38306,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -35931,6 +38355,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -35977,6 +38403,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -36026,7 +38454,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -36078,7 +38505,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -36130,7 +38556,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -36182,7 +38607,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -36234,7 +38658,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -36286,7 +38709,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -36337,7 +38759,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -36385,6 +38806,7 @@ export namespace Prisma {
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    alamat_shm?: string | null
     nik_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -36432,6 +38854,7 @@ export namespace Prisma {
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    alamat_shm?: string | null
     nik_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -36479,6 +38902,7 @@ export namespace Prisma {
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -36526,6 +38950,7 @@ export namespace Prisma {
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -36573,6 +38998,7 @@ export namespace Prisma {
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    alamat_shm?: string | null
     nik_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -36620,6 +39046,7 @@ export namespace Prisma {
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -36666,6 +39093,7 @@ export namespace Prisma {
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -36714,7 +39142,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
-    nama_shm?: string | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -36764,7 +39191,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
-    nama_shm?: string | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -36814,7 +39240,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -36864,7 +39289,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -36914,7 +39338,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
-    nama_shm?: string | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -36964,7 +39387,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -37013,7 +39435,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -37066,7 +39487,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -37115,7 +39535,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -37164,7 +39583,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -37213,7 +39631,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -37262,7 +39679,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -37311,7 +39727,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -37359,7 +39774,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -37521,6 +39935,61 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
+  export type FleksiBarangJaminanLainnyaCreateInput = {
+    id?: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    fleksi: FLEKSICreateNestedOneWithoutBarang_jaminan_lainnyaInput
+  }
+
+  export type FleksiBarangJaminanLainnyaUncheckedCreateInput = {
+    id?: string
+    fleksi_id: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    fleksi?: FLEKSIUpdateOneRequiredWithoutBarang_jaminan_lainnyaNestedInput
+  }
+
+  export type FleksiBarangJaminanLainnyaUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fleksi_id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaCreateManyInput = {
+    id?: string
+    fleksi_id: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fleksi_id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
   export type ProcimBarangElektronikCreateInput = {
     id?: string
     nama_barang?: string | null
@@ -37655,6 +40124,61 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe?: NullableStringFieldUpdateOperationsInput | string | null
     harga?: NullableIntFieldUpdateOperationsInput | number | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaCreateInput = {
+    id?: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    procim: PROCIMCreateNestedOneWithoutBarang_jaminan_lainnyaInput
+  }
+
+  export type ProcimBarangJaminanLainnyaUncheckedCreateInput = {
+    id?: string
+    procim_id: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    procim?: PROCIMUpdateOneRequiredWithoutBarang_jaminan_lainnyaNestedInput
+  }
+
+  export type ProcimBarangJaminanLainnyaUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    procim_id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaCreateManyInput = {
+    id?: string
+    procim_id: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    procim_id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
@@ -38038,7 +40562,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_SHM?: SortOrder
     nama_barang?: SortOrder
     no_bpkb?: SortOrder
     harga_barang?: SortOrder
@@ -38109,7 +40632,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_SHM?: SortOrder
     nama_barang?: SortOrder
     no_bpkb?: SortOrder
     harga_barang?: SortOrder
@@ -38161,7 +40683,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_SHM?: SortOrder
     nama_barang?: SortOrder
     no_bpkb?: SortOrder
     harga_barang?: SortOrder
@@ -38296,6 +40817,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: SortOrder
     tanggal_lahir_penjamin?: SortOrder
     nama_shm?: SortOrder
+    nik_shm?: SortOrder
+    alamat_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -38359,6 +40882,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: SortOrder
     tanggal_lahir_penjamin?: SortOrder
     nama_shm?: SortOrder
+    nik_shm?: SortOrder
+    alamat_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -38406,6 +40931,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: SortOrder
     tanggal_lahir_penjamin?: SortOrder
     nama_shm?: SortOrder
+    nik_shm?: SortOrder
+    alamat_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -38464,7 +40991,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_shm?: SortOrder
+    nama_barang?: SortOrder
+    detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
@@ -38519,7 +41047,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_shm?: SortOrder
+    nama_barang?: SortOrder
+    detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
@@ -38560,7 +41089,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_shm?: SortOrder
+    nama_barang?: SortOrder
+    detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
@@ -38609,11 +41139,21 @@ export namespace Prisma {
     none?: FleksiBarangFurnitureWhereInput
   }
 
+  export type FleksiBarangJaminanLainnyaListRelationFilter = {
+    every?: FleksiBarangJaminanLainnyaWhereInput
+    some?: FleksiBarangJaminanLainnyaWhereInput
+    none?: FleksiBarangJaminanLainnyaWhereInput
+  }
+
   export type FleksiBarangElektronikOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type FleksiBarangFurnitureOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type FleksiBarangJaminanLainnyaOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -38634,7 +41174,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_shm?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
@@ -38642,7 +41181,6 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
-    barang_jaminan_lainnya?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -38673,7 +41211,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_shm?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
@@ -38681,7 +41218,6 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
-    barang_jaminan_lainnya?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -38705,7 +41241,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_shm?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
@@ -38713,7 +41248,6 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
-    barang_jaminan_lainnya?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -38739,11 +41273,21 @@ export namespace Prisma {
     none?: ProcimBarangFurnitureWhereInput
   }
 
+  export type ProcimBarangJaminanLainnyaListRelationFilter = {
+    every?: ProcimBarangJaminanLainnyaWhereInput
+    some?: ProcimBarangJaminanLainnyaWhereInput
+    none?: ProcimBarangJaminanLainnyaWhereInput
+  }
+
   export type ProcimBarangElektronikOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type ProcimBarangFurnitureOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ProcimBarangJaminanLainnyaOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -38762,14 +41306,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: SortOrder
     tanggal_lahir_penjamin?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_SHM?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
-    barang_jaminan_lainnya?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -38798,14 +41340,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: SortOrder
     tanggal_lahir_penjamin?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_SHM?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
-    barang_jaminan_lainnya?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -38827,14 +41367,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: SortOrder
     tanggal_lahir_penjamin?: SortOrder
     alamat_rumah_penjamin?: SortOrder
-    nama_SHM?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
-    barang_jaminan_lainnya?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -38873,7 +41411,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -38943,7 +41480,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -38994,7 +41530,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39064,7 +41599,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39132,7 +41666,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39182,7 +41715,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39248,6 +41780,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     nama_shm?: SortOrder
+    nik_shm?: SortOrder
+    alamat_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39311,6 +41845,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     nama_shm?: SortOrder
+    nik_shm?: SortOrder
+    alamat_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39358,6 +41894,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     nama_shm?: SortOrder
+    nik_shm?: SortOrder
+    alamat_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39423,7 +41961,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39494,7 +42031,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39546,7 +42082,6 @@ export namespace Prisma {
     nama_barang?: SortOrder
     harga_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -39613,6 +42148,7 @@ export namespace Prisma {
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     nama_shm?: SortOrder
+    alamat_shm?: SortOrder
     nik_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
@@ -39677,6 +42213,7 @@ export namespace Prisma {
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     nama_shm?: SortOrder
+    alamat_shm?: SortOrder
     nik_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
@@ -39724,6 +42261,7 @@ export namespace Prisma {
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
     nama_shm?: SortOrder
+    alamat_shm?: SortOrder
     nik_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
@@ -39789,7 +42327,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
-    nama_shm?: SortOrder
     nama_barang?: SortOrder
     merek_barang?: SortOrder
     tipe_barang?: SortOrder
@@ -39855,7 +42392,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
-    nama_shm?: SortOrder
     nama_barang?: SortOrder
     merek_barang?: SortOrder
     tipe_barang?: SortOrder
@@ -39905,7 +42441,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
-    nama_shm?: SortOrder
     nama_barang?: SortOrder
     merek_barang?: SortOrder
     tipe_barang?: SortOrder
@@ -39974,7 +42509,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrder
     nama_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -40039,7 +42573,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrder
     nama_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -40088,7 +42621,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: SortOrder
     nama_barang?: SortOrder
     no_bpkb?: SortOrder
-    nama_shm?: SortOrder
     detail_jaminan?: SortOrder
     nominal_pinjaman?: SortOrder
     bunga_pinjaman?: SortOrder
@@ -40209,6 +42741,30 @@ export namespace Prisma {
     harga?: SortOrder
   }
 
+  export type FleksiBarangJaminanLainnyaCountOrderByAggregateInput = {
+    id?: SortOrder
+    fleksi_id?: SortOrder
+    nama_barang?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type FleksiBarangJaminanLainnyaMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fleksi_id?: SortOrder
+    nama_barang?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type FleksiBarangJaminanLainnyaMinOrderByAggregateInput = {
+    id?: SortOrder
+    fleksi_id?: SortOrder
+    nama_barang?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
   export type PROCIMScalarRelationFilter = {
     is?: PROCIMWhereInput
     isNot?: PROCIMWhereInput
@@ -40288,6 +42844,30 @@ export namespace Prisma {
 
   export type ProcimBarangFurnitureSumOrderByAggregateInput = {
     harga?: SortOrder
+  }
+
+  export type ProcimBarangJaminanLainnyaCountOrderByAggregateInput = {
+    id?: SortOrder
+    procim_id?: SortOrder
+    nama_barang?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type ProcimBarangJaminanLainnyaMaxOrderByAggregateInput = {
+    id?: SortOrder
+    procim_id?: SortOrder
+    nama_barang?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+  }
+
+  export type ProcimBarangJaminanLainnyaMinOrderByAggregateInput = {
+    id?: SortOrder
+    procim_id?: SortOrder
+    nama_barang?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
   }
 
   export type UserNullableScalarRelationFilter = {
@@ -40965,6 +43545,13 @@ export namespace Prisma {
     connect?: FleksiBarangFurnitureWhereUniqueInput | FleksiBarangFurnitureWhereUniqueInput[]
   }
 
+  export type FleksiBarangJaminanLainnyaCreateNestedManyWithoutFleksiInput = {
+    create?: XOR<FleksiBarangJaminanLainnyaCreateWithoutFleksiInput, FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput> | FleksiBarangJaminanLainnyaCreateWithoutFleksiInput[] | FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput[]
+    connectOrCreate?: FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput | FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput[]
+    createMany?: FleksiBarangJaminanLainnyaCreateManyFleksiInputEnvelope
+    connect?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+  }
+
   export type UserCreateNestedOneWithoutFLEKSIInput = {
     create?: XOR<UserCreateWithoutFLEKSIInput, UserUncheckedCreateWithoutFLEKSIInput>
     connectOrCreate?: UserCreateOrConnectWithoutFLEKSIInput
@@ -40983,6 +43570,13 @@ export namespace Prisma {
     connectOrCreate?: FleksiBarangFurnitureCreateOrConnectWithoutFleksiInput | FleksiBarangFurnitureCreateOrConnectWithoutFleksiInput[]
     createMany?: FleksiBarangFurnitureCreateManyFleksiInputEnvelope
     connect?: FleksiBarangFurnitureWhereUniqueInput | FleksiBarangFurnitureWhereUniqueInput[]
+  }
+
+  export type FleksiBarangJaminanLainnyaUncheckedCreateNestedManyWithoutFleksiInput = {
+    create?: XOR<FleksiBarangJaminanLainnyaCreateWithoutFleksiInput, FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput> | FleksiBarangJaminanLainnyaCreateWithoutFleksiInput[] | FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput[]
+    connectOrCreate?: FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput | FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput[]
+    createMany?: FleksiBarangJaminanLainnyaCreateManyFleksiInputEnvelope
+    connect?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
   }
 
   export type FleksiBarangElektronikUpdateManyWithoutFleksiNestedInput = {
@@ -41011,6 +43605,20 @@ export namespace Prisma {
     update?: FleksiBarangFurnitureUpdateWithWhereUniqueWithoutFleksiInput | FleksiBarangFurnitureUpdateWithWhereUniqueWithoutFleksiInput[]
     updateMany?: FleksiBarangFurnitureUpdateManyWithWhereWithoutFleksiInput | FleksiBarangFurnitureUpdateManyWithWhereWithoutFleksiInput[]
     deleteMany?: FleksiBarangFurnitureScalarWhereInput | FleksiBarangFurnitureScalarWhereInput[]
+  }
+
+  export type FleksiBarangJaminanLainnyaUpdateManyWithoutFleksiNestedInput = {
+    create?: XOR<FleksiBarangJaminanLainnyaCreateWithoutFleksiInput, FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput> | FleksiBarangJaminanLainnyaCreateWithoutFleksiInput[] | FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput[]
+    connectOrCreate?: FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput | FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput[]
+    upsert?: FleksiBarangJaminanLainnyaUpsertWithWhereUniqueWithoutFleksiInput | FleksiBarangJaminanLainnyaUpsertWithWhereUniqueWithoutFleksiInput[]
+    createMany?: FleksiBarangJaminanLainnyaCreateManyFleksiInputEnvelope
+    set?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+    disconnect?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+    delete?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+    connect?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+    update?: FleksiBarangJaminanLainnyaUpdateWithWhereUniqueWithoutFleksiInput | FleksiBarangJaminanLainnyaUpdateWithWhereUniqueWithoutFleksiInput[]
+    updateMany?: FleksiBarangJaminanLainnyaUpdateManyWithWhereWithoutFleksiInput | FleksiBarangJaminanLainnyaUpdateManyWithWhereWithoutFleksiInput[]
+    deleteMany?: FleksiBarangJaminanLainnyaScalarWhereInput | FleksiBarangJaminanLainnyaScalarWhereInput[]
   }
 
   export type UserUpdateOneRequiredWithoutFLEKSINestedInput = {
@@ -41049,6 +43657,20 @@ export namespace Prisma {
     deleteMany?: FleksiBarangFurnitureScalarWhereInput | FleksiBarangFurnitureScalarWhereInput[]
   }
 
+  export type FleksiBarangJaminanLainnyaUncheckedUpdateManyWithoutFleksiNestedInput = {
+    create?: XOR<FleksiBarangJaminanLainnyaCreateWithoutFleksiInput, FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput> | FleksiBarangJaminanLainnyaCreateWithoutFleksiInput[] | FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput[]
+    connectOrCreate?: FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput | FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput[]
+    upsert?: FleksiBarangJaminanLainnyaUpsertWithWhereUniqueWithoutFleksiInput | FleksiBarangJaminanLainnyaUpsertWithWhereUniqueWithoutFleksiInput[]
+    createMany?: FleksiBarangJaminanLainnyaCreateManyFleksiInputEnvelope
+    set?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+    disconnect?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+    delete?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+    connect?: FleksiBarangJaminanLainnyaWhereUniqueInput | FleksiBarangJaminanLainnyaWhereUniqueInput[]
+    update?: FleksiBarangJaminanLainnyaUpdateWithWhereUniqueWithoutFleksiInput | FleksiBarangJaminanLainnyaUpdateWithWhereUniqueWithoutFleksiInput[]
+    updateMany?: FleksiBarangJaminanLainnyaUpdateManyWithWhereWithoutFleksiInput | FleksiBarangJaminanLainnyaUpdateManyWithWhereWithoutFleksiInput[]
+    deleteMany?: FleksiBarangJaminanLainnyaScalarWhereInput | FleksiBarangJaminanLainnyaScalarWhereInput[]
+  }
+
   export type ProcimBarangElektronikCreateNestedManyWithoutProcimInput = {
     create?: XOR<ProcimBarangElektronikCreateWithoutProcimInput, ProcimBarangElektronikUncheckedCreateWithoutProcimInput> | ProcimBarangElektronikCreateWithoutProcimInput[] | ProcimBarangElektronikUncheckedCreateWithoutProcimInput[]
     connectOrCreate?: ProcimBarangElektronikCreateOrConnectWithoutProcimInput | ProcimBarangElektronikCreateOrConnectWithoutProcimInput[]
@@ -41061,6 +43683,13 @@ export namespace Prisma {
     connectOrCreate?: ProcimBarangFurnitureCreateOrConnectWithoutProcimInput | ProcimBarangFurnitureCreateOrConnectWithoutProcimInput[]
     createMany?: ProcimBarangFurnitureCreateManyProcimInputEnvelope
     connect?: ProcimBarangFurnitureWhereUniqueInput | ProcimBarangFurnitureWhereUniqueInput[]
+  }
+
+  export type ProcimBarangJaminanLainnyaCreateNestedManyWithoutProcimInput = {
+    create?: XOR<ProcimBarangJaminanLainnyaCreateWithoutProcimInput, ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput> | ProcimBarangJaminanLainnyaCreateWithoutProcimInput[] | ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput[]
+    connectOrCreate?: ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput | ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput[]
+    createMany?: ProcimBarangJaminanLainnyaCreateManyProcimInputEnvelope
+    connect?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
   }
 
   export type UserCreateNestedOneWithoutPROCIMInput = {
@@ -41081,6 +43710,13 @@ export namespace Prisma {
     connectOrCreate?: ProcimBarangFurnitureCreateOrConnectWithoutProcimInput | ProcimBarangFurnitureCreateOrConnectWithoutProcimInput[]
     createMany?: ProcimBarangFurnitureCreateManyProcimInputEnvelope
     connect?: ProcimBarangFurnitureWhereUniqueInput | ProcimBarangFurnitureWhereUniqueInput[]
+  }
+
+  export type ProcimBarangJaminanLainnyaUncheckedCreateNestedManyWithoutProcimInput = {
+    create?: XOR<ProcimBarangJaminanLainnyaCreateWithoutProcimInput, ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput> | ProcimBarangJaminanLainnyaCreateWithoutProcimInput[] | ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput[]
+    connectOrCreate?: ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput | ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput[]
+    createMany?: ProcimBarangJaminanLainnyaCreateManyProcimInputEnvelope
+    connect?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
   }
 
   export type ProcimBarangElektronikUpdateManyWithoutProcimNestedInput = {
@@ -41109,6 +43745,20 @@ export namespace Prisma {
     update?: ProcimBarangFurnitureUpdateWithWhereUniqueWithoutProcimInput | ProcimBarangFurnitureUpdateWithWhereUniqueWithoutProcimInput[]
     updateMany?: ProcimBarangFurnitureUpdateManyWithWhereWithoutProcimInput | ProcimBarangFurnitureUpdateManyWithWhereWithoutProcimInput[]
     deleteMany?: ProcimBarangFurnitureScalarWhereInput | ProcimBarangFurnitureScalarWhereInput[]
+  }
+
+  export type ProcimBarangJaminanLainnyaUpdateManyWithoutProcimNestedInput = {
+    create?: XOR<ProcimBarangJaminanLainnyaCreateWithoutProcimInput, ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput> | ProcimBarangJaminanLainnyaCreateWithoutProcimInput[] | ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput[]
+    connectOrCreate?: ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput | ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput[]
+    upsert?: ProcimBarangJaminanLainnyaUpsertWithWhereUniqueWithoutProcimInput | ProcimBarangJaminanLainnyaUpsertWithWhereUniqueWithoutProcimInput[]
+    createMany?: ProcimBarangJaminanLainnyaCreateManyProcimInputEnvelope
+    set?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
+    disconnect?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
+    delete?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
+    connect?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
+    update?: ProcimBarangJaminanLainnyaUpdateWithWhereUniqueWithoutProcimInput | ProcimBarangJaminanLainnyaUpdateWithWhereUniqueWithoutProcimInput[]
+    updateMany?: ProcimBarangJaminanLainnyaUpdateManyWithWhereWithoutProcimInput | ProcimBarangJaminanLainnyaUpdateManyWithWhereWithoutProcimInput[]
+    deleteMany?: ProcimBarangJaminanLainnyaScalarWhereInput | ProcimBarangJaminanLainnyaScalarWhereInput[]
   }
 
   export type UserUpdateOneRequiredWithoutPROCIMNestedInput = {
@@ -41145,6 +43795,20 @@ export namespace Prisma {
     update?: ProcimBarangFurnitureUpdateWithWhereUniqueWithoutProcimInput | ProcimBarangFurnitureUpdateWithWhereUniqueWithoutProcimInput[]
     updateMany?: ProcimBarangFurnitureUpdateManyWithWhereWithoutProcimInput | ProcimBarangFurnitureUpdateManyWithWhereWithoutProcimInput[]
     deleteMany?: ProcimBarangFurnitureScalarWhereInput | ProcimBarangFurnitureScalarWhereInput[]
+  }
+
+  export type ProcimBarangJaminanLainnyaUncheckedUpdateManyWithoutProcimNestedInput = {
+    create?: XOR<ProcimBarangJaminanLainnyaCreateWithoutProcimInput, ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput> | ProcimBarangJaminanLainnyaCreateWithoutProcimInput[] | ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput[]
+    connectOrCreate?: ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput | ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput[]
+    upsert?: ProcimBarangJaminanLainnyaUpsertWithWhereUniqueWithoutProcimInput | ProcimBarangJaminanLainnyaUpsertWithWhereUniqueWithoutProcimInput[]
+    createMany?: ProcimBarangJaminanLainnyaCreateManyProcimInputEnvelope
+    set?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
+    disconnect?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
+    delete?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
+    connect?: ProcimBarangJaminanLainnyaWhereUniqueInput | ProcimBarangJaminanLainnyaWhereUniqueInput[]
+    update?: ProcimBarangJaminanLainnyaUpdateWithWhereUniqueWithoutProcimInput | ProcimBarangJaminanLainnyaUpdateWithWhereUniqueWithoutProcimInput[]
+    updateMany?: ProcimBarangJaminanLainnyaUpdateManyWithWhereWithoutProcimInput | ProcimBarangJaminanLainnyaUpdateManyWithWhereWithoutProcimInput[]
+    deleteMany?: ProcimBarangJaminanLainnyaScalarWhereInput | ProcimBarangJaminanLainnyaScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutKSMInput = {
@@ -41273,6 +43937,20 @@ export namespace Prisma {
     update?: XOR<XOR<FLEKSIUpdateToOneWithWhereWithoutBarang_furnitureInput, FLEKSIUpdateWithoutBarang_furnitureInput>, FLEKSIUncheckedUpdateWithoutBarang_furnitureInput>
   }
 
+  export type FLEKSICreateNestedOneWithoutBarang_jaminan_lainnyaInput = {
+    create?: XOR<FLEKSICreateWithoutBarang_jaminan_lainnyaInput, FLEKSIUncheckedCreateWithoutBarang_jaminan_lainnyaInput>
+    connectOrCreate?: FLEKSICreateOrConnectWithoutBarang_jaminan_lainnyaInput
+    connect?: FLEKSIWhereUniqueInput
+  }
+
+  export type FLEKSIUpdateOneRequiredWithoutBarang_jaminan_lainnyaNestedInput = {
+    create?: XOR<FLEKSICreateWithoutBarang_jaminan_lainnyaInput, FLEKSIUncheckedCreateWithoutBarang_jaminan_lainnyaInput>
+    connectOrCreate?: FLEKSICreateOrConnectWithoutBarang_jaminan_lainnyaInput
+    upsert?: FLEKSIUpsertWithoutBarang_jaminan_lainnyaInput
+    connect?: FLEKSIWhereUniqueInput
+    update?: XOR<XOR<FLEKSIUpdateToOneWithWhereWithoutBarang_jaminan_lainnyaInput, FLEKSIUpdateWithoutBarang_jaminan_lainnyaInput>, FLEKSIUncheckedUpdateWithoutBarang_jaminan_lainnyaInput>
+  }
+
   export type PROCIMCreateNestedOneWithoutBarang_elektronikInput = {
     create?: XOR<PROCIMCreateWithoutBarang_elektronikInput, PROCIMUncheckedCreateWithoutBarang_elektronikInput>
     connectOrCreate?: PROCIMCreateOrConnectWithoutBarang_elektronikInput
@@ -41299,6 +43977,20 @@ export namespace Prisma {
     upsert?: PROCIMUpsertWithoutBarang_furnitureInput
     connect?: PROCIMWhereUniqueInput
     update?: XOR<XOR<PROCIMUpdateToOneWithWhereWithoutBarang_furnitureInput, PROCIMUpdateWithoutBarang_furnitureInput>, PROCIMUncheckedUpdateWithoutBarang_furnitureInput>
+  }
+
+  export type PROCIMCreateNestedOneWithoutBarang_jaminan_lainnyaInput = {
+    create?: XOR<PROCIMCreateWithoutBarang_jaminan_lainnyaInput, PROCIMUncheckedCreateWithoutBarang_jaminan_lainnyaInput>
+    connectOrCreate?: PROCIMCreateOrConnectWithoutBarang_jaminan_lainnyaInput
+    connect?: PROCIMWhereUniqueInput
+  }
+
+  export type PROCIMUpdateOneRequiredWithoutBarang_jaminan_lainnyaNestedInput = {
+    create?: XOR<PROCIMCreateWithoutBarang_jaminan_lainnyaInput, PROCIMUncheckedCreateWithoutBarang_jaminan_lainnyaInput>
+    connectOrCreate?: PROCIMCreateOrConnectWithoutBarang_jaminan_lainnyaInput
+    upsert?: PROCIMUpsertWithoutBarang_jaminan_lainnyaInput
+    connect?: PROCIMWhereUniqueInput
+    update?: XOR<XOR<PROCIMUpdateToOneWithWhereWithoutBarang_jaminan_lainnyaInput, PROCIMUpdateWithoutBarang_jaminan_lainnyaInput>, PROCIMUncheckedUpdateWithoutBarang_jaminan_lainnyaInput>
   }
 
   export type UserCreateNestedOneWithoutSystem_logsInput = {
@@ -41517,7 +44209,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
     harga_barang?: number | null
@@ -41568,7 +44259,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
     harga_barang?: number | null
@@ -41629,6 +44319,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -41675,6 +44367,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -41726,7 +44420,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
+    nama_barang?: string | null
+    detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -41766,7 +44461,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
+    nama_barang?: string | null
+    detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -41815,7 +44511,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -41823,12 +44518,12 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_elektronik?: FleksiBarangElektronikCreateNestedManyWithoutFleksiInput
     barang_furniture?: FleksiBarangFurnitureCreateNestedManyWithoutFleksiInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaCreateNestedManyWithoutFleksiInput
   }
 
   export type FLEKSIUncheckedCreateWithoutUserInput = {
@@ -41848,7 +44543,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -41856,12 +44550,12 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_elektronik?: FleksiBarangElektronikUncheckedCreateNestedManyWithoutFleksiInput
     barang_furniture?: FleksiBarangFurnitureUncheckedCreateNestedManyWithoutFleksiInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUncheckedCreateNestedManyWithoutFleksiInput
   }
 
   export type FLEKSICreateOrConnectWithoutUserInput = {
@@ -41889,19 +44583,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_elektronik?: ProcimBarangElektronikCreateNestedManyWithoutProcimInput
     barang_furniture?: ProcimBarangFurnitureCreateNestedManyWithoutProcimInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaCreateNestedManyWithoutProcimInput
   }
 
   export type PROCIMUncheckedCreateWithoutUserInput = {
@@ -41919,19 +44612,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_elektronik?: ProcimBarangElektronikUncheckedCreateNestedManyWithoutProcimInput
     barang_furniture?: ProcimBarangFurnitureUncheckedCreateNestedManyWithoutProcimInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUncheckedCreateNestedManyWithoutProcimInput
   }
 
   export type PROCIMCreateOrConnectWithoutUserInput = {
@@ -41969,7 +44661,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42019,7 +44710,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42079,7 +44769,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42128,7 +44817,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42185,6 +44873,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42231,6 +44921,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42289,7 +44981,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42340,7 +45031,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42397,6 +45087,7 @@ export namespace Prisma {
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    alamat_shm?: string | null
     nik_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -42443,6 +45134,7 @@ export namespace Prisma {
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    alamat_shm?: string | null
     nik_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -42500,7 +45192,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
-    nama_shm?: string | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -42549,7 +45240,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
-    nama_shm?: string | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -42611,7 +45301,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42659,7 +45348,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -42766,7 +45454,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KSSM"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KSSM"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"KSSM"> | string | null
-    nama_SHM?: StringNullableFilter<"KSSM"> | string | null
     nama_barang?: StringNullableFilter<"KSSM"> | string | null
     no_bpkb?: StringNullableFilter<"KSSM"> | string | null
     harga_barang?: IntNullableFilter<"KSSM"> | number | null
@@ -42837,6 +45524,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: StringNullableFilter<"KSS"> | string | null
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KSS"> | Date | string | null
     nama_shm?: StringNullableFilter<"KSS"> | string | null
+    nik_shm?: StringNullableFilter<"KSS"> | string | null
+    alamat_shm?: StringNullableFilter<"KSS"> | string | null
     detail_jaminan?: StringNullableFilter<"KSS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSS"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KSS"> | number | null
@@ -42898,7 +45587,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"PINEK"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"PINEK"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"PINEK"> | string | null
-    nama_shm?: StringNullableFilter<"PINEK"> | string | null
+    nama_barang?: StringNullableFilter<"PINEK"> | string | null
+    detail_jaminan?: StringNullableFilter<"PINEK"> | string | null
     nominal_pinjaman?: IntNullableFilter<"PINEK"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"PINEK"> | number | null
     jangka_waktu?: IntNullableFilter<"PINEK"> | number | null
@@ -42957,7 +45647,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"FLEKSI"> | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"FLEKSI"> | string | null
-    nama_shm?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_pinjaman?: IntNullableFilter<"FLEKSI"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"FLEKSI"> | number | null
     jangka_waktu?: IntNullableFilter<"FLEKSI"> | number | null
@@ -42965,7 +45654,6 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_angsuran?: IntNullableFilter<"FLEKSI"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
-    barang_jaminan_lainnya?: StringNullableFilter<"FLEKSI"> | string | null
     created_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
@@ -43006,14 +45694,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: StringNullableFilter<"PROCIM"> | string | null
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     alamat_rumah_penjamin?: StringNullableFilter<"PROCIM"> | string | null
-    nama_SHM?: StringNullableFilter<"PROCIM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"PROCIM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"PROCIM"> | number | null
     jangka_waktu?: IntNullableFilter<"PROCIM"> | number | null
     rekening_pinjaman?: StringNullableFilter<"PROCIM"> | string | null
     nominal_angsuran?: IntNullableFilter<"PROCIM"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
-    barang_jaminan_lainnya?: StringNullableFilter<"PROCIM"> | string | null
     created_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
@@ -43064,7 +45750,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KSM"> | string | null
     harga_barang?: IntNullableFilter<"KSM"> | number | null
     no_bpkb?: StringNullableFilter<"KSM"> | string | null
-    nama_shm?: StringNullableFilter<"KSM"> | string | null
     detail_jaminan?: StringNullableFilter<"KSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KSM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KSM"> | number | null
@@ -43134,7 +45819,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KMSM"> | string | null
     harga_barang?: IntNullableFilter<"KMSM"> | number | null
     no_bpkb?: StringNullableFilter<"KMSM"> | string | null
-    nama_shm?: StringNullableFilter<"KMSM"> | string | null
     detail_jaminan?: StringNullableFilter<"KMSM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMSM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KMSM"> | number | null
@@ -43201,6 +45885,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KRS"> | Date | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KRS"> | string | null
     nama_shm?: StringNullableFilter<"KRS"> | string | null
+    nik_shm?: StringNullableFilter<"KRS"> | string | null
+    alamat_shm?: StringNullableFilter<"KRS"> | string | null
     detail_jaminan?: StringNullableFilter<"KRS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KRS"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KRS"> | number | null
@@ -43269,7 +45955,6 @@ export namespace Prisma {
     nama_barang?: StringNullableFilter<"KMM"> | string | null
     harga_barang?: IntNullableFilter<"KMM"> | number | null
     no_bpkb?: StringNullableFilter<"KMM"> | string | null
-    nama_shm?: StringNullableFilter<"KMM"> | string | null
     detail_jaminan?: StringNullableFilter<"KMM"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMM"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KMM"> | number | null
@@ -43336,6 +46021,7 @@ export namespace Prisma {
     nik_penjamin?: StringNullableFilter<"KMS"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KMS"> | string | null
     nama_shm?: StringNullableFilter<"KMS"> | string | null
+    alamat_shm?: StringNullableFilter<"KMS"> | string | null
     nik_shm?: StringNullableFilter<"KMS"> | string | null
     detail_jaminan?: StringNullableFilter<"KMS"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KMS"> | number | null
@@ -43403,7 +46089,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KEF"> | Date | string | null
     nik_penjamin?: StringNullableFilter<"KEF"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KEF"> | string | null
-    nama_shm?: StringNullableFilter<"KEF"> | string | null
     nama_barang?: StringNullableFilter<"KEF"> | string | null
     merek_barang?: StringNullableFilter<"KEF"> | string | null
     tipe_barang?: StringNullableFilter<"KEF"> | string | null
@@ -43475,7 +46160,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: StringNullableFilter<"KAR"> | string | null
     nama_barang?: StringNullableFilter<"KAR"> | string | null
     no_bpkb?: StringNullableFilter<"KAR"> | string | null
-    nama_shm?: StringNullableFilter<"KAR"> | string | null
     detail_jaminan?: StringNullableFilter<"KAR"> | string | null
     nominal_pinjaman?: IntNullableFilter<"KAR"> | number | null
     bunga_pinjaman?: FloatNullableFilter<"KAR"> | number | null
@@ -43886,6 +46570,30 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type FleksiBarangJaminanLainnyaCreateWithoutFleksiInput = {
+    id?: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput = {
+    id?: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaCreateOrConnectWithoutFleksiInput = {
+    where: FleksiBarangJaminanLainnyaWhereUniqueInput
+    create: XOR<FleksiBarangJaminanLainnyaCreateWithoutFleksiInput, FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput>
+  }
+
+  export type FleksiBarangJaminanLainnyaCreateManyFleksiInputEnvelope = {
+    data: FleksiBarangJaminanLainnyaCreateManyFleksiInput | FleksiBarangJaminanLainnyaCreateManyFleksiInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UserCreateWithoutFLEKSIInput = {
     id?: string
     username: string
@@ -43989,6 +46697,33 @@ export namespace Prisma {
     harga?: IntNullableFilter<"FleksiBarangFurniture"> | number | null
     created_at?: DateTimeNullableFilter<"FleksiBarangFurniture"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"FleksiBarangFurniture"> | Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaUpsertWithWhereUniqueWithoutFleksiInput = {
+    where: FleksiBarangJaminanLainnyaWhereUniqueInput
+    update: XOR<FleksiBarangJaminanLainnyaUpdateWithoutFleksiInput, FleksiBarangJaminanLainnyaUncheckedUpdateWithoutFleksiInput>
+    create: XOR<FleksiBarangJaminanLainnyaCreateWithoutFleksiInput, FleksiBarangJaminanLainnyaUncheckedCreateWithoutFleksiInput>
+  }
+
+  export type FleksiBarangJaminanLainnyaUpdateWithWhereUniqueWithoutFleksiInput = {
+    where: FleksiBarangJaminanLainnyaWhereUniqueInput
+    data: XOR<FleksiBarangJaminanLainnyaUpdateWithoutFleksiInput, FleksiBarangJaminanLainnyaUncheckedUpdateWithoutFleksiInput>
+  }
+
+  export type FleksiBarangJaminanLainnyaUpdateManyWithWhereWithoutFleksiInput = {
+    where: FleksiBarangJaminanLainnyaScalarWhereInput
+    data: XOR<FleksiBarangJaminanLainnyaUpdateManyMutationInput, FleksiBarangJaminanLainnyaUncheckedUpdateManyWithoutFleksiInput>
+  }
+
+  export type FleksiBarangJaminanLainnyaScalarWhereInput = {
+    AND?: FleksiBarangJaminanLainnyaScalarWhereInput | FleksiBarangJaminanLainnyaScalarWhereInput[]
+    OR?: FleksiBarangJaminanLainnyaScalarWhereInput[]
+    NOT?: FleksiBarangJaminanLainnyaScalarWhereInput | FleksiBarangJaminanLainnyaScalarWhereInput[]
+    id?: StringFilter<"FleksiBarangJaminanLainnya"> | string
+    fleksi_id?: StringFilter<"FleksiBarangJaminanLainnya"> | string
+    nama_barang?: StringNullableFilter<"FleksiBarangJaminanLainnya"> | string | null
+    created_at?: DateTimeNullableFilter<"FleksiBarangJaminanLainnya"> | Date | string | null
+    updated_at?: DateTimeNullableFilter<"FleksiBarangJaminanLainnya"> | Date | string | null
   }
 
   export type UserUpsertWithoutFLEKSIInput = {
@@ -44100,6 +46835,30 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type ProcimBarangJaminanLainnyaCreateWithoutProcimInput = {
+    id?: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput = {
+    id?: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaCreateOrConnectWithoutProcimInput = {
+    where: ProcimBarangJaminanLainnyaWhereUniqueInput
+    create: XOR<ProcimBarangJaminanLainnyaCreateWithoutProcimInput, ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput>
+  }
+
+  export type ProcimBarangJaminanLainnyaCreateManyProcimInputEnvelope = {
+    data: ProcimBarangJaminanLainnyaCreateManyProcimInput | ProcimBarangJaminanLainnyaCreateManyProcimInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UserCreateWithoutPROCIMInput = {
     id?: string
     username: string
@@ -44203,6 +46962,33 @@ export namespace Prisma {
     harga?: IntNullableFilter<"ProcimBarangFurniture"> | number | null
     created_at?: DateTimeNullableFilter<"ProcimBarangFurniture"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"ProcimBarangFurniture"> | Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaUpsertWithWhereUniqueWithoutProcimInput = {
+    where: ProcimBarangJaminanLainnyaWhereUniqueInput
+    update: XOR<ProcimBarangJaminanLainnyaUpdateWithoutProcimInput, ProcimBarangJaminanLainnyaUncheckedUpdateWithoutProcimInput>
+    create: XOR<ProcimBarangJaminanLainnyaCreateWithoutProcimInput, ProcimBarangJaminanLainnyaUncheckedCreateWithoutProcimInput>
+  }
+
+  export type ProcimBarangJaminanLainnyaUpdateWithWhereUniqueWithoutProcimInput = {
+    where: ProcimBarangJaminanLainnyaWhereUniqueInput
+    data: XOR<ProcimBarangJaminanLainnyaUpdateWithoutProcimInput, ProcimBarangJaminanLainnyaUncheckedUpdateWithoutProcimInput>
+  }
+
+  export type ProcimBarangJaminanLainnyaUpdateManyWithWhereWithoutProcimInput = {
+    where: ProcimBarangJaminanLainnyaScalarWhereInput
+    data: XOR<ProcimBarangJaminanLainnyaUpdateManyMutationInput, ProcimBarangJaminanLainnyaUncheckedUpdateManyWithoutProcimInput>
+  }
+
+  export type ProcimBarangJaminanLainnyaScalarWhereInput = {
+    AND?: ProcimBarangJaminanLainnyaScalarWhereInput | ProcimBarangJaminanLainnyaScalarWhereInput[]
+    OR?: ProcimBarangJaminanLainnyaScalarWhereInput[]
+    NOT?: ProcimBarangJaminanLainnyaScalarWhereInput | ProcimBarangJaminanLainnyaScalarWhereInput[]
+    id?: StringFilter<"ProcimBarangJaminanLainnya"> | string
+    procim_id?: StringFilter<"ProcimBarangJaminanLainnya"> | string
+    nama_barang?: StringNullableFilter<"ProcimBarangJaminanLainnya"> | string | null
+    created_at?: DateTimeNullableFilter<"ProcimBarangJaminanLainnya"> | Date | string | null
+    updated_at?: DateTimeNullableFilter<"ProcimBarangJaminanLainnya"> | Date | string | null
   }
 
   export type UserUpsertWithoutPROCIMInput = {
@@ -44975,7 +47761,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -44983,11 +47768,11 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_furniture?: FleksiBarangFurnitureCreateNestedManyWithoutFleksiInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaCreateNestedManyWithoutFleksiInput
     User: UserCreateNestedOneWithoutFLEKSIInput
   }
 
@@ -45008,7 +47793,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -45016,12 +47800,12 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     userID: string
     barang_furniture?: FleksiBarangFurnitureUncheckedCreateNestedManyWithoutFleksiInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUncheckedCreateNestedManyWithoutFleksiInput
   }
 
   export type FLEKSICreateOrConnectWithoutBarang_elektronikInput = {
@@ -45057,7 +47841,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -45065,11 +47848,11 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_furniture?: FleksiBarangFurnitureUpdateManyWithoutFleksiNestedInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUpdateManyWithoutFleksiNestedInput
     User?: UserUpdateOneRequiredWithoutFLEKSINestedInput
   }
 
@@ -45090,7 +47873,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -45098,12 +47880,12 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     userID?: StringFieldUpdateOperationsInput | string
     barang_furniture?: FleksiBarangFurnitureUncheckedUpdateManyWithoutFleksiNestedInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUncheckedUpdateManyWithoutFleksiNestedInput
   }
 
   export type FLEKSICreateWithoutBarang_furnitureInput = {
@@ -45123,7 +47905,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -45131,11 +47912,11 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_elektronik?: FleksiBarangElektronikCreateNestedManyWithoutFleksiInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaCreateNestedManyWithoutFleksiInput
     User: UserCreateNestedOneWithoutFLEKSIInput
   }
 
@@ -45156,7 +47937,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -45164,12 +47944,12 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     userID: string
     barang_elektronik?: FleksiBarangElektronikUncheckedCreateNestedManyWithoutFleksiInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUncheckedCreateNestedManyWithoutFleksiInput
   }
 
   export type FLEKSICreateOrConnectWithoutBarang_furnitureInput = {
@@ -45205,7 +47985,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -45213,11 +47992,11 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_elektronik?: FleksiBarangElektronikUpdateManyWithoutFleksiNestedInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUpdateManyWithoutFleksiNestedInput
     User?: UserUpdateOneRequiredWithoutFLEKSINestedInput
   }
 
@@ -45238,7 +48017,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -45246,12 +48024,156 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     userID?: StringFieldUpdateOperationsInput | string
     barang_elektronik?: FleksiBarangElektronikUncheckedUpdateManyWithoutFleksiNestedInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUncheckedUpdateManyWithoutFleksiNestedInput
+  }
+
+  export type FLEKSICreateWithoutBarang_jaminan_lainnyaInput = {
+    id?: string
+    nomor_surat?: string | null
+    tanggal_surat_persetujuan_kredit?: Date | string | null
+    nama_debitur?: string | null
+    status_debitur?: string | null
+    jenis_kelamin_debitur?: string | null
+    tempat_lahir_debitur?: string | null
+    tanggal_lahir_debitur?: Date | string | null
+    alamat_rumah_debitur?: string | null
+    nik_debitur?: string | null
+    nama_penjamin?: string | null
+    nik_penjamin?: string | null
+    tempat_lahir_penjamin?: string | null
+    tanggal_lahir_penjamin?: Date | string | null
+    hubungan_penjamin_debitur?: string | null
+    alamat_rumah_penjamin?: string | null
+    nominal_pinjaman?: number | null
+    bunga_pinjaman?: number | null
+    jangka_waktu?: number | null
+    tujuan_penggunaan?: string | null
+    rekening_pinjaman?: string | null
+    nominal_angsuran?: number | null
+    tanggal_angsuran_pertama?: Date | string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    submitted_at?: Date | string | null
+    barang_elektronik?: FleksiBarangElektronikCreateNestedManyWithoutFleksiInput
+    barang_furniture?: FleksiBarangFurnitureCreateNestedManyWithoutFleksiInput
+    User: UserCreateNestedOneWithoutFLEKSIInput
+  }
+
+  export type FLEKSIUncheckedCreateWithoutBarang_jaminan_lainnyaInput = {
+    id?: string
+    nomor_surat?: string | null
+    tanggal_surat_persetujuan_kredit?: Date | string | null
+    nama_debitur?: string | null
+    status_debitur?: string | null
+    jenis_kelamin_debitur?: string | null
+    tempat_lahir_debitur?: string | null
+    tanggal_lahir_debitur?: Date | string | null
+    alamat_rumah_debitur?: string | null
+    nik_debitur?: string | null
+    nama_penjamin?: string | null
+    nik_penjamin?: string | null
+    tempat_lahir_penjamin?: string | null
+    tanggal_lahir_penjamin?: Date | string | null
+    hubungan_penjamin_debitur?: string | null
+    alamat_rumah_penjamin?: string | null
+    nominal_pinjaman?: number | null
+    bunga_pinjaman?: number | null
+    jangka_waktu?: number | null
+    tujuan_penggunaan?: string | null
+    rekening_pinjaman?: string | null
+    nominal_angsuran?: number | null
+    tanggal_angsuran_pertama?: Date | string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    submitted_at?: Date | string | null
+    userID: string
+    barang_elektronik?: FleksiBarangElektronikUncheckedCreateNestedManyWithoutFleksiInput
+    barang_furniture?: FleksiBarangFurnitureUncheckedCreateNestedManyWithoutFleksiInput
+  }
+
+  export type FLEKSICreateOrConnectWithoutBarang_jaminan_lainnyaInput = {
+    where: FLEKSIWhereUniqueInput
+    create: XOR<FLEKSICreateWithoutBarang_jaminan_lainnyaInput, FLEKSIUncheckedCreateWithoutBarang_jaminan_lainnyaInput>
+  }
+
+  export type FLEKSIUpsertWithoutBarang_jaminan_lainnyaInput = {
+    update: XOR<FLEKSIUpdateWithoutBarang_jaminan_lainnyaInput, FLEKSIUncheckedUpdateWithoutBarang_jaminan_lainnyaInput>
+    create: XOR<FLEKSICreateWithoutBarang_jaminan_lainnyaInput, FLEKSIUncheckedCreateWithoutBarang_jaminan_lainnyaInput>
+    where?: FLEKSIWhereInput
+  }
+
+  export type FLEKSIUpdateToOneWithWhereWithoutBarang_jaminan_lainnyaInput = {
+    where?: FLEKSIWhereInput
+    data: XOR<FLEKSIUpdateWithoutBarang_jaminan_lainnyaInput, FLEKSIUncheckedUpdateWithoutBarang_jaminan_lainnyaInput>
+  }
+
+  export type FLEKSIUpdateWithoutBarang_jaminan_lainnyaInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nomor_surat?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_surat_persetujuan_kredit?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nama_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    status_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jenis_kelamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
+    bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
+    jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
+    tujuan_penggunaan?: NullableStringFieldUpdateOperationsInput | string | null
+    rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
+    nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
+    tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    barang_elektronik?: FleksiBarangElektronikUpdateManyWithoutFleksiNestedInput
+    barang_furniture?: FleksiBarangFurnitureUpdateManyWithoutFleksiNestedInput
+    User?: UserUpdateOneRequiredWithoutFLEKSINestedInput
+  }
+
+  export type FLEKSIUncheckedUpdateWithoutBarang_jaminan_lainnyaInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nomor_surat?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_surat_persetujuan_kredit?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nama_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    status_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jenis_kelamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
+    bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
+    jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
+    tujuan_penggunaan?: NullableStringFieldUpdateOperationsInput | string | null
+    rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
+    nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
+    tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    userID?: StringFieldUpdateOperationsInput | string
+    barang_elektronik?: FleksiBarangElektronikUncheckedUpdateManyWithoutFleksiNestedInput
+    barang_furniture?: FleksiBarangFurnitureUncheckedUpdateManyWithoutFleksiNestedInput
   }
 
   export type PROCIMCreateWithoutBarang_elektronikInput = {
@@ -45269,18 +48191,17 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_furniture?: ProcimBarangFurnitureCreateNestedManyWithoutProcimInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaCreateNestedManyWithoutProcimInput
     User: UserCreateNestedOneWithoutPROCIMInput
   }
 
@@ -45299,19 +48220,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     userID: string
     barang_furniture?: ProcimBarangFurnitureUncheckedCreateNestedManyWithoutProcimInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUncheckedCreateNestedManyWithoutProcimInput
   }
 
   export type PROCIMCreateOrConnectWithoutBarang_elektronikInput = {
@@ -45345,18 +48265,17 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_furniture?: ProcimBarangFurnitureUpdateManyWithoutProcimNestedInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUpdateManyWithoutProcimNestedInput
     User?: UserUpdateOneRequiredWithoutPROCIMNestedInput
   }
 
@@ -45375,19 +48294,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     userID?: StringFieldUpdateOperationsInput | string
     barang_furniture?: ProcimBarangFurnitureUncheckedUpdateManyWithoutProcimNestedInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUncheckedUpdateManyWithoutProcimNestedInput
   }
 
   export type PROCIMCreateWithoutBarang_furnitureInput = {
@@ -45405,18 +48323,17 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     barang_elektronik?: ProcimBarangElektronikCreateNestedManyWithoutProcimInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaCreateNestedManyWithoutProcimInput
     User: UserCreateNestedOneWithoutPROCIMInput
   }
 
@@ -45435,19 +48352,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
     userID: string
     barang_elektronik?: ProcimBarangElektronikUncheckedCreateNestedManyWithoutProcimInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUncheckedCreateNestedManyWithoutProcimInput
   }
 
   export type PROCIMCreateOrConnectWithoutBarang_furnitureInput = {
@@ -45481,18 +48397,17 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_elektronik?: ProcimBarangElektronikUpdateManyWithoutProcimNestedInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUpdateManyWithoutProcimNestedInput
     User?: UserUpdateOneRequiredWithoutPROCIMNestedInput
   }
 
@@ -45511,19 +48426,150 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     userID?: StringFieldUpdateOperationsInput | string
     barang_elektronik?: ProcimBarangElektronikUncheckedUpdateManyWithoutProcimNestedInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUncheckedUpdateManyWithoutProcimNestedInput
+  }
+
+  export type PROCIMCreateWithoutBarang_jaminan_lainnyaInput = {
+    id?: string
+    nomor_surat?: string | null
+    tanggal_surat_persetujuan_kredit?: Date | string | null
+    nama_debitur?: string | null
+    nik_debitur?: string | null
+    status_debitur?: string | null
+    tempat_lahir_debitur?: string | null
+    tanggal_lahir_debitur?: Date | string | null
+    alamat_rumah_debitur?: string | null
+    nama_penjamin?: string | null
+    nik_penjamin?: string | null
+    tempat_lahir_penjamin?: string | null
+    tanggal_lahir_penjamin?: Date | string | null
+    alamat_rumah_penjamin?: string | null
+    nominal_pinjaman?: number | null
+    bunga_pinjaman?: number | null
+    jangka_waktu?: number | null
+    rekening_pinjaman?: string | null
+    nominal_angsuran?: number | null
+    tanggal_angsuran_pertama?: Date | string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    submitted_at?: Date | string | null
+    barang_elektronik?: ProcimBarangElektronikCreateNestedManyWithoutProcimInput
+    barang_furniture?: ProcimBarangFurnitureCreateNestedManyWithoutProcimInput
+    User: UserCreateNestedOneWithoutPROCIMInput
+  }
+
+  export type PROCIMUncheckedCreateWithoutBarang_jaminan_lainnyaInput = {
+    id?: string
+    nomor_surat?: string | null
+    tanggal_surat_persetujuan_kredit?: Date | string | null
+    nama_debitur?: string | null
+    nik_debitur?: string | null
+    status_debitur?: string | null
+    tempat_lahir_debitur?: string | null
+    tanggal_lahir_debitur?: Date | string | null
+    alamat_rumah_debitur?: string | null
+    nama_penjamin?: string | null
+    nik_penjamin?: string | null
+    tempat_lahir_penjamin?: string | null
+    tanggal_lahir_penjamin?: Date | string | null
+    alamat_rumah_penjamin?: string | null
+    nominal_pinjaman?: number | null
+    bunga_pinjaman?: number | null
+    jangka_waktu?: number | null
+    rekening_pinjaman?: string | null
+    nominal_angsuran?: number | null
+    tanggal_angsuran_pertama?: Date | string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+    submitted_at?: Date | string | null
+    userID: string
+    barang_elektronik?: ProcimBarangElektronikUncheckedCreateNestedManyWithoutProcimInput
+    barang_furniture?: ProcimBarangFurnitureUncheckedCreateNestedManyWithoutProcimInput
+  }
+
+  export type PROCIMCreateOrConnectWithoutBarang_jaminan_lainnyaInput = {
+    where: PROCIMWhereUniqueInput
+    create: XOR<PROCIMCreateWithoutBarang_jaminan_lainnyaInput, PROCIMUncheckedCreateWithoutBarang_jaminan_lainnyaInput>
+  }
+
+  export type PROCIMUpsertWithoutBarang_jaminan_lainnyaInput = {
+    update: XOR<PROCIMUpdateWithoutBarang_jaminan_lainnyaInput, PROCIMUncheckedUpdateWithoutBarang_jaminan_lainnyaInput>
+    create: XOR<PROCIMCreateWithoutBarang_jaminan_lainnyaInput, PROCIMUncheckedCreateWithoutBarang_jaminan_lainnyaInput>
+    where?: PROCIMWhereInput
+  }
+
+  export type PROCIMUpdateToOneWithWhereWithoutBarang_jaminan_lainnyaInput = {
+    where?: PROCIMWhereInput
+    data: XOR<PROCIMUpdateWithoutBarang_jaminan_lainnyaInput, PROCIMUncheckedUpdateWithoutBarang_jaminan_lainnyaInput>
+  }
+
+  export type PROCIMUpdateWithoutBarang_jaminan_lainnyaInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nomor_surat?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_surat_persetujuan_kredit?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nama_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    status_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
+    bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
+    jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
+    rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
+    nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
+    tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    barang_elektronik?: ProcimBarangElektronikUpdateManyWithoutProcimNestedInput
+    barang_furniture?: ProcimBarangFurnitureUpdateManyWithoutProcimNestedInput
+    User?: UserUpdateOneRequiredWithoutPROCIMNestedInput
+  }
+
+  export type PROCIMUncheckedUpdateWithoutBarang_jaminan_lainnyaInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nomor_surat?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_surat_persetujuan_kredit?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    nama_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    status_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    tempat_lahir_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_lahir_debitur?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    alamat_rumah_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
+    nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
+    bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
+    jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
+    rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
+    nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
+    tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    userID?: StringFieldUpdateOperationsInput | string
+    barang_elektronik?: ProcimBarangElektronikUncheckedUpdateManyWithoutProcimNestedInput
+    barang_furniture?: ProcimBarangFurnitureUncheckedUpdateManyWithoutProcimNestedInput
   }
 
   export type UserCreateWithoutSystem_logsInput = {
@@ -45649,7 +48695,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
     harga_barang?: number | null
@@ -45700,6 +48745,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -45741,7 +48788,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
+    nama_barang?: string | null
+    detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -45780,7 +48828,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     alamat_rumah_penjamin?: string | null
-    nama_shm?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
@@ -45788,7 +48835,6 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -45809,14 +48855,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: string | null
     tanggal_lahir_penjamin?: Date | string | null
     alamat_rumah_penjamin?: string | null
-    nama_SHM?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
     jangka_waktu?: number | null
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
-    barang_jaminan_lainnya?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -45847,7 +48891,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -45897,7 +48940,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -45944,6 +48986,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    nik_shm?: string | null
+    alamat_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -45992,7 +49036,6 @@ export namespace Prisma {
     nama_barang?: string | null
     harga_barang?: number | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -46039,6 +49082,7 @@ export namespace Prisma {
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
     nama_shm?: string | null
+    alamat_shm?: string | null
     nik_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
@@ -46086,7 +49130,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
-    nama_shm?: string | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -46138,7 +49181,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: string | null
     nama_barang?: string | null
     no_bpkb?: string | null
-    nama_shm?: string | null
     detail_jaminan?: string | null
     nominal_pinjaman?: number | null
     bunga_pinjaman?: number | null
@@ -46195,7 +49237,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46246,7 +49287,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46297,7 +49337,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46348,6 +49387,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -46394,6 +49435,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -46440,6 +49483,8 @@ export namespace Prisma {
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -46481,7 +49526,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46521,7 +49567,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46561,7 +49608,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46600,7 +49648,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46608,12 +49655,12 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_elektronik?: FleksiBarangElektronikUpdateManyWithoutFleksiNestedInput
     barang_furniture?: FleksiBarangFurnitureUpdateManyWithoutFleksiNestedInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUpdateManyWithoutFleksiNestedInput
   }
 
   export type FLEKSIUncheckedUpdateWithoutUserInput = {
@@ -46633,7 +49680,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46641,12 +49687,12 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_elektronik?: FleksiBarangElektronikUncheckedUpdateManyWithoutFleksiNestedInput
     barang_furniture?: FleksiBarangFurnitureUncheckedUpdateManyWithoutFleksiNestedInput
+    barang_jaminan_lainnya?: FleksiBarangJaminanLainnyaUncheckedUpdateManyWithoutFleksiNestedInput
   }
 
   export type FLEKSIUncheckedUpdateManyWithoutUserInput = {
@@ -46666,7 +49712,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -46674,7 +49719,6 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -46695,19 +49739,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_elektronik?: ProcimBarangElektronikUpdateManyWithoutProcimNestedInput
     barang_furniture?: ProcimBarangFurnitureUpdateManyWithoutProcimNestedInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUpdateManyWithoutProcimNestedInput
   }
 
   export type PROCIMUncheckedUpdateWithoutUserInput = {
@@ -46725,19 +49768,18 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     barang_elektronik?: ProcimBarangElektronikUncheckedUpdateManyWithoutProcimNestedInput
     barang_furniture?: ProcimBarangFurnitureUncheckedUpdateManyWithoutProcimNestedInput
+    barang_jaminan_lainnya?: ProcimBarangJaminanLainnyaUncheckedUpdateManyWithoutProcimNestedInput
   }
 
   export type PROCIMUncheckedUpdateManyWithoutUserInput = {
@@ -46755,14 +49797,12 @@ export namespace Prisma {
     tempat_lahir_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_SHM?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
     jangka_waktu?: NullableIntFieldUpdateOperationsInput | number | null
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    barang_jaminan_lainnya?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -46793,7 +49833,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -46843,7 +49882,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -46893,7 +49931,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -46943,7 +49980,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -46992,7 +50028,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47041,7 +50076,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47088,6 +50122,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47134,6 +50170,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47180,6 +50218,8 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47228,7 +50268,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47279,7 +50318,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47330,7 +50368,6 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     harga_barang?: NullableIntFieldUpdateOperationsInput | number | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47377,6 +50414,7 @@ export namespace Prisma {
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -47423,6 +50461,7 @@ export namespace Prisma {
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -47469,6 +50508,7 @@ export namespace Prisma {
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
     nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
+    alamat_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nik_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
@@ -47516,7 +50556,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47565,7 +50604,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47614,7 +50652,6 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47666,7 +50703,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47714,7 +50750,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47762,7 +50797,6 @@ export namespace Prisma {
     alamat_rumah_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     no_bpkb?: NullableStringFieldUpdateOperationsInput | string | null
-    nama_shm?: NullableStringFieldUpdateOperationsInput | string | null
     detail_jaminan?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_pinjaman?: NullableIntFieldUpdateOperationsInput | number | null
     bunga_pinjaman?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -47836,6 +50870,13 @@ export namespace Prisma {
     updated_at?: Date | string | null
   }
 
+  export type FleksiBarangJaminanLainnyaCreateManyFleksiInput = {
+    id?: string
+    nama_barang?: string | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
   export type FleksiBarangElektronikUpdateWithoutFleksiInput = {
     id?: StringFieldUpdateOperationsInput | string
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -47890,6 +50931,27 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
+  export type FleksiBarangJaminanLainnyaUpdateWithoutFleksiInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaUncheckedUpdateWithoutFleksiInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type FleksiBarangJaminanLainnyaUncheckedUpdateManyWithoutFleksiInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
   export type ProcimBarangElektronikCreateManyProcimInput = {
     id?: string
     nama_barang?: string | null
@@ -47904,6 +50966,13 @@ export namespace Prisma {
     nama_barang?: string | null
     tipe?: string | null
     harga?: number | null
+    created_at?: Date | string | null
+    updated_at?: Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaCreateManyProcimInput = {
+    id?: string
+    nama_barang?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
   }
@@ -47958,6 +51027,27 @@ export namespace Prisma {
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe?: NullableStringFieldUpdateOperationsInput | string | null
     harga?: NullableIntFieldUpdateOperationsInput | number | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaUpdateWithoutProcimInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaUncheckedUpdateWithoutProcimInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ProcimBarangJaminanLainnyaUncheckedUpdateManyWithoutProcimInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }

@@ -63,7 +63,7 @@ model KSSM {
   tanggal_lahir_penjamin           DateTime? @db.Date
   hubungan_penjamin_debitur        String?
   alamat_rumah_penjamin            String?
-  nama_SHM                         String?
+  // nama_SHM                         String?
   nama_barang                      String?
   no_bpkb                          String?
   harga_barang                     Int?
@@ -116,6 +116,8 @@ model KSS {
   hubungan_penjamin_debitur        String?
   tanggal_lahir_penjamin           DateTime? @db.Date
   nama_shm                         String?
+  nik_shm                          String?
+  alamat_shm                       String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
@@ -159,7 +161,9 @@ model PINEK {
   tanggal_lahir_penjamin           DateTime? @db.Date
   hubungan_penjamin_debitur        String?
   alamat_rumah_penjamin            String?
-  nama_shm                         String?
+  // nama_shm                         String?
+  nama_barang                      String?
+  detail_jaminan                   String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
   jangka_waktu                     Int?
@@ -184,70 +188,70 @@ model PINEK {
 }
 
 model FLEKSI {
-  id                               String                   @id @default(uuid())
+  id                               String                       @id @default(uuid())
   nomor_surat                      String?
-  tanggal_surat_persetujuan_kredit DateTime?                @db.Date
+  tanggal_surat_persetujuan_kredit DateTime?                    @db.Date
   nama_debitur                     String?
   status_debitur                   String?
   jenis_kelamin_debitur            String?
   tempat_lahir_debitur             String?
-  tanggal_lahir_debitur            DateTime?                @db.Date
+  tanggal_lahir_debitur            DateTime?                    @db.Date
   alamat_rumah_debitur             String?
   nik_debitur                      String?
   nama_penjamin                    String?
   nik_penjamin                     String?
   tempat_lahir_penjamin            String?
-  tanggal_lahir_penjamin           DateTime?                @db.Date
+  tanggal_lahir_penjamin           DateTime?                    @db.Date
   hubungan_penjamin_debitur        String?
   alamat_rumah_penjamin            String?
-  nama_shm                         String?
+  // nama_shm String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
   jangka_waktu                     Int?
   tujuan_penggunaan                String?
   rekening_pinjaman                String?
   nominal_angsuran                 Int?
-  tanggal_angsuran_pertama         DateTime?                @db.Date
+  tanggal_angsuran_pertama         DateTime?                    @db.Date
   barang_elektronik                FleksiBarangElektronik[]
   barang_furniture                 FleksiBarangFurniture[]
-  barang_jaminan_lainnya           String?
-  created_at                       DateTime?                @default(now())
-  updated_at                       DateTime?                @updatedAt
+  barang_jaminan_lainnya           FleksiBarangJaminanLainnya[]
+  created_at                       DateTime?                    @default(now())
+  updated_at                       DateTime?                    @updatedAt
   submitted_at                     DateTime?
   userID                           String
-  User                             User                     @relation(fields: [userID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  User                             User                         @relation(fields: [userID], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
 model PROCIM {
-  id                               String                   @id @default(uuid())
+  id                               String                       @id @default(uuid())
   nomor_surat                      String?
-  tanggal_surat_persetujuan_kredit DateTime?                @db.Date
+  tanggal_surat_persetujuan_kredit DateTime?                    @db.Date
   nama_debitur                     String?
   nik_debitur                      String?
   status_debitur                   String?
   tempat_lahir_debitur             String?
-  tanggal_lahir_debitur            DateTime?                @db.Date
+  tanggal_lahir_debitur            DateTime?                    @db.Date
   alamat_rumah_debitur             String?
   nama_penjamin                    String?
   nik_penjamin                     String?
   tempat_lahir_penjamin            String?
-  tanggal_lahir_penjamin           DateTime?                @db.Date
+  tanggal_lahir_penjamin           DateTime?                    @db.Date
   alamat_rumah_penjamin            String?
-  nama_SHM                         String?
+  // nama_SHM                         String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
   jangka_waktu                     Int?
   rekening_pinjaman                String?
   nominal_angsuran                 Int?
-  tanggal_angsuran_pertama         DateTime?                @db.Date
+  tanggal_angsuran_pertama         DateTime?                    @db.Date
   barang_elektronik                ProcimBarangElektronik[]
   barang_furniture                 ProcimBarangFurniture[]
-  barang_jaminan_lainnya           String?
-  created_at                       DateTime?                @default(now())
-  updated_at                       DateTime?                @updatedAt
+  barang_jaminan_lainnya           ProcimBarangJaminanLainnya[]
+  created_at                       DateTime?                    @default(now())
+  updated_at                       DateTime?                    @updatedAt
   submitted_at                     DateTime?
   userID                           String
-  User                             User                     @relation(fields: [userID], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  User                             User                         @relation(fields: [userID], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
 model KSM {
@@ -275,7 +279,7 @@ model KSM {
   nama_barang                      String?
   harga_barang                     Int?
   no_bpkb                          String?
-  nama_shm                         String?
+  // nama_shm                         String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
@@ -327,7 +331,7 @@ model KMSM {
   nama_barang                      String?
   harga_barang                     Int?
   no_bpkb                          String?
-  nama_shm                         String?
+  // nama_shm                         String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
@@ -376,6 +380,8 @@ model KRS {
   tanggal_lahir_penjamin           DateTime? @db.Date
   hubungan_penjamin_debitur        String?
   nama_shm                         String?
+  nik_shm                          String?
+  alamat_shm                       String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
@@ -426,7 +432,7 @@ model KMM {
   nama_barang                      String?
   harga_barang                     Int?
   no_bpkb                          String?
-  nama_shm                         String?
+  // nama_shm                         String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
@@ -475,6 +481,7 @@ model KMS {
   nik_penjamin                     String? // no_ktp_penjamin String?
   hubungan_penjamin_debitur        String? // telah_persetujuan_dari String?
   nama_shm                         String? // nama_SHM String?
+  alamat_shm                       String? // nama_SHM String?
   nik_shm                          String? // no_ktp_SHM String?
   detail_jaminan                   String? // detail_jaminan String?
   nominal_pinjaman                 Int? // plafond Int?
@@ -524,7 +531,7 @@ model KEF {
   tanggal_lahir_penjamin           DateTime? @db.Date // tanggal_lahir_penjamin DateTime?
   nik_penjamin                     String? // no_ktp_penjamin String?
   hubungan_penjamin_debitur        String? // telah_mendapat_persetujuan String?
-  nama_shm                         String? // nama_SHM String?
+  // nama_shm                         String? // nama_SHM String?
   nama_barang                      String? // nama_barang String?
   merek_barang                     String? // merek_barang String?
   tipe_barang                      String? // tipe_barang String?
@@ -578,7 +585,7 @@ model KAR {
   alamat_rumah_penjamin            String?
   nama_barang                      String?
   no_bpkb                          String?
-  nama_shm                         String?
+  // nama_shm                         String?
   detail_jaminan                   String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
@@ -625,6 +632,15 @@ model FleksiBarangFurniture {
   updated_at  DateTime? @updatedAt
 }
 
+model FleksiBarangJaminanLainnya {
+  id          String    @id @default(uuid())
+  fleksi_id   String
+  nama_barang String?
+  fleksi      FLEKSI    @relation(fields: [fleksi_id], references: [id])
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @updatedAt
+}
+
 model ProcimBarangElektronik {
   id          String    @id @default(uuid())
   procim_id   String
@@ -642,6 +658,15 @@ model ProcimBarangFurniture {
   nama_barang String?
   tipe        String?
   harga       Int?
+  procim      PROCIM    @relation(fields: [procim_id], references: [id])
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @updatedAt
+}
+
+model ProcimBarangJaminanLainnya {
+  id          String    @id @default(uuid())
+  procim_id   String
+  nama_barang String?
   procim      PROCIM    @relation(fields: [procim_id], references: [id])
   created_at  DateTime? @default(now())
   updated_at  DateTime? @updatedAt

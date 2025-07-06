@@ -1,5 +1,5 @@
-import Joi from "joi";
-import JoiDate from "@joi/date";
+import Joi from 'joi';
+import JoiDate from '@joi/date';
 
 // Extend Joi with JoiDate
 const JoiExtended = Joi.extend(JoiDate);
@@ -8,10 +8,10 @@ const JoiExtended = Joi.extend(JoiDate);
 const createKSSM = JoiExtended.object({
   nomor_surat: JoiExtended.string().optional().min(0),
   tanggal_surat_permohonan_kredit: JoiExtended.date()
-    .format("YYYY/MM/DD")
+    .format('YYYY/MM/DD')
     .optional(),
   tanggal_surat_persetujuan_kredit: JoiExtended.date()
-    .format("YYYY/MM/DD")
+    .format('YYYY/MM/DD')
     .optional(),
   nama: JoiExtended.string().optional().min(0),
   jabatan: JoiExtended.string().optional().min(0),
@@ -22,16 +22,16 @@ const createKSSM = JoiExtended.object({
   alamat_usaha_debitur: JoiExtended.string().optional().min(0),
   alamat_rumah_debitur: JoiExtended.string().optional().min(0),
   tempat_lahir_debitur: JoiExtended.string().optional().min(0),
-  tanggal_lahir_debitur: JoiExtended.date().format("YYYY/MM/DD").optional(),
+  tanggal_lahir_debitur: JoiExtended.date().format('YYYY/MM/DD').optional(),
   pekerjaan_debitur: JoiExtended.string().optional().min(0),
   jenis_kelamin_debitur: JoiExtended.string().optional().min(0),
   nama_penjamin: JoiExtended.string().optional().min(0),
   nik_penjamin: JoiExtended.string().optional().min(0),
   tempat_lahir_penjamin: JoiExtended.string().optional().min(0),
-  tanggal_lahir_penjamin: JoiExtended.date().format("YYYY/MM/DD").optional(),
+  tanggal_lahir_penjamin: JoiExtended.date().format('YYYY/MM/DD').optional(),
   hubungan_penjamin_debitur: JoiExtended.string().optional().min(0),
   alamat_rumah_penjamin: JoiExtended.string().optional().min(0),
-  nama_SHM: JoiExtended.string().optional().min(0),
+  // nama_SHM: JoiExtended.string().optional().min(0),
   nama_barang: JoiExtended.string().optional().min(0),
   no_bpkb: JoiExtended.string().optional().min(0),
   harga_barang: JoiExtended.number().optional().min(0),
@@ -41,8 +41,8 @@ const createKSSM = JoiExtended.object({
   jangka_waktu: JoiExtended.number().optional().min(0),
   tujuan_penggunaan: JoiExtended.string().optional().min(0),
   nominal_angsuran: JoiExtended.number().optional().min(0),
-  tanggal_angsuran_pertama: JoiExtended.date().format("YYYY/MM/DD").optional(),
-  tanggal_angsuran_terakhir: JoiExtended.date().format("YYYY/MM/DD").optional(),
+  tanggal_angsuran_pertama: JoiExtended.date().format('YYYY/MM/DD').optional(),
+  tanggal_angsuran_terakhir: JoiExtended.date().format('YYYY/MM/DD').optional(),
   hutang_keseluruhan: JoiExtended.number().optional().min(0),
   tenggat_angsuran: JoiExtended.number().optional().min(0),
   provisi_persen: JoiExtended.number().optional().min(0),
