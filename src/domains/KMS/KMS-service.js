@@ -1,4 +1,4 @@
-import db from "../../config/db.js";
+import db from '../../config/db.js';
 
 class KMSService {
   async getAll(page, limit) {
@@ -77,6 +77,7 @@ class KMSService {
     nik_penjamin,
     hubungan_penjamin_debitur,
     nama_shm,
+    alamat_shm,
     nik_shm,
     detail_jaminan,
     nominal_pinjaman,
@@ -103,8 +104,12 @@ class KMSService {
     const newKMS = await db.KMS.create({
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
+        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit
+          ? new Date(tanggal_surat_permohonan_kredit)
+          : null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
         nama: nama,
         jabatan: jabatan,
         nama_debitur: nama_debitur,
@@ -117,19 +122,26 @@ class KMSService {
         alamat_rumah_penjamin: alamat_rumah_penjamin,
         nama_penjamin: nama_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         nik_penjamin: nik_penjamin,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
         nama_shm: nama_shm,
+        alamat_shm: alamat_shm,
         nik_shm: nik_shm,
         detail_jaminan: detail_jaminan,
         nominal_pinjaman: nominal_pinjaman,
         tujuan_penggunaan: tujuan_penggunaan,
         jangka_waktu: jangka_waktu,
         bunga_pinjaman: bunga_pinjaman,
-        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir?new Date(tanggal_angsuran_terakhir):null,
+        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir
+          ? new Date(tanggal_angsuran_terakhir)
+          : null,
         tenggat_angsuran: tenggat_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
         nominal_angsuran: nominal_angsuran,
         hutang_keseluruhan: hutang_keseluruhan,
         provisi_persen: provisi_persen,
@@ -146,7 +158,7 @@ class KMSService {
       },
     });
     if (!newKMS) {
-      throw new Error("Create KMS failed");
+      throw new Error('Create KMS failed');
     }
     return newKMS;
   }
@@ -173,6 +185,7 @@ class KMSService {
       nik_penjamin,
       hubungan_penjamin_debitur,
       nama_shm,
+      alamat_shm,
       nik_shm,
       detail_jaminan,
       nominal_pinjaman,
@@ -204,8 +217,12 @@ class KMSService {
       },
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
+        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit
+          ? new Date(tanggal_surat_permohonan_kredit)
+          : null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
         nama: nama,
         jabatan: jabatan,
         nama_debitur: nama_debitur,
@@ -218,19 +235,26 @@ class KMSService {
         alamat_rumah_penjamin: alamat_rumah_penjamin,
         nama_penjamin: nama_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         nik_penjamin: nik_penjamin,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
         nama_shm: nama_shm,
+        alamat_shm: alamat_shm,
         nik_shm: nik_shm,
         detail_jaminan: detail_jaminan,
         nominal_pinjaman: nominal_pinjaman,
         tujuan_penggunaan: tujuan_penggunaan,
         jangka_waktu: jangka_waktu,
         bunga_pinjaman: bunga_pinjaman,
-        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir?new Date(tanggal_angsuran_terakhir):null,
+        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir
+          ? new Date(tanggal_angsuran_terakhir)
+          : null,
         tenggat_angsuran: tenggat_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
         nominal_angsuran: nominal_angsuran,
         hutang_keseluruhan: hutang_keseluruhan,
         provisi_persen: provisi_persen,

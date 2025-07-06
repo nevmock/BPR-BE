@@ -1,4 +1,4 @@
-import db from "../../config/db.js";
+import db from '../../config/db.js';
 class KRSService {
   async getAll(page, limit) {
     let datas;
@@ -78,6 +78,8 @@ class KRSService {
     tanggal_lahir_penjamin,
     hubungan_penjamin_debitur,
     nama_shm,
+    nik_shm,
+    alamat_shm,
     detail_jaminan,
     nominal_pinjaman,
     bunga_pinjaman,
@@ -102,8 +104,12 @@ class KRSService {
     const newKRS = await db.KRS.create({
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
+        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit
+          ? new Date(tanggal_surat_permohonan_kredit)
+          : null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
         nama: nama,
         jabatan: jabatan,
         nama_debitur: nama_debitur,
@@ -112,26 +118,36 @@ class KRSService {
         hubungan_debitur_penjamin: hubungan_debitur_penjamin,
         jenis_kelamin_debitur: jenis_kelamin_debitur,
         tempat_lahir_debitur: tempat_lahir_debitur,
-        tanggal_lahir_debitur: tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
+        tanggal_lahir_debitur: tanggal_lahir_debitur
+          ? new Date(tanggal_lahir_debitur)
+          : null,
         alamat_usaha_debitur: alamat_usaha_debitur,
         alamat_rumah_debitur: alamat_rumah_debitur,
         pekerjaan_debitur: pekerjaan_debitur,
         nama_penjamin: nama_penjamin,
         nik_penjamin: nik_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
         nama_shm: nama_shm,
+        nik_shm: nik_shm,
+        alamat_shm: alamat_shm,
         detail_jaminan: detail_jaminan,
         nominal_pinjaman: nominal_pinjaman,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
         tujuan_penggunaan: tujuan_penggunaan,
         nominal_angsuran: nominal_angsuran,
-        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir?new Date(tanggal_angsuran_terakhir):null,
+        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir
+          ? new Date(tanggal_angsuran_terakhir)
+          : null,
         hutang_keseluruhan: hutang_keseluruhan,
         tenggat_angsuran: tenggat_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
         provisi_persen: provisi_persen,
         administrasi_persen: administrasi_persen,
         provisi_nominal: provisi_nominal,
@@ -145,7 +161,7 @@ class KRSService {
       },
     });
     if (!newKRS) {
-      throw new Error("Create KRS failed");
+      throw new Error('Create KRS failed');
     }
     return newKRS;
   }
@@ -174,6 +190,8 @@ class KRSService {
       tanggal_lahir_penjamin,
       hubungan_penjamin_debitur,
       nama_shm,
+      nik_shm,
+      alamat_shm,
       detail_jaminan,
       nominal_pinjaman,
       bunga_pinjaman,
@@ -203,8 +221,12 @@ class KRSService {
       },
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
+        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit
+          ? new Date(tanggal_surat_permohonan_kredit)
+          : null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
         nama: nama,
         jabatan: jabatan,
         nama_debitur: nama_debitur,
@@ -213,26 +235,36 @@ class KRSService {
         hubungan_debitur_penjamin: hubungan_debitur_penjamin,
         jenis_kelamin_debitur: jenis_kelamin_debitur,
         tempat_lahir_debitur: tempat_lahir_debitur,
-        tanggal_lahir_debitur: tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
+        tanggal_lahir_debitur: tanggal_lahir_debitur
+          ? new Date(tanggal_lahir_debitur)
+          : null,
         alamat_usaha_debitur: alamat_usaha_debitur,
         alamat_rumah_debitur: alamat_rumah_debitur,
         pekerjaan_debitur: pekerjaan_debitur,
         nama_penjamin: nama_penjamin,
         nik_penjamin: nik_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
         nama_shm: nama_shm,
+        nik_shm: nik_shm,
+        alamat_shm: alamat_shm,
         detail_jaminan: detail_jaminan,
         nominal_pinjaman: nominal_pinjaman,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
         tujuan_penggunaan: tujuan_penggunaan,
         nominal_angsuran: nominal_angsuran,
-        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir?new Date(tanggal_angsuran_terakhir):null,
+        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir
+          ? new Date(tanggal_angsuran_terakhir)
+          : null,
         hutang_keseluruhan: hutang_keseluruhan,
         tenggat_angsuran: tenggat_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
         provisi_persen: provisi_persen,
         administrasi_persen: administrasi_persen,
         provisi_nominal: provisi_nominal,

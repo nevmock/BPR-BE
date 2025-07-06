@@ -1,4 +1,4 @@
-import db from "../../config/db.js";
+import db from '../../config/db.js';
 class PINEKService {
   async getAll(page, limit) {
     let datas;
@@ -71,7 +71,9 @@ class PINEKService {
     tanggal_lahir_penjamin,
     hubungan_penjamin_debitur,
     alamat_rumah_penjamin,
-    nama_shm,
+    // nama_shm,
+    nama_barang,
+    detail_jaminan,
     nominal_pinjaman,
     bunga_pinjaman,
     jangka_waktu,
@@ -117,7 +119,9 @@ class PINEKService {
           : null,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
         alamat_rumah_penjamin: alamat_rumah_penjamin,
-        nama_shm: nama_shm,
+        // nama_shm: nama_shm,
+        nama_barang: nama_barang,
+        detail_jaminan: detail_jaminan,
         nominal_pinjaman: nominal_pinjaman,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
@@ -143,7 +147,7 @@ class PINEKService {
       },
     });
     if (!newPINEK) {
-      throw new Error("Create PINEK failed");
+      throw new Error('Create PINEK failed');
     }
     return newPINEK;
   }
@@ -166,7 +170,9 @@ class PINEKService {
       tanggal_lahir_penjamin,
       hubungan_penjamin_debitur,
       alamat_rumah_penjamin,
-      nama_shm,
+      // nama_shm,
+      nama_barang,
+      detail_jaminan,
       nominal_pinjaman,
       bunga_pinjaman,
       jangka_waktu,
@@ -217,7 +223,9 @@ class PINEKService {
           : null,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
         alamat_rumah_penjamin: alamat_rumah_penjamin,
-        nama_shm: nama_shm,
+        // nama_shm: nama_shm,
+        nama_barang: nama_barang,
+        detail_jaminan: detail_jaminan,
         nominal_pinjaman: nominal_pinjaman,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
