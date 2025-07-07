@@ -7,6 +7,7 @@ import Docxtemplater from 'docxtemplater';
 import { exec } from 'child_process';
 import { formatRupiahDenganHuruf } from '../../utils/formatTerbilangRupiah.js';
 import { formatRupiah } from '../../utils/formatRupiah.js';
+import { getHariDalamBahasaIndonesia } from '../../utils/getHariDalamBahasaIndonesia.js';
 
 class PINEKController {
   async get(req, res) {
@@ -181,6 +182,7 @@ class PINEKController {
       const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`;
 
       const data = {
+        hari: getHariDalamBahasaIndonesia(formattedTanggal),
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
         nama_debitur: dbData.nama_debitur,
@@ -380,6 +382,7 @@ class PINEKController {
       const formatMateraiNominal = `${formatRupiah(dbData.materai_nominal)}`;
 
       const data = {
+        hari: getHariDalamBahasaIndonesia(formattedTanggal),
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
         nama_debitur: dbData.nama_debitur,
