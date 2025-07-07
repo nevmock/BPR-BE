@@ -85,6 +85,7 @@ class PROCIMService {
     jangka_waktu,
     rekening_pinjaman,
     nominal_angsuran,
+    tenggat_angsuran,
     tanggal_angsuran_pertama,
     barang_elektronik,
     barang_furniture,
@@ -119,6 +120,7 @@ class PROCIMService {
         jangka_waktu: jangka_waktu,
         rekening_pinjaman: rekening_pinjaman,
         nominal_angsuran: nominal_angsuran,
+        tenggat_angsuran: tenggat_angsuran,
         tanggal_angsuran_pertama: tanggal_angsuran_pertama
           ? new Date(tanggal_angsuran_pertama)
           : null,
@@ -178,6 +180,7 @@ class PROCIMService {
       jangka_waktu,
       rekening_pinjaman,
       nominal_angsuran,
+      tenggat_angsuran,
       tanggal_angsuran_pertama,
       barang_elektronik,
       barang_furniture,
@@ -230,6 +233,7 @@ class PROCIMService {
         jangka_waktu: jangka_waktu,
         rekening_pinjaman: rekening_pinjaman,
         nominal_angsuran: nominal_angsuran,
+        tenggat_angsuran: tenggat_angsuran,
         tanggal_angsuran_pertama: tanggal_angsuran_pertama
           ? new Date(tanggal_angsuran_pertama)
           : null,

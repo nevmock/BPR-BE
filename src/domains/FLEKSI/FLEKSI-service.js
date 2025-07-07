@@ -90,6 +90,7 @@ class FLEKSIService {
     rekening_pinjaman,
     nominal_angsuran,
     tanggal_angsuran_pertama,
+    tenggat_angsuran,
     barang_elektronik,
     barang_furniture,
     barang_jaminan_lainnya,
@@ -126,6 +127,7 @@ class FLEKSIService {
         tujuan_penggunaan: tujuan_penggunaan,
         rekening_pinjaman: rekening_pinjaman,
         nominal_angsuran: nominal_angsuran,
+        tenggat_angsuran: tenggat_angsuran,
         tanggal_angsuran_pertama: tanggal_angsuran_pertama
           ? new Date(tanggal_angsuran_pertama)
           : null,
@@ -190,6 +192,7 @@ class FLEKSIService {
       rekening_pinjaman,
       nominal_angsuran,
       tanggal_angsuran_pertama,
+      tenggat_angsuran,
       barang_elektronik,
       barang_furniture,
       barang_jaminan_lainnya,
@@ -244,6 +247,7 @@ class FLEKSIService {
         tujuan_penggunaan: tujuan_penggunaan,
         rekening_pinjaman: rekening_pinjaman,
         nominal_angsuran: nominal_angsuran,
+        tenggat_angsuran: tenggat_angsuran,
         tanggal_angsuran_pertama: tanggal_angsuran_pertama
           ? new Date(tanggal_angsuran_pertama)
           : null,

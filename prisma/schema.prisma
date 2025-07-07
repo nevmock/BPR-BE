@@ -204,7 +204,6 @@ model FLEKSI {
   tanggal_lahir_penjamin           DateTime?                    @db.Date
   hubungan_penjamin_debitur        String?
   alamat_rumah_penjamin            String?
-  // nama_shm String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
   jangka_waktu                     Int?
@@ -212,6 +211,7 @@ model FLEKSI {
   rekening_pinjaman                String?
   nominal_angsuran                 Int?
   tanggal_angsuran_pertama         DateTime?                    @db.Date
+  tenggat_angsuran                 String?
   barang_elektronik                FleksiBarangElektronik[]
   barang_furniture                 FleksiBarangFurniture[]
   barang_jaminan_lainnya           FleksiBarangJaminanLainnya[]
@@ -237,13 +237,13 @@ model PROCIM {
   tempat_lahir_penjamin            String?
   tanggal_lahir_penjamin           DateTime?                    @db.Date
   alamat_rumah_penjamin            String?
-  // nama_SHM                         String?
   nominal_pinjaman                 Int?
   bunga_pinjaman                   Float?
   jangka_waktu                     Int?
   rekening_pinjaman                String?
   nominal_angsuran                 Int?
   tanggal_angsuran_pertama         DateTime?                    @db.Date
+  tenggat_angsuran                 String?
   barang_elektronik                ProcimBarangElektronik[]
   barang_furniture                 ProcimBarangFurniture[]
   barang_jaminan_lainnya           ProcimBarangJaminanLainnya[]

@@ -7,6 +7,7 @@ import { exec } from 'child_process';
 import fs from 'fs';
 import { formatRupiah } from '../../utils/formatRupiah.js';
 import { formatRupiahDenganHuruf } from '../../utils/formatTerbilangRupiah.js';
+import { getHariDalamBahasaIndonesia } from '../../utils/getHariDalamBahasaIndonesia.js';
 
 class FLEKSIController {
   async get(req, res) {
@@ -50,6 +51,7 @@ class FLEKSIController {
       tujuan_penggunaan,
       rekening_pinjaman,
       nominal_angsuran,
+      tenggat_angsuran,
       tanggal_angsuran_pertama,
       barang_elektronik,
       barang_furniture,
@@ -82,6 +84,7 @@ class FLEKSIController {
       tujuan_penggunaan,
       rekening_pinjaman,
       nominal_angsuran,
+      tenggat_angsuran,
       tanggal_angsuran_pertama,
       barang_elektronik,
       barang_furniture,
@@ -167,6 +170,8 @@ class FLEKSIController {
       );
 
       const data = {
+        hari: getHariDalamBahasaIndonesia(formattedTanggal),
+        tenggat_angsuran: dbData.tenggat_angsuran,
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
         nama_debitur: dbData.nama_debitur,
@@ -362,6 +367,8 @@ class FLEKSIController {
       );
 
       const data = {
+        hari: getHariDalamBahasaIndonesia(formattedTanggal),
+        tenggat_angsuran: dbData.tenggat_angsuran,
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
         nama_debitur: dbData.nama_debitur,

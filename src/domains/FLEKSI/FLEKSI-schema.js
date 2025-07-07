@@ -21,7 +21,6 @@ const createFLEKSI = JoiExtended.object({
   tanggal_lahir_penjamin: JoiExtended.date().format('YYYY/MM/DD').optional(),
   hubungan_penjamin_debitur: JoiExtended.string().optional().min(0),
   alamat_rumah_penjamin: JoiExtended.string().optional().min(0),
-  // nama_shm: JoiExtended.string().optional().min(0),
   nominal_pinjaman: JoiExtended.number().optional().min(0),
   bunga_pinjaman: JoiExtended.number().optional().min(0),
   jangka_waktu: JoiExtended.number().optional().min(0),
@@ -29,6 +28,7 @@ const createFLEKSI = JoiExtended.object({
   rekening_pinjaman: JoiExtended.string().optional().min(0),
   nominal_angsuran: JoiExtended.number().optional().min(0),
   tanggal_angsuran_pertama: JoiExtended.date().format('YYYY/MM/DD').optional(),
+  tenggat_angsuran: JoiExtended.string().optional().min(0),
   barang_elektronik: Joi.array().items(
     Joi.object({
       nama_barang: Joi.string().optional(),

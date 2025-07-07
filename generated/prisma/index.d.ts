@@ -9261,6 +9261,7 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
+    tenggat_angsuran: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -9291,6 +9292,7 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
+    tenggat_angsuran: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -9321,6 +9323,7 @@ export namespace Prisma {
     rekening_pinjaman: number
     nominal_angsuran: number
     tanggal_angsuran_pertama: number
+    tenggat_angsuran: number
     created_at: number
     updated_at: number
     submitted_at: number
@@ -9367,6 +9370,7 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
+    tenggat_angsuran?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -9397,6 +9401,7 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
+    tenggat_angsuran?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -9427,6 +9432,7 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
+    tenggat_angsuran?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -9544,6 +9550,7 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
+    tenggat_angsuran: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -9593,6 +9600,7 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
+    tenggat_angsuran?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -9628,6 +9636,7 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
+    tenggat_angsuran?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -9659,6 +9668,7 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
+    tenggat_angsuran?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -9690,13 +9700,14 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
+    tenggat_angsuran?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
     userID?: boolean
   }
 
-  export type FLEKSIOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "status_debitur" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "nik_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "rekening_pinjaman" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["fLEKSI"]>
+  export type FLEKSIOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "status_debitur" | "jenis_kelamin_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "nik_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "hubungan_penjamin_debitur" | "alamat_rumah_penjamin" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "tujuan_penggunaan" | "rekening_pinjaman" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tenggat_angsuran" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["fLEKSI"]>
   export type FLEKSIInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     barang_elektronik?: boolean | FLEKSI$barang_elektronikArgs<ExtArgs>
     barang_furniture?: boolean | FLEKSI$barang_furnitureArgs<ExtArgs>
@@ -9743,6 +9754,7 @@ export namespace Prisma {
       rekening_pinjaman: string | null
       nominal_angsuran: number | null
       tanggal_angsuran_pertama: Date | null
+      tenggat_angsuran: string | null
       created_at: Date | null
       updated_at: Date | null
       submitted_at: Date | null
@@ -10197,6 +10209,7 @@ export namespace Prisma {
     readonly rekening_pinjaman: FieldRef<"FLEKSI", 'String'>
     readonly nominal_angsuran: FieldRef<"FLEKSI", 'Int'>
     readonly tanggal_angsuran_pertama: FieldRef<"FLEKSI", 'DateTime'>
+    readonly tenggat_angsuran: FieldRef<"FLEKSI", 'String'>
     readonly created_at: FieldRef<"FLEKSI", 'DateTime'>
     readonly updated_at: FieldRef<"FLEKSI", 'DateTime'>
     readonly submitted_at: FieldRef<"FLEKSI", 'DateTime'>
@@ -10734,6 +10747,7 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
+    tenggat_angsuran: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -10761,6 +10775,7 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
+    tenggat_angsuran: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -10788,6 +10803,7 @@ export namespace Prisma {
     rekening_pinjaman: number
     nominal_angsuran: number
     tanggal_angsuran_pertama: number
+    tenggat_angsuran: number
     created_at: number
     updated_at: number
     submitted_at: number
@@ -10831,6 +10847,7 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
+    tenggat_angsuran?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -10858,6 +10875,7 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
+    tenggat_angsuran?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -10885,6 +10903,7 @@ export namespace Prisma {
     rekening_pinjaman?: true
     nominal_angsuran?: true
     tanggal_angsuran_pertama?: true
+    tenggat_angsuran?: true
     created_at?: true
     updated_at?: true
     submitted_at?: true
@@ -10999,6 +11018,7 @@ export namespace Prisma {
     rekening_pinjaman: string | null
     nominal_angsuran: number | null
     tanggal_angsuran_pertama: Date | null
+    tenggat_angsuran: string | null
     created_at: Date | null
     updated_at: Date | null
     submitted_at: Date | null
@@ -11045,6 +11065,7 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
+    tenggat_angsuran?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -11077,6 +11098,7 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
+    tenggat_angsuran?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -11105,6 +11127,7 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
+    tenggat_angsuran?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
@@ -11133,13 +11156,14 @@ export namespace Prisma {
     rekening_pinjaman?: boolean
     nominal_angsuran?: boolean
     tanggal_angsuran_pertama?: boolean
+    tenggat_angsuran?: boolean
     created_at?: boolean
     updated_at?: boolean
     submitted_at?: boolean
     userID?: boolean
   }
 
-  export type PROCIMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "nik_debitur" | "status_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "alamat_rumah_penjamin" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "rekening_pinjaman" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["pROCIM"]>
+  export type PROCIMOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "nama_debitur" | "nik_debitur" | "status_debitur" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "alamat_rumah_debitur" | "nama_penjamin" | "nik_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "alamat_rumah_penjamin" | "nominal_pinjaman" | "bunga_pinjaman" | "jangka_waktu" | "rekening_pinjaman" | "nominal_angsuran" | "tanggal_angsuran_pertama" | "tenggat_angsuran" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["pROCIM"]>
   export type PROCIMInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     barang_elektronik?: boolean | PROCIM$barang_elektronikArgs<ExtArgs>
     barang_furniture?: boolean | PROCIM$barang_furnitureArgs<ExtArgs>
@@ -11183,6 +11207,7 @@ export namespace Prisma {
       rekening_pinjaman: string | null
       nominal_angsuran: number | null
       tanggal_angsuran_pertama: Date | null
+      tenggat_angsuran: string | null
       created_at: Date | null
       updated_at: Date | null
       submitted_at: Date | null
@@ -11634,6 +11659,7 @@ export namespace Prisma {
     readonly rekening_pinjaman: FieldRef<"PROCIM", 'String'>
     readonly nominal_angsuran: FieldRef<"PROCIM", 'Int'>
     readonly tanggal_angsuran_pertama: FieldRef<"PROCIM", 'DateTime'>
+    readonly tenggat_angsuran: FieldRef<"PROCIM", 'String'>
     readonly created_at: FieldRef<"PROCIM", 'DateTime'>
     readonly updated_at: FieldRef<"PROCIM", 'DateTime'>
     readonly submitted_at: FieldRef<"PROCIM", 'DateTime'>
@@ -31802,6 +31828,7 @@ export namespace Prisma {
     rekening_pinjaman: 'rekening_pinjaman',
     nominal_angsuran: 'nominal_angsuran',
     tanggal_angsuran_pertama: 'tanggal_angsuran_pertama',
+    tenggat_angsuran: 'tenggat_angsuran',
     created_at: 'created_at',
     updated_at: 'updated_at',
     submitted_at: 'submitted_at',
@@ -31832,6 +31859,7 @@ export namespace Prisma {
     rekening_pinjaman: 'rekening_pinjaman',
     nominal_angsuran: 'nominal_angsuran',
     tanggal_angsuran_pertama: 'tanggal_angsuran_pertama',
+    tenggat_angsuran: 'tenggat_angsuran',
     created_at: 'created_at',
     updated_at: 'updated_at',
     submitted_at: 'submitted_at',
@@ -33267,6 +33295,7 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_angsuran?: IntNullableFilter<"FLEKSI"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
+    tenggat_angsuran?: StringNullableFilter<"FLEKSI"> | string | null
     created_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
@@ -33301,6 +33330,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrderInput | SortOrder
     nominal_angsuran?: SortOrderInput | SortOrder
     tanggal_angsuran_pertama?: SortOrderInput | SortOrder
+    tenggat_angsuran?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     submitted_at?: SortOrderInput | SortOrder
@@ -33338,6 +33368,7 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_angsuran?: IntNullableFilter<"FLEKSI"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
+    tenggat_angsuran?: StringNullableFilter<"FLEKSI"> | string | null
     created_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
@@ -33372,6 +33403,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrderInput | SortOrder
     nominal_angsuran?: SortOrderInput | SortOrder
     tanggal_angsuran_pertama?: SortOrderInput | SortOrder
+    tenggat_angsuran?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     submitted_at?: SortOrderInput | SortOrder
@@ -33410,6 +33442,7 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableWithAggregatesFilter<"FLEKSI"> | string | null
     nominal_angsuran?: IntNullableWithAggregatesFilter<"FLEKSI"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
+    tenggat_angsuran?: StringNullableWithAggregatesFilter<"FLEKSI"> | string | null
     created_at?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
     submitted_at?: DateTimeNullableWithAggregatesFilter<"FLEKSI"> | Date | string | null
@@ -33440,6 +33473,7 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"PROCIM"> | string | null
     nominal_angsuran?: IntNullableFilter<"PROCIM"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
+    tenggat_angsuran?: StringNullableFilter<"PROCIM"> | string | null
     created_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
@@ -33471,6 +33505,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrderInput | SortOrder
     nominal_angsuran?: SortOrderInput | SortOrder
     tanggal_angsuran_pertama?: SortOrderInput | SortOrder
+    tenggat_angsuran?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     submitted_at?: SortOrderInput | SortOrder
@@ -33505,6 +33540,7 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"PROCIM"> | string | null
     nominal_angsuran?: IntNullableFilter<"PROCIM"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
+    tenggat_angsuran?: StringNullableFilter<"PROCIM"> | string | null
     created_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
@@ -33536,6 +33572,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrderInput | SortOrder
     nominal_angsuran?: SortOrderInput | SortOrder
     tanggal_angsuran_pertama?: SortOrderInput | SortOrder
+    tenggat_angsuran?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
     submitted_at?: SortOrderInput | SortOrder
@@ -33571,6 +33608,7 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableWithAggregatesFilter<"PROCIM"> | string | null
     nominal_angsuran?: IntNullableWithAggregatesFilter<"PROCIM"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
+    tenggat_angsuran?: StringNullableWithAggregatesFilter<"PROCIM"> | string | null
     created_at?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
     submitted_at?: DateTimeNullableWithAggregatesFilter<"PROCIM"> | Date | string | null
@@ -36999,6 +37037,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -37032,6 +37071,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -37065,6 +37105,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -37098,6 +37139,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -37131,6 +37173,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -37161,6 +37204,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -37190,6 +37234,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -37217,6 +37262,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -37247,6 +37293,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -37277,6 +37324,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -37307,6 +37355,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -37337,6 +37386,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -37364,6 +37414,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -37390,6 +37441,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41181,6 +41233,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
+    tenggat_angsuran?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -41218,6 +41271,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
+    tenggat_angsuran?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -41248,6 +41302,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
+    tenggat_angsuran?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -41312,6 +41367,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
+    tenggat_angsuran?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -41346,6 +41402,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
+    tenggat_angsuran?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -41373,6 +41430,7 @@ export namespace Prisma {
     rekening_pinjaman?: SortOrder
     nominal_angsuran?: SortOrder
     tanggal_angsuran_pertama?: SortOrder
+    tenggat_angsuran?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     submitted_at?: SortOrder
@@ -44518,6 +44576,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -44550,6 +44609,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -44589,6 +44649,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -44618,6 +44679,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -45654,6 +45716,7 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"FLEKSI"> | string | null
     nominal_angsuran?: IntNullableFilter<"FLEKSI"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
+    tenggat_angsuran?: StringNullableFilter<"FLEKSI"> | string | null
     created_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"FLEKSI"> | Date | string | null
@@ -45700,6 +45763,7 @@ export namespace Prisma {
     rekening_pinjaman?: StringNullableFilter<"PROCIM"> | string | null
     nominal_angsuran?: IntNullableFilter<"PROCIM"> | number | null
     tanggal_angsuran_pertama?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
+    tenggat_angsuran?: StringNullableFilter<"PROCIM"> | string | null
     created_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
     submitted_at?: DateTimeNullableFilter<"PROCIM"> | Date | string | null
@@ -47768,6 +47832,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -47800,6 +47865,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -47848,6 +47914,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -47880,6 +47947,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -47912,6 +47980,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -47944,6 +48013,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -47992,6 +48062,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48024,6 +48095,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48056,6 +48128,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48088,6 +48161,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48136,6 +48210,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48168,6 +48243,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48197,6 +48273,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48226,6 +48303,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48271,6 +48349,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48300,6 +48379,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48329,6 +48409,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48358,6 +48439,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48403,6 +48485,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48432,6 +48515,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48461,6 +48545,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48490,6 +48575,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48535,6 +48621,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48564,6 +48651,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -48835,6 +48923,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -48861,6 +48950,7 @@ export namespace Prisma {
     rekening_pinjaman?: string | null
     nominal_angsuran?: number | null
     tanggal_angsuran_pertama?: Date | string | null
+    tenggat_angsuran?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
     submitted_at?: Date | string | null
@@ -49655,6 +49745,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -49687,6 +49778,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -49719,6 +49811,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -49745,6 +49838,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -49774,6 +49868,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -49803,6 +49898,7 @@ export namespace Prisma {
     rekening_pinjaman?: NullableStringFieldUpdateOperationsInput | string | null
     nominal_angsuran?: NullableIntFieldUpdateOperationsInput | number | null
     tanggal_angsuran_pertama?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    tenggat_angsuran?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     submitted_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
