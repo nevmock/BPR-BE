@@ -49,7 +49,7 @@ class KEFController {
       tanggal_lahir_penjamin,
       nik_penjamin,
       hubungan_penjamin_debitur,
-      // nama_shm,
+      jumlah_barang,
       nama_barang,
       merek_barang,
       tipe_barang,
@@ -97,7 +97,7 @@ class KEFController {
       tanggal_lahir_penjamin,
       nik_penjamin,
       hubungan_penjamin_debitur,
-      // nama_shm,
+      jumlah_barang,
       nama_barang,
       merek_barang,
       tipe_barang,
@@ -211,6 +211,7 @@ class KEFController {
         no_ktp_penjamin: dbData.nik_penjamin,
         bertempat_tinggal_dengan: dbData.hubungan_debitur_penjamin,
         tanggal_surat_permohonan_kredit: formattedTanggal3,
+        jumlah_barang: dbData.jumlah_barang,
         nama_barang: dbData.nama_barang,
         merek_barang: dbData.merek_barang,
         tipe_barang: dbData.tipe_barang,
@@ -420,6 +421,7 @@ class KEFController {
         no_ktp_penjamin: dbData.nik_penjamin,
         bertempat_tinggal_dengan: dbData.hubungan_debitur_penjamin,
         tanggal_surat_permohonan_kredit: formattedTanggal3,
+        jumlah_barang: dbData.jumlah_barang,
         nama_barang: dbData.nama_barang,
         merek_barang: dbData.merek_barang,
         tipe_barang: dbData.tipe_barang,
@@ -495,12 +497,10 @@ class KEFController {
       res.send(buf);
     } catch (err) {
       console.error('Gagal generate DOCX:', err);
-      res
-        .status(500)
-        .json({
-          error: 'Failed to generate Word document',
-          message: err.message,
-        });
+      res.status(500).json({
+        error: 'Failed to generate Word document',
+        message: err.message,
+      });
     }
   }
 

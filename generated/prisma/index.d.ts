@@ -20590,6 +20590,7 @@ export namespace Prisma {
   }
 
   export type KEFAvgAggregateOutputType = {
+    jumlah_barang: number | null
     harga_barang: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
@@ -20606,6 +20607,7 @@ export namespace Prisma {
   }
 
   export type KEFSumAggregateOutputType = {
+    jumlah_barang: number | null
     harga_barang: number | null
     bunga_pinjaman: number | null
     jangka_waktu: number | null
@@ -20643,6 +20645,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
+    jumlah_barang: number | null
     nama_barang: string | null
     merek_barang: string | null
     tipe_barang: string | null
@@ -20692,6 +20695,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
+    jumlah_barang: number | null
     nama_barang: string | null
     merek_barang: string | null
     tipe_barang: string | null
@@ -20741,6 +20745,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin: number
     nik_penjamin: number
     hubungan_penjamin_debitur: number
+    jumlah_barang: number
     nama_barang: number
     merek_barang: number
     tipe_barang: number
@@ -20771,6 +20776,7 @@ export namespace Prisma {
 
 
   export type KEFAvgAggregateInputType = {
+    jumlah_barang?: true
     harga_barang?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
@@ -20787,6 +20793,7 @@ export namespace Prisma {
   }
 
   export type KEFSumAggregateInputType = {
+    jumlah_barang?: true
     harga_barang?: true
     bunga_pinjaman?: true
     jangka_waktu?: true
@@ -20824,6 +20831,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
+    jumlah_barang?: true
     nama_barang?: true
     merek_barang?: true
     tipe_barang?: true
@@ -20873,6 +20881,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
+    jumlah_barang?: true
     nama_barang?: true
     merek_barang?: true
     tipe_barang?: true
@@ -20922,6 +20931,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: true
     nik_penjamin?: true
     hubungan_penjamin_debitur?: true
+    jumlah_barang?: true
     nama_barang?: true
     merek_barang?: true
     tipe_barang?: true
@@ -21058,6 +21068,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin: Date | null
     nik_penjamin: string | null
     hubungan_penjamin_debitur: string | null
+    jumlah_barang: number | null
     nama_barang: string | null
     merek_barang: string | null
     tipe_barang: string | null
@@ -21126,6 +21137,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
+    jumlah_barang?: boolean
     nama_barang?: boolean
     merek_barang?: boolean
     tipe_barang?: boolean
@@ -21176,6 +21188,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
+    jumlah_barang?: boolean
     nama_barang?: boolean
     merek_barang?: boolean
     tipe_barang?: boolean
@@ -21226,6 +21239,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
+    jumlah_barang?: boolean
     nama_barang?: boolean
     merek_barang?: boolean
     tipe_barang?: boolean
@@ -21276,6 +21290,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: boolean
     nik_penjamin?: boolean
     hubungan_penjamin_debitur?: boolean
+    jumlah_barang?: boolean
     nama_barang?: boolean
     merek_barang?: boolean
     tipe_barang?: boolean
@@ -21303,7 +21318,7 @@ export namespace Prisma {
     userID?: boolean
   }
 
-  export type KEFOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "tanggal_surat_permohonan_kredit" | "nama_debitur" | "status_debitur" | "nik_debitur" | "no_hp_debitur" | "jenis_kelamin_debitur" | "hubungan_debitur_penjamin" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "nama_usaha_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "nama_barang" | "merek_barang" | "tipe_barang" | "ukuran_barang" | "warna_barang" | "harga_barang" | "detail_jaminan" | "bunga_pinjaman" | "jangka_waktu" | "tanggal_angsuran_terakhir" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "nominal_angsuran" | "hutang_keseluruhan" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "fidusia_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kEF"]>
+  export type KEFOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomor_surat" | "tanggal_surat_persetujuan_kredit" | "tanggal_surat_permohonan_kredit" | "nama_debitur" | "status_debitur" | "nik_debitur" | "no_hp_debitur" | "jenis_kelamin_debitur" | "hubungan_debitur_penjamin" | "tempat_lahir_debitur" | "tanggal_lahir_debitur" | "nama_usaha_debitur" | "alamat_usaha_debitur" | "alamat_rumah_debitur" | "pekerjaan_debitur" | "nama_penjamin" | "tempat_lahir_penjamin" | "tanggal_lahir_penjamin" | "nik_penjamin" | "hubungan_penjamin_debitur" | "jumlah_barang" | "nama_barang" | "merek_barang" | "tipe_barang" | "ukuran_barang" | "warna_barang" | "harga_barang" | "detail_jaminan" | "bunga_pinjaman" | "jangka_waktu" | "tanggal_angsuran_terakhir" | "tenggat_angsuran" | "tanggal_angsuran_pertama" | "nominal_angsuran" | "hutang_keseluruhan" | "provisi_persen" | "provisi_nominal" | "administrasi_persen" | "administrasi_nominal" | "materai_nominal" | "fidusia_nominal" | "total_biaya" | "created_at" | "updated_at" | "submitted_at" | "userID", ExtArgs["result"]["kEF"]>
   export type KEFInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -21341,6 +21356,7 @@ export namespace Prisma {
       tanggal_lahir_penjamin: Date | null
       nik_penjamin: string | null
       hubungan_penjamin_debitur: string | null
+      jumlah_barang: number | null
       nama_barang: string | null
       merek_barang: string | null
       tipe_barang: string | null
@@ -21811,6 +21827,7 @@ export namespace Prisma {
     readonly tanggal_lahir_penjamin: FieldRef<"KEF", 'DateTime'>
     readonly nik_penjamin: FieldRef<"KEF", 'String'>
     readonly hubungan_penjamin_debitur: FieldRef<"KEF", 'String'>
+    readonly jumlah_barang: FieldRef<"KEF", 'Int'>
     readonly nama_barang: FieldRef<"KEF", 'String'>
     readonly merek_barang: FieldRef<"KEF", 'String'>
     readonly tipe_barang: FieldRef<"KEF", 'String'>
@@ -32153,6 +32170,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
     nik_penjamin: 'nik_penjamin',
     hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
+    jumlah_barang: 'jumlah_barang',
     nama_barang: 'nama_barang',
     merek_barang: 'merek_barang',
     tipe_barang: 'tipe_barang',
@@ -34960,6 +34978,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KEF"> | Date | string | null
     nik_penjamin?: StringNullableFilter<"KEF"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KEF"> | string | null
+    jumlah_barang?: IntNullableFilter<"KEF"> | number | null
     nama_barang?: StringNullableFilter<"KEF"> | string | null
     merek_barang?: StringNullableFilter<"KEF"> | string | null
     tipe_barang?: StringNullableFilter<"KEF"> | string | null
@@ -35010,6 +35029,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     nik_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
+    jumlah_barang?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
     merek_barang?: SortOrderInput | SortOrder
     tipe_barang?: SortOrderInput | SortOrder
@@ -35063,6 +35083,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KEF"> | Date | string | null
     nik_penjamin?: StringNullableFilter<"KEF"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KEF"> | string | null
+    jumlah_barang?: IntNullableFilter<"KEF"> | number | null
     nama_barang?: StringNullableFilter<"KEF"> | string | null
     merek_barang?: StringNullableFilter<"KEF"> | string | null
     tipe_barang?: StringNullableFilter<"KEF"> | string | null
@@ -35113,6 +35134,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrderInput | SortOrder
     nik_penjamin?: SortOrderInput | SortOrder
     hubungan_penjamin_debitur?: SortOrderInput | SortOrder
+    jumlah_barang?: SortOrderInput | SortOrder
     nama_barang?: SortOrderInput | SortOrder
     merek_barang?: SortOrderInput | SortOrder
     tipe_barang?: SortOrderInput | SortOrder
@@ -35170,6 +35192,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableWithAggregatesFilter<"KEF"> | Date | string | null
     nik_penjamin?: StringNullableWithAggregatesFilter<"KEF"> | string | null
     hubungan_penjamin_debitur?: StringNullableWithAggregatesFilter<"KEF"> | string | null
+    jumlah_barang?: IntNullableWithAggregatesFilter<"KEF"> | number | null
     nama_barang?: StringNullableWithAggregatesFilter<"KEF"> | string | null
     merek_barang?: StringNullableWithAggregatesFilter<"KEF"> | string | null
     tipe_barang?: StringNullableWithAggregatesFilter<"KEF"> | string | null
@@ -39194,6 +39217,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
+    jumlah_barang?: number | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -39243,6 +39267,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
+    jumlah_barang?: number | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -39292,6 +39317,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jumlah_barang?: NullableIntFieldUpdateOperationsInput | number | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -39341,6 +39367,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jumlah_barang?: NullableIntFieldUpdateOperationsInput | number | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -39390,6 +39417,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
+    jumlah_barang?: number | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -39439,6 +39467,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jumlah_barang?: NullableIntFieldUpdateOperationsInput | number | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -39487,6 +39516,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jumlah_barang?: NullableIntFieldUpdateOperationsInput | number | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -42385,6 +42415,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
+    jumlah_barang?: SortOrder
     nama_barang?: SortOrder
     merek_barang?: SortOrder
     tipe_barang?: SortOrder
@@ -42413,6 +42444,7 @@ export namespace Prisma {
   }
 
   export type KEFAvgOrderByAggregateInput = {
+    jumlah_barang?: SortOrder
     harga_barang?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
@@ -42450,6 +42482,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
+    jumlah_barang?: SortOrder
     nama_barang?: SortOrder
     merek_barang?: SortOrder
     tipe_barang?: SortOrder
@@ -42499,6 +42532,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: SortOrder
     nik_penjamin?: SortOrder
     hubungan_penjamin_debitur?: SortOrder
+    jumlah_barang?: SortOrder
     nama_barang?: SortOrder
     merek_barang?: SortOrder
     tipe_barang?: SortOrder
@@ -42527,6 +42561,7 @@ export namespace Prisma {
   }
 
   export type KEFSumOrderByAggregateInput = {
+    jumlah_barang?: SortOrder
     harga_barang?: SortOrder
     bunga_pinjaman?: SortOrder
     jangka_waktu?: SortOrder
@@ -45254,6 +45289,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
+    jumlah_barang?: number | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -45302,6 +45338,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
+    jumlah_barang?: number | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -46153,6 +46190,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: DateTimeNullableFilter<"KEF"> | Date | string | null
     nik_penjamin?: StringNullableFilter<"KEF"> | string | null
     hubungan_penjamin_debitur?: StringNullableFilter<"KEF"> | string | null
+    jumlah_barang?: IntNullableFilter<"KEF"> | number | null
     nama_barang?: StringNullableFilter<"KEF"> | string | null
     merek_barang?: StringNullableFilter<"KEF"> | string | null
     tipe_barang?: StringNullableFilter<"KEF"> | string | null
@@ -49220,6 +49258,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: Date | string | null
     nik_penjamin?: string | null
     hubungan_penjamin_debitur?: string | null
+    jumlah_barang?: number | null
     nama_barang?: string | null
     merek_barang?: string | null
     tipe_barang?: string | null
@@ -50652,6 +50691,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jumlah_barang?: NullableIntFieldUpdateOperationsInput | number | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -50700,6 +50740,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jumlah_barang?: NullableIntFieldUpdateOperationsInput | number | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null
@@ -50748,6 +50789,7 @@ export namespace Prisma {
     tanggal_lahir_penjamin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     nik_penjamin?: NullableStringFieldUpdateOperationsInput | string | null
     hubungan_penjamin_debitur?: NullableStringFieldUpdateOperationsInput | string | null
+    jumlah_barang?: NullableIntFieldUpdateOperationsInput | number | null
     nama_barang?: NullableStringFieldUpdateOperationsInput | string | null
     merek_barang?: NullableStringFieldUpdateOperationsInput | string | null
     tipe_barang?: NullableStringFieldUpdateOperationsInput | string | null

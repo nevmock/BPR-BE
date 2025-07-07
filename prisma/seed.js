@@ -17,7 +17,7 @@ async function main() {
 
   await prisma.kSSM.create({
     data: {
-      nomor_surat: 'KSSM-001',
+      nomor_surat: '007951.0/1',
       tanggal_surat_permohonan_kredit: new Date('2025-01-01'),
       tanggal_surat_persetujuan_kredit: new Date('2025-01-05'),
       nama: 'MUHAMAD JAMALUDIN',
@@ -69,7 +69,7 @@ async function main() {
 
   await prisma.kSS.create({
     data: {
-      nomor_surat: 'KSS-001',
+      nomor_surat: '004454.7/1',
       tanggal_surat_permohonan_kredit: new Date('2025-03-01'),
       tanggal_surat_persetujuan_kredit: new Date('2025-03-05'),
       nama: 'SRI HANDAYANI',
@@ -117,7 +117,7 @@ async function main() {
 
   await prisma.pINEK.create({
     data: {
-      nomor_surat: 'PINEK-001',
+      nomor_surat: '001308.0/1',
       tanggal_surat_permohonan_kredit: new Date('2025-05-10'),
       tanggal_surat_persetujuan_kredit: new Date('2025-05-12'),
       nama_debitur: 'SARI WULANDARI',
@@ -158,7 +158,7 @@ async function main() {
 
   await prisma.fLEKSI.create({
     data: {
-      nomor_surat: 'FLEKSI-001',
+      nomor_surat: '000689.0/1',
       tanggal_surat_persetujuan_kredit: new Date('2025-07-01'),
       nama_debitur: 'NURUL AINI',
       status_debitur: 'Kawin',
@@ -219,7 +219,7 @@ async function main() {
 
   await prisma.pROCIM.create({
     data: {
-      nomor_surat: 'PROCIM-001',
+      nomor_surat: '000280.1/1',
       tanggal_surat_persetujuan_kredit: new Date('2025-01-15'),
       nama_debitur: 'NUR KHOLIS',
       nik_debitur: '3210112301890007',
@@ -277,7 +277,7 @@ async function main() {
 
   await prisma.kSM.create({
     data: {
-      nomor_surat: 'KSM-001',
+      nomor_surat: '001100.2/1',
       tanggal_surat_permohonan_kredit: new Date('2025-06-10'),
       tanggal_surat_persetujuan_kredit: new Date('2025-06-15'),
       nama_debitur: 'ROFIUDIN',
@@ -314,7 +314,7 @@ async function main() {
 
   await prisma.kMSM.create({
     data: {
-      nomor_surat: 'KMSM-001',
+      nomor_surat: '001322.6/1',
       tanggal_surat_permohonan_kredit: new Date('2025-04-01'),
       tanggal_surat_persetujuan_kredit: new Date('2025-04-05'),
       nama: 'RENDI MAULANA',
@@ -363,7 +363,7 @@ async function main() {
 
   await prisma.kRS.create({
     data: {
-      nomor_surat: 'KRS-001',
+      nomor_surat: '004650.7/1',
       tanggal_surat_permohonan_kredit: new Date('2025-03-10'),
       tanggal_surat_persetujuan_kredit: new Date('2025-03-15'),
       nama: 'AGUS SANTOSO',
@@ -412,7 +412,7 @@ async function main() {
 
   await prisma.kMM.create({
     data: {
-      nomor_surat: 'KMM-001',
+      nomor_surat: '000323.9/1',
       tanggal_surat_permohonan_kredit: new Date('2025-04-10'),
       tanggal_surat_persetujuan_kredit: new Date('2025-04-15'),
       nama: 'INDRA YULIANA',
@@ -463,7 +463,7 @@ async function main() {
 
   await prisma.kMS.create({
     data: {
-      nomor_surat: 'KMS-001',
+      nomor_surat: '000971.7/1',
       tanggal_surat_permohonan_kredit: new Date('2025-02-10'),
       tanggal_surat_persetujuan_kredit: new Date('2025-02-15'),
       nama: 'RINA WULANDARI',
@@ -511,7 +511,7 @@ async function main() {
 
   await prisma.kEF.create({
     data: {
-      nomor_surat: 'KEF-001',
+      nomor_surat: '000019.1/1',
       tanggal_surat_permohonan_kredit: new Date('2025-03-01'),
       tanggal_surat_persetujuan_kredit: new Date('2025-03-05'),
       nama_debitur: 'NURUL HIKMAH',
@@ -531,6 +531,7 @@ async function main() {
       tanggal_lahir_penjamin: new Date('1970-04-15'),
       nik_penjamin: '3209051504700006',
       hubungan_penjamin_debitur: 'Ibu',
+      jumlah_barang: 1,
       nama_barang: 'KULKAS',
       merek_barang: 'SHARP',
       tipe_barang: 'SJ-195MD-SR',
@@ -560,7 +561,7 @@ async function main() {
 
   await prisma.kAR.create({
     data: {
-      nomor_surat: 'KAR-001',
+      nomor_surat: '000235.6/1',
       tanggal_surat_permohonan_kredit: new Date('2025-04-01'),
       tanggal_surat_persetujuan_kredit: new Date('2025-04-05'),
       nama: 'BUDI SANTOSO',
