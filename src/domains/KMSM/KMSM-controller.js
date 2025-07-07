@@ -8,6 +8,7 @@ import { exec } from 'child_process';
 import { __dirname, __filename } from '../../utils/path.js';
 import { formatRupiahDenganHuruf } from '../../utils/formatTerbilangRupiah.js';
 import { formatRupiah } from '../../utils/formatRupiah.js';
+import { getHariDalamBahasaIndonesia } from '../../utils/getHariDalamBahasaIndonesia.js';
 
 class KMSMController {
   async get(req, res) {
@@ -203,6 +204,7 @@ class KMSMController {
       const formatNotarisNominal = `${formatRupiah(dbData.notaris_nominal)}`;
 
       const data = {
+        hari: getHariDalamBahasaIndonesia(formattedTanggal1),
         nama: dbData.nama,
         jabatan: dbData.jabatan,
         nama_debitur: dbData.nama_debitur,
@@ -418,6 +420,7 @@ class KMSMController {
       const formatNotarisNominal = `${formatRupiah(dbData.notaris_nominal)}`;
 
       const data = {
+        hari: getHariDalamBahasaIndonesia(formattedTanggal1),
         nama: dbData.nama,
         jabatan: dbData.jabatan,
         nama_debitur: dbData.nama_debitur,
