@@ -531,7 +531,7 @@ model KEF {
   tanggal_lahir_penjamin           DateTime? @db.Date // tanggal_lahir_penjamin DateTime?
   nik_penjamin                     String? // no_ktp_penjamin String?
   hubungan_penjamin_debitur        String? // telah_mendapat_persetujuan String?
-  // nama_shm                         String? // nama_SHM String?
+  jumlah_barang                    Int?
   nama_barang                      String? // nama_barang String?
   merek_barang                     String? // merek_barang String?
   tipe_barang                      String? // tipe_barang String?

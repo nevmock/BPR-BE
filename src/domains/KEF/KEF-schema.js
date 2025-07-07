@@ -28,7 +28,7 @@ const createKEF = JoiExtended.object({
   tanggal_lahir_penjamin: JoiExtended.date().format('YYYY/MM/DD').optional(),
   nik_penjamin: JoiExtended.string().optional(),
   hubungan_penjamin_debitur: JoiExtended.string().optional(),
-  // nama_shm: JoiExtended.string().optional(),
+  jumlah_barang: JoiExtended.number().optional(),
   nama_barang: JoiExtended.string().optional(),
   merek_barang: JoiExtended.string().optional(),
   tipe_barang: JoiExtended.string().optional(),

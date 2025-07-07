@@ -8,6 +8,7 @@ import fs from 'fs';
 import { formatRupiah } from '../../utils/formatRupiah.js';
 import { formatRupiahDenganHuruf } from '../../utils/formatTerbilangRupiah.js';
 import { getHariDalamBahasaIndonesia } from '../../utils/getHariDalamBahasaIndonesia.js';
+import getYear from '../../utils/getYear.js';
 
 class FLEKSIController {
   async get(req, res) {
@@ -171,6 +172,7 @@ class FLEKSIController {
 
       const data = {
         hari: getHariDalamBahasaIndonesia(formattedTanggal),
+        tahun_surat: getYear(formattedTanggal),
         tenggat_angsuran: dbData.tenggat_angsuran,
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
@@ -368,6 +370,7 @@ class FLEKSIController {
 
       const data = {
         hari: getHariDalamBahasaIndonesia(formattedTanggal),
+        tahun_surat: getYear(formattedTanggal),
         tenggat_angsuran: dbData.tenggat_angsuran,
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
