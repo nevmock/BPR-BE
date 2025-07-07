@@ -7,6 +7,7 @@ import { exec } from 'child_process';
 import fs from 'fs';
 import { formatRupiahDenganHuruf } from '../../utils/formatTerbilangRupiah.js';
 import { formatRupiah } from '../../utils/formatRupiah.js';
+import { getHariDalamBahasaIndonesia } from '../../utils/getHariDalamBahasaIndonesia.js';
 
 class PROCIMController {
   async get(req, res) {
@@ -47,6 +48,7 @@ class PROCIMController {
       jangka_waktu,
       rekening_pinjaman,
       nominal_angsuran,
+      tenggat_angsuran,
       tanggal_angsuran_pertama,
       barang_elektronik,
       barang_furniture,
@@ -76,6 +78,7 @@ class PROCIMController {
       jangka_waktu,
       rekening_pinjaman,
       nominal_angsuran,
+      tenggat_angsuran,
       tanggal_angsuran_pertama,
       barang_elektronik,
       barang_furniture,
@@ -161,6 +164,8 @@ class PROCIMController {
       );
 
       const data = {
+        hari: getHariDalamBahasaIndonesia(formattedTanggal),
+        tenggat_angsuran: dbData.tenggat_angsuran,
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
         nama_debitur: dbData.nama_debitur,
@@ -354,6 +359,8 @@ class PROCIMController {
       );
 
       const data = {
+        hari: getHariDalamBahasaIndonesia(formattedTanggal),
+        tenggat_angsuran: dbData.tenggat_angsuran,
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
         nama_debitur: dbData.nama_debitur,
