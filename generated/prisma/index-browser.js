@@ -599,6 +599,7 @@ exports.Prisma.KEFScalarFieldEnum = {
   tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
   nik_penjamin: 'nik_penjamin',
   hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
+  jumlah_barang: 'jumlah_barang',
   nama_barang: 'nama_barang',
   merek_barang: 'merek_barang',
   tipe_barang: 'tipe_barang',

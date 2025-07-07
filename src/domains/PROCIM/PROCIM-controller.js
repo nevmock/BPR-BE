@@ -165,6 +165,7 @@ class PROCIMController {
 
       const data = {
         hari: getHariDalamBahasaIndonesia(formattedTanggal),
+        tahun_surat: getYear(formattedTanggal),
         tenggat_angsuran: dbData.tenggat_angsuran,
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
@@ -360,6 +361,7 @@ class PROCIMController {
 
       const data = {
         hari: getHariDalamBahasaIndonesia(formattedTanggal),
+        tahun_surat: getYear(formattedTanggal),
         tenggat_angsuran: dbData.tenggat_angsuran,
         nomor_surat: dbData.nomor_surat,
         tanggal_surat_persetujuan_kredit: formattedTanggal,
