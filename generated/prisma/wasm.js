@@ -152,7 +152,6 @@ exports.Prisma.KSSMScalarFieldEnum = {
   tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
   hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
   alamat_rumah_penjamin: 'alamat_rumah_penjamin',
-  nama_SHM: 'nama_SHM',
   nama_barang: 'nama_barang',
   no_bpkb: 'no_bpkb',
   harga_barang: 'harga_barang',
@@ -204,6 +203,8 @@ exports.Prisma.KSSScalarFieldEnum = {
   hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
   tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
   nama_shm: 'nama_shm',
+  nik_shm: 'nik_shm',
+  alamat_shm: 'alamat_shm',
   detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
@@ -246,7 +247,8 @@ exports.Prisma.PINEKScalarFieldEnum = {
   tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
   hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
   alamat_rumah_penjamin: 'alamat_rumah_penjamin',
-  nama_shm: 'nama_shm',
+  nama_barang: 'nama_barang',
+  detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
   jangka_waktu: 'jangka_waktu',
@@ -286,7 +288,6 @@ exports.Prisma.FLEKSIScalarFieldEnum = {
   tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
   hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
   alamat_rumah_penjamin: 'alamat_rumah_penjamin',
-  nama_shm: 'nama_shm',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
   jangka_waktu: 'jangka_waktu',
@@ -294,7 +295,7 @@ exports.Prisma.FLEKSIScalarFieldEnum = {
   rekening_pinjaman: 'rekening_pinjaman',
   nominal_angsuran: 'nominal_angsuran',
   tanggal_angsuran_pertama: 'tanggal_angsuran_pertama',
-  barang_jaminan_lainnya: 'barang_jaminan_lainnya',
+  tenggat_angsuran: 'tenggat_angsuran',
   created_at: 'created_at',
   updated_at: 'updated_at',
   submitted_at: 'submitted_at',
@@ -316,14 +317,13 @@ exports.Prisma.PROCIMScalarFieldEnum = {
   tempat_lahir_penjamin: 'tempat_lahir_penjamin',
   tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
   alamat_rumah_penjamin: 'alamat_rumah_penjamin',
-  nama_SHM: 'nama_SHM',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
   jangka_waktu: 'jangka_waktu',
   rekening_pinjaman: 'rekening_pinjaman',
   nominal_angsuran: 'nominal_angsuran',
   tanggal_angsuran_pertama: 'tanggal_angsuran_pertama',
-  barang_jaminan_lainnya: 'barang_jaminan_lainnya',
+  tenggat_angsuran: 'tenggat_angsuran',
   created_at: 'created_at',
   updated_at: 'updated_at',
   submitted_at: 'submitted_at',
@@ -355,7 +355,6 @@ exports.Prisma.KSMScalarFieldEnum = {
   nama_barang: 'nama_barang',
   harga_barang: 'harga_barang',
   no_bpkb: 'no_bpkb',
-  nama_shm: 'nama_shm',
   detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
@@ -406,7 +405,6 @@ exports.Prisma.KMSMScalarFieldEnum = {
   nama_barang: 'nama_barang',
   harga_barang: 'harga_barang',
   no_bpkb: 'no_bpkb',
-  nama_shm: 'nama_shm',
   detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
@@ -454,6 +452,8 @@ exports.Prisma.KRSScalarFieldEnum = {
   tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
   hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
   nama_shm: 'nama_shm',
+  nik_shm: 'nik_shm',
+  alamat_shm: 'alamat_shm',
   detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
@@ -503,7 +503,6 @@ exports.Prisma.KMMScalarFieldEnum = {
   nama_barang: 'nama_barang',
   harga_barang: 'harga_barang',
   no_bpkb: 'no_bpkb',
-  nama_shm: 'nama_shm',
   detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
@@ -551,6 +550,7 @@ exports.Prisma.KMSScalarFieldEnum = {
   nik_penjamin: 'nik_penjamin',
   hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
   nama_shm: 'nama_shm',
+  alamat_shm: 'alamat_shm',
   nik_shm: 'nik_shm',
   detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',
@@ -599,7 +599,7 @@ exports.Prisma.KEFScalarFieldEnum = {
   tanggal_lahir_penjamin: 'tanggal_lahir_penjamin',
   nik_penjamin: 'nik_penjamin',
   hubungan_penjamin_debitur: 'hubungan_penjamin_debitur',
-  nama_shm: 'nama_shm',
+  jumlah_barang: 'jumlah_barang',
   nama_barang: 'nama_barang',
   merek_barang: 'merek_barang',
   tipe_barang: 'tipe_barang',
@@ -652,7 +652,6 @@ exports.Prisma.KARScalarFieldEnum = {
   alamat_rumah_penjamin: 'alamat_rumah_penjamin',
   nama_barang: 'nama_barang',
   no_bpkb: 'no_bpkb',
-  nama_shm: 'nama_shm',
   detail_jaminan: 'detail_jaminan',
   nominal_pinjaman: 'nominal_pinjaman',
   bunga_pinjaman: 'bunga_pinjaman',
@@ -696,6 +695,14 @@ exports.Prisma.FleksiBarangFurnitureScalarFieldEnum = {
   updated_at: 'updated_at'
 };
 
+exports.Prisma.FleksiBarangJaminanLainnyaScalarFieldEnum = {
+  id: 'id',
+  fleksi_id: 'fleksi_id',
+  nama_barang: 'nama_barang',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
 exports.Prisma.ProcimBarangElektronikScalarFieldEnum = {
   id: 'id',
   procim_id: 'procim_id',
@@ -712,6 +719,14 @@ exports.Prisma.ProcimBarangFurnitureScalarFieldEnum = {
   nama_barang: 'nama_barang',
   tipe: 'tipe',
   harga: 'harga',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.ProcimBarangJaminanLainnyaScalarFieldEnum = {
+  id: 'id',
+  procim_id: 'procim_id',
+  nama_barang: 'nama_barang',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -760,8 +775,10 @@ exports.Prisma.ModelName = {
   KAR: 'KAR',
   FleksiBarangElektronik: 'FleksiBarangElektronik',
   FleksiBarangFurniture: 'FleksiBarangFurniture',
+  FleksiBarangJaminanLainnya: 'FleksiBarangJaminanLainnya',
   ProcimBarangElektronik: 'ProcimBarangElektronik',
   ProcimBarangFurniture: 'ProcimBarangFurniture',
+  ProcimBarangJaminanLainnya: 'ProcimBarangJaminanLainnya',
   SystemLog: 'SystemLog'
 };
 

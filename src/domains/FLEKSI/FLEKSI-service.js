@@ -1,4 +1,5 @@
-import db from "../../config/db.js";
+import db from '../../config/db.js';
+
 class FLEKSIService {
   async getAll(page, limit) {
     let datas;
@@ -18,6 +19,7 @@ class FLEKSIService {
           },
           barang_elektronik: true,
           barang_furniture: true,
+          barang_jaminan_lainnya: true,
         },
       });
     } else {
@@ -34,6 +36,7 @@ class FLEKSIService {
           },
           barang_elektronik: true,
           barang_furniture: true,
+          barang_jaminan_lainnya: true,
         },
       });
     }
@@ -57,6 +60,7 @@ class FLEKSIService {
         },
         barang_elektronik: true,
         barang_furniture: true,
+        barang_jaminan_lainnya: true,
       },
     });
     return data;
@@ -78,7 +82,7 @@ class FLEKSIService {
     tanggal_lahir_penjamin,
     hubungan_penjamin_debitur,
     alamat_rumah_penjamin,
-    nama_shm,
+    // nama_shm,
     nominal_pinjaman,
     bunga_pinjaman,
     jangka_waktu,
@@ -86,6 +90,7 @@ class FLEKSIService {
     rekening_pinjaman,
     nominal_angsuran,
     tanggal_angsuran_pertama,
+    tenggat_angsuran,
     barang_elektronik,
     barang_furniture,
     barang_jaminan_lainnya,
@@ -95,28 +100,37 @@ class FLEKSIService {
     const newFLEKSI = await db.FLEKSI.create({
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
         nama_debitur: nama_debitur,
         status_debitur: status_debitur,
         jenis_kelamin_debitur: jenis_kelamin_debitur,
         tempat_lahir_debitur: tempat_lahir_debitur,
-        tanggal_lahir_debitur: tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
+        tanggal_lahir_debitur: tanggal_lahir_debitur
+          ? new Date(tanggal_lahir_debitur)
+          : null,
         alamat_rumah_debitur: alamat_rumah_debitur,
         nik_debitur: nik_debitur,
         nama_penjamin: nama_penjamin,
         nik_penjamin: nik_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
         alamat_rumah_penjamin: alamat_rumah_penjamin,
-        nama_shm: nama_shm,
+        // nama_shm: nama_shm,
         nominal_pinjaman: nominal_pinjaman,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
         tujuan_penggunaan: tujuan_penggunaan,
         rekening_pinjaman: rekening_pinjaman,
         nominal_angsuran: nominal_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
+        tenggat_angsuran: tenggat_angsuran,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
         barang_elektronik: {
           create: barang_elektronik?.map((item) => ({
             nama_barang: item.nama_barang,
@@ -131,18 +145,23 @@ class FLEKSIService {
             harga: item.harga,
           })),
         },
-        barang_jaminan_lainnya: barang_jaminan_lainnya,
+        barang_jaminan_lainnya: {
+          create: barang_jaminan_lainnya?.map((item) => ({
+            nama_barang: item.nama_barang,
+          })),
+        },
         submitted_at: new Date(),
         userID,
       },
       include: {
         barang_elektronik: true,
         barang_furniture: true,
+        barang_jaminan_lainnya: true,
       },
     });
 
     if (!newFLEKSI) {
-      throw new Error("Create FLEKSI failed");
+      throw new Error('Create FLEKSI failed');
     }
     return newFLEKSI;
   }
@@ -165,7 +184,7 @@ class FLEKSIService {
       tanggal_lahir_penjamin,
       hubungan_penjamin_debitur,
       alamat_rumah_penjamin,
-      nama_shm,
+      // nama_shm,
       nominal_pinjaman,
       bunga_pinjaman,
       jangka_waktu,
@@ -173,6 +192,7 @@ class FLEKSIService {
       rekening_pinjaman,
       nominal_angsuran,
       tanggal_angsuran_pertama,
+      tenggat_angsuran,
       barang_elektronik,
       barang_furniture,
       barang_jaminan_lainnya,
@@ -189,34 +209,48 @@ class FLEKSIService {
     await db.fleksiBarangFurniture.deleteMany({
       where: { fleksi_id: id },
     });
+
+    await db.fleksiBarangJaminanLainnya.deleteMany({
+      where: { fleksi_id: id },
+    });
+
     const updatedFLEKSI = await db.FLEKSI.update({
       where: {
         id: id,
       },
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
         nama_debitur: nama_debitur,
         status_debitur: status_debitur,
         jenis_kelamin_debitur: jenis_kelamin_debitur,
         tempat_lahir_debitur: tempat_lahir_debitur,
-        tanggal_lahir_debitur: tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
+        tanggal_lahir_debitur: tanggal_lahir_debitur
+          ? new Date(tanggal_lahir_debitur)
+          : null,
         alamat_rumah_debitur: alamat_rumah_debitur,
         nik_debitur: nik_debitur,
         nama_penjamin: nama_penjamin,
         nik_penjamin: nik_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
         alamat_rumah_penjamin: alamat_rumah_penjamin,
-        nama_shm: nama_shm,
+        // nama_shm: nama_shm,
         nominal_pinjaman: nominal_pinjaman,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
         tujuan_penggunaan: tujuan_penggunaan,
         rekening_pinjaman: rekening_pinjaman,
         nominal_angsuran: nominal_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
+        tenggat_angsuran: tenggat_angsuran,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
         barang_elektronik: {
           create: barang_elektronik?.map((item) => ({
             nama_barang: item.nama_barang,
@@ -231,7 +265,11 @@ class FLEKSIService {
             harga: item.harga,
           })),
         },
-        barang_jaminan_lainnya: barang_jaminan_lainnya,
+        barang_jaminan_lainnya: {
+          create: barang_jaminan_lainnya?.map((item) => ({
+            nama_barang: item.nama_barang,
+          })),
+        },
         status: status,
         updated_at: new Date(),
         submitted_at,
@@ -240,6 +278,7 @@ class FLEKSIService {
       include: {
         barang_elektronik: true,
         barang_furniture: true,
+        barang_jaminan_lainnya: true,
       },
     });
 
@@ -254,6 +293,11 @@ class FLEKSIService {
     await db.fleksiBarangFurniture.deleteMany({
       where: { fleksi_id: id },
     });
+
+    await db.fleksiBarangJaminanLainnya.deleteMany({
+      where: { fleksi_id: id },
+    });
+
     const data = await db.FLEKSI.delete({
       where: {
         id: id,

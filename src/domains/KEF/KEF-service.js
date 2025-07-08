@@ -1,4 +1,4 @@
-import db from "../../config/db.js";
+import db from '../../config/db.js';
 class KEFService {
   async getAll(page, limit) {
     let datas;
@@ -77,7 +77,7 @@ class KEFService {
     tanggal_lahir_penjamin,
     nik_penjamin,
     hubungan_penjamin_debitur,
-    nama_shm,
+    jumlah_barang,
     nama_barang,
     merek_barang,
     tipe_barang,
@@ -105,8 +105,12 @@ class KEFService {
     const newKEF = await db.KEF.create({
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
-        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
+        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit
+          ? new Date(tanggal_surat_permohonan_kredit)
+          : null,
         nama_debitur: nama_debitur,
         status_debitur: status_debitur,
         nik_debitur: nik_debitur,
@@ -114,17 +118,21 @@ class KEFService {
         jenis_kelamin_debitur: jenis_kelamin_debitur,
         hubungan_debitur_penjamin: hubungan_debitur_penjamin,
         tempat_lahir_debitur: tempat_lahir_debitur,
-        tanggal_lahir_debitur: tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
+        tanggal_lahir_debitur: tanggal_lahir_debitur
+          ? new Date(tanggal_lahir_debitur)
+          : null,
         nama_usaha_debitur: nama_usaha_debitur,
         alamat_usaha_debitur: alamat_usaha_debitur,
         alamat_rumah_debitur: alamat_rumah_debitur,
         pekerjaan_debitur: pekerjaan_debitur,
         nama_penjamin: nama_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         nik_penjamin: nik_penjamin,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
-        nama_shm: nama_shm,
+        jumlah_barang: jumlah_barang,
         nama_barang: nama_barang,
         merek_barang: merek_barang,
         tipe_barang: tipe_barang,
@@ -134,9 +142,13 @@ class KEFService {
         detail_jaminan: detail_jaminan,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
-        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir?new Date(tanggal_angsuran_terakhir):null,
+        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir
+          ? new Date(tanggal_angsuran_terakhir)
+          : null,
         tenggat_angsuran: tenggat_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
         nominal_angsuran: nominal_angsuran,
         hutang_keseluruhan: hutang_keseluruhan,
         provisi_persen: provisi_persen,
@@ -151,7 +163,7 @@ class KEFService {
       },
     });
     if (!newKEF) {
-      throw new Error("Create KEF failed");
+      throw new Error('Create KEF failed');
     }
     return newKEF;
   }
@@ -179,7 +191,7 @@ class KEFService {
       tanggal_lahir_penjamin,
       nik_penjamin,
       hubungan_penjamin_debitur,
-      nama_shm,
+      jumlah_barang: jumlah_barang,
       nama_barang,
       merek_barang,
       tipe_barang,
@@ -212,8 +224,12 @@ class KEFService {
       },
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
-        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
+        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit
+          ? new Date(tanggal_surat_permohonan_kredit)
+          : null,
         nama_debitur: nama_debitur,
         status_debitur: status_debitur,
         nik_debitur: nik_debitur,
@@ -221,17 +237,21 @@ class KEFService {
         jenis_kelamin_debitur: jenis_kelamin_debitur,
         hubungan_debitur_penjamin: hubungan_debitur_penjamin,
         tempat_lahir_debitur: tempat_lahir_debitur,
-        tanggal_lahir_debitur: tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
+        tanggal_lahir_debitur: tanggal_lahir_debitur
+          ? new Date(tanggal_lahir_debitur)
+          : null,
         nama_usaha_debitur: nama_usaha_debitur,
         alamat_usaha_debitur: alamat_usaha_debitur,
         alamat_rumah_debitur: alamat_rumah_debitur,
         pekerjaan_debitur: pekerjaan_debitur,
         nama_penjamin: nama_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         nik_penjamin: nik_penjamin,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
-        nama_shm: nama_shm,
+        jumlah_barang: jumlah_barang,
         nama_barang: nama_barang,
         merek_barang: merek_barang,
         tipe_barang: tipe_barang,
@@ -241,9 +261,13 @@ class KEFService {
         detail_jaminan: detail_jaminan,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
-        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir?new Date(tanggal_angsuran_terakhir):null,
+        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir
+          ? new Date(tanggal_angsuran_terakhir)
+          : null,
         tenggat_angsuran: tenggat_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
         nominal_angsuran: nominal_angsuran,
         hutang_keseluruhan: hutang_keseluruhan,
         provisi_persen: provisi_persen,
