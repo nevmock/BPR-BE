@@ -1,4 +1,4 @@
-import db from "../../config/db.js";
+import db from '../../config/db.js';
 class PROCIMService {
   async getAll(page, limit) {
     let datas;
@@ -18,6 +18,7 @@ class PROCIMService {
           },
           barang_elektronik: true,
           barang_furniture: true,
+          barang_jaminan_lainnya: true,
         },
       });
     } else {
@@ -34,6 +35,7 @@ class PROCIMService {
           },
           barang_elektronik: true,
           barang_furniture: true,
+          barang_jaminan_lainnya: true,
         },
       });
     }
@@ -57,6 +59,7 @@ class PROCIMService {
         },
         barang_elektronik: true,
         barang_furniture: true,
+        barang_jaminan_lainnya: true,
       },
     });
     return data;
@@ -76,12 +79,13 @@ class PROCIMService {
     tempat_lahir_penjamin,
     tanggal_lahir_penjamin,
     alamat_rumah_penjamin,
-    nama_SHM,
+    // nama_SHM,
     nominal_pinjaman,
     bunga_pinjaman,
     jangka_waktu,
     rekening_pinjaman,
     nominal_angsuran,
+    tenggat_angsuran,
     tanggal_angsuran_pertama,
     barang_elektronik,
     barang_furniture,
@@ -110,12 +114,13 @@ class PROCIMService {
           ? new Date(tanggal_lahir_penjamin)
           : null,
         alamat_rumah_penjamin: alamat_rumah_penjamin,
-        nama_SHM: nama_SHM,
+        // nama_SHM: nama_SHM,
         nominal_pinjaman: nominal_pinjaman,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
         rekening_pinjaman: rekening_pinjaman,
         nominal_angsuran: nominal_angsuran,
+        tenggat_angsuran: tenggat_angsuran,
         tanggal_angsuran_pertama: tanggal_angsuran_pertama
           ? new Date(tanggal_angsuran_pertama)
           : null,
@@ -133,17 +138,22 @@ class PROCIMService {
             harga: item.harga,
           })),
         },
-        barang_jaminan_lainnya: barang_jaminan_lainnya,
+        barang_jaminan_lainnya: {
+          create: barang_jaminan_lainnya?.map((item) => ({
+            nama_barang: item.nama_barang,
+          })),
+        },
         submitted_at: new Date(),
         userID: userID,
       },
       include: {
         barang_elektronik: true,
         barang_furniture: true,
+        barang_jaminan_lainnya: true,
       },
     });
     if (!newPROCIM) {
-      throw new Error("Create PROCIM failed");
+      throw new Error('Create PROCIM failed');
     }
     return newPROCIM;
   }
@@ -164,12 +174,13 @@ class PROCIMService {
       tempat_lahir_penjamin,
       tanggal_lahir_penjamin,
       alamat_rumah_penjamin,
-      nama_SHM,
+      // nama_SHM,
       nominal_pinjaman,
       bunga_pinjaman,
       jangka_waktu,
       rekening_pinjaman,
       nominal_angsuran,
+      tenggat_angsuran,
       tanggal_angsuran_pertama,
       barang_elektronik,
       barang_furniture,
@@ -187,6 +198,11 @@ class PROCIMService {
     await db.procimBarangFurniture.deleteMany({
       where: { procim_id: id },
     });
+
+    await db.procimBarangJaminanLainnya.deleteMany({
+      where: { procim_id: id },
+    });
+
     const updatedPROCIM = await db.PROCIM.update({
       where: {
         id: id,
@@ -211,12 +227,13 @@ class PROCIMService {
           ? new Date(tanggal_lahir_penjamin)
           : null,
         alamat_rumah_penjamin: alamat_rumah_penjamin,
-        nama_SHM: nama_SHM,
+        // nama_SHM: nama_SHM,
         nominal_pinjaman: nominal_pinjaman,
         bunga_pinjaman: bunga_pinjaman,
         jangka_waktu: jangka_waktu,
         rekening_pinjaman: rekening_pinjaman,
         nominal_angsuran: nominal_angsuran,
+        tenggat_angsuran: tenggat_angsuran,
         tanggal_angsuran_pertama: tanggal_angsuran_pertama
           ? new Date(tanggal_angsuran_pertama)
           : null,
@@ -234,7 +251,11 @@ class PROCIMService {
             harga: item.harga,
           })),
         },
-        barang_jaminan_lainnya: barang_jaminan_lainnya,
+        barang_jaminan_lainnya: {
+          create: barang_jaminan_lainnya?.map((item) => ({
+            nama_barang: item.nama_barang,
+          })),
+        },
         status: status,
         updated_at: new Date(),
         submitted_at,
@@ -243,6 +264,7 @@ class PROCIMService {
       include: {
         barang_elektronik: true,
         barang_furniture: true,
+        barang_jaminan_lainnya: true,
       },
     });
 
@@ -257,6 +279,11 @@ class PROCIMService {
     await db.procimBarangFurniture.deleteMany({
       where: { procim_id: id },
     });
+
+    await db.procimBarangJaminanLainnya.deleteMany({
+      where: { procim_id: id },
+    });
+
     const data = await db.PROCIM.delete({
       where: {
         id: id,

@@ -1,10 +1,10 @@
-import BaseError from "../../base_classes/base-error.js";
+import BaseError from '../../base_classes/base-error.js';
 
-import { generateVerifEmail } from "../../utils/bodyEmail.js";
-import sendEmail from "../../utils/sendEmail.js";
-import db from "../../config/db.js";
-import { parseJWT, generateToken } from "../../utils/jwtTokenConfig.js";
-import { matchPassword, hashPassword } from "../../utils/passwordConfig.js";
+import { generateVerifEmail } from '../../utils/bodyEmail.js';
+import sendEmail from '../../utils/sendEmail.js';
+import db from '../../config/db.js';
+import { parseJWT, generateToken } from '../../utils/jwtTokenConfig.js';
+import { matchPassword, hashPassword } from '../../utils/passwordConfig.js';
 
 class KSSMService {
   async getAll(page, limit) {
@@ -85,8 +85,9 @@ class KSSMService {
     tanggal_lahir_penjamin,
     hubungan_penjamin_debitur,
     alamat_rumah_penjamin,
-    nama_SHM,
+    // nama_SHM,
     nama_barang,
+    no_bpkb,
     harga_barang,
     detail_jaminan,
     nominal_pinjaman,
@@ -113,8 +114,12 @@ class KSSMService {
     const newKSSM = await db.KSSM.create({
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
+        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit
+          ? new Date(tanggal_surat_permohonan_kredit)
+          : null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
         nama: nama,
         jabatan: jabatan,
         nama_debitur: nama_debitur,
@@ -124,17 +129,22 @@ class KSSMService {
         alamat_usaha_debitur: alamat_usaha_debitur,
         alamat_rumah_debitur: alamat_rumah_debitur,
         tempat_lahir_debitur: tempat_lahir_debitur,
-        tanggal_lahir_debitur: tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
+        tanggal_lahir_debitur: tanggal_lahir_debitur
+          ? new Date(tanggal_lahir_debitur)
+          : null,
         pekerjaan_debitur: pekerjaan_debitur,
         jenis_kelamin_debitur: jenis_kelamin_debitur,
         nama_penjamin: nama_penjamin,
         nik_penjamin: nik_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
-        alamat_rumah_penjamin:alamat_rumah_penjamin,
-        nama_SHM: nama_SHM,
+        alamat_rumah_penjamin: alamat_rumah_penjamin,
+        // nama_SHM: nama_SHM,
         nama_barang: nama_barang,
+        no_bpkb: no_bpkb,
         harga_barang: harga_barang,
         detail_jaminan: detail_jaminan,
         nominal_pinjaman: nominal_pinjaman,
@@ -142,8 +152,12 @@ class KSSMService {
         jangka_waktu: jangka_waktu,
         tujuan_penggunaan: tujuan_penggunaan,
         nominal_angsuran: nominal_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
-        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir?new Date(tanggal_angsuran_terakhir):null,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
+        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir
+          ? new Date(tanggal_angsuran_terakhir)
+          : null,
         hutang_keseluruhan: hutang_keseluruhan,
         tenggat_angsuran: tenggat_angsuran,
         provisi_persen: provisi_persen,
@@ -160,7 +174,7 @@ class KSSMService {
       },
     });
     if (!newKSSM) {
-      throw new Error("Create KSSM failed");
+      throw new Error('Create KSSM failed');
     }
     return newKSSM;
   }
@@ -169,48 +183,49 @@ class KSSMService {
     id,
     {
       nomor_surat,
-        tanggal_surat_permohonan_kredit,
-        tanggal_surat_persetujuan_kredit,
-        nama,
-        jabatan,
-        nama_debitur,
-        nik_debitur,
-        status_debitur,
-        hubungan_debitur_penjamin,
-        alamat_usaha_debitur,
-        alamat_rumah_debitur,
-        tempat_lahir_debitur,
-        tanggal_lahir_debitur,
-        pekerjaan_debitur,
-        jenis_kelamin_debitur,
-        nama_penjamin,
-        nik_penjamin,
-        tempat_lahir_penjamin,
-        tanggal_lahir_penjamin,
-        hubungan_penjamin_debitur,
-        alamat_rumah_penjamin,
-        nama_SHM,
-        nama_barang,
-        harga_barang,
-        detail_jaminan,
-        nominal_pinjaman,
-        bunga_pinjaman,
-        jangka_waktu,
-        tujuan_penggunaan,
-        nominal_angsuran,
-        tanggal_angsuran_pertama,
-        tanggal_angsuran_terakhir,
-        hutang_keseluruhan,
-        tenggat_angsuran,
-        provisi_persen,
-        provisi_nominal,
-        administrasi_persen,
-        administrasi_nominal,
-        materai_nominal,
-        asuransi_jiwa_nominal,
-        asuransi_tlo_nominal,
-        notaris_nominal,
-        total_biaya,
+      tanggal_surat_permohonan_kredit,
+      tanggal_surat_persetujuan_kredit,
+      nama,
+      jabatan,
+      nama_debitur,
+      nik_debitur,
+      status_debitur,
+      hubungan_debitur_penjamin,
+      alamat_usaha_debitur,
+      alamat_rumah_debitur,
+      tempat_lahir_debitur,
+      tanggal_lahir_debitur,
+      pekerjaan_debitur,
+      jenis_kelamin_debitur,
+      nama_penjamin,
+      nik_penjamin,
+      tempat_lahir_penjamin,
+      tanggal_lahir_penjamin,
+      hubungan_penjamin_debitur,
+      alamat_rumah_penjamin,
+      // nama_SHM,
+      nama_barang,
+      no_bpkb,
+      harga_barang,
+      detail_jaminan,
+      nominal_pinjaman,
+      bunga_pinjaman,
+      jangka_waktu,
+      tujuan_penggunaan,
+      nominal_angsuran,
+      tanggal_angsuran_pertama,
+      tanggal_angsuran_terakhir,
+      hutang_keseluruhan,
+      tenggat_angsuran,
+      provisi_persen,
+      provisi_nominal,
+      administrasi_persen,
+      administrasi_nominal,
+      materai_nominal,
+      asuransi_jiwa_nominal,
+      asuransi_tlo_nominal,
+      notaris_nominal,
+      total_biaya,
       status,
       submitted_at,
       userID,
@@ -222,8 +237,12 @@ class KSSMService {
       },
       data: {
         nomor_surat: nomor_surat,
-        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit?new Date(tanggal_surat_permohonan_kredit):null,
-        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit?new Date(tanggal_surat_persetujuan_kredit):null,
+        tanggal_surat_permohonan_kredit: tanggal_surat_permohonan_kredit
+          ? new Date(tanggal_surat_permohonan_kredit)
+          : null,
+        tanggal_surat_persetujuan_kredit: tanggal_surat_persetujuan_kredit
+          ? new Date(tanggal_surat_persetujuan_kredit)
+          : null,
         nama: nama,
         jabatan: jabatan,
         nama_debitur: nama_debitur,
@@ -233,17 +252,22 @@ class KSSMService {
         alamat_usaha_debitur: alamat_usaha_debitur,
         alamat_rumah_debitur: alamat_rumah_debitur,
         tempat_lahir_debitur: tempat_lahir_debitur,
-        tanggal_lahir_debitur: tanggal_lahir_debitur?new Date(tanggal_lahir_debitur):null,
+        tanggal_lahir_debitur: tanggal_lahir_debitur
+          ? new Date(tanggal_lahir_debitur)
+          : null,
         pekerjaan_debitur: pekerjaan_debitur,
         jenis_kelamin_debitur: jenis_kelamin_debitur,
         nama_penjamin: nama_penjamin,
         nik_penjamin: nik_penjamin,
         tempat_lahir_penjamin: tempat_lahir_penjamin,
-        tanggal_lahir_penjamin: tanggal_lahir_penjamin?new Date(tanggal_lahir_penjamin):null,
+        tanggal_lahir_penjamin: tanggal_lahir_penjamin
+          ? new Date(tanggal_lahir_penjamin)
+          : null,
         hubungan_penjamin_debitur: hubungan_penjamin_debitur,
-        alamat_rumah_penjamin:alamat_rumah_penjamin,
-        nama_SHM: nama_SHM,
+        alamat_rumah_penjamin: alamat_rumah_penjamin,
+        // nama_SHM: nama_SHM,
         nama_barang: nama_barang,
+        no_bpkb: no_bpkb,
         harga_barang: harga_barang,
         detail_jaminan: detail_jaminan,
         nominal_pinjaman: nominal_pinjaman,
@@ -251,8 +275,12 @@ class KSSMService {
         jangka_waktu: jangka_waktu,
         tujuan_penggunaan: tujuan_penggunaan,
         nominal_angsuran: nominal_angsuran,
-        tanggal_angsuran_pertama: tanggal_angsuran_pertama?new Date(tanggal_angsuran_pertama):null,
-        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir?new Date(tanggal_angsuran_terakhir):null,
+        tanggal_angsuran_pertama: tanggal_angsuran_pertama
+          ? new Date(tanggal_angsuran_pertama)
+          : null,
+        tanggal_angsuran_terakhir: tanggal_angsuran_terakhir
+          ? new Date(tanggal_angsuran_terakhir)
+          : null,
         hutang_keseluruhan: hutang_keseluruhan,
         tenggat_angsuran: tenggat_angsuran,
         provisi_persen: provisi_persen,

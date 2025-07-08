@@ -79,8 +79,8 @@ class DashboardService {
           const model = db[productName];
 
           const allUnique = await model.findMany({
-            select: { no_ktp_debitur: true },
-            distinct: ['no_ktp_debitur'],
+            select: { nik_debitur: true },
+            distinct: ['nik_debitur'],
           });
 
           const currentMonth = await model.findMany({
@@ -90,8 +90,8 @@ class DashboardService {
                 lte: endCurrentMonth,
               },
             },
-            select: { no_ktp_debitur: true },
-            distinct: ['no_ktp_debitur'],
+            select: { nik_debitur: true },
+            distinct: ['nik_debitur'],
           });
 
           const lastMonth = await model.findMany({
@@ -101,8 +101,8 @@ class DashboardService {
                 lte: endLastMonth,
               },
             },
-            select: { no_ktp_debitur: true },
-            distinct: ['no_ktp_debitur'],
+            select: { nik_debitur: true },
+            distinct: ['nik_debitur'],
           });
 
           const count = await db[productName].count();

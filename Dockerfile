@@ -13,7 +13,6 @@ RUN apt-get update && \
     xfonts-utils \
     libreoffice && \
     mkdir -p /usr/share/fonts/truetype/custom && \
-    wget -O "/usr/share/fonts/truetype/custom/Courier New.ttf" "https://raw.githubusercontent.com/maseyyi/font-courier-new/master/Courier%20New.ttf" && \
     fc-cache -f -v && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
